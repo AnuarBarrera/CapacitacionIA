@@ -127,6 +127,7 @@ watch(currentSlideIndex, () => {
           v-if="currentSlide"
           :key="currentSlide.id"
           :slide="currentSlide"
+          @next="nextSlide"
         />
       </Transition>
     </div>
