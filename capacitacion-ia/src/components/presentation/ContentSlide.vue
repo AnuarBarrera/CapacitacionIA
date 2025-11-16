@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { IContentSlide } from '@/interfaces/Slide'
 
 const props = defineProps<{
@@ -26,6 +26,33 @@ const toggleItem = (index: number) => {
 
 // Verificar si un item está expandido
 const isExpanded = (index: number) => expandedItems.value.has(index)
+
+// Verificar si todas las tarjetas están expandidas
+const allItemsExpanded = computed(() => {
+  if (!props.slide.bullets) return true
+  return expandedItems.value.size >= props.slide.bullets.length
+})
+
+// Obtener palabra clave para cada bullet
+const getKeyword = (bullet: string, index: number): string => {
+  // Palabras clave predefinidas basadas en el contenido común
+  const keywords: string[] = [
+    'Base de datos',      // Para contenido sobre almacenamiento
+    'Matemáticas',        // Para contenido sobre posiciones/tokens
+    'Predicción',         // Para contenido sobre predicción
+    'Entrenamiento',      // Para contenido sobre entrenamiento
+    'No es magia'         // Para el concepto final
+  ]
+
+  // Si hay más bullets que keywords, extraer la primera palabra del bullet
+  if (index < keywords.length) {
+    return keywords[index]!
+  }
+
+  // Fallback: tomar las primeras 2-3 palabras del bullet
+  const words = bullet.split(' ')
+  return words.slice(0, 2).join(' ') || 'Concepto'
+}
 
 // Iconos SVG para cada tipo de contenido (basado en el índice)
 const getIconForIndex = (index: number): string => {
@@ -77,6 +104,11 @@ const handleNextClick = () => {
       <div class="text-content">
         <p class="description">{{ slide.content }}</p>
 
+        <!-- Mensaje de instrucciones -->
+        <div v-if="slide.bullets && slide.bullets.length > 0" class="instructions">
+          👇 Da click en cada flecha para desplegar el contenido y poder continuar
+        </div>
+
         <div v-if="slide.bullets && slide.bullets.length > 0" class="expandable-list">
           <div
             v-for="(bullet, index) in slide.bullets"
@@ -88,7 +120,7 @@ const handleNextClick = () => {
             <div class="item-header">
               <div class="icon-wrapper" v-html="getIconForIndex(index)"></div>
               <div class="item-preview">
-                {{ bullet.length > 80 ? bullet.substring(0, 80) + '...' : bullet }}
+                {{ getKeyword(bullet, index) }}
               </div>
               <div class="expand-indicator">
                 <svg
@@ -105,11 +137,6 @@ const handleNextClick = () => {
               </div>
             </div>
 
-            <!-- Leyenda solo en el primer item y cuando no está expandido -->
-            <div v-if="index === 0 && !isExpanded(0)" class="hint-text">
-              👆 Da click aquí
-            </div>
-
             <Transition name="expand">
               <div v-if="isExpanded(index)" class="item-content">
                 <p>{{ bullet }}</p>
@@ -124,20 +151,22 @@ const handleNextClick = () => {
       </div>
     </div>
 
-    <!-- Botón siguiente -->
-    <button class="next-button" @click="handleNextClick">
-      Siguiente
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
+    <!-- Botón siguiente - Solo aparece cuando todas las tarjetas están expandidas -->
+    <Transition name="fade-in">
+      <button v-if="allItemsExpanded" class="next-button" @click="handleNextClick">
+        Siguiente
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </Transition>
   </div>
 </template>
 
@@ -174,6 +203,32 @@ const handleNextClick = () => {
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: var(--color-text);
+}
+
+/* Mensaje de instrucciones */
+.instructions {
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  border-left: 4px solid #667eea;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  text-align: center;
+  animation: gentle-pulse 3s infinite;
+}
+
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.01);
+  }
 }
 
 /* Lista expandible */
@@ -256,28 +311,6 @@ const handleNextClick = () => {
   width: 100%;
   height: 100%;
   color: var(--color-heading);
-}
-
-/* Texto de ayuda */
-.hint-text {
-  margin-top: 0.8rem;
-  padding: 0.5rem 1rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #667eea;
-  text-align: center;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
 }
 
 /* Contenido expandido */
@@ -365,6 +398,26 @@ const handleNextClick = () => {
 .next-button:active {
   transform: translateY(0);
   box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* Transición fade-in para el botón siguiente */
+.fade-in-enter-active {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.fade-in-leave-active {
+  animation: fadeIn 0.4s ease-in reverse;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 768px) {
