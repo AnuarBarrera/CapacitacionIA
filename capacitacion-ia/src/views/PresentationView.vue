@@ -10,6 +10,10 @@ import TitleSlide from '@/components/presentation/TitleSlide.vue'
 import ContentSlide from '@/components/presentation/ContentSlide.vue'
 import CodeSlide from '@/components/presentation/CodeSlide.vue'
 import QuizSlide from '@/components/presentation/QuizSlide.vue'
+import TypewriterSlide from '@/components/presentation/TypewriterSlide.vue'
+import CardGridSlide from '@/components/presentation/CardGridSlide.vue'
+import ResourceSlide from '@/components/presentation/ResourceSlide.vue'
+import CTASlide from '@/components/presentation/CTASlide.vue'
 
 // Inicializar el servicio de presentación
 const presentationService = new PresentationService(slidesData)
@@ -33,7 +37,11 @@ const slideComponents: Record<SlideType, Component> = {
   [SlideType.CONTENT]: ContentSlide,
   [SlideType.CODE]: CodeSlide,
   [SlideType.QUIZ]: QuizSlide,
-  [SlideType.INTERACTIVE]: ContentSlide // Placeholder por ahora
+  [SlideType.INTERACTIVE]: ContentSlide,
+  [SlideType.TYPEWRITER]: TypewriterSlide,
+  [SlideType.CARD_GRID]: CardGridSlide,
+  [SlideType.RESOURCE]: ResourceSlide,
+  [SlideType.CTA]: CTASlide
 }
 
 // Navegación con teclado
@@ -143,9 +151,10 @@ watch(currentSlideIndex, () => {
 }
 
 .slide-container {
-  max-width: 1400px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 4rem;
   min-height: calc(100vh - 120px);
   display: flex;
   align-items: center;

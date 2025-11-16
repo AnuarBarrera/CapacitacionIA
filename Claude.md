@@ -20,4 +20,8 @@ Esta pagina es una presentación interactiva que sirve de introducción al uso d
 
 Debe ser lo mas intuitiva posible. Responsive.
 
+---
+
+Crea y ejecuta test por cada modulo y cambio que realices en el proyecto
+
 

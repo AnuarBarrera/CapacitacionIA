@@ -6,7 +6,11 @@ export enum SlideType {
   CONTENT = 'content',
   CODE = 'code',
   INTERACTIVE = 'interactive',
-  QUIZ = 'quiz'
+  QUIZ = 'quiz',
+  TYPEWRITER = 'typewriter',
+  CARD_GRID = 'card-grid',
+  RESOURCE = 'resource',
+  CTA = 'cta'
 }
 
 /**
@@ -78,6 +82,100 @@ export interface IQuizSlide extends ISlide {
 }
 
 /**
+ * Slide con efecto typewriter
+ */
+export interface ITypewriterSlide extends ISlide {
+  type: SlideType.TYPEWRITER
+  lines: string[]
+  imageUrl?: string
+  speed?: number // Milisegundos entre caracteres
+}
+
+/**
+ * Tarjeta para grid
+ */
+export interface ICard {
+  id: string
+  title: string
+  description?: string
+  logoUrl?: string
+  link?: string
+  icon?: string
+}
+
+/**
+ * Slide con grid de tarjetas
+ */
+export interface ICardGridSlide extends ISlide {
+  type: SlideType.CARD_GRID
+  description?: string
+  cards: ICard[]
+  columns?: number
+}
+
+/**
+ * Recurso con enlaces
+ */
+export interface IResource {
+  type: 'web' | 'app' | 'tool'
+  label: string
+  url: string
+  icon?: string
+}
+
+/**
+ * Slide de recursos
+ */
+export interface IResourceSlide extends ISlide {
+  type: SlideType.RESOURCE
+  platform: string
+  logoUrl?: string
+  description?: string
+  resources: IResource[]
+  features?: string[]
+  screenshot?: string
+}
+
+/**
+ * Información de contacto para CTA
+ */
+export interface IContactInfo {
+  name: string
+  company: string
+  website?: string
+  email?: string
+  phone?: string
+  socialMedia?: {
+    platform: string
+    url: string
+    icon?: string
+  }[]
+}
+
+/**
+ * Slide de Call to Action / Cierre
+ */
+export interface ICTASlide extends ISlide {
+  type: SlideType.CTA
+  message: string[]
+  contactInfo: IContactInfo
+  ctaButtons?: {
+    label: string
+    action: string
+    variant?: 'primary' | 'secondary'
+  }[]
+}
+
+/**
  * Unión de todos los tipos de slides
  */
-export type Slide = ITitleSlide | IContentSlide | ICodeSlide | IInteractiveSlide | IQuizSlide
+export type Slide =
+  | ITitleSlide
+  | IContentSlide
+  | ICodeSlide
+  | IInteractiveSlide
+  | IQuizSlide
+  | ITypewriterSlide
+  | ICardGridSlide
+  | IResourceSlide
+  | ICTASlide

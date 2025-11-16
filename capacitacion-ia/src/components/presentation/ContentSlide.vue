@@ -30,8 +30,9 @@ defineProps<{
 
 <style scoped>
 .content-slide {
-  padding: 2rem;
-  max-width: 1200px;
+  padding: 2rem 4rem;
+  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -45,12 +46,14 @@ defineProps<{
 .slide-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
   align-items: start;
 }
 
-.slide-content:has(.image-container) {
-  grid-template-columns: 1fr 1fr;
+@media (min-width: 1024px) {
+  .slide-content:has(.image-container) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .description {
@@ -98,11 +101,7 @@ defineProps<{
 
 @media (max-width: 768px) {
   .content-slide {
-    padding: 1rem;
-  }
-
-  .slide-content:has(.image-container) {
-    grid-template-columns: 1fr;
+    padding: 1.5rem;
   }
 
   .bullet-item {

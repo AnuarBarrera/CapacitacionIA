@@ -20,9 +20,12 @@ defineProps<{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 70vh;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .main-title {
