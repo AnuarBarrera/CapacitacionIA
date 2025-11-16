@@ -6,10 +6,18 @@ const props = defineProps<{
   slide: ITypewriterSlide
 }>()
 
+const emit = defineEmits<{
+  next: []
+}>()
+
 const displayedText = ref<string[]>([])
 const currentLineIndex = ref(0)
 const currentCharIndex = ref(0)
 const isComplete = ref(false)
+
+const handleContinueClick = () => {
+  emit('next')
+}
 
 let intervalId: number | null = null
 
@@ -75,6 +83,17 @@ onUnmounted(() => {
         </p>
       </div>
     </div>
+
+    <!-- Botón flotante que aparece cuando termina la animación -->
+    <Transition name="fade-slide-up">
+      <button
+        v-if="isComplete"
+        class="continue-button"
+        @click="handleContinueClick"
+      >
+        Sigue aquí
+      </button>
+    </Transition>
   </div>
 </template>
 
@@ -162,6 +181,57 @@ onUnmounted(() => {
   }
 }
 
+/* Botón flotante "Sigue aquí" */
+.continue-button {
+  position: fixed;
+  bottom: 140px;
+  right: 3rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+  z-index: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.continue-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.7);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.continue-button:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.5);
+}
+
+/* Transición fade-slide-up */
+.fade-slide-up-enter-active {
+  animation: fadeSlideUp 0.6s ease-out;
+}
+
+.fade-slide-up-leave-active {
+  animation: fadeSlideUp 0.3s ease-in reverse;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .typewriter-slide {
     padding: 1rem;
@@ -173,6 +243,13 @@ onUnmounted(() => {
 
   .typewriter-line {
     font-size: 1rem;
+  }
+
+  .continue-button {
+    bottom: 120px;
+    right: 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
   }
 }
 
