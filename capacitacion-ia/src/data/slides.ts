@@ -310,7 +310,7 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: '💡 La IA no es magia, es matemáticas. No es inteligente, solo predice la siguiente palabra de forma tan convincente porque fue muy bien entrenada.',
+        text: 'La IA no es magia, son matemáticas. No es inteligente, solo predice la siguiente palabra de forma tan convincente porque fue muy bien entrenada.',
         keyword: 'Magia',
         svgContent: `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -375,10 +375,10 @@ export const slidesData: Slide[] = [
     type: SlideType.CONTENT,
     content: 'Las aplicaciones de IA (como ChatGPT) son "Agentes de IA". Esto significa que el chat hace lo necesario para cumplir tu solicitud.',
     bullets: [
-      '🤖 Agente: El sistema que ejecuta acciones para cumplir tu solicitud',
-      '🧠 Razonamiento: La IA analiza tu petición ANTES de ejecutarla',
-      '✨ Razonar = analizar tu petición para darte un mejor resultado y reducir errores',
-      '🔄 Flujo: Usuario → Prompt → Razonamiento → Respuesta'
+      'Agente: El sistema que ejecuta las acciones para cumplir tu solicitud',
+      'Razonamiento: La IA analiza tu petición ANTES de ejecutarla',
+      'Razonar = analizar tu petición para darte un mejor resultado y reducir errores',
+      'Flujo: Usuario → Prompt → Razonamiento → Respuesta'
     ],
     order: 3
   },
@@ -390,16 +390,16 @@ export const slidesData: Slide[] = [
     type: SlideType.CONTENT,
     content: 'El prompt es el mensaje que le mandas a la IA.',
     bullets: [
-      '📝 Estructura básica de prompts:',
-      '• QUÉ quieres que haga',
-      '• CÓMO lo quieres',
-      '• CONTEXTO necesario',
-      '💪 Ejemplo real del poder de la IA:',
+      'Estructura básica de un prompt:',
+      '• QUÉ: lo QUE quieres que haga',
+      '• CÓMO: COMO quieres quieres que lo haga',
+      '• CONTEXTO: información necesaria para que la IA te de elmresultado esperado',
+      'Un ejemplo real del poder de la IA:',
       'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
-      'CON IA: "Quiero lona para vender pan dulce, estilo épico, inspiración anime, formato horizontal 1.20m"',
+      'AHORA CON IA: "QUE: Quiero lona para vender pan dulce, COMO: estilo épico, inspiración anime, formato horizontal 1.20m, CONTEXTO: Con precios desde 10 pesos mexicanos"',
       'Resultado: Diseño profesional, gratis, en 5 minutos',
       '',
-      '🚀 ESTO es el poder de la IA'
+      'ESTO es el poder de la IA'
     ],
     order: 4
   },
@@ -411,10 +411,10 @@ export const slidesData: Slide[] = [
     type: SlideType.CONTENT,
     content: 'Estrategias para mejorar el prompt que le compartes a la IA y obtener mejores respuestas.',
     bullets: [
-      '🎯 Sé específico: entre más detalles, mejor resultado',
-      '📚 Da ejemplos: muestra qué quieres con ejemplos concretos',
-      '📋 Define formato: especifica cómo quieres la respuesta',
-      '🔄 Itera: si no sale bien, ajusta y vuelve a intentar'
+      'Sé específico: entre más detalles, mejor resultado',
+      'Da ejemplos: muestra qué quieres con ejemplos concretos',
+      'Define el formato: especifica cómo quieres la respuesta',
+      'Insiste: si no sale bien a la primera, ajusta y vuelve a intentar'
     ],
     order: 5
   },
@@ -426,10 +426,10 @@ export const slidesData: Slide[] = [
     type: SlideType.CONTENT,
     content: 'Formas y métodos para compartirle contexto a la IA para que entienda mejor tu situación.',
     bullets: [
-      '📎 Subir archivos (documentos, imágenes)',
-      '🏢 Explicar tu negocio en el primer mensaje',
-      '🎨 Dar ejemplos de tu trabajo previo',
-      '👥 Compartir tu audiencia objetivo'
+      'Subir archivos (documentos, imágenes)',
+      'Explicar tu negocio en el primer mensaje',
+      'Dar ejemplos de tu trabajo previo',
+      'Compartir tu audiencia objetivo'
     ],
     order: 6
   },
@@ -439,7 +439,7 @@ export const slidesData: Slide[] = [
     id: 'seguridad',
     title: 'Qué SÍ y qué NO compartir con la IA',
     type: SlideType.CONTENT,
-    content: '⚠️ Lo que escribes puede ser usado para entrenar la IA. Si es confidencial, NO lo compartas.',
+    content: 'Lo que escribes puede ser usado para entrenar la IA. Si es confidencial, NO lo compartas.',
     bullets: [
       '🟢 SÍ puedes compartir:',
       '• Ideas de negocio',
@@ -447,13 +447,13 @@ export const slidesData: Slide[] = [
       '• Descripciones de productos/servicios',
       '• Solicitudes de contenido',
       '• Problemas que necesitas resolver',
-      '',
       '🔴 NO compartas NUNCA:',
       '• Contraseñas o claves',
       '• Datos bancarios',
       '• INE o documentos oficiales completos',
       '• Información privada de clientes',
-      '• Datos sensibles de tu empresa'
+      '• Datos sensibles de tu empresa',
+      'TIP: Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA'
     ],
     order: 7
   },
@@ -691,7 +691,10 @@ export const slidesData: Slide[] = [
       name: 'Anuar Barrera',
       company: 'Tu Socio Tecnológico',
       website: 'https://www.anuarbarrera.dev',
-      email: 'contacto@anuarbarrera.dev'
+      email: 'contacto@anuarbarrera.dev',
+      whatsapp: '5664799775',
+      linkedin: 'https://www.linkedin.com/in/anuarbarrera',
+      servicios: 'https://www.anuarbarrera.dev/servicios/'
     },
     ctaButtons: [
       {
