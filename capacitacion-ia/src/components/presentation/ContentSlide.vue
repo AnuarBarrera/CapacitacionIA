@@ -144,15 +144,18 @@ onMounted(() => {
 
 <template>
   <div class="content-slide">
-    <h2 class="slide-title">{{ slide.title }}</h2>
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h2 class="hero-title">{{ slide.title }}</h2>
+      <p class="hero-description">{{ slide.content }}</p>
+    </div>
 
     <div class="slide-content">
       <div class="text-content">
-        <p class="description">{{ slide.content }}</p>
-
-        <!-- Mensaje de instrucciones -->
-        <div v-if="itemsCount > 0" class="instructions">
-          👇 Da click en cada flecha para desplegar el contenido y poder continuar
+        <!-- Mensaje de instrucciones (compacto) -->
+        <div v-if="itemsCount > 0" class="instructions-compact">
+          <span class="instructions-icon">👇</span>
+          <span class="instructions-text">Click para expandir</span>
         </div>
 
         <!-- Lista expandible con customBullets -->
@@ -263,12 +266,52 @@ onMounted(() => {
   margin: 0 auto;
 }
 
-.slide-title {
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: var(--spacing-6);
+  padding: var(--spacing-6) var(--spacing-4);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-title {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
-  font-weight: var(--font-bold);
-  margin-bottom: var(--spacing-4);
-  color: var(--color-text-primary);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-6xl));
+  font-weight: var(--font-black);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-inverse);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+  font-family: var(--font-primary);
+  font-size: clamp(var(--text-lg), 2vw, var(--text-2xl));
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
+  font-weight: var(--font-medium);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slide-content {
@@ -284,38 +327,38 @@ onMounted(() => {
   }
 }
 
-.description {
-  font-family: var(--font-primary);
-  font-size: var(--text-lg);
-  line-height: 1.8;
+/* Mensaje de instrucciones compacto */
+.instructions-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
   margin-bottom: var(--spacing-3);
-  color: var(--color-text-secondary);
-}
-
-/* Mensaje de instrucciones */
-.instructions {
-  margin-bottom: var(--spacing-4);
-  padding: var(--spacing-2) var(--spacing-3);
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
-  border-left: 4px solid var(--color-secondary-500);
-  border-radius: var(--radius-md);
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-full);
   font-family: var(--font-primary);
-  font-size: var(--text-base);
-  font-weight: var(--font-semibold);
-  color: var(--color-primary-700);
-  text-align: center;
-  animation: gentle-pulse 3s infinite;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-neutral-700);
+  box-shadow: var(--shadow-sm);
 }
 
-@keyframes gentle-pulse {
+.instructions-icon {
+  font-size: var(--text-base);
+  animation: gentle-bounce 2s infinite;
+}
+
+.instructions-text {
+  opacity: 0.8;
+}
+
+@keyframes gentle-bounce {
   0%,
   100% {
-    opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
   50% {
-    opacity: 0.9;
-    transform: scale(1.01);
+    transform: translateY(-4px);
   }
 }
 
@@ -549,8 +592,17 @@ onMounted(() => {
     padding: var(--spacing-3);
   }
 
-  .slide-title {
+  .hero-section {
+    padding: var(--spacing-4) var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .hero-title {
     font-size: var(--text-2xl);
+  }
+
+  .hero-description {
+    font-size: var(--text-base);
   }
 
   .icon-wrapper {

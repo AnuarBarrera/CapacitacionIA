@@ -46,60 +46,60 @@ export const slidesData: Slide[] = [
       {
         text: 'Todo el contenido que ha generado la humanidad se organizó en una base de datos gigante',
         keyword: 'Base de datos',
-        svgContent: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        svgContent: `<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
               <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
             </linearGradient>
           </defs>
-          <!-- Base de datos 3D (más pequeña) -->
+          <!-- Base de datos 3D (50% más pequeña) -->
           <!-- Nivel 1 (superior) -->
-          <ellipse cx="100" cy="30" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="50" y="30" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="50" rx="50" ry="12" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="25" rx="35" ry="9" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="65" y="25" width="70" height="14" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="39" rx="35" ry="9" fill="url(#grad1)"/>
 
           <!-- Nivel 2 -->
-          <ellipse cx="100" cy="65" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="50" y="65" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="85" rx="50" ry="12" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="50" rx="35" ry="9" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="65" y="50" width="70" height="14" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="64" rx="35" ry="9" fill="url(#grad1)"/>
 
           <!-- Nivel 3 (inferior) -->
-          <ellipse cx="100" cy="100" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="50" y="100" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="120" rx="50" ry="12" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="75" rx="35" ry="9" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="65" y="75" width="70" height="14" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="89" rx="35" ry="9" fill="url(#grad1)"/>
 
-          <!-- Puntos de datos -->
-          <circle cx="85" cy="40" r="2.5" fill="#fff" opacity="0.8">
+          <!-- Puntos de datos (reducidos proporcionalmente) -->
+          <circle cx="88" cy="32" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="100" cy="40" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="100" cy="32" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.3s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="115" cy="40" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="112" cy="32" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
           </circle>
 
-          <circle cx="75" cy="75" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="82" cy="57" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.9s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="90" cy="75" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="93" cy="57" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="110" cy="75" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="107" cy="57" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="125" cy="75" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="118" cy="57" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.8s" repeatCount="indefinite"/>
           </circle>
 
-          <circle cx="80" cy="110" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="87" cy="82" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="95" cy="110" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="97" cy="82" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="110" cy="110" r="2.5" fill="#fff" opacity="0.8">
+          <circle cx="107" cy="82" r="2" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.4s" repeatCount="indefinite"/>
           </circle>
         </svg>`
