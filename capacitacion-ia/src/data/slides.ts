@@ -107,43 +107,43 @@ export const slidesData: Slide[] = [
       {
         text: 'Con matemáticas, cada palabra (técnicamente llamada "token") recibió una posición específica',
         keyword: 'Matemáticas',
-        svgContent: `<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+        svgContent: `<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
               .formula-text { fill: #4a5ba5; font-family: 'Times New Roman', serif; font-style: italic; }
-              .formula-large { font-size: 32px; }
-              .formula-small { font-size: 20px; }
+              .formula-large { font-size: 22px; }
+              .formula-small { font-size: 16px; }
             </style>
           </defs>
           <!-- Fórmula de Atención: Attention(Q,K,V) = softmax(QK^T/√d_k)V -->
-          <text x="10" y="35" class="formula-text formula-large">Attention(Q,K,V) =</text>
+          <text x="5" y="30" class="formula-text formula-large">Attention(Q,K,V) =</text>
 
           <!-- softmax -->
-          <text x="30" y="75" class="formula-text formula-large">softmax(</text>
+          <text x="20" y="65" class="formula-text formula-large">softmax(</text>
 
           <!-- Fracción QK^T / √d_k -->
-          <line x1="110" y1="66" x2="170" y2="66" stroke="#4a5ba5" stroke-width="2"/>
-          <text x="120" y="60" class="formula-text formula-small">QK</text>
-          <text x="148" y="53" class="formula-text formula-small" font-size="16px">T</text>
-          <text x="115" y="85" class="formula-text formula-small">√d</text>
-          <text x="138" y="90" class="formula-text formula-small" font-size="14px">k</text>
+          <line x1="95" y1="58" x2="145" y2="58" stroke="#4a5ba5" stroke-width="2"/>
+          <text x="100" y="53" class="formula-text formula-small">QK</text>
+          <text x="122" y="48" class="formula-text formula-small" font-size="12px">T</text>
+          <text x="98" y="73" class="formula-text formula-small">√d</text>
+          <text x="118" y="77" class="formula-text formula-small" font-size="11px">k</text>
 
-          <text x="175" y="75" class="formula-text formula-large">)V</text>
+          <text x="150" y="65" class="formula-text formula-large">)V</text>
 
           <!-- Decoración: flechas y elementos visuales -->
-          <path d="M 10 100 Q 70 105 130 100" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5">
+          <path d="M 10 85 Q 60 88 110 85" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5">
             <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="3s" repeatCount="indefinite"/>
           </path>
 
           <!-- Puntos decorativos animados -->
-          <circle cx="250" cy="30" r="4" fill="#ff6b6b" opacity="0.7">
-            <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+          <circle cx="220" cy="25" r="3" fill="#ff6b6b" opacity="0.7">
+            <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="265" cy="50" r="4" fill="#4a5ba5" opacity="0.7">
-            <animate attributeName="r" values="4;6;4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          <circle cx="235" cy="40" r="3" fill="#4a5ba5" opacity="0.7">
+            <animate attributeName="r" values="3;5;3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="280" cy="70" r="4" fill="#ff6b6b" opacity="0.7">
-            <animate attributeName="r" values="4;6;4" dur="2s" begin="1s" repeatCount="indefinite"/>
+          <circle cx="250" cy="55" r="3" fill="#ff6b6b" opacity="0.7">
+            <animate attributeName="r" values="3;5;3" dur="2s" begin="1s" repeatCount="indefinite"/>
           </circle>
         </svg>`
       },
