@@ -40,6 +40,7 @@ export interface ICustomBullet {
   text: string
   keyword?: string
   svgContent?: string
+  iconContent?: string // SVG personalizado para el icono del header
 }
 
 /**
@@ -112,6 +113,8 @@ export interface ICard {
   logoUrl?: string
   link?: string
   icon?: string
+  svgContent?: string // SVG ilustrativo para la tarjeta
+  bullets?: string[] // Bullets para mostrar en la tarjeta
 }
 
 /**
@@ -122,6 +125,7 @@ export interface ICardGridSlide extends ISlide {
   description?: string
   cards: ICard[]
   columns?: number
+  flowDiagram?: string // SVG adicional al final de la slide
 }
 
 /**

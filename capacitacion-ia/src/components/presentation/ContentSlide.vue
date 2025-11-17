@@ -167,7 +167,7 @@ onMounted(() => {
             @click="toggleItem(index)"
           >
             <div class="item-header">
-              <div class="icon-wrapper" v-html="getIconForIndex(index)"></div>
+              <div class="icon-wrapper" v-html="bullet.iconContent || getIconForIndex(index)"></div>
               <div class="item-preview">
                 {{ bullet.keyword || getKeyword(bullet.text, index) }}
               </div>
