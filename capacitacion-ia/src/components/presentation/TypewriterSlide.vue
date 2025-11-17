@@ -91,7 +91,7 @@ onUnmounted(() => {
         class="continue-button"
         @click="handleContinueClick"
       >
-        Sigue aquí
+        Click para continuar
       </button>
     </Transition>
   </div>

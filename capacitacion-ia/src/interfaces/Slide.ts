@@ -51,6 +51,7 @@ export interface IContentSlide extends ISlide {
   bullets?: string[]
   customBullets?: ICustomBullet[]
   imageUrl?: string
+  flowDiagram?: string
 }
 
 /**
@@ -155,6 +156,9 @@ export interface IContactInfo {
   website?: string
   email?: string
   phone?: string
+  whatsapp?: string
+  linkedin?: string
+  servicios?: string
   socialMedia?: {
     platform: string
     url: string
