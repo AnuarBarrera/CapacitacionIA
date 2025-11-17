@@ -103,15 +103,15 @@ const handleSocialClick = (url: string) => {
 
 <style scoped>
 .cta-slide {
-  padding: 2rem 4rem;
-  max-width: 1400px;
+  padding: var(--spacing-4) var(--spacing-8);
+  max-width: var(--container-xl);
   width: 100%;
   margin: 0 auto;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3rem;
+  gap: var(--spacing-6);
 }
 
 .message-section {
@@ -119,10 +119,11 @@ const handleSocialClick = (url: string) => {
 }
 
 .slide-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: bold;
-  margin-bottom: 2rem;
-  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
 }
 
 .message-content {
@@ -131,11 +132,12 @@ const handleSocialClick = (url: string) => {
 }
 
 .message-line {
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-family: var(--font-primary);
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
   line-height: 1.8;
-  margin: 0.5rem 0;
-  color: var(--color-text);
-  font-weight: 500;
+  margin: var(--spacing-1) 0;
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
 }
 
 .contact-section {
@@ -144,46 +146,49 @@ const handleSocialClick = (url: string) => {
 }
 
 .contact-card {
-  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
-  padding: 2.5rem;
-  border-radius: 16px;
-  color: white;
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  padding: var(--spacing-5);
+  border-radius: var(--radius-xl);
+  color: var(--color-text-inverse);
   text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
+  box-shadow: var(--shadow-2xl);
   max-width: 500px;
   width: 100%;
 }
 
 .contact-name {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-1);
 }
 
 .contact-company {
-  font-size: 1.2rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
   opacity: 0.9;
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-4);
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
 }
 
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 1.2rem;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   text-decoration: none;
-  color: white;
-  transition: all 0.3s ease;
-  font-size: 1rem;
+  color: var(--color-text-inverse);
+  transition: all var(--transition-base);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
 }
 
 .contact-link:hover {
@@ -192,105 +197,105 @@ const handleSocialClick = (url: string) => {
 }
 
 .contact-link .icon {
-  font-size: 1.2rem;
+  font-size: var(--text-lg);
 }
 
 .social-media {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-2);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .social-button {
-  padding: 0.8rem 1.5rem;
+  padding: var(--spacing-2) var(--spacing-3);
   background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
+  border: var(--border-width-md) solid rgba(255, 255, 255, 0.4);
+  border-radius: var(--radius-md);
+  color: var(--color-text-inverse);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .social-button:hover {
   background: rgba(255, 255, 255, 0.3);
-  border-color: white;
+  border-color: var(--color-text-inverse);
   transform: scale(1.05);
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--spacing-3);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .cta-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 12px;
+  padding: var(--spacing-2) var(--spacing-5);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   border: none;
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-lg);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
+  box-shadow: var(--shadow-xl);
 }
 
 .cta-button.secondary {
   background: transparent;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
+  border: var(--border-width-md) solid var(--color-primary-600);
+  color: var(--color-primary-600);
 }
 
 .cta-button.secondary:hover {
-  background: #00d4ff;
-  color: #000000;
+  background: var(--color-primary-600);
+  color: var(--color-text-inverse);
   transform: translateY(-4px);
 }
 
 @media (max-width: 768px) {
   .cta-slide {
-    padding: 1rem;
-    gap: 2rem;
+    padding: var(--spacing-2);
+    gap: var(--spacing-4);
+  }
+
+  .slide-title {
+    font-size: var(--text-3xl);
   }
 
   .contact-card {
-    padding: 1.5rem;
+    padding: var(--spacing-3);
   }
 
   .contact-name {
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
   }
 
   .contact-company {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 
   .contact-link {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
+    font-size: var(--text-sm);
+    padding: var(--spacing-1) var(--spacing-2);
   }
 
   .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .message-line {
-    color: #e5e7eb;
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--text-base);
   }
 }
 </style>
