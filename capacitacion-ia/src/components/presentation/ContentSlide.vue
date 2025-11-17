@@ -238,6 +238,14 @@ onMounted(() => {
       </div>
     </div>
 
+    <!-- Diagrama de flujo - Solo aparece cuando todas las tarjetas están expandidas -->
+    <Transition name="fade-in">
+      <div v-if="slide.flowDiagram && allItemsExpanded" class="flow-diagram-container">
+        <h3 class="flow-diagram-title">Flujo de Trabajo</h3>
+        <div class="flow-diagram" v-html="slide.flowDiagram"></div>
+      </div>
+    </Transition>
+
     <!-- Botón siguiente - Solo aparece cuando todas las tarjetas están expandidas -->
     <Transition name="fade-in">
       <button v-if="allItemsExpanded" class="next-button" @click="handleNextClick">
@@ -562,6 +570,45 @@ onMounted(() => {
   box-shadow: var(--shadow-md);
 }
 
+/* Diagrama de flujo */
+.flow-diagram-container {
+  margin-top: var(--spacing-8);
+  padding: var(--spacing-6) var(--spacing-4);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: var(--border-width-md) solid var(--color-primary-300);
+}
+
+.flow-diagram-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-4);
+  margin-top: 0;
+}
+
+.flow-diagram {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-3);
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.flow-diagram svg {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+}
+
 /* Transición fade-in para el botón siguiente */
 .fade-in-enter-active {
   animation: fadeIn 0.8s ease-out;
@@ -631,6 +678,25 @@ onMounted(() => {
 
   .item-content .expanded-text {
     font-size: var(--text-sm);
+  }
+
+  /* Flow diagram en móvil */
+  .flow-diagram-container {
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-3);
+  }
+
+  .flow-diagram-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .flow-diagram {
+    padding: var(--spacing-2);
+  }
+
+  .flow-diagram svg {
+    max-width: 100%;
   }
 }
 </style>

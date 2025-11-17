@@ -373,13 +373,267 @@ export const slidesData: Slide[] = [
     id: 'como-funcionan',
     title: '¿Cómo funcionan las aplicaciones de IA?',
     type: SlideType.CONTENT,
-    content: 'Las aplicaciones de IA (como ChatGPT) son "Agentes de IA". Esto significa que el chat hace lo necesario para cumplir tu solicitud.',
-    bullets: [
-      'Agente: El sistema que ejecuta las acciones para cumplir tu solicitud',
-      'Razonamiento: La IA analiza tu petición ANTES de ejecutarla',
-      'Razonar = analizar tu petición para darte un mejor resultado y reducir errores',
-      'Flujo: Usuario → Prompt → Razonamiento → Respuesta'
+    content: 'Las aplicaciones de Inteligencia Artificial (como ChatGPT) son "Agentes de IA". Esto significa que el LLM analiza tu mensaje y hace lo necesario (como pedirte mas informacion) para cumplirlo. Entre otras cosas',
+    customBullets: [
+      {
+        text: 'Un agente es el sistema que ejecuta las acciones necesarias para cumplir tu solicitud. No solo responde, sino que puede realizar múltiples tareas, pedir más información, o usar herramientas para darte el mejor resultado.',
+        keyword: '¿Qué es un agente?',
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .agent-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; }
+              .agent-icon { fill: #4a5ba5; }
+              .agent-arrow { stroke: #ff6b6b; stroke-width: 3; fill: none; marker-end: url(#agent-arrow-head); }
+            </style>
+            <marker id="agent-arrow-head" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#ff6b6b"/>
+            </marker>
+          </defs>
+
+          <!-- Robot/Agente central -->
+          <g transform="translate(130, 60)">
+            <!-- Cabeza -->
+            <rect x="10" y="5" width="30" height="30" rx="5" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <!-- Antena -->
+            <line x1="25" y1="5" x2="25" y2="-5" stroke="#ff6b6b" stroke-width="2"/>
+            <circle cx="25" cy="-5" r="3" fill="#ff6b6b">
+              <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Ojos -->
+            <circle cx="18" cy="18" r="3" fill="#fff"/>
+            <circle cx="32" cy="18" r="3" fill="#fff"/>
+            <circle cx="19" cy="18" r="1.5" fill="#2d3561">
+              <animate attributeName="cx" values="19;20;19" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="33" cy="18" r="1.5" fill="#2d3561">
+              <animate attributeName="cx" values="33;34;33" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Boca -->
+            <path d="M 18 27 Q 25 30 32 27" stroke="#fff" stroke-width="2" fill="none"/>
+            <!-- Cuerpo -->
+            <rect x="13" y="37" width="24" height="25" rx="3" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <!-- Brazos -->
+            <rect x="2" y="42" width="9" height="15" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <rect x="39" y="42" width="9" height="15" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <text x="-5" y="80" class="agent-text" font-size="12px">Agente IA</text>
+          </g>
+
+          <!-- Tareas alrededor -->
+          <!-- Tarea 1: Búsqueda -->
+          <g transform="translate(20, 20)">
+            <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
+            <path d="M -5 -3 A 6 6 0 1 1 -5 3" stroke="#4a5ba5" stroke-width="2" fill="none"/>
+            <line x1="2" y1="5" x2="7" y2="10" stroke="#4a5ba5" stroke-width="2"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Tarea 2: Procesamiento -->
+          <g transform="translate(240, 30)">
+            <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
+            <circle cx="-5" cy="-3" r="2" fill="#4a5ba5"/>
+            <circle cx="5" cy="-3" r="2" fill="#4a5ba5"/>
+            <circle cx="-5" cy="5" r="2" fill="#4a5ba5"/>
+            <circle cx="5" cy="5" r="2" fill="#4a5ba5"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Tarea 3: Respuesta -->
+          <g transform="translate(240, 130)">
+            <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
+            <path d="M -8 -5 L 8 -5 L 8 5 L 2 5 L 0 10 L -2 5 L -8 5 Z" fill="#4a5ba5"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Flechas conectoras -->
+          <path d="M 45 30 L 125 75" class="agent-arrow">
+            <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <path d="M 220 40 L 180 80" class="agent-arrow">
+            <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+          </path>
+          <path d="M 220 120 L 180 105" class="agent-arrow">
+            <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2s" repeatCount="indefinite"/>
+          </path>
+        </svg>`
+      },
+      {
+        text: 'El razonamiento es el proceso donde la IA analiza tu petición ANTES de ejecutarla. Esto significa que examina qué necesitas, evalúa diferentes opciones, y planea los pasos necesarios para darte un mejor resultado y reducir errores. No solo reacciona, sino que piensa estratégicamente.',
+        keyword: '¿Que es razonamiento?',
+        svgContent: `<svg viewBox="0 0 350 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .think-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; }
+              .think-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 10px; }
+            </style>
+          </defs>
+
+          <!-- Cerebro pensando -->
+          <g transform="translate(50, 70)">
+            <!-- Forma del cerebro -->
+            <ellipse cx="0" cy="0" rx="35" ry="40" fill="#4a5ba5" opacity="0.2"/>
+            <path d="M -20 -30 Q -35 -20 -30 0 Q -35 20 -20 30 Q -10 35 0 35 Q 10 35 20 30 Q 35 20 30 0 Q 35 -20 20 -30 Q 10 -35 0 -35 Q -10 -35 -20 -30"
+                  fill="none" stroke="#4a5ba5" stroke-width="2.5"/>
+
+            <!-- Líneas del cerebro -->
+            <path d="M -15 -20 Q -20 -10 -15 0" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <path d="M -15 0 Q -20 10 -15 20" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <path d="M 15 -20 Q 20 -10 15 0" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <path d="M 15 0 Q 20 10 15 20" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <path d="M -8 -15 Q 0 -18 8 -15" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <path d="M -8 15 Q 0 18 8 15" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+
+            <!-- Bombilla de idea -->
+            <g transform="translate(40, -40)">
+              <ellipse cx="0" cy="0" rx="8" ry="10" fill="#ffd43b" stroke="#ff8787" stroke-width="1.5">
+                <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+              </ellipse>
+              <rect x="-4" y="8" width="8" height="4" fill="#868e96"/>
+              <line x1="-12" y1="-5" x2="-15" y2="-8" stroke="#ffd43b" stroke-width="2"/>
+              <line x1="-10" y1="3" x2="-13" y2="6" stroke="#ffd43b" stroke-width="2"/>
+              <line x1="12" y1="-5" x2="15" y2="-8" stroke="#ffd43b" stroke-width="2"/>
+              <line x1="10" y1="3" x2="13" y2="6" stroke="#ffd43b" stroke-width="2"/>
+            </g>
+
+            <text x="-35" y="55" class="think-text">Análisis</text>
+          </g>
+
+          <!-- Proceso de razonamiento -->
+          <g transform="translate(160, 30)">
+            <!-- Paso 1 -->
+            <rect x="0" y="0" width="80" height="30" rx="5" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2">
+              <animate attributeName="stroke" values="#4a5ba5;#ff6b6b;#4a5ba5" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <text x="40" y="13" class="think-label" text-anchor="middle">1. Entender</text>
+            <text x="40" y="24" class="think-label" text-anchor="middle">petición</text>
+
+            <!-- Flecha -->
+            <line x1="40" y1="35" x2="40" y2="50" stroke="#868e96" stroke-width="2" marker-end="url(#arrow1)"/>
+
+            <!-- Paso 2 -->
+            <rect x="0" y="55" width="80" height="30" rx="5" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2">
+              <animate attributeName="stroke" values="#4a5ba5;#4a5ba5;#ff6b6b;#4a5ba5" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <text x="40" y="68" class="think-label" text-anchor="middle">2. Evaluar</text>
+            <text x="40" y="79" class="think-label" text-anchor="middle">opciones</text>
+
+            <!-- Flecha -->
+            <line x1="40" y1="90" x2="40" y2="105" stroke="#868e96" stroke-width="2" marker-end="url(#arrow2)"/>
+
+            <!-- Paso 3 -->
+            <rect x="0" y="110" width="80" height="30" rx="5" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2">
+              <animate attributeName="stroke" values="#4a5ba5;#4a5ba5;#4a5ba5;#ff6b6b" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <text x="40" y="123" class="think-label" text-anchor="middle">3. Planear</text>
+            <text x="40" y="134" class="think-label" text-anchor="middle">acción</text>
+
+            <defs>
+              <marker id="arrow1" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#868e96"/>
+              </marker>
+              <marker id="arrow2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#868e96"/>
+              </marker>
+            </defs>
+          </g>
+
+          <!-- Resultado -->
+          <g transform="translate(260, 90)">
+            <circle cx="25" cy="0" r="25" fill="#51cf66" opacity="0.2">
+              <animate attributeName="r" values="25;28;25" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M 10 -5 L 20 8 L 40 -15" stroke="#51cf66" stroke-width="4" stroke-linecap="round" fill="none">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <text x="3" y="40" class="think-text">Mejor resultado</text>
+          </g>
+        </svg>`
+      }
     ],
+    flowDiagram: `<svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .flow-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; }
+          .flow-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 12px; }
+          .flow-box { fill: #f1f3f5; stroke: #4a5ba5; stroke-width: 3; }
+          .flow-arrow { stroke: #ff6b6b; stroke-width: 4; fill: none; marker-end: url(#flow-arrow-head); }
+        </style>
+        <marker id="flow-arrow-head" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+          <polygon points="0 0, 12 6, 0 12" fill="#ff6b6b"/>
+        </marker>
+        <linearGradient id="userGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+
+      <!-- Usuario -->
+      <g transform="translate(30, 50)">
+        <circle cx="30" cy="20" r="18" fill="url(#userGrad)"/>
+        <circle cx="23" cy="15" r="3" fill="#fff"/>
+        <circle cx="37" cy="15" r="3" fill="#fff"/>
+        <path d="M 22 26 Q 30 30 38 26" stroke="#fff" stroke-width="2" fill="none"/>
+        <text x="5" y="60" class="flow-text">Usuario</text>
+      </g>
+
+      <!-- Flecha 1 -->
+      <path d="M 95 70 L 160 70" class="flow-arrow">
+        <animate attributeName="stroke-dasharray" values="0 300;300 0" dur="2s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Prompt -->
+      <g transform="translate(170, 40)">
+        <rect x="0" y="0" width="100" height="60" rx="8" class="flow-box">
+          <animate attributeName="fill" values="#f1f3f5;#e1e5f1;#f1f3f5" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <text x="50" y="25" class="flow-text" text-anchor="middle">Prompt</text>
+        <text x="50" y="42" class="flow-label" text-anchor="middle">(Tu mensaje)</text>
+      </g>
+
+      <!-- Flecha 2 -->
+      <path d="M 280 70 L 330 70" class="flow-arrow">
+        <animate attributeName="stroke-dasharray" values="0 300;300 0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Razonamiento -->
+      <g transform="translate(340, 40)">
+        <rect x="0" y="0" width="120" height="60" rx="8" class="flow-box">
+          <animate attributeName="fill" values="#f1f3f5;#e1e5f1;#f1f3f5" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="60" y="25" class="flow-text" text-anchor="middle">Razonamiento</text>
+        <text x="60" y="42" class="flow-label" text-anchor="middle">(IA analiza)</text>
+        <!-- Icono de engranaje -->
+        <g transform="translate(55, -15)">
+          <circle cx="0" cy="0" r="8" fill="#4a5ba5" opacity="0.3">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="3s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+
+      <!-- Flecha 3 -->
+      <path d="M 470 70 L 520 70" class="flow-arrow">
+        <animate attributeName="stroke-dasharray" values="0 300;300 0" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </path>
+
+      <!-- Respuesta -->
+      <g transform="translate(530, 40)">
+        <rect x="0" y="0" width="100" height="60" rx="8" fill="url(#aiGrad)" stroke="#2d3561" stroke-width="3">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1s" repeatCount="indefinite"/>
+        </rect>
+        <text x="50" y="25" class="flow-text" text-anchor="middle" fill="#fff">Respuesta</text>
+        <text x="50" y="42" class="flow-label" text-anchor="middle" fill="#f1f3f5">(Resultado)</text>
+        <!-- Icono de check -->
+        <g transform="translate(75, 10)">
+          <circle cx="0" cy="0" r="10" fill="#51cf66">
+            <animate attributeName="r" values="10;12;10" dur="2s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M -4 0 L -1 4 L 5 -4" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </g>
+      </g>
+    </svg>`,
     order: 3
   },
 
