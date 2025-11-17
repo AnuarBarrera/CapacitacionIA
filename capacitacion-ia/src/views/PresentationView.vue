@@ -52,6 +52,14 @@ const handleNavigationAllowed = (allowed: boolean) => {
   isNavigationAllowed.value = allowed
 }
 
+// Handler para navegar a una slide específica por su ID
+const handleNavigateToSlide = (slideId: string) => {
+  const slideIndex = presentationService.getSlideIndexById(slideId)
+  if (slideIndex !== -1) {
+    goToSlide(slideIndex)
+  }
+}
+
 // Función auxiliar para verificar si se puede navegar
 const canNavigate = (): boolean => {
   // Si es un slide de contenido, verificar si la navegación está permitida
@@ -156,6 +164,7 @@ watch(currentSlideIndex, () => {
           :slide="currentSlide"
           @next="nextSlide"
           @navigation-allowed="handleNavigationAllowed"
+          @navigate-to-slide="handleNavigateToSlide"
         />
       </Transition>
     </div>

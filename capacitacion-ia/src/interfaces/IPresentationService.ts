@@ -16,6 +16,12 @@ export interface IPresentationService {
   getSlideById(id: string): Slide | undefined
 
   /**
+   * Obtiene el índice de una slide por su ID
+   * @returns El índice de la slide, o -1 si no se encuentra
+   */
+  getSlideIndexById(id: string): number
+
+  /**
    * Obtiene la slide en la posición indicada
    */
   getSlideByIndex(index: number): Slide | undefined

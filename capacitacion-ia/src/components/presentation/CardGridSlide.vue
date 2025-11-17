@@ -5,14 +5,17 @@ const props = defineProps<{
   slide: ICardGridSlide
 }>()
 
+const emit = defineEmits<{
+  'navigate-to-slide': [slideId: string]
+}>()
+
 const handleCardClick = (link?: string) => {
   if (link) {
     if (link.startsWith('http')) {
       window.open(link, '_blank')
     } else {
-      // Es un enlace interno a otra slide
-      // TODO: Implementar navegación a slide específica
-      console.log('Navigate to slide:', link)
+      // Es un enlace interno a otra slide - emitir evento para navegar
+      emit('navigate-to-slide', link)
     }
   }
 }
