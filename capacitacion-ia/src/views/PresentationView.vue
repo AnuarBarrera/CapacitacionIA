@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, watch, type Component } from 'vue'
+import { onMounted, onUnmounted, watch, ref, type Component } from 'vue'
 import { usePresentation } from '@/composables/usePresentation'
 import { PresentationService } from '@/services/PresentationService'
 import { slidesData } from '@/data/slides'
@@ -44,17 +44,38 @@ const slideComponents: Record<SlideType, Component> = {
   [SlideType.CTA]: CTASlide
 }
 
+// Control de navegación para slides interactivos
+const isNavigationAllowed = ref(true)
+
+// Handler para el evento de navegación permitida desde ContentSlide
+const handleNavigationAllowed = (allowed: boolean) => {
+  isNavigationAllowed.value = allowed
+}
+
+// Función auxiliar para verificar si se puede navegar
+const canNavigate = (): boolean => {
+  // Si es un slide de contenido, verificar si la navegación está permitida
+  if (currentSlide.value?.type === SlideType.CONTENT) {
+    return isNavigationAllowed.value
+  }
+  return true
+}
+
 // Navegación con teclado
 const handleKeyPress = (event: KeyboardEvent) => {
   switch (event.key) {
     case 'ArrowRight':
     case ' ':
       event.preventDefault()
-      nextSlide()
+      if (canNavigate()) {
+        nextSlide()
+      }
       break
     case 'ArrowLeft':
       event.preventDefault()
-      previousSlide()
+      if (canNavigate()) {
+        previousSlide()
+      }
       break
     case 'Home':
       event.preventDefault()
@@ -87,6 +108,10 @@ const handleTouchEnd = (event: TouchEvent) => {
 }
 
 const handleSwipe = () => {
+  if (!canNavigate()) {
+    return
+  }
+
   const swipeThreshold = 50
   const diff = touchStartX - touchEndX
 
@@ -112,9 +137,11 @@ onUnmounted(() => {
   document.removeEventListener('touchend', handleTouchEnd)
 })
 
-// Scroll al inicio cuando cambia la slide
+// Scroll al inicio cuando cambia la slide y resetear navegación permitida
 watch(currentSlideIndex, () => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
+  // Resetear el estado de navegación al cambiar de slide
+  isNavigationAllowed.value = true
 })
 </script>
 
@@ -128,11 +155,13 @@ watch(currentSlideIndex, () => {
           :key="currentSlide.id"
           :slide="currentSlide"
           @next="nextSlide"
+          @navigation-allowed="handleNavigationAllowed"
         />
       </Transition>
     </div>
 
     <SlideNavigation
+      v-if="canNavigate()"
       :current-index="currentSlideIndex"
       :total-slides="totalSlides"
       :is-first-slide="isFirstSlide"

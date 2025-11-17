@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import type { IContentSlide } from '@/interfaces/Slide'
 
 const props = defineProps<{
@@ -8,6 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   next: []
+  'navigation-allowed': [allowed: boolean]
 }>()
 
 // Estado para controlar qué items están expandidos
@@ -22,6 +23,15 @@ const toggleItem = (index: number) => {
   }
   // Forzar re-render
   expandedItems.value = new Set(expandedItems.value)
+
+  // Notificar si la navegación está permitida
+  checkNavigationAllowed()
+}
+
+// Verificar y emitir si la navegación está permitida
+const checkNavigationAllowed = () => {
+  const allowed = allItemsExpanded.value
+  emit('navigation-allowed', allowed)
 }
 
 // Verificar si un item está expandido
@@ -35,23 +45,47 @@ const allItemsExpanded = computed(() => {
 
 // Obtener palabra clave para cada bullet
 const getKeyword = (bullet: string, index: number): string => {
-  // Palabras clave predefinidas basadas en el contenido común
-  const keywords: string[] = [
-    'Base de datos',      // Para contenido sobre almacenamiento
-    'Matemáticas',        // Para contenido sobre posiciones/tokens
-    'Predicción',         // Para contenido sobre predicción
-    'Entrenamiento',      // Para contenido sobre entrenamiento
-    'No es magia'         // Para el concepto final
-  ]
+  // Extraer palabra clave inteligentemente del contenido del bullet
+  // Buscar patrones comunes:
 
-  // Si hay más bullets que keywords, extraer la primera palabra del bullet
-  if (index < keywords.length) {
-    return keywords[index]!
+  // 1. Si empieza con emoji, tomar las primeras 2-4 palabras después del emoji
+  const emojiPattern = /^[\u{1F300}-\u{1F9FF}][\s:•]*/u
+  const withoutEmoji = bullet.replace(emojiPattern, '').trim()
+
+  // 2. Si tiene dos puntos (:), tomar lo que está antes de los dos puntos
+  if (withoutEmoji.includes(':')) {
+    const parts = withoutEmoji.split(':')
+    const beforeColon = parts[0]?.trim() || ''
+    if (beforeColon) {
+      // Limitar a primeras 3 palabras
+      const words = beforeColon.split(' ')
+      return words.slice(0, Math.min(3, words.length)).join(' ')
+    }
   }
 
-  // Fallback: tomar las primeras 2-3 palabras del bullet
-  const words = bullet.split(' ')
-  return words.slice(0, 2).join(' ') || 'Concepto'
+  // 3. Si tiene punto y seguido, tomar la primera oración corta
+  if (withoutEmoji.includes('.')) {
+    const parts = withoutEmoji.split('.')
+    const firstSentence = parts[0]?.trim() || ''
+    if (firstSentence && firstSentence.length <= 50) {
+      return firstSentence
+    }
+  }
+
+  // 4. Si empieza con viñeta (•, -, *), removerla
+  const withoutBullet = withoutEmoji.replace(/^[•\-*]\s*/, '').trim()
+
+  // 5. Tomar las primeras 2-4 palabras significativas
+  const words = withoutBullet.split(' ')
+  const significantWords = words.filter(word => word.length > 2) // Filtrar palabras cortas
+
+  // Si hay palabras significativas, tomar las primeras 2-3
+  if (significantWords.length > 0) {
+    return significantWords.slice(0, Math.min(3, significantWords.length)).join(' ')
+  }
+
+  // Fallback: primeras 3 palabras
+  return words.slice(0, Math.min(3, words.length)).join(' ') || 'Ver más'
 }
 
 // Iconos SVG para cada tipo de contenido (basado en el índice)
@@ -94,6 +128,11 @@ const getIconForIndex = (index: number): string => {
 const handleNextClick = () => {
   emit('next')
 }
+
+// Emitir estado inicial cuando se monta el componente
+onMounted(() => {
+  checkNavigationAllowed()
+})
 </script>
 
 <template>
