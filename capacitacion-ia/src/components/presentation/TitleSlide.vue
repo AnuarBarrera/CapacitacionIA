@@ -15,7 +15,7 @@ const handleStartClick = () => {
 </script>
 
 <template>
-  <div class="title-slide">
+  <div class="title-slide animate-fade-in-up">
     <h1 class="main-title">{{ slide.title }}</h1>
     <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
     <p v-if="slide.author" class="author">{{ slide.author }}</p>
@@ -39,62 +39,105 @@ const handleStartClick = () => {
   align-items: center;
   min-height: 70vh;
   text-align: center;
-  padding: 3rem;
+  padding: var(--spacing-6);
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--container-xl);
   margin: 0 auto;
 }
 
 .main-title {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-primary);
   line-height: 1.2;
 }
 
 .subtitle {
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  color: var(--color-text);
-  margin-bottom: 2rem;
+  font-family: var(--font-primary);
+  font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-4);
   max-width: 800px;
+  line-height: 1.6;
 }
 
 .author {
-  font-size: 1.2rem;
-  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  color: var(--color-text-tertiary);
   opacity: 0.8;
   font-style: italic;
 }
 
 .start-button {
-  margin-top: 3rem;
-  padding: 1rem 3rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+  margin-top: var(--spacing-6);
+  padding: var(--spacing-3) var(--spacing-6);
+  font-family: var(--font-primary);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.start-button:hover {
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
 }
 
 .start-button:active {
   transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+/* Efecto ripple */
+.start-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-slow), height var(--transition-slow);
+}
+
+.start-button:active::before {
+  width: 300px;
+  height: 300px;
+  transition: width 0s, height 0s;
 }
 
 @media (max-width: 768px) {
   .title-slide {
-    padding: 1rem;
+    padding: var(--spacing-4);
+  }
+
+  .main-title {
+    font-size: var(--text-3xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-lg);
   }
 
   .start-button {
-    margin-top: 2rem;
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--text-lg);
   }
 }
 </style>

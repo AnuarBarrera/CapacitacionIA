@@ -112,7 +112,7 @@ watch(currentSlideIndex, () => {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: var(--spacing-4) var(--spacing-8);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -122,7 +122,7 @@ watch(currentSlideIndex, () => {
 /* Transiciones entre slides */
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
 }
 
 .slide-enter-from {
@@ -137,7 +137,7 @@ watch(currentSlideIndex, () => {
 
 @media (max-width: 768px) {
   .slide-container {
-    padding: 1rem;
+    padding: var(--spacing-2);
     min-height: 100vh;
   }
 }

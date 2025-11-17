@@ -82,45 +82,48 @@ const handleNextClick = () => {
 
 <style scoped>
 .card-grid-slide {
-  padding: 2rem 4rem;
-  max-width: 1800px;
+  padding: var(--spacing-4) var(--spacing-8);
+  max-width: var(--container-2xl);
   width: 100%;
   margin: 0 auto;
 }
 
 .slide-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
   text-align: center;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
   text-align: center;
-  margin-bottom: 3rem;
-  color: var(--color-text);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-text-secondary);
   opacity: 0.9;
 }
 
 .card-grid {
   display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
 }
 
 .card {
-  background: #ffffff;
-  border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 2rem;
+  background: var(--color-bg-primary);
+  border: var(--border-width-md) solid var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: var(--spacing-2);
+  box-shadow: var(--shadow-sm);
 }
 
 .card.clickable {
@@ -129,8 +132,8 @@ const handleNextClick = () => {
 
 .card.clickable:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-color: var(--color-heading);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-600);
 }
 
 .card-icon {
@@ -139,13 +142,14 @@ const handleNextClick = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 16px;
-  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-1);
+  box-shadow: var(--shadow-md);
 }
 
 .icon-emoji {
-  font-size: 3rem;
+  font-size: var(--text-5xl);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -156,47 +160,52 @@ const handleNextClick = () => {
 }
 
 .card-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-heading);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
   margin: 0;
 }
 
 .card-description {
-  font-size: 1rem;
-  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
   opacity: 0.8;
   margin: 0;
+  line-height: 1.6;
 }
 
 .card-link {
   margin-top: auto;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #667eea;
-  padding-top: 1rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-600);
+  padding-top: var(--spacing-2);
 }
 
 /* Sección de navegación */
 .navigation-section {
-  margin-top: 3rem;
+  margin-top: var(--spacing-6);
   text-align: center;
 }
 
 .next-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-2) var(--spacing-5);
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-inverse);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--radius-full);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-1);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -204,13 +213,13 @@ const handleNextClick = () => {
 .next-button svg {
   width: 20px;
   height: 20px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 }
 
 .next-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
 }
 
 .next-button:hover svg {
@@ -219,21 +228,25 @@ const handleNextClick = () => {
 
 .next-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 768px) {
   .card-grid-slide {
-    padding: 1rem;
+    padding: var(--spacing-2);
+  }
+
+  .slide-title {
+    font-size: var(--text-2xl);
   }
 
   .card-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--spacing-3);
   }
 
   .card {
-    padding: 1.5rem;
+    padding: var(--spacing-3);
   }
 
   .card-icon {
@@ -242,23 +255,12 @@ const handleNextClick = () => {
   }
 
   .icon-emoji {
-    font-size: 2rem;
+    font-size: var(--text-4xl);
   }
 
   .next-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .card {
-    background: #1f2937;
-    border-color: #374151;
-  }
-
-  .card.clickable:hover {
-    border-color: #667eea;
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--text-base);
   }
 }
 </style>
