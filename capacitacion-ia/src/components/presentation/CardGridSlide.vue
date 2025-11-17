@@ -28,9 +28,11 @@ const handleNextClick = () => {
 
 <template>
   <div class="card-grid-slide">
-    <h2 class="slide-title">{{ slide.title }}</h2>
-
-    <p v-if="slide.description" class="description">{{ slide.description }}</p>
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h2 class="hero-title">{{ slide.title }}</h2>
+      <p v-if="slide.description" class="hero-description">{{ slide.description }}</p>
+    </div>
 
     <div
       class="card-grid"
@@ -103,22 +105,52 @@ const handleNextClick = () => {
   margin: 0 auto;
 }
 
-.slide-title {
-  font-family: var(--font-display);
-  font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
-  font-weight: var(--font-bold);
-  margin-bottom: var(--spacing-2);
-  color: var(--color-text-primary);
-  text-align: center;
-}
-
-.description {
-  font-family: var(--font-primary);
-  font-size: var(--text-lg);
+/* Hero Section */
+.hero-section {
   text-align: center;
   margin-bottom: var(--spacing-6);
-  color: var(--color-text-secondary);
-  opacity: 0.9;
+  padding: var(--spacing-6) var(--spacing-4);
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-family: var(--font-hero);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-6xl));
+  font-weight: var(--font-black);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-text-inverse);
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+  font-family: var(--font-primary);
+  font-size: clamp(var(--text-lg), 2vw, var(--text-2xl));
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
+  font-weight: var(--font-medium);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-grid {
@@ -132,40 +164,58 @@ const handleNextClick = () => {
   border: var(--border-width-md) solid var(--color-neutral-300);
   border-radius: var(--radius-lg);
   padding: var(--spacing-4);
-  text-align: center;
+  text-align: left;
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-2);
-  box-shadow: var(--shadow-sm);
+  align-items: stretch;
+  gap: var(--spacing-3);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
 }
 
-.card.has-content {
-  text-align: left;
-  align-items: stretch;
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600) 0%, var(--color-primary-400) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card.clickable {
   cursor: pointer;
 }
 
-.card.clickable:hover {
-  transform: translateY(-8px);
+.card:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-400);
+}
+
+.card.clickable:hover {
   border-color: var(--color-primary-600);
 }
 
 .card-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
-  border-radius: var(--radius-xl);
-  margin-bottom: var(--spacing-1);
+  background: linear-gradient(135deg, #ff6b6b 0%, #fa5252 100%);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-2);
   box-shadow: var(--shadow-md);
+  flex-shrink: 0;
 }
 
 .icon-emoji {
@@ -183,13 +233,13 @@ const handleNextClick = () => {
 }
 
 .icon-svg svg {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 .icon-image {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -199,6 +249,7 @@ const handleNextClick = () => {
   font-weight: var(--font-bold);
   color: var(--color-text-primary);
   margin: 0;
+  line-height: 1.3;
 }
 
 .card-description {
@@ -213,28 +264,36 @@ const handleNextClick = () => {
 .card-bullets {
   list-style: none;
   padding: 0;
-  margin: var(--spacing-2) 0;
+  margin: var(--spacing-3) 0;
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
 }
 
 .card-bullets li {
   font-family: var(--font-primary);
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   color: var(--color-text-secondary);
-  padding: var(--spacing-1) 0;
-  padding-left: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  padding-left: var(--spacing-4);
   position: relative;
   line-height: 1.6;
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
 }
 
 .card-bullets li::before {
   content: '•';
   position: absolute;
-  left: 0;
-  color: var(--color-primary-600);
+  left: var(--spacing-2);
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff6b6b;
   font-weight: bold;
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
 }
 
 .card-svg-content {
@@ -352,11 +411,20 @@ const handleNextClick = () => {
 
 @media (max-width: 768px) {
   .card-grid-slide {
-    padding: var(--spacing-2);
+    padding: var(--spacing-3);
   }
 
-  .slide-title {
+  .hero-section {
+    padding: var(--spacing-4) var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .hero-title {
     font-size: var(--text-2xl);
+  }
+
+  .hero-description {
+    font-size: var(--text-base);
   }
 
   .card-grid {
@@ -369,12 +437,21 @@ const handleNextClick = () => {
   }
 
   .card-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-svg svg {
+    width: 28px;
+    height: 28px;
   }
 
   .icon-emoji {
-    font-size: var(--text-4xl);
+    font-size: var(--text-3xl);
+  }
+
+  .card-title {
+    font-size: var(--text-lg);
   }
 
   .next-button {
@@ -383,7 +460,9 @@ const handleNextClick = () => {
   }
 
   .card-bullets li {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
+    padding: var(--spacing-1) var(--spacing-2);
+    padding-left: var(--spacing-4);
   }
 
   .card-svg-content {
