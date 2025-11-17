@@ -5,7 +5,6 @@ import { PresentationService } from '@/services/PresentationService'
 import { slidesData } from '@/data/slides'
 import { SlideType } from '@/interfaces/Slide'
 
-import SlideNavigation from '@/components/common/SlideNavigation.vue'
 import TitleSlide from '@/components/presentation/TitleSlide.vue'
 import ContentSlide from '@/components/presentation/ContentSlide.vue'
 import CodeSlide from '@/components/presentation/CodeSlide.vue'
@@ -69,80 +68,13 @@ const canNavigate = (): boolean => {
   return true
 }
 
-// Navegación con teclado
-const handleKeyPress = (event: KeyboardEvent) => {
-  switch (event.key) {
-    case 'ArrowRight':
-    case ' ':
-      event.preventDefault()
-      if (canNavigate()) {
-        nextSlide()
-      }
-      break
-    case 'ArrowLeft':
-      event.preventDefault()
-      if (canNavigate()) {
-        previousSlide()
-      }
-      break
-    case 'Home':
-      event.preventDefault()
-      goToSlide(0)
-      break
-    case 'End':
-      event.preventDefault()
-      goToSlide(totalSlides.value - 1)
-      break
-  }
-}
-
-// Detectar swipe en móvil
-let touchStartX = 0
-let touchEndX = 0
-
-const handleTouchStart = (event: TouchEvent) => {
-  const touch = event.changedTouches[0]
-  if (touch) {
-    touchStartX = touch.screenX
-  }
-}
-
-const handleTouchEnd = (event: TouchEvent) => {
-  const touch = event.changedTouches[0]
-  if (touch) {
-    touchEndX = touch.screenX
-    handleSwipe()
-  }
-}
-
-const handleSwipe = () => {
-  if (!canNavigate()) {
-    return
-  }
-
-  const swipeThreshold = 50
-  const diff = touchStartX - touchEndX
-
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      nextSlide()
-    } else {
-      previousSlide()
-    }
-  }
-}
-
 // Lifecycle hooks
 onMounted(() => {
-  document.addEventListener('keydown', handleKeyPress)
-  document.addEventListener('touchstart', handleTouchStart)
-  document.addEventListener('touchend', handleTouchEnd)
+  // Sin navegación por teclado ni touch
 })
 
 onUnmounted(() => {
-  document.removeEventListener('keydown', handleKeyPress)
-  document.removeEventListener('touchstart', handleTouchStart)
-  document.removeEventListener('touchend', handleTouchEnd)
+  // Cleanup si es necesario
 })
 
 // Scroll al inicio cuando cambia la slide y resetear navegación permitida
@@ -168,25 +100,12 @@ watch(currentSlideIndex, () => {
         />
       </Transition>
     </div>
-
-    <SlideNavigation
-      v-if="canNavigate()"
-      :current-index="currentSlideIndex"
-      :total-slides="totalSlides"
-      :is-first-slide="isFirstSlide"
-      :is-last-slide="isLastSlide"
-      :progress="progress"
-      @previous="previousSlide"
-      @next="nextSlide"
-      @go-to-slide="goToSlide"
-    />
   </div>
 </template>
 
 <style scoped>
 .presentation-view {
   min-height: 100vh;
-  padding-bottom: 120px; /* Espacio para la navegación */
 }
 
 .slide-container {
@@ -194,7 +113,7 @@ watch(currentSlideIndex, () => {
   max-width: 100%;
   margin: 0 auto;
   padding: 2rem 4rem;
-  min-height: calc(100vh - 120px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,13 +136,9 @@ watch(currentSlideIndex, () => {
 }
 
 @media (max-width: 768px) {
-  .presentation-view {
-    padding-bottom: 100px;
-  }
-
   .slide-container {
     padding: 1rem;
-    min-height: calc(100vh - 100px);
+    min-height: 100vh;
   }
 }
 </style>
