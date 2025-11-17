@@ -42,12 +42,300 @@ export const slidesData: Slide[] = [
     title: '¿Qué es la IA?',
     type: SlideType.CONTENT,
     content: 'La IA es un Modelo Grande de Lenguaje (en inglés LLM - Large Language Model)',
-    bullets: [
-      'Todo el contenido que ha generado la humanidad se organizó en una base de datos gigante',
-      'Con matemáticas, cada palabra (técnicamente llamada "token") recibió una posición específica',
-      'El LLM predice cuál es la siguiente palabra más probable según tu mensaje (prompt)',
-      'Entre mejor entrenado esté el modelo, mejor predice',
-      '💡 La IA no es magia, es matemáticas. No es inteligente, solo predice la siguiente palabra de forma tan convincente porque fue muy bien entrenada.'
+    customBullets: [
+      {
+        text: 'Todo el contenido que ha generado la humanidad se organizó en una base de datos gigante',
+        keyword: 'Base de datos',
+        svgContent: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Base de datos 3D -->
+          <!-- Nivel 1 (superior) -->
+          <ellipse cx="100" cy="40" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="40" y="40" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="70" rx="60" ry="15" fill="url(#grad1)"/>
+
+          <!-- Nivel 2 -->
+          <ellipse cx="100" cy="90" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="40" y="90" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="120" rx="60" ry="15" fill="url(#grad1)"/>
+
+          <!-- Nivel 3 (inferior) -->
+          <ellipse cx="100" cy="140" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="40" y="140" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="170" rx="60" ry="15" fill="url(#grad1)"/>
+
+          <!-- Puntos de datos -->
+          <circle cx="80" cy="55" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="100" cy="55" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="120" cy="55" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+          </circle>
+
+          <circle cx="70" cy="105" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="90" cy="105" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="110" cy="105" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="130" cy="105" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+          </circle>
+
+          <circle cx="75" cy="155" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="95" cy="155" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="115" cy="155" r="3" fill="#fff" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`
+      },
+      {
+        text: 'Con matemáticas, cada palabra (técnicamente llamada "token") recibió una posición específica',
+        keyword: 'Matemáticas',
+        svgContent: `<svg viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .formula-text { fill: #4a5ba5; font-family: 'Times New Roman', serif; font-style: italic; }
+              .formula-large { font-size: 32px; }
+              .formula-small { font-size: 20px; }
+            </style>
+          </defs>
+          <!-- Fórmula de Atención: Attention(Q,K,V) = softmax(QK^T/√d_k)V -->
+          <text x="10" y="35" class="formula-text formula-large">Attention(Q,K,V) =</text>
+
+          <!-- softmax -->
+          <text x="30" y="75" class="formula-text formula-large">softmax(</text>
+
+          <!-- Fracción QK^T / √d_k -->
+          <line x1="110" y1="66" x2="170" y2="66" stroke="#4a5ba5" stroke-width="2"/>
+          <text x="120" y="60" class="formula-text formula-small">QK</text>
+          <text x="148" y="53" class="formula-text formula-small" font-size="16px">T</text>
+          <text x="115" y="85" class="formula-text formula-small">√d</text>
+          <text x="138" y="90" class="formula-text formula-small" font-size="14px">k</text>
+
+          <text x="175" y="75" class="formula-text formula-large">)V</text>
+
+          <!-- Decoración: flechas y elementos visuales -->
+          <path d="M 10 100 Q 70 105 130 100" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5">
+            <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="3s" repeatCount="indefinite"/>
+          </path>
+
+          <!-- Puntos decorativos animados -->
+          <circle cx="250" cy="30" r="4" fill="#ff6b6b" opacity="0.7">
+            <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="265" cy="50" r="4" fill="#4a5ba5" opacity="0.7">
+            <animate attributeName="r" values="4;6;4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="280" cy="70" r="4" fill="#ff6b6b" opacity="0.7">
+            <animate attributeName="r" values="4;6;4" dur="2s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`
+      },
+      {
+        text: 'El LLM predice cuál es la siguiente palabra más probable según tu mensaje (prompt)',
+        keyword: 'Predicción',
+        svgContent: `<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .pred-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; }
+              .pred-word { fill: #4a5ba5; font-size: 20px; font-weight: 700; }
+              .pred-percent { fill: #ff6b6b; font-size: 16px; font-weight: 600; }
+              .dots { fill: #adb5bd; }
+            </style>
+          </defs>
+
+          <!-- Texto base -->
+          <text x="20" y="35" class="pred-text">El perro ladra y el gato</text>
+
+          <!-- Tres puntos -->
+          <text x="240" y="35" class="dots">...</text>
+
+          <!-- Palabra que cambia (animación con opacidad) -->
+          <g id="word1">
+            <text x="270" y="35" class="pred-word">maulla</text>
+            <animate attributeName="opacity" values="1;1;1;1;0;0;0;0;0;0;0;0" dur="9s" repeatCount="indefinite"/>
+          </g>
+          <g id="word2">
+            <text x="270" y="35" class="pred-word">come</text>
+            <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;0;0;0;0" dur="9s" repeatCount="indefinite"/>
+          </g>
+          <g id="word3">
+            <text x="270" y="35" class="pred-word">corre</text>
+            <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;1;1;1" dur="9s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Barra de probabilidades -->
+          <text x="20" y="80" class="pred-text" font-size="14px">Probabilidades:</text>
+
+          <!-- Barra 1: maulla 80% -->
+          <g id="bar1">
+            <rect x="20" y="90" width="240" height="15" fill="#4a5ba5" rx="3">
+              <animate attributeName="opacity" values="1;1;1;1;0.3;0.3;0.3;0.3;0.3;0.3;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+            </rect>
+            <text x="270" y="102" class="pred-percent">80%</text>
+            <text x="310" y="102" class="pred-text" font-size="14px">maulla</text>
+            <animate attributeName="opacity" values="1;1;1;1;0.3;0.3;0.3;0.3;0.3;0.3;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Barra 2: come 10% -->
+          <g id="bar2">
+            <rect x="20" y="112" width="30" height="15" fill="#ff8787" rx="3">
+              <animate attributeName="opacity" values="0.3;0.3;0.3;0.3;1;1;1;1;0.3;0.3;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="width" values="30;30;30;30;240;240;240;240;30;30;30;30" dur="9s" repeatCount="indefinite"/>
+            </rect>
+            <text x="270" y="124" class="pred-percent">10%</text>
+            <text x="310" y="124" class="pred-text" font-size="14px">come</text>
+            <g>
+              <animate attributeName="opacity" values="0.3;0.3;0.3;0.3;1;1;1;1;0.3;0.3;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="transform" values="translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0);translate(0,0)" dur="9s" repeatCount="indefinite"/>
+            </g>
+          </g>
+
+          <!-- Barra 3: corre 10% -->
+          <g id="bar3">
+            <rect x="20" y="134" width="30" height="15" fill="#ff8787" rx="3">
+              <animate attributeName="opacity" values="0.3;0.3;0.3;0.3;0.3;0.3;0.3;0.3;1;1;1;1" dur="9s" repeatCount="indefinite"/>
+              <animate attributeName="width" values="30;30;30;30;30;30;30;30;240;240;240;240" dur="9s" repeatCount="indefinite"/>
+            </rect>
+            <text x="270" y="146" class="pred-percent">10%</text>
+            <text x="310" y="146" class="pred-text" font-size="14px">corre</text>
+            <animate attributeName="opacity" values="0.3;0.3;0.3;0.3;0.3;0.3;0.3;0.3;1;1;1;1" dur="9s" repeatCount="indefinite"/>
+          </g>
+        </svg>`
+      },
+      {
+        text: 'Entre mejor entrenado esté el modelo, mejor predice',
+        keyword: 'Entrenamiento',
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .axis { stroke: #adb5bd; stroke-width: 2; }
+              .axis-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 12px; }
+              .line-bad { stroke: #ff6b6b; stroke-width: 3; fill: none; }
+              .line-good { stroke: #51cf66; stroke-width: 3; fill: none; }
+            </style>
+          </defs>
+
+          <!-- Ejes -->
+          <line x1="40" y1="160" x2="260" y2="160" class="axis"/>
+          <line x1="40" y1="160" x2="40" y2="40" class="axis"/>
+
+          <!-- Etiquetas -->
+          <text x="130" y="185" class="axis-label">Tiempo de entrenamiento</text>
+          <text x="5" y="105" class="axis-label" transform="rotate(-90 15 105)">Precisión</text>
+
+          <!-- Línea mala (ondulante) - estado inicial -->
+          <g id="bad-line">
+            <path d="M 50 140 Q 80 135 100 145 T 150 140 T 200 150 T 250 145" class="line-bad" opacity="0.4">
+              <animate attributeName="opacity" values="1;1;1;0.3" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <text x="200" y="130" fill="#ff6b6b" font-size="14px" font-weight="600">
+              Sin entrenar
+              <animate attributeName="opacity" values="1;1;1;0.3" dur="4s" repeatCount="indefinite"/>
+            </text>
+          </g>
+
+          <!-- Línea buena (suave y ascendente) - estado final -->
+          <g id="good-line">
+            <path d="M 50 140" class="line-good">
+              <animate attributeName="d"
+                values="M 50 140;M 50 140 L 100 110 L 150 80 L 200 60 L 250 50;M 50 140 L 100 110 L 150 80 L 200 60 L 250 50;M 50 140 L 100 110 L 150 80 L 200 60 L 250 50"
+                dur="4s"
+                repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.3;1;1;1" dur="4s" repeatCount="indefinite"/>
+            </path>
+            <text x="180" y="45" fill="#51cf66" font-size="14px" font-weight="600">
+              Bien entrenado
+              <animate attributeName="opacity" values="0.3;1;1;1" dur="4s" repeatCount="indefinite"/>
+            </text>
+          </g>
+
+          <!-- Puntos de datos que aparecen progresivamente -->
+          <circle cx="100" cy="110" r="4" fill="#4a5ba5" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="150" cy="80" r="4" fill="#4a5ba5" opacity="0">
+            <animate attributeName="opacity" values="0;0;0.5;1;1" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="200" cy="60" r="4" fill="#4a5ba5" opacity="0">
+            <animate attributeName="opacity" values="0;0;0;0.5;1;1" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="50" r="4" fill="#4a5ba5" opacity="0">
+            <animate attributeName="opacity" values="0;0;0;0;0.5;1" dur="4s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`
+      },
+      {
+        text: '💡 La IA no es magia, es matemáticas. No es inteligente, solo predice la siguiente palabra de forma tan convincente porque fue muy bien entrenada.',
+        keyword: 'Magia',
+        svgContent: `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .icon-title { fill: #495057; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; }
+            </style>
+          </defs>
+
+          <!-- Robot (NO es IA) -->
+          <g transform="translate(50, 60)">
+            <!-- Cabeza del robot -->
+            <rect x="20" y="10" width="40" height="40" rx="5" fill="#adb5bd" stroke="#495057" stroke-width="2"/>
+            <!-- Ojos -->
+            <circle cx="30" cy="25" r="4" fill="#495057"/>
+            <circle cx="50" cy="25" r="4" fill="#495057"/>
+            <!-- Boca triste -->
+            <path d="M 30 38 Q 40 35 50 38" stroke="#495057" stroke-width="2" fill="none"/>
+            <!-- Cuerpo -->
+            <rect x="25" y="52" width="30" height="35" rx="3" fill="#adb5bd" stroke="#495057" stroke-width="2"/>
+            <!-- Brazos -->
+            <rect x="10" y="60" width="13" height="20" rx="2" fill="#adb5bd" stroke="#495057" stroke-width="2"/>
+            <rect x="57" y="60" width="13" height="20" rx="2" fill="#adb5bd" stroke="#495057" stroke-width="2"/>
+            <!-- X roja grande -->
+            <line x1="0" y1="0" x2="80" y2="100" stroke="#ff6b6b" stroke-width="8" opacity="0.8"/>
+            <line x1="80" y1="0" x2="0" y2="100" stroke="#ff6b6b" stroke-width="8" opacity="0.8"/>
+            <text x="10" y="-5" class="icon-title">Robot ≠ IA</text>
+          </g>
+
+          <!-- Flecha -->
+          <g transform="translate(180, 110)">
+            <line x1="0" y1="0" x2="40" y2="0" stroke="#495057" stroke-width="3"/>
+            <polygon points="40,0 30,5 30,-5" fill="#495057"/>
+          </g>
+
+          <!-- Herramientas (SÍ es IA) -->
+          <g transform="translate(270, 60)">
+            <!-- Llave inglesa -->
+            <path d="M 15 20 L 15 40 L 20 40 L 20 45 L 25 45 L 25 40 L 30 40 L 30 20 L 27 20 L 27 15 L 18 15 L 18 20 Z"
+                  fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <!-- Destornillador -->
+            <rect x="35" y="30" width="5" height="30" fill="#ff6b6b" stroke="#c92a2a" stroke-width="1"/>
+            <path d="M 32 28 L 32 32 L 42 32 L 42 28 Z" fill="#868e96"/>
+            <circle cx="37.5" cy="25" r="3" fill="#868e96"/>
+            <!-- Martillo -->
+            <rect x="50" y="40" width="4" height="25" fill="#4a5ba5" stroke="#2d3561" stroke-width="1"/>
+            <rect x="45" y="35" width="14" height="8" rx="2" fill="#868e96" stroke="#495057" stroke-width="1"/>
+
+            <!-- Checkmark verde grande -->
+            <path d="M 10 0 L 25 20 L 60 -15" stroke="#51cf66" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+            <text x="0" y="-5" class="icon-title">Herramientas = IA</text>
+          </g>
+        </svg>`
+      }
     ],
     order: 2
   },

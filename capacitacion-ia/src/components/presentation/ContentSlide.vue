@@ -37,10 +37,17 @@ const checkNavigationAllowed = () => {
 // Verificar si un item está expandido
 const isExpanded = (index: number) => expandedItems.value.has(index)
 
+// Determinar el número de items basado en si hay customBullets o bullets
+const itemsCount = computed(() => {
+  if (props.slide.customBullets) return props.slide.customBullets.length
+  if (props.slide.bullets) return props.slide.bullets.length
+  return 0
+})
+
 // Verificar si todas las tarjetas están expandidas
 const allItemsExpanded = computed(() => {
-  if (!props.slide.bullets) return true
-  return expandedItems.value.size >= props.slide.bullets.length
+  if (itemsCount.value === 0) return true
+  return expandedItems.value.size >= itemsCount.value
 })
 
 // Obtener palabra clave para cada bullet
@@ -144,11 +151,51 @@ onMounted(() => {
         <p class="description">{{ slide.content }}</p>
 
         <!-- Mensaje de instrucciones -->
-        <div v-if="slide.bullets && slide.bullets.length > 0" class="instructions">
+        <div v-if="itemsCount > 0" class="instructions">
           👇 Da click en cada flecha para desplegar el contenido y poder continuar
         </div>
 
-        <div v-if="slide.bullets && slide.bullets.length > 0" class="expandable-list">
+        <!-- Lista expandible con customBullets -->
+        <div v-if="slide.customBullets && slide.customBullets.length > 0" class="expandable-list">
+          <div
+            v-for="(bullet, index) in slide.customBullets"
+            :key="index"
+            class="expandable-item"
+            :class="{ expanded: isExpanded(index) }"
+            @click="toggleItem(index)"
+          >
+            <div class="item-header">
+              <div class="icon-wrapper" v-if="bullet.svgContent" v-html="bullet.svgContent"></div>
+              <div class="icon-wrapper" v-else v-html="getIconForIndex(index)"></div>
+              <div class="item-preview">
+                {{ bullet.keyword || getKeyword(bullet.text, index) }}
+              </div>
+              <div class="expand-indicator">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="chevron"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <Transition name="expand">
+              <div v-if="isExpanded(index)" class="item-content">
+                <p>{{ bullet.text }}</p>
+                <div v-if="bullet.svgContent" class="expanded-svg" v-html="bullet.svgContent"></div>
+              </div>
+            </Transition>
+          </div>
+        </div>
+
+        <!-- Lista expandible con bullets simples (fallback) -->
+        <div v-else-if="slide.bullets && slide.bullets.length > 0" class="expandable-list">
           <div
             v-for="(bullet, index) in slide.bullets"
             :key="index"
@@ -364,6 +411,9 @@ onMounted(() => {
   margin-top: var(--spacing-2);
   padding-top: var(--spacing-2);
   border-top: var(--border-width) solid var(--color-neutral-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }
 
 .item-content p {
@@ -372,6 +422,18 @@ onMounted(() => {
   line-height: 1.8;
   color: var(--color-text-secondary);
   margin: 0;
+}
+
+/* SVG en contenido expandido */
+.item-content .expanded-svg {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.item-content .expanded-svg svg {
+  width: 100%;
+  height: auto;
 }
 
 /* Transición de expansión */
