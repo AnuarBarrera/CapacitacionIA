@@ -7,6 +7,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'navigate-to-slide': [slideId: string]
+  next: []
 }>()
 
 const handleCardClick = (link?: string) => {
@@ -18,6 +19,10 @@ const handleCardClick = (link?: string) => {
       emit('navigate-to-slide', link)
     }
   }
+}
+
+const handleNextClick = () => {
+  emit('next')
 }
 </script>
 
@@ -54,6 +59,23 @@ const handleCardClick = (link?: string) => {
           <span v-else>Ver más →</span>
         </div>
       </div>
+    </div>
+
+    <!-- Botón para continuar -->
+    <div class="navigation-section">
+      <button class="next-button" @click="handleNextClick">
+        Continuar con la presentación
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 </template>
@@ -155,6 +177,51 @@ const handleCardClick = (link?: string) => {
   padding-top: 1rem;
 }
 
+/* Sección de navegación */
+.navigation-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.next-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.next-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.next-button:hover svg {
+  transform: translateX(4px);
+}
+
+.next-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
 @media (max-width: 768px) {
   .card-grid-slide {
     padding: 1rem;
@@ -176,6 +243,11 @@ const handleCardClick = (link?: string) => {
 
   .icon-emoji {
     font-size: 2rem;
+  }
+
+  .next-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
   }
 }
 

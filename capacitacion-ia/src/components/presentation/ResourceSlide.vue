@@ -5,6 +5,10 @@ const props = defineProps<{
   slide: IResourceSlide
 }>()
 
+const emit = defineEmits<{
+  next: []
+}>()
+
 const getResourceIcon = (type: string): string => {
   const icons: Record<string, string> = {
     web: '🌐',
@@ -16,6 +20,10 @@ const getResourceIcon = (type: string): string => {
 
 const openLink = (url: string) => {
   window.open(url, '_blank', 'noopener,noreferrer')
+}
+
+const handleNextClick = () => {
+  emit('next')
 }
 </script>
 
@@ -61,6 +69,21 @@ const openLink = (url: string) => {
     <div v-if="slide.screenshot" class="screenshot-section">
       <img :src="slide.screenshot" :alt="`${slide.platform} screenshot`" class="screenshot" />
     </div>
+
+    <!-- Botón siguiente -->
+    <button class="next-button" @click="handleNextClick">
+      Siguiente
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -209,6 +232,47 @@ const openLink = (url: string) => {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Botón siguiente */
+.next-button {
+  margin-top: 3rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.next-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.next-button:hover svg {
+  transform: translateX(4px);
+}
+
+.next-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
 @media (max-width: 768px) {
   .resource-slide {
     padding: 1rem;
@@ -232,6 +296,12 @@ const openLink = (url: string) => {
   .feature-item {
     font-size: 0.95rem;
     padding-left: 1.5rem;
+  }
+
+  .next-button {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }
 
