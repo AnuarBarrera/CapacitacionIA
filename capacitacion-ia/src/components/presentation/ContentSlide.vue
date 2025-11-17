@@ -248,12 +248,12 @@ onMounted(() => {
 .instructions {
   margin-bottom: 2rem;
   padding: 1rem 1.5rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
-  border-left: 4px solid #667eea;
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.15) 0%, rgba(0, 212, 255, 0.15) 100%);
+  border-left: 4px solid #00d4ff;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #667eea;
+  color: #00d4ff;
   text-align: center;
   animation: gentle-pulse 3s infinite;
 }
@@ -279,8 +279,8 @@ onMounted(() => {
 
 /* Item expandible */
 .expandable-item {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 2px solid rgba(0, 150, 255, 0.2);
   border-radius: 12px;
   padding: 1.2rem;
   cursor: pointer;
@@ -289,14 +289,14 @@ onMounted(() => {
 }
 
 .expandable-item:hover {
-  border-color: rgba(102, 126, 234, 0.5);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: rgba(0, 212, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
   transform: translateY(-2px);
 }
 
 .expandable-item.expanded {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  border-color: rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, rgba(0, 102, 255, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border-color: rgba(0, 212, 255, 0.6);
 }
 
 /* Header del item */
@@ -314,7 +314,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   border-radius: 10px;
   padding: 8px;
 }
@@ -356,7 +356,7 @@ onMounted(() => {
 .item-content {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(102, 126, 234, 0.2);
+  border-top: 1px solid rgba(0, 150, 255, 0.2);
 }
 
 .item-content p {
@@ -405,12 +405,11 @@ onMounted(() => {
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -424,19 +423,12 @@ onMounted(() => {
   transition: transform 0.3s ease;
 }
 
-.next-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-}
-
 .next-button:hover svg {
   transform: translateX(4px);
 }
 
 .next-button:active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
 }
 
 /* Transición fade-in para el botón siguiente */

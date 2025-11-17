@@ -1,9 +1,59 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import { onMounted, ref } from 'vue'
+
+interface Particle {
+  id: number
+  x: number
+  y: number
+  size: number
+  duration: number
+  delay: number
+  opacity: number
+}
+
+const particles = ref<Particle[]>([])
+
+onMounted(() => {
+  // Generar 30 partículas con posiciones aleatorias
+  particles.value = Array.from({ length: 30 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100, // Posición X en porcentaje
+    y: Math.random() * 100 + 100, // Empezar desde abajo de la pantalla
+    size: Math.random() * 4 + 2, // Tamaño entre 2-6px
+    duration: Math.random() * 20 + 15, // Duración entre 15-35s
+    delay: Math.random() * 5, // Delay inicial entre 0-5s
+    opacity: Math.random() * 0.5 + 0.2 // Opacidad entre 0.2-0.7
+  }))
+})
 </script>
 
 <template>
-  <RouterView />
+  <!-- Grid Blueprint de fondo -->
+  <div class="blueprint-grid"></div>
+
+  <!-- Partículas flotantes -->
+  <div class="particles-container">
+    <div
+      v-for="particle in particles"
+      :key="particle.id"
+      class="particle"
+      :style="{
+        left: `${particle.x}%`,
+        bottom: `${particle.y}%`,
+        width: `${particle.size}px`,
+        height: `${particle.size}px`,
+        animationDuration: `${particle.duration}s`,
+        animationDelay: `${particle.delay}s`,
+        opacity: particle.opacity
+      }"
+    ></div>
+  </div>
+
+  <!-- Contenido principal con fade-in -->
+  <div class="app-content">
+    <RouterView />
+  </div>
 </template>
 
 <style>
@@ -15,19 +65,129 @@ import { RouterView } from 'vue-router'
 
 :root {
   --font-heading: 'Poppins', sans-serif;
-  --color-heading: #1a1a2e;
-  --color-text: #2c3e50;
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --color-heading: #ffffff;
+  --color-text: #e0e0e0;
+  --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #00d4ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --bg-dark: #000000;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--color-text);
 }
 
 #app {
   min-height: 100vh;
-  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #000000;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   position: relative;
   overflow-x: hidden;
+  color: #ffffff;
+}
+
+/* Grid Blueprint de fondo */
+.blueprint-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(0, 150, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 150, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Contenedor de partículas */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, rgba(0, 102, 255, 0.4) 50%, transparent 100%);
+  border-radius: 50%;
+  animation: floatUp linear infinite;
+  filter: blur(1px);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-25vh) translateX(10px);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-75vh) translateX(15px);
+  }
+  100% {
+    transform: translateY(-120vh) translateX(0);
+  }
+}
+
+/* Contenido principal con fade-in */
+.app-content {
+  position: relative;
+  z-index: 10;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradient animado de fondo */
+#app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(75, 166, 234, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: gradientMove 15s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(50px, -30px) scale(1.1);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.95);
+    opacity: 0.95;
+  }
 }
 
 /* Estilos globales para títulos con efectos */
@@ -37,7 +197,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
 }
 
-/* Efecto de gradiente animado para títulos principales */
+/* Efecto de gradiente animado para títulos principales con shine effect */
 .slide-title,
 .main-title {
   font-family: var(--font-heading) !important;
@@ -47,14 +207,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShine 4s ease-in-out infinite;
   position: relative;
   letter-spacing: -0.5px;
-  text-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
 }
 
-/* Animación de gradiente */
-@keyframes gradientShift {
+/* Animación de gradiente shine continuo */
+@keyframes gradientShine {
   0% {
     background-position: 0% 50%;
   }
@@ -66,35 +226,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Efecto de fondo con patrón sutil */
-#app::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(75, 166, 234, 0.03) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-  animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  33% {
-    transform: translate(30px, -30px);
-  }
-  66% {
-    transform: translate(-20px, 20px);
-  }
-}
-
 /* Asegurar que el contenido esté por encima del fondo */
 .presentation-view,
 .slide-container {
@@ -102,13 +233,35 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
-/* Efecto de brillo para elementos interactivos */
+/* Botón con glow effect que pulsa */
 .start-button,
 .continue-button,
 .next-button,
 .cta-button.primary {
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+  animation: buttonPulse 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+  }
+}
+
+.start-button:hover,
+.continue-button:hover,
+.next-button:hover,
+.cta-button.primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 1);
 }
 
 .start-button::before,
@@ -137,6 +290,24 @@ h1, h2, h3, h4, h5, h6 {
   }
   100% {
     transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blueprint-grid {
+    background-size: 30px 30px;
+  }
+
+  .particle {
+    filter: blur(0.5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .blueprint-grid {
+    background-size: 20px 20px;
+    opacity: 0.5;
   }
 }
 </style>

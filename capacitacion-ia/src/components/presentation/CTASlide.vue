@@ -123,10 +123,6 @@ const handleSocialClick = (url: string) => {
   font-weight: bold;
   margin-bottom: 2rem;
   color: var(--color-heading);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .message-content {
@@ -148,12 +144,12 @@ const handleSocialClick = (url: string) => {
 }
 
 .contact-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   padding: 2.5rem;
   border-radius: 16px;
   color: white;
   text-align: center;
-  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
   max-width: 500px;
   width: 100%;
 }
@@ -241,25 +237,25 @@ const handleSocialClick = (url: string) => {
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   color: white;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
 }
 
 .cta-button.primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.6);
 }
 
 .cta-button.secondary {
   background: transparent;
-  border: 2px solid var(--color-heading);
-  color: var(--color-heading);
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
 }
 
 .cta-button.secondary:hover {
-  background: var(--color-heading);
-  color: white;
+  background: #00d4ff;
+  color: #000000;
   transform: translateY(-4px);
 }
 
