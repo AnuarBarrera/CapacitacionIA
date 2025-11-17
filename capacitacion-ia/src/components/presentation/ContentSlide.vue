@@ -238,13 +238,11 @@ onMounted(() => {
       </div>
     </div>
 
-    <!-- Diagrama de flujo - Solo aparece cuando todas las tarjetas están expandidas -->
-    <Transition name="fade-in">
-      <div v-if="slide.flowDiagram && allItemsExpanded" class="flow-diagram-container">
-        <h3 class="flow-diagram-title">Flujo de Trabajo</h3>
-        <div class="flow-diagram" v-html="slide.flowDiagram"></div>
-      </div>
-    </Transition>
+    <!-- Diagrama de flujo - Siempre visible -->
+    <div v-if="slide.flowDiagram" class="flow-diagram-container">
+      <h3 class="flow-diagram-title">Flujo de Trabajo</h3>
+      <div class="flow-diagram" v-html="slide.flowDiagram"></div>
+    </div>
 
     <!-- Botón siguiente - Solo aparece cuando todas las tarjetas están expandidas -->
     <Transition name="fade-in">

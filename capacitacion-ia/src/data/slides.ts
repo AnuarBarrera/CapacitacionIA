@@ -382,53 +382,73 @@ export const slidesData: Slide[] = [
           <defs>
             <style>
               .agent-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; }
-              .agent-icon { fill: #4a5ba5; }
               .agent-arrow { stroke: #ff6b6b; stroke-width: 3; fill: none; marker-end: url(#agent-arrow-head); }
             </style>
             <marker id="agent-arrow-head" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
               <polygon points="0 0, 10 3, 0 6" fill="#ff6b6b"/>
             </marker>
+            <linearGradient id="robotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
+            </linearGradient>
           </defs>
 
-          <!-- Robot/Agente central -->
-          <g transform="translate(130, 60)">
-            <!-- Cabeza -->
-            <rect x="10" y="5" width="30" height="30" rx="5" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+          <!-- Robot/Agente central (más pequeño) -->
+          <g transform="translate(150, 80)">
             <!-- Antena -->
-            <line x1="25" y1="5" x2="25" y2="-5" stroke="#ff6b6b" stroke-width="2"/>
-            <circle cx="25" cy="-5" r="3" fill="#ff6b6b">
+            <line x1="0" y1="-25" x2="0" y2="-35" stroke="#ff6b6b" stroke-width="2"/>
+            <circle cx="0" cy="-35" r="3" fill="#ff6b6b">
               <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
             </circle>
+
+            <!-- Cabeza -->
+            <rect x="-15" y="-25" width="30" height="25" rx="5" fill="url(#robotGrad)" stroke="#2d3561" stroke-width="2"/>
+
             <!-- Ojos -->
-            <circle cx="18" cy="18" r="3" fill="#fff"/>
-            <circle cx="32" cy="18" r="3" fill="#fff"/>
-            <circle cx="19" cy="18" r="1.5" fill="#2d3561">
-              <animate attributeName="cx" values="19;20;19" dur="3s" repeatCount="indefinite"/>
+            <circle cx="-7" cy="-16" r="3" fill="#fff"/>
+            <circle cx="7" cy="-16" r="3" fill="#fff"/>
+            <circle cx="-7" cy="-16" r="1.5" fill="#2d3561">
+              <animate attributeName="cx" values="-7;-6;-7" dur="3s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="33" cy="18" r="1.5" fill="#2d3561">
-              <animate attributeName="cx" values="33;34;33" dur="3s" repeatCount="indefinite"/>
+            <circle cx="7" cy="-16" r="1.5" fill="#2d3561">
+              <animate attributeName="cx" values="7;8;7" dur="3s" repeatCount="indefinite"/>
             </circle>
+
             <!-- Boca -->
-            <path d="M 18 27 Q 25 30 32 27" stroke="#fff" stroke-width="2" fill="none"/>
+            <path d="M -8 -6 Q 0 -3 8 -6" stroke="#fff" stroke-width="2" fill="none"/>
+
             <!-- Cuerpo -->
-            <rect x="13" y="37" width="24" height="25" rx="3" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
+            <rect x="-12" y="0" width="24" height="22" rx="3" fill="url(#robotGrad)" stroke="#2d3561" stroke-width="2"/>
+
+            <!-- Panel -->
+            <circle cx="0" cy="8" r="4" fill="#51cf66" opacity="0.7">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </circle>
+
             <!-- Brazos -->
-            <rect x="2" y="42" width="9" height="15" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
-            <rect x="39" y="42" width="9" height="15" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="2"/>
-            <text x="-5" y="80" class="agent-text" font-size="12px">Agente IA</text>
+            <rect x="-18" y="3" width="5" height="12" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="1.5"/>
+            <rect x="13" y="3" width="5" height="12" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="1.5"/>
+
+            <!-- Piernas -->
+            <rect x="-8" y="22" width="6" height="14" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="1.5"/>
+            <rect x="2" y="22" width="6" height="14" rx="2" fill="#4a5ba5" stroke="#2d3561" stroke-width="1.5"/>
+
+            <text x="-30" y="50" class="agent-text" font-size="11px">Agente IA</text>
           </g>
 
           <!-- Tareas alrededor -->
-          <!-- Tarea 1: Búsqueda -->
-          <g transform="translate(20, 20)">
+          <!-- Tarea 1: Búsqueda (superior izquierda) - Lupa mejorada con círculo cerrado -->
+          <g transform="translate(40, 30)">
             <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
-            <path d="M -5 -3 A 6 6 0 1 1 -5 3" stroke="#4a5ba5" stroke-width="2" fill="none"/>
-            <line x1="2" y1="5" x2="7" y2="10" stroke="#4a5ba5" stroke-width="2"/>
+            <!-- Círculo de la lupa COMPLETAMENTE cerrado -->
+            <circle cx="-3" cy="-2" r="6" stroke="#4a5ba5" stroke-width="2.5" fill="none"/>
+            <!-- Mango de la lupa -->
+            <line x1="2" y1="3" x2="7" y2="8" stroke="#4a5ba5" stroke-width="2.5" stroke-linecap="round"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/>
           </g>
 
-          <!-- Tarea 2: Procesamiento -->
-          <g transform="translate(240, 30)">
+          <!-- Tarea 2: Procesamiento (superior derecha) -->
+          <g transform="translate(260, 40)">
             <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
             <circle cx="-5" cy="-3" r="2" fill="#4a5ba5"/>
             <circle cx="5" cy="-3" r="2" fill="#4a5ba5"/>
@@ -437,22 +457,37 @@ export const slidesData: Slide[] = [
             <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1s" repeatCount="indefinite"/>
           </g>
 
-          <!-- Tarea 3: Respuesta -->
-          <g transform="translate(240, 130)">
+          <!-- Tarea 3: Respuesta (derecha) -->
+          <g transform="translate(260, 130)">
             <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
             <path d="M -8 -5 L 8 -5 L 8 5 L 2 5 L 0 10 L -2 5 L -8 5 Z" fill="#4a5ba5"/>
             <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
           </g>
 
+          <!-- Tarea 4: Web/Internet (inferior izquierda) - NUEVO -->
+          <g transform="translate(40, 150)">
+            <circle cx="0" cy="0" r="18" fill="#f1f3f5" stroke="#4a5ba5" stroke-width="2"/>
+            <!-- Icono de globo/mundo -->
+            <circle cx="0" cy="0" r="8" stroke="#4a5ba5" stroke-width="2" fill="none"/>
+            <!-- Líneas del globo -->
+            <ellipse cx="0" cy="0" rx="3" ry="8" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <line x1="-8" y1="0" x2="8" y2="0" stroke="#4a5ba5" stroke-width="1.5"/>
+            <ellipse cx="0" cy="0" rx="8" ry="3" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+          </g>
+
           <!-- Flechas conectoras -->
-          <path d="M 45 30 L 125 75" class="agent-arrow">
+          <path d="M 60 35 L 130 65" class="agent-arrow">
             <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
           </path>
-          <path d="M 220 40 L 180 80" class="agent-arrow">
+          <path d="M 240 50 L 180 75" class="agent-arrow">
             <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite"/>
           </path>
-          <path d="M 220 120 L 180 105" class="agent-arrow">
+          <path d="M 240 120 L 180 100" class="agent-arrow">
             <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2s" repeatCount="indefinite"/>
+          </path>
+          <path d="M 60 145 L 130 105" class="agent-arrow">
+            <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
           </path>
         </svg>`
       },
@@ -464,35 +499,44 @@ export const slidesData: Slide[] = [
             <style>
               .think-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; }
               .think-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 10px; }
+              @media (max-width: 768px) {
+                .think-text { font-size: 10px; }
+                .think-label { font-size: 8px; }
+              }
             </style>
           </defs>
 
-          <!-- Cerebro pensando -->
+          <!-- Bombilla/Foco de idea (principal) -->
           <g transform="translate(50, 70)">
-            <!-- Forma del cerebro -->
-            <ellipse cx="0" cy="0" rx="35" ry="40" fill="#4a5ba5" opacity="0.2"/>
-            <path d="M -20 -30 Q -35 -20 -30 0 Q -35 20 -20 30 Q -10 35 0 35 Q 10 35 20 30 Q 35 20 30 0 Q 35 -20 20 -30 Q 10 -35 0 -35 Q -10 -35 -20 -30"
-                  fill="none" stroke="#4a5ba5" stroke-width="2.5"/>
+            <!-- Bombilla principal -->
+            <ellipse cx="0" cy="-5" rx="22" ry="28" fill="#ffd43b" stroke="#ff8787" stroke-width="3" opacity="0.9">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </ellipse>
 
-            <!-- Líneas del cerebro -->
-            <path d="M -15 -20 Q -20 -10 -15 0" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
-            <path d="M -15 0 Q -20 10 -15 20" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
-            <path d="M 15 -20 Q 20 -10 15 0" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
-            <path d="M 15 0 Q 20 10 15 20" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
-            <path d="M -8 -15 Q 0 -18 8 -15" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
-            <path d="M -8 15 Q 0 18 8 15" stroke="#4a5ba5" stroke-width="1.5" fill="none"/>
+            <!-- Base de la bombilla -->
+            <rect x="-12" y="20" width="24" height="8" fill="#868e96" rx="2"/>
+            <rect x="-10" y="28" width="20" height="4" fill="#6c757d" rx="1"/>
+            <rect x="-8" y="32" width="16" height="3" fill="#495057" rx="1"/>
 
-            <!-- Bombilla de idea -->
-            <g transform="translate(40, -40)">
-              <ellipse cx="0" cy="0" rx="8" ry="10" fill="#ffd43b" stroke="#ff8787" stroke-width="1.5">
-                <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-              </ellipse>
-              <rect x="-4" y="8" width="8" height="4" fill="#868e96"/>
-              <line x1="-12" y1="-5" x2="-15" y2="-8" stroke="#ffd43b" stroke-width="2"/>
-              <line x1="-10" y1="3" x2="-13" y2="6" stroke="#ffd43b" stroke-width="2"/>
-              <line x1="12" y1="-5" x2="15" y2="-8" stroke="#ffd43b" stroke-width="2"/>
-              <line x1="10" y1="3" x2="13" y2="6" stroke="#ffd43b" stroke-width="2"/>
-            </g>
+            <!-- Filamento interno -->
+            <path d="M -8 -5 Q -4 5 0 -5 Q 4 5 8 -5" stroke="#ff8787" stroke-width="2" fill="none" opacity="0.6"/>
+
+            <!-- Rayos de luz -->
+            <line x1="-32" y1="-15" x2="-40" y2="-20" stroke="#ffd43b" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+            </line>
+            <line x1="-28" y1="5" x2="-35" y2="10" stroke="#ffd43b" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+            </line>
+            <line x1="32" y1="-15" x2="40" y2="-20" stroke="#ffd43b" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+            </line>
+            <line x1="28" y1="5" x2="35" y2="10" stroke="#ffd43b" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" begin="0.9s" repeatCount="indefinite"/>
+            </line>
+            <line x1="-2" y1="-38" x2="-2" y2="-48" stroke="#ffd43b" stroke-width="3" stroke-linecap="round">
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+            </line>
 
             <text x="-35" y="55" class="think-text">Análisis</text>
           </g>
@@ -536,15 +580,16 @@ export const slidesData: Slide[] = [
             </defs>
           </g>
 
-          <!-- Resultado -->
-          <g transform="translate(260, 90)">
-            <circle cx="25" cy="0" r="25" fill="#51cf66" opacity="0.2">
+          <!-- Resultado (ajustado para móviles) -->
+          <g transform="translate(270, 90)">
+            <circle cx="20" cy="0" r="25" fill="#51cf66" opacity="0.2">
               <animate attributeName="r" values="25;28;25" dur="2s" repeatCount="indefinite"/>
             </circle>
-            <path d="M 10 -5 L 20 8 L 40 -15" stroke="#51cf66" stroke-width="4" stroke-linecap="round" fill="none">
+            <path d="M 5 -5 L 15 8 L 35 -15" stroke="#51cf66" stroke-width="4" stroke-linecap="round" fill="none">
               <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
             </path>
-            <text x="3" y="40" class="think-text">Mejor resultado</text>
+            <text x="-5" y="35" class="think-text" font-size="11px">Mejor</text>
+            <text x="-10" y="48" class="think-text" font-size="11px">resultado</text>
           </g>
         </svg>`
       }
@@ -565,8 +610,8 @@ export const slidesData: Slide[] = [
           <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
         </linearGradient>
         <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
+          <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#5a67d8;stop-opacity:1" />
         </linearGradient>
       </defs>
 
@@ -625,8 +670,8 @@ export const slidesData: Slide[] = [
         </rect>
         <text x="50" y="25" class="flow-text" text-anchor="middle" fill="#fff">Respuesta</text>
         <text x="50" y="42" class="flow-label" text-anchor="middle" fill="#f1f3f5">(Resultado)</text>
-        <!-- Icono de check -->
-        <g transform="translate(75, 10)">
+        <!-- Icono de check (movido a esquina superior derecha) -->
+        <g transform="translate(88, -8)">
           <circle cx="0" cy="0" r="10" fill="#51cf66">
             <animate attributeName="r" values="10;12;10" dur="2s" begin="1s" repeatCount="indefinite"/>
           </circle>
