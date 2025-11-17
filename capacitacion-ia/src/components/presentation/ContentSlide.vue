@@ -165,8 +165,7 @@ onMounted(() => {
             @click="toggleItem(index)"
           >
             <div class="item-header">
-              <div class="icon-wrapper" v-if="bullet.svgContent" v-html="bullet.svgContent"></div>
-              <div class="icon-wrapper" v-else v-html="getIconForIndex(index)"></div>
+              <div class="icon-wrapper" v-html="getIconForIndex(index)"></div>
               <div class="item-preview">
                 {{ bullet.keyword || getKeyword(bullet.text, index) }}
               </div>
@@ -187,7 +186,7 @@ onMounted(() => {
 
             <Transition name="expand">
               <div v-if="isExpanded(index)" class="item-content">
-                <p>{{ bullet.text }}</p>
+                <p class="expanded-text">{{ bullet.text }}</p>
                 <div v-if="bullet.svgContent" class="expanded-svg" v-html="bullet.svgContent"></div>
               </div>
             </Transition>
@@ -366,7 +365,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #fa5252 100%);
   border-radius: var(--radius-md);
   padding: var(--spacing-1);
   box-shadow: var(--shadow-sm);
@@ -416,6 +415,16 @@ onMounted(() => {
   gap: var(--spacing-3);
 }
 
+/* Texto expandido */
+.item-content .expanded-text {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-weight: var(--font-medium);
+}
+
 .item-content p {
   font-family: var(--font-primary);
   font-size: var(--text-base);
@@ -427,13 +436,18 @@ onMounted(() => {
 /* SVG en contenido expandido */
 .item-content .expanded-svg {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   margin: 0 auto;
+  padding: var(--spacing-2);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .item-content .expanded-svg svg {
   width: 100%;
   height: auto;
+  max-height: 200px;
 }
 
 /* Transición de expansión */
@@ -556,6 +570,20 @@ onMounted(() => {
     margin-top: var(--spacing-4);
     padding: var(--spacing-2) var(--spacing-4);
     font-size: var(--text-base);
+  }
+
+  /* SVG en móvil más pequeño */
+  .item-content .expanded-svg {
+    max-width: 280px;
+    padding: var(--spacing-1);
+  }
+
+  .item-content .expanded-svg svg {
+    max-height: 150px;
+  }
+
+  .item-content .expanded-text {
+    font-size: var(--text-sm);
   }
 }
 </style>
