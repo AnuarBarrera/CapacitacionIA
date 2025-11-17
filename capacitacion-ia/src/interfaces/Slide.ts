@@ -34,12 +34,22 @@ export interface ITitleSlide extends ISlide {
 }
 
 /**
+ * Bullet point personalizado con keyword e imagen SVG
+ */
+export interface ICustomBullet {
+  text: string
+  keyword?: string
+  svgContent?: string
+}
+
+/**
  * Slide de contenido general
  */
 export interface IContentSlide extends ISlide {
   type: SlideType.CONTENT
   content: string
   bullets?: string[]
+  customBullets?: ICustomBullet[]
   imageUrl?: string
 }
 
