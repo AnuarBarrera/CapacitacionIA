@@ -46,60 +46,60 @@ export const slidesData: Slide[] = [
       {
         text: 'Todo el contenido que ha generado la humanidad se organizó en una base de datos gigante',
         keyword: 'Base de datos',
-        svgContent: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        svgContent: `<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" style="stop-color:#4a5ba5;stop-opacity:1" />
               <stop offset="100%" style="stop-color:#3b4a8f;stop-opacity:1" />
             </linearGradient>
           </defs>
-          <!-- Base de datos 3D -->
+          <!-- Base de datos 3D (más pequeña) -->
           <!-- Nivel 1 (superior) -->
-          <ellipse cx="100" cy="40" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="40" y="40" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="70" rx="60" ry="15" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="30" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="50" y="30" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="50" rx="50" ry="12" fill="url(#grad1)"/>
 
           <!-- Nivel 2 -->
-          <ellipse cx="100" cy="90" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="40" y="90" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="120" rx="60" ry="15" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="65" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="50" y="65" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="85" rx="50" ry="12" fill="url(#grad1)"/>
 
           <!-- Nivel 3 (inferior) -->
-          <ellipse cx="100" cy="140" rx="60" ry="15" fill="url(#grad1)" opacity="0.8"/>
-          <rect x="40" y="140" width="120" height="30" fill="url(#grad1)" opacity="0.9"/>
-          <ellipse cx="100" cy="170" rx="60" ry="15" fill="url(#grad1)"/>
+          <ellipse cx="100" cy="100" rx="50" ry="12" fill="url(#grad1)" opacity="0.8"/>
+          <rect x="50" y="100" width="100" height="20" fill="url(#grad1)" opacity="0.9"/>
+          <ellipse cx="100" cy="120" rx="50" ry="12" fill="url(#grad1)"/>
 
           <!-- Puntos de datos -->
-          <circle cx="80" cy="55" r="3" fill="#fff" opacity="0.8">
+          <circle cx="85" cy="40" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="100" cy="55" r="3" fill="#fff" opacity="0.8">
+          <circle cx="100" cy="40" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.3s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="120" cy="55" r="3" fill="#fff" opacity="0.8">
+          <circle cx="115" cy="40" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
           </circle>
 
-          <circle cx="70" cy="105" r="3" fill="#fff" opacity="0.8">
+          <circle cx="75" cy="75" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.9s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="90" cy="105" r="3" fill="#fff" opacity="0.8">
+          <circle cx="90" cy="75" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="110" cy="105" r="3" fill="#fff" opacity="0.8">
+          <circle cx="110" cy="75" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="130" cy="105" r="3" fill="#fff" opacity="0.8">
+          <circle cx="125" cy="75" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.8s" repeatCount="indefinite"/>
           </circle>
 
-          <circle cx="75" cy="155" r="3" fill="#fff" opacity="0.8">
+          <circle cx="80" cy="110" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="0.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="95" cy="155" r="3" fill="#fff" opacity="0.8">
+          <circle cx="95" cy="110" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="115" cy="155" r="3" fill="#fff" opacity="0.8">
+          <circle cx="110" cy="110" r="2.5" fill="#fff" opacity="0.8">
             <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" begin="1.4s" repeatCount="indefinite"/>
           </circle>
         </svg>`
@@ -107,42 +107,70 @@ export const slidesData: Slide[] = [
       {
         text: 'Con matemáticas, cada palabra (técnicamente llamada "token") recibió una posición específica',
         keyword: 'Matemáticas',
-        svgContent: `<svg viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+        svgContent: `<svg viewBox="0 0 250 140" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
-              .formula-text { fill: #4a5ba5; font-family: 'Times New Roman', serif; font-style: italic; }
-              .formula-large { font-size: 22px; }
-              .formula-small { font-size: 16px; }
+              .vec-text { fill: #4a5ba5; font-family: 'Times New Roman', serif; font-style: italic; }
+              .vec-large { font-size: 20px; }
+              .vec-small { font-size: 16px; }
+              .vec-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 12px; }
             </style>
           </defs>
-          <!-- Fórmula de Atención: Attention(Q,K,V) = softmax(QK^T/√d_k)V -->
-          <text x="5" y="30" class="formula-text formula-large">Attention(Q,K,V) =</text>
 
-          <!-- softmax -->
-          <text x="20" y="65" class="formula-text formula-large">softmax(</text>
+          <!-- Fórmula de vectores: v⃗ = (x, y) -->
+          <text x="10" y="25" class="vec-text vec-large">v⃗ = (x, y)</text>
 
-          <!-- Fracción QK^T / √d_k -->
-          <line x1="95" y1="58" x2="145" y2="58" stroke="#4a5ba5" stroke-width="2"/>
-          <text x="100" y="53" class="formula-text formula-small">QK</text>
-          <text x="122" y="48" class="formula-text formula-small" font-size="12px">T</text>
-          <text x="98" y="73" class="formula-text formula-small">√d</text>
-          <text x="118" y="77" class="formula-text formula-small" font-size="11px">k</text>
+          <!-- Representación visual de vector -->
+          <!-- Sistema de coordenadas -->
+          <line x1="20" y1="110" x2="180" y2="110" stroke="#adb5bd" stroke-width="2"/>
+          <line x1="20" y1="110" x2="20" y2="50" stroke="#adb5bd" stroke-width="2"/>
 
-          <text x="150" y="65" class="formula-text formula-large">)V</text>
+          <!-- Etiquetas de ejes -->
+          <text x="185" y="115" class="vec-label">x</text>
+          <text x="10" y="45" class="vec-label">y</text>
 
-          <!-- Decoración: flechas y elementos visuales -->
-          <path d="M 10 85 Q 60 88 110 85" stroke="#ff6b6b" stroke-width="2" fill="none" opacity="0.5">
-            <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="3s" repeatCount="indefinite"/>
-          </path>
+          <!-- Vector animado -->
+          <g id="vector">
+            <line x1="20" y1="110" x2="140" y2="70" stroke="#4a5ba5" stroke-width="3" marker-end="url(#arrowhead)">
+              <animate attributeName="x2" values="140;150;140" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+            </line>
+
+            <!-- Flecha del vector -->
+            <defs>
+              <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#4a5ba5"/>
+              </marker>
+            </defs>
+
+            <!-- Líneas punteadas a los ejes -->
+            <line x1="140" y1="110" x2="140" y2="70" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="3,3" opacity="0.5">
+              <animate attributeName="x1" values="140;150;140" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="x2" values="140;150;140" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+            </line>
+            <line x1="20" y1="70" x2="140" y2="70" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="3,3" opacity="0.5">
+              <animate attributeName="x2" values="140;150;140" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="y1" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="y2" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+            </line>
+
+            <!-- Componentes del vector -->
+            <text x="75" y="125" class="vec-text vec-small" fill="#ff6b6b">x</text>
+            <text x="5" y="90" class="vec-text vec-small" fill="#ff6b6b">y</text>
+
+            <!-- Etiqueta del vector -->
+            <text x="85" y="80" class="vec-text vec-small" fill="#4a5ba5" font-weight="bold">v⃗</text>
+          </g>
 
           <!-- Puntos decorativos animados -->
-          <circle cx="220" cy="25" r="3" fill="#ff6b6b" opacity="0.7">
+          <circle cx="200" cy="20" r="3" fill="#ff6b6b" opacity="0.7">
             <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="235" cy="40" r="3" fill="#4a5ba5" opacity="0.7">
+          <circle cx="215" cy="35" r="3" fill="#4a5ba5" opacity="0.7">
             <animate attributeName="r" values="3;5;3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
           </circle>
-          <circle cx="250" cy="55" r="3" fill="#ff6b6b" opacity="0.7">
+          <circle cx="230" cy="50" r="3" fill="#ff6b6b" opacity="0.7">
             <animate attributeName="r" values="3;5;3" dur="2s" begin="1s" repeatCount="indefinite"/>
           </circle>
         </svg>`
@@ -330,8 +358,8 @@ export const slidesData: Slide[] = [
             <rect x="50" y="40" width="4" height="25" fill="#4a5ba5" stroke="#2d3561" stroke-width="1"/>
             <rect x="45" y="35" width="14" height="8" rx="2" fill="#868e96" stroke="#495057" stroke-width="1"/>
 
-            <!-- Checkmark verde grande -->
-            <path d="M 10 0 L 25 20 L 60 -15" stroke="#51cf66" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+            <!-- Checkmark verde grande (bajado) -->
+            <path d="M 10 30 L 25 50 L 60 15" stroke="#51cf66" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
             <text x="0" y="-5" class="icon-title">Herramientas = IA</text>
           </g>
         </svg>`
