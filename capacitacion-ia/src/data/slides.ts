@@ -731,11 +731,6 @@ export const slidesData: Slide[] = [
           </circle>
           <line x1="9" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
         </svg>`,
-        bullets: [
-          'QUÉ: Lo que quieres que haga',
-          'CÓMO: Cómo quieres que lo haga',
-          'CONTEXTO: Información necesaria para el resultado esperado'
-        ],
         svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
@@ -791,7 +786,10 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
-          'AHORA CON IA: "QUE: Quiero lona para vender pan dulce, COMO: estilo épico, inspiración anime, formato horizontal 1.20m, CONTEXTO: Con precios desde 10 pesos mexicanos"',
+          'AHORA CON IA:',
+          '  • QUE: Quiero lona para vender pan dulce',
+          '  • COMO: estilo épico, inspiración anime, formato horizontal 1.20m',
+          '  • CONTEXTO: Con precios desde 10 pesos mexicanos',
           'Resultado: Diseño profesional, gratis, en 5 minutos',
           '✨ ESTO es el poder de la IA'
         ],
@@ -866,10 +864,14 @@ export const slidesData: Slide[] = [
     flowDiagram: `<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <style>
-          .chat-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 13px; }
-          .chat-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 11px; }
+          .chat-text { fill: #212529; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; }
+          .chat-label { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; }
           .user-bubble { fill: #4a5ba5; }
           .ai-bubble { fill: #e9ecef; }
+          @media (max-width: 768px) {
+            .chat-text { font-size: 10px; }
+            .chat-label { font-size: 9px; }
+          }
         </style>
         <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style="stop-color:#343a40;stop-opacity:1" />
@@ -962,11 +964,6 @@ export const slidesData: Slide[] = [
         <!-- Botón home -->
         <circle cx="100" cy="395" r="3" fill="#fff" opacity="0.6"/>
       </g>
-
-      <!-- Título superior -->
-      <text x="200" y="30" class="chat-text" font-size="16px" font-weight="bold" text-anchor="middle" fill="#4a5ba5">
-        Chat con IA
-      </text>
 
       <!-- Indicadores de animación -->
       <g transform="translate(50, 480)">

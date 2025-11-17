@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import type { ICardGridSlide } from '@/interfaces/Slide'
 
 const props = defineProps<{
@@ -9,6 +10,34 @@ const emit = defineEmits<{
   'navigate-to-slide': [slideId: string]
   next: []
 }>()
+
+// Estado para controlar qué tarjetas están expandidas
+const expandedCards = ref<Set<string>>(new Set())
+
+// Alternar expansión de una tarjeta
+const toggleCard = (cardId: string, hasLink?: string) => {
+  // Si tiene link y no está expandida, navegar en lugar de expandir
+  if (hasLink && !expandedCards.value.has(cardId)) {
+    handleCardClick(hasLink)
+    return
+  }
+
+  if (expandedCards.value.has(cardId)) {
+    expandedCards.value.delete(cardId)
+  } else {
+    expandedCards.value.add(cardId)
+  }
+  // Forzar re-render
+  expandedCards.value = new Set(expandedCards.value)
+}
+
+// Verificar si una tarjeta está expandida
+const isExpanded = (cardId: string) => expandedCards.value.has(cardId)
+
+// Verificar si una tarjeta tiene contenido expandible
+const hasExpandableContent = (card: any) => {
+  return !!(card.bullets || card.svgContent)
+}
 
 const handleCardClick = (link?: string) => {
   if (link) {
@@ -44,31 +73,59 @@ const handleNextClick = () => {
         v-for="card in slide.cards"
         :key="card.id"
         class="card"
-        :class="{ clickable: !!card.link, 'has-content': card.bullets || card.svgContent }"
-        @click="handleCardClick(card.link)"
+        :class="{
+          clickable: !!card.link || hasExpandableContent(card),
+          expanded: isExpanded(card.id),
+          'has-content': hasExpandableContent(card)
+        }"
+        @click="hasExpandableContent(card) ? toggleCard(card.id, card.link) : handleCardClick(card.link)"
       >
-        <div class="card-icon" v-if="card.icon || card.logoUrl">
-          <div v-if="card.icon && card.icon.startsWith('<svg')" class="icon-svg" v-html="card.icon"></div>
-          <span v-else-if="card.icon" class="icon-emoji">{{ card.icon }}</span>
-          <img v-else-if="card.logoUrl" :src="card.logoUrl" :alt="card.title" class="icon-image" />
+        <div class="card-header">
+          <div class="card-icon" v-if="card.icon || card.logoUrl">
+            <div v-if="card.icon && card.icon.startsWith('<svg')" class="icon-svg" v-html="card.icon"></div>
+            <span v-else-if="card.icon" class="icon-emoji">{{ card.icon }}</span>
+            <img v-else-if="card.logoUrl" :src="card.logoUrl" :alt="card.title" class="icon-image" />
+          </div>
+
+          <h3 class="card-title">{{ card.title }}</h3>
+
+          <!-- Indicador de expansión -->
+          <div v-if="hasExpandableContent(card)" class="expand-indicator">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="chevron"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
         </div>
 
-        <h3 class="card-title">{{ card.title }}</h3>
+        <p v-if="card.description && !hasExpandableContent(card)" class="card-description">{{ card.description }}</p>
 
-        <p v-if="card.description" class="card-description">{{ card.description }}</p>
+        <!-- Contenido expandible -->
+        <Transition name="expand">
+          <div v-if="isExpanded(card.id)" class="card-expanded-content">
+            <p v-if="card.description" class="card-description">{{ card.description }}</p>
 
-        <!-- Bullets -->
-        <ul v-if="card.bullets && card.bullets.length > 0" class="card-bullets">
-          <li v-for="(bullet, index) in card.bullets" :key="index">{{ bullet }}</li>
-        </ul>
+            <!-- Bullets -->
+            <ul v-if="card.bullets && card.bullets.length > 0" class="card-bullets">
+              <li v-for="(bullet, index) in card.bullets" :key="index">{{ bullet }}</li>
+            </ul>
 
-        <!-- SVG Content -->
-        <div v-if="card.svgContent" class="card-svg-content" v-html="card.svgContent"></div>
+            <!-- SVG Content -->
+            <div v-if="card.svgContent" class="card-svg-content" v-html="card.svgContent"></div>
 
-        <div v-if="card.link" class="card-link">
-          <span v-if="card.link.startsWith('http')">Visitar →</span>
-          <span v-else>Ver más →</span>
-        </div>
+            <div v-if="card.link" class="card-link">
+              <span v-if="card.link.startsWith('http')">Visitar →</span>
+              <span v-else>Ver más →</span>
+            </div>
+          </div>
+        </Transition>
       </div>
     </div>
 
@@ -169,10 +226,10 @@ const handleNextClick = () => {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
   box-shadow: var(--shadow-md);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .card::before {
@@ -203,6 +260,19 @@ const handleNextClick = () => {
 
 .card.clickable:hover {
   border-color: var(--color-primary-600);
+}
+
+.card.expanded {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-500);
+}
+
+/* Header de la tarjeta */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  width: 100%;
 }
 
 .card-icon {
@@ -244,12 +314,49 @@ const handleNextClick = () => {
 }
 
 .card-title {
-  font-family: var(--font-display);
+  font-family: var(--font-primary);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--color-text-primary);
   margin: 0;
   line-height: 1.3;
+  flex: 1;
+}
+
+/* Indicador de expansión */
+.expand-indicator {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.card:hover .expand-indicator {
+  background: var(--color-primary-100);
+}
+
+.card.expanded .expand-indicator {
+  transform: rotate(180deg);
+  background: var(--color-primary-200);
+}
+
+.expand-indicator .chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-primary);
+}
+
+/* Contenido expandido */
+.card-expanded-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  width: 100%;
 }
 
 .card-description {
@@ -409,6 +516,27 @@ const handleNextClick = () => {
   box-shadow: var(--shadow-md);
 }
 
+/* Transición de expansión */
+.expand-enter-active,
+.expand-leave-active {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+}
+
+.expand-enter-to,
+.expand-leave-from {
+  opacity: 1;
+  max-height: 1000px;
+  margin-top: var(--spacing-2);
+}
+
 @media (max-width: 768px) {
   .card-grid-slide {
     padding: var(--spacing-3);
@@ -452,6 +580,16 @@ const handleNextClick = () => {
 
   .card-title {
     font-size: var(--text-lg);
+  }
+
+  .expand-indicator {
+    width: 28px;
+    height: 28px;
+  }
+
+  .expand-indicator .chevron {
+    width: 16px;
+    height: 16px;
   }
 
   .next-button {
