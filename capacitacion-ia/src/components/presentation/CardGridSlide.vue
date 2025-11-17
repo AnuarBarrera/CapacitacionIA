@@ -39,6 +39,17 @@ const hasExpandableContent = (card: any) => {
   return !!(card.bullets || card.svgContent)
 }
 
+// Contar cuántas tarjetas tienen contenido expandible
+const expandableCardsCount = computed(() => {
+  return props.slide.cards.filter(card => hasExpandableContent(card)).length
+})
+
+// Verificar si todas las tarjetas expandibles están expandidas
+const allCardsExpanded = computed(() => {
+  if (expandableCardsCount.value === 0) return true
+  return expandedCards.value.size >= expandableCardsCount.value
+})
+
 const handleCardClick = (link?: string) => {
   if (link) {
     if (link.startsWith('http')) {
@@ -61,6 +72,11 @@ const handleNextClick = () => {
     <div class="hero-section">
       <h2 class="hero-title">{{ slide.title }}</h2>
       <p v-if="slide.description" class="hero-description">{{ slide.description }}</p>
+    </div>
+
+    <!-- Mensaje de instrucciones -->
+    <div v-if="expandableCardsCount > 0" class="instructions-compact">
+      <span class="instructions-text">Da click en la flecha para expandir, expande todas las tarjetas para continuar</span>
     </div>
 
     <div
@@ -131,14 +147,13 @@ const handleNextClick = () => {
 
     <!-- Diagrama de flujo / SVG adicional - Siempre visible -->
     <div v-if="slide.flowDiagram" class="flow-diagram-container">
-      <h3 class="flow-diagram-title">Demo Interactiva</h3>
       <div class="flow-diagram" v-html="slide.flowDiagram"></div>
     </div>
 
-    <!-- Botón para continuar -->
-    <div class="navigation-section">
-      <button class="next-button" @click="handleNextClick">
-        Continuar con la presentación
+    <!-- Botón para continuar - Solo aparece cuando todas las tarjetas están expandidas -->
+    <Transition name="fade-in">
+      <button v-if="allCardsExpanded" class="next-button" @click="handleNextClick">
+        Click para continuar
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -150,7 +165,7 @@ const handleNextClick = () => {
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
       </button>
-    </div>
+    </Transition>
   </div>
 </template>
 
@@ -210,9 +225,30 @@ const handleNextClick = () => {
   margin-right: auto;
 }
 
+/* Mensaje de instrucciones compacto */
+.instructions-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-md);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-neutral-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.instructions-text {
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
 .card-grid {
   display: grid;
-  gap: var(--spacing-4);
+  gap: var(--spacing-2);
   margin-top: var(--spacing-4);
 }
 
@@ -220,76 +256,47 @@ const handleNextClick = () => {
   background: var(--color-bg-primary);
   border: var(--border-width-md) solid var(--color-neutral-300);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-4);
-  text-align: left;
-  transition: all var(--transition-base);
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: var(--spacing-2);
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: visible;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary-600) 0%, var(--color-primary-400) 100%);
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card.clickable {
+  padding: var(--spacing-3);
   cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
   border-color: var(--color-primary-400);
-}
-
-.card.clickable:hover {
-  border-color: var(--color-primary-600);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .card.expanded {
   background: var(--color-primary-50);
-  border-color: var(--color-primary-500);
+  border-color: var(--color-primary-600);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Header de la tarjeta */
 .card-header {
   display: flex;
   align-items: center;
-  gap: var(--spacing-3);
-  width: 100%;
+  gap: var(--spacing-2);
 }
 
 .card-icon {
-  width: 60px;
-  height: 60px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #ff6b6b 0%, #fa5252 100%);
   border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-2);
-  box-shadow: var(--shadow-md);
-  flex-shrink: 0;
+  padding: var(--spacing-1);
+  box-shadow: var(--shadow-sm);
 }
 
 .icon-emoji {
-  font-size: var(--text-5xl);
+  font-size: var(--text-2xl);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -303,60 +310,51 @@ const handleNextClick = () => {
 }
 
 .icon-svg svg {
-  width: 35px;
-  height: 35px;
+  width: 100%;
+  height: 100%;
 }
 
 .icon-image {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
 .card-title {
-  font-family: var(--font-primary);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  margin: 0;
-  line-height: 1.3;
   flex: 1;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  color: var(--color-text-primary);
+  line-height: 1.5;
 }
 
-/* Indicador de expansión */
+/* Indicador de expansión (chevron) */
 .expand-indicator {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-neutral-100);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-base);
-}
-
-.card:hover .expand-indicator {
-  background: var(--color-primary-100);
+  width: 24px;
+  height: 24px;
+  transition: transform var(--transition-base);
 }
 
 .card.expanded .expand-indicator {
   transform: rotate(180deg);
-  background: var(--color-primary-200);
 }
 
-.expand-indicator .chevron {
-  width: 20px;
-  height: 20px;
+.expand-indicator svg {
+  width: 100%;
+  height: 100%;
   color: var(--color-text-primary);
 }
 
 /* Contenido expandido */
 .card-expanded-content {
+  margin-top: var(--spacing-2);
+  padding-top: var(--spacing-2);
+  border-top: var(--border-width) solid var(--color-neutral-300);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
-  width: 100%;
 }
 
 .card-description {
@@ -470,13 +468,9 @@ const handleNextClick = () => {
   max-width: 400px;
 }
 
-/* Sección de navegación */
-.navigation-section {
-  margin-top: var(--spacing-6);
-  text-align: center;
-}
-
+/* Botón siguiente */
 .next-button {
+  margin-top: var(--spacing-6);
   padding: var(--spacing-2) var(--spacing-5);
   font-family: var(--font-primary);
   font-size: var(--text-lg);
@@ -487,12 +481,12 @@ const handleNextClick = () => {
   border-radius: var(--radius-full);
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-lg);
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-1);
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
 }
 
 .next-button svg {
@@ -502,9 +496,13 @@ const handleNextClick = () => {
 }
 
 .next-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-xl);
   background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.next-button svg {
+  transition: transform var(--transition-base);
 }
 
 .next-button:hover svg {
@@ -516,10 +514,30 @@ const handleNextClick = () => {
   box-shadow: var(--shadow-md);
 }
 
+/* Transición fade-in para el botón siguiente */
+.fade-in-enter-active {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.fade-in-leave-active {
+  animation: fadeIn 0.4s ease-in reverse;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 /* Transición de expansión */
 .expand-enter-active,
 .expand-leave-active {
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
   overflow: hidden;
 }
 
@@ -527,14 +545,12 @@ const handleNextClick = () => {
 .expand-leave-to {
   opacity: 0;
   max-height: 0;
-  margin-top: 0;
 }
 
 .expand-enter-to,
 .expand-leave-from {
   opacity: 1;
-  max-height: 1000px;
-  margin-top: var(--spacing-2);
+  max-height: 500px;
 }
 
 @media (max-width: 768px) {
@@ -565,31 +581,16 @@ const handleNextClick = () => {
   }
 
   .card-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .icon-svg svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
   }
 
   .icon-emoji {
-    font-size: var(--text-3xl);
-  }
-
-  .card-title {
     font-size: var(--text-lg);
   }
 
-  .expand-indicator {
-    width: 28px;
-    height: 28px;
-  }
-
-  .expand-indicator .chevron {
-    width: 16px;
-    height: 16px;
+  .card-title {
+    font-size: var(--text-sm);
   }
 
   .next-button {
