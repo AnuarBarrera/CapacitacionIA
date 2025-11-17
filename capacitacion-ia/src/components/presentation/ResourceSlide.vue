@@ -72,7 +72,7 @@ const handleNextClick = () => {
 
     <!-- Botón siguiente -->
     <button class="next-button" @click="handleNextClick">
-      Siguiente
+      Click para continuar
       <svg
         viewBox="0 0 24 24"
         fill="none"

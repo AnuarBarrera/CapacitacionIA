@@ -154,8 +154,7 @@ onMounted(() => {
       <div class="text-content">
         <!-- Mensaje de instrucciones (compacto) -->
         <div v-if="itemsCount > 0" class="instructions-compact">
-          <span class="instructions-icon">👇</span>
-          <span class="instructions-text">Click para expandir</span>
+          <span class="instructions-text">Da click en la flecha para expandir, expande todas las tarjetas para continuar</span>
         </div>
 
         <!-- Lista expandible con customBullets -->
@@ -242,7 +241,7 @@ onMounted(() => {
     <!-- Botón siguiente - Solo aparece cuando todas las tarjetas están expandidas -->
     <Transition name="fade-in">
       <button v-if="allItemsExpanded" class="next-button" @click="handleNextClick">
-        Siguiente
+        Click para continuar
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -290,7 +289,7 @@ onMounted(() => {
 }
 
 .hero-title {
-  font-family: var(--font-display);
+  font-family: var(--font-hero);
   font-size: clamp(var(--text-3xl), 5vw, var(--text-6xl));
   font-weight: var(--font-black);
   margin-bottom: var(--spacing-3);
@@ -333,9 +332,9 @@ onMounted(() => {
   align-items: center;
   gap: var(--spacing-1);
   margin-bottom: var(--spacing-3);
-  padding: var(--spacing-1) var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
   background: var(--color-neutral-100);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-family: var(--font-primary);
   font-size: var(--text-sm);
   font-weight: var(--font-medium);
@@ -343,13 +342,9 @@ onMounted(() => {
   box-shadow: var(--shadow-sm);
 }
 
-.instructions-icon {
-  font-size: var(--text-base);
-  animation: gentle-bounce 2s infinite;
-}
-
 .instructions-text {
-  opacity: 0.8;
+  opacity: 0.9;
+  line-height: 1.5;
 }
 
 @keyframes gentle-bounce {
