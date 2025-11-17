@@ -378,6 +378,17 @@ export const slidesData: Slide[] = [
       {
         text: 'Un agente es el sistema que ejecuta las acciones necesarias para cumplir tu solicitud. No solo responde, sino que puede realizar múltiples tareas, pedir más información, o usar herramientas para darte el mejor resultado.',
         keyword: '¿Qué es un agente?',
+        iconContent: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2Z" fill="currentColor" opacity="0.3"/>
+          <circle cx="12" cy="9" r="2.5" fill="currentColor"/>
+          <path d="M12 12.5C9.5 12.5 7.5 14 7.5 16V17H16.5V16C16.5 14 14.5 12.5 12 12.5Z" fill="currentColor"/>
+          <circle cx="7" cy="12" r="1.5" fill="currentColor" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="17" cy="12" r="1.5" fill="currentColor" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
         svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
@@ -494,6 +505,18 @@ export const slidesData: Slide[] = [
       {
         text: 'El razonamiento es el proceso donde la IA analiza tu petición ANTES de ejecutarla. Esto significa que examina qué necesitas, evalúa diferentes opciones, y planea los pasos necesarios para darte un mejor resultado y reducir errores. No solo reacciona, sino que piensa estratégicamente.',
         keyword: '¿Que es razonamiento?',
+        iconContent: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 2L9 6M15 2L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="12" cy="8" rx="6" ry="4" fill="currentColor" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+          </ellipse>
+          <path d="M6 8C6 10.2091 8.68629 12 12 12C15.3137 12 18 10.2091 18 8" stroke="currentColor" stroke-width="2"/>
+          <rect x="8" y="10" width="8" height="8" rx="1" fill="currentColor" opacity="0.2"/>
+          <circle cx="12" cy="14" r="2" fill="currentColor">
+            <animate attributeName="r" values="2;2.5;2" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M10 18L8 21M14 18L16 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
         svgContent: `<svg viewBox="0 0 350 180" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
@@ -686,20 +709,291 @@ export const slidesData: Slide[] = [
   {
     id: 'el-prompt',
     title: 'El Prompt',
-    type: SlideType.CONTENT,
-    content: 'El prompt es el mensaje que le mandas a la IA.',
-    bullets: [
-      'Estructura básica de un prompt:',
-      '• QUÉ: lo QUE quieres que haga',
-      '• CÓMO: COMO quieres quieres que lo haga',
-      '• CONTEXTO: información necesaria para que la IA te de elmresultado esperado',
-      'Un ejemplo real del poder de la IA:',
-      'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
-      'AHORA CON IA: "QUE: Quiero lona para vender pan dulce, COMO: estilo épico, inspiración anime, formato horizontal 1.20m, CONTEXTO: Con precios desde 10 pesos mexicanos"',
-      'Resultado: Diseño profesional, gratis, en 5 minutos',
-      '',
-      'ESTO es el poder de la IA'
+    type: SlideType.CARD_GRID,
+    description: 'El prompt es el mensaje que le mandas a la IA. Aprende a estructurarlo correctamente:',
+    cards: [
+      {
+        id: 'estructura-basica',
+        title: 'Estructura Básica',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M3 8h18M8 4v4M16 4v4" stroke="currentColor" stroke-width="2"/>
+          <circle cx="7" cy="12" r="1" fill="currentColor">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="9" y1="12" x2="17" y2="12" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="7" cy="15" r="1" fill="currentColor">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="9" y1="15" x2="17" y2="15" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <circle cx="7" cy="18" r="1" fill="currentColor">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="9" y1="18" x2="14" y2="18" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+        </svg>`,
+        bullets: [
+          'QUÉ: Lo que quieres que haga',
+          'CÓMO: Cómo quieres que lo haga',
+          'CONTEXTO: Información necesaria para el resultado esperado'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .prompt-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; }
+              .prompt-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 12px; }
+            </style>
+          </defs>
+
+          <!-- QUÉ -->
+          <g transform="translate(20, 30)">
+            <rect x="0" y="0" width="260" height="40" rx="8" fill="#4a5ba5" opacity="0.2"/>
+            <text x="10" y="15" class="prompt-text" fill="#4a5ba5">QUÉ</text>
+            <text x="10" y="30" class="prompt-label">Lo que quieres que haga</text>
+            <circle cx="250" cy="20" r="4" fill="#4a5ba5">
+              <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- CÓMO -->
+          <g transform="translate(20, 85)">
+            <rect x="0" y="0" width="260" height="40" rx="8" fill="#ff6b6b" opacity="0.2"/>
+            <text x="10" y="15" class="prompt-text" fill="#ff6b6b">CÓMO</text>
+            <text x="10" y="30" class="prompt-label">Cómo quieres que lo haga</text>
+            <circle cx="250" cy="20" r="4" fill="#ff6b6b">
+              <animate attributeName="r" values="4;6;4" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- CONTEXTO -->
+          <g transform="translate(20, 140)">
+            <rect x="0" y="0" width="260" height="40" rx="8" fill="#51cf66" opacity="0.2"/>
+            <text x="10" y="15" class="prompt-text" fill="#51cf66">CONTEXTO</text>
+            <text x="10" y="30" class="prompt-label">Información necesaria</text>
+            <circle cx="250" cy="20" r="4" fill="#51cf66">
+              <animate attributeName="r" values="4;6;4" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'ejemplo-real',
+        title: 'Ejemplo Real: El Poder de la IA',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor">
+            <animate attributeName="r" values="2;3;2" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <g opacity="0.6">
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="3s" repeatCount="indefinite"/>
+          </g>
+        </svg>`,
+        bullets: [
+          'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
+          'AHORA CON IA: "QUE: Quiero lona para vender pan dulce, COMO: estilo épico, inspiración anime, formato horizontal 1.20m, CONTEXTO: Con precios desde 10 pesos mexicanos"',
+          'Resultado: Diseño profesional, gratis, en 5 minutos',
+          '✨ ESTO es el poder de la IA'
+        ],
+        svgContent: `<svg viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .example-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; }
+              .example-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 11px; }
+            </style>
+            <linearGradient id="beforeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fa5252;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="afterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#51cf66;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#37b24d;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+
+          <!-- ANTES -->
+          <g transform="translate(20, 20)">
+            <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#beforeGrad)" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="70" y="20" class="example-text" fill="#ff6b6b" text-anchor="middle">ANTES</text>
+
+            <!-- Ícono de dinero -->
+            <text x="70" y="55" font-size="30" text-anchor="middle">💸</text>
+            <text x="70" y="75" class="example-label" text-anchor="middle">$500-1,000</text>
+            <text x="70" y="90" class="example-label" text-anchor="middle" opacity="0.7">o hacerlo mal</text>
+          </g>
+
+          <!-- Flecha -->
+          <g transform="translate(175, 60)">
+            <path d="M 0 0 L 30 0" stroke="#868e96" stroke-width="3" marker-end="url(#arrowEnd)"/>
+            <defs>
+              <marker id="arrowEnd" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#868e96"/>
+              </marker>
+            </defs>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- AHORA -->
+          <g transform="translate(190, 20)">
+            <rect x="0" y="0" width="140" height="100" rx="8" fill="url(#afterGrad)" opacity="0.2" stroke="#51cf66" stroke-width="2"/>
+            <text x="70" y="20" class="example-text" fill="#51cf66" text-anchor="middle">AHORA</text>
+
+            <!-- Ícono de IA -->
+            <text x="70" y="55" font-size="30" text-anchor="middle">✨</text>
+            <text x="70" y="75" class="example-label" text-anchor="middle">Gratis</text>
+            <text x="70" y="90" class="example-label" text-anchor="middle" opacity="0.7">5 minutos</text>
+          </g>
+
+          <!-- Resultado -->
+          <g transform="translate(20, 140)">
+            <rect x="0" y="0" width="310" height="90" rx="8" fill="#4a5ba5" opacity="0.1" stroke="#4a5ba5" stroke-width="2" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="155" y="25" class="example-text" fill="#4a5ba5" text-anchor="middle">El Prompt</text>
+            <text x="10" y="45" class="example-label" opacity="0.8">QUE: Lona para pan dulce</text>
+            <text x="10" y="60" class="example-label" opacity="0.8">COMO: Estilo épico, anime, 1.20m</text>
+            <text x="10" y="75" class="example-label" opacity="0.8">CONTEXTO: Precios desde $10 MXN</text>
+
+            <!-- Checkmark animado -->
+            <circle cx="290" cy="60" r="15" fill="#51cf66" opacity="0.3">
+              <animate attributeName="r" values="15;18;15" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M 283 60 L 287 65 L 297 53" stroke="#51cf66" stroke-width="3" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>`
+      }
     ],
+    flowDiagram: `<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <style>
+          .chat-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 13px; }
+          .chat-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 11px; }
+          .user-bubble { fill: #4a5ba5; }
+          .ai-bubble { fill: #e9ecef; }
+        </style>
+        <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#343a40;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#212529;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+
+      <!-- Celular -->
+      <g transform="translate(100, 50)">
+        <!-- Cuerpo del celular -->
+        <rect x="0" y="0" width="200" height="400" rx="20" fill="url(#phoneGrad)" stroke="#495057" stroke-width="3"/>
+
+        <!-- Notch -->
+        <rect x="70" y="0" width="60" height="15" rx="0 0 8 8" fill="#212529"/>
+
+        <!-- Pantalla -->
+        <rect x="10" y="20" width="180" height="360" rx="10" fill="url(#screenGrad)"/>
+
+        <!-- Header del chat -->
+        <g>
+          <rect x="10" y="20" width="180" height="50" rx="10 10 0 0" fill="#4a5ba5"/>
+          <circle cx="30" cy="45" r="12" fill="#fff" opacity="0.9"/>
+          <text x="50" y="42" class="chat-text" fill="#fff" font-weight="bold">Asistente IA</text>
+          <text x="50" y="55" class="chat-label" fill="#fff" opacity="0.8">En línea</text>
+        </g>
+
+        <!-- Área de mensajes -->
+        <g transform="translate(15, 80)">
+          <!-- Mensaje 1: Usuario -->
+          <g opacity="0">
+            <rect x="50" y="0" width="120" height="50" rx="10" class="user-bubble"/>
+            <text x="60" y="18" class="chat-text" fill="#fff">Quiero crear una</text>
+            <text x="60" y="33" class="chat-text" fill="#fff">lona para mi negocio</text>
+            <animate attributeName="opacity" values="0;0;1;1;1;1;1;1" dur="8s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Mensaje 2: IA pensando -->
+          <g opacity="0">
+            <rect x="10" y="60" width="80" height="35" rx="10" class="ai-bubble"/>
+            <circle cx="35" cy="77.5" r="3" fill="#4a5ba5">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="50" cy="77.5" r="3" fill="#4a5ba5">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="65" cy="77.5" r="3" fill="#4a5ba5">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.4s" repeatCount="indefinite"/>
+            </circle>
+            <animate attributeName="opacity" values="0;0;0;1;1;0;0;0" dur="8s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Mensaje 3: IA responde -->
+          <g opacity="0">
+            <rect x="10" y="105" width="160" height="95" rx="10" class="ai-bubble"/>
+            <text x="20" y="122" class="chat-text">¡Claro! Para ayudarte</text>
+            <text x="20" y="137" class="chat-text">mejor, necesito saber:</text>
+            <text x="20" y="157" class="chat-label" opacity="0.8">• ¿Qué vendes?</text>
+            <text x="20" y="172" class="chat-label" opacity="0.8">• ¿Qué estilo prefieres?</text>
+            <text x="20" y="187" class="chat-label" opacity="0.8">• ¿Qué tamaño necesitas?</text>
+            <animate attributeName="opacity" values="0;0;0;0;0;1;1;1" dur="8s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Mensaje 4: Usuario responde -->
+          <g opacity="0">
+            <rect x="10" y="210" width="160" height="80" rx="10" class="user-bubble"/>
+            <text x="20" y="227" class="chat-text" fill="#fff">Vendo pan dulce.</text>
+            <text x="20" y="242" class="chat-text" fill="#fff">Estilo épico, anime.</text>
+            <text x="20" y="257" class="chat-text" fill="#fff">1.20m horizontal.</text>
+            <text x="20" y="272" class="chat-text" fill="#fff">Precios desde $10</text>
+            <animate attributeName="opacity" values="0;0;0;0;0;0;0;1" dur="8s" repeatCount="indefinite"/>
+          </g>
+        </g>
+
+        <!-- Input area -->
+        <g>
+          <rect x="15" y="355" width="140" height="20" rx="10" fill="#fff" stroke="#dee2e6" stroke-width="1"/>
+          <text x="22" y="368" class="chat-label" opacity="0.5">Escribe un mensaje...</text>
+
+          <!-- Botón enviar -->
+          <circle cx="170" cy="365" r="10" fill="#4a5ba5">
+            <animate attributeName="r" values="10;11;10" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M 167 365 L 173 365 L 170 361 Z" fill="#fff" transform="rotate(90 170 365)"/>
+        </g>
+
+        <!-- Botón home -->
+        <circle cx="100" cy="395" r="3" fill="#fff" opacity="0.6"/>
+      </g>
+
+      <!-- Título superior -->
+      <text x="200" y="30" class="chat-text" font-size="16px" font-weight="bold" text-anchor="middle" fill="#4a5ba5">
+        Chat con IA
+      </text>
+
+      <!-- Indicadores de animación -->
+      <g transform="translate(50, 480)">
+        <circle cx="0" cy="0" r="5" fill="#4a5ba5" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="20" cy="0" r="5" fill="#4a5ba5" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="8s" begin="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="40" cy="0" r="5" fill="#4a5ba5" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="8s" begin="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="0" r="5" fill="#4a5ba5" opacity="0.3">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="8s" begin="6s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- Etiquetas descriptivas -->
+      <g transform="translate(20, 520)">
+        <text x="0" y="0" class="chat-label" opacity="0.7">
+          <tspan x="0" dy="0">El usuario hace una pregunta</tspan>
+          <tspan x="0" dy="18">La IA analiza y pide contexto</tspan>
+          <tspan x="0" dy="18">El usuario da detalles específicos</tspan>
+          <tspan x="0" dy="18">La IA genera el diseño perfecto ✨</tspan>
+        </text>
+      </g>
+    </svg>`,
     order: 4
   },
 
