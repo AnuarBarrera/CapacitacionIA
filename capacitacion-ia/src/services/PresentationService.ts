@@ -22,6 +22,10 @@ export class PresentationService implements IPresentationService {
     return this.slides.find(slide => slide.id === id)
   }
 
+  getSlideIndexById(id: string): number {
+    return this.slides.findIndex(slide => slide.id === id)
+  }
+
   getSlideByIndex(index: number): Slide | undefined {
     if (!this.isValidIndex(index)) {
       return undefined
