@@ -998,13 +998,304 @@ export const slidesData: Slide[] = [
   {
     id: 'prompt-engineering',
     title: 'Prompt Engineering',
-    type: SlideType.CONTENT,
-    content: 'Estrategias para mejorar el prompt que le compartes a la IA y obtener mejores respuestas.',
-    bullets: [
-      'Sé específico: entre más detalles, mejor resultado',
-      'Da ejemplos: muestra qué quieres con ejemplos concretos',
-      'Define el formato: especifica cómo quieres la respuesta',
-      'Insiste: si no sale bien a la primera, ajusta y vuelve a intentar'
+    type: SlideType.CARD_GRID,
+    description: 'Estrategias para mejorar el prompt que le compartes a la IA y obtener mejores respuestas.',
+    cards: [
+      {
+        id: 'especifico',
+        title: 'Sé específico',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 11l3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="1.5" fill="currentColor">
+            <animate attributeName="r" values="1.5;2;1.5" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
+        bullets: [
+          'Entre más detalles, mejor resultado',
+          'Especifica colores, tamaños, estilos',
+          'Menciona el tono que deseas (formal, casual, técnico)',
+          'Indica la audiencia objetivo'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .spec-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; }
+              .spec-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 10px; }
+            </style>
+          </defs>
+
+          <!-- Malo (vago) -->
+          <g transform="translate(20, 30)">
+            <rect x="0" y="0" width="120" height="80" rx="8" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="60" y="20" class="spec-text" fill="#ff6b6b" text-anchor="middle" font-weight="bold">❌ Vago</text>
+            <text x="10" y="40" class="spec-label">"Diseña un logo"</text>
+            <text x="10" y="60" class="spec-label" opacity="0.6">Sin detalles</text>
+            <text x="10" y="72" class="spec-label" opacity="0.6">Sin contexto</text>
+          </g>
+
+          <!-- Flecha -->
+          <g transform="translate(145, 60)">
+            <path d="M 0 0 L 25 0" stroke="#868e96" stroke-width="3" marker-end="url(#arrowSpec)"/>
+            <defs>
+              <marker id="arrowSpec" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                <polygon points="0 0, 10 5, 0 10" fill="#868e96"/>
+              </marker>
+            </defs>
+          </g>
+
+          <!-- Bueno (específico) -->
+          <g transform="translate(160, 30)">
+            <rect x="0" y="0" width="120" height="80" rx="8" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2"/>
+            <text x="60" y="20" class="spec-text" fill="#51cf66" text-anchor="middle" font-weight="bold">✓ Específico</text>
+            <text x="10" y="38" class="spec-label">"Logo minimalista"</text>
+            <text x="10" y="50" class="spec-label">Colores: azul/blanco</text>
+            <text x="10" y="62" class="spec-label">Para cafetería</text>
+            <text x="10" y="74" class="spec-label">Audiencia: jóvenes</text>
+          </g>
+
+          <!-- Resultado -->
+          <g transform="translate(60, 130)">
+            <rect x="0" y="0" width="180" height="50" rx="8" fill="#4a5ba5" opacity="0.1" stroke="#4a5ba5" stroke-width="2" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="90" y="25" class="spec-text" fill="#4a5ba5" text-anchor="middle">Resultado 10x mejor</text>
+            <circle cx="165" cy="25" r="10" fill="#51cf66" opacity="0.3">
+              <animate attributeName="r" values="10;13;10" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M 158 25 L 162 30 L 172 18" stroke="#51cf66" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'ejemplos',
+        title: 'Da ejemplos',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+          </rect>
+        </svg>`,
+        bullets: [
+          'Muestra qué quieres con ejemplos concretos',
+          'Comparte referencias visuales o de texto',
+          'Indica qué te gusta y qué no',
+          '"Como esto, pero con [cambio específico]"'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .ex-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; }
+              .ex-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 9px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="ex-text" text-anchor="middle" font-size="13px" font-weight="bold" fill="#4a5ba5">Ejemplos mejoran el resultado</text>
+
+          <!-- Ejemplo 1 -->
+          <g transform="translate(30, 40)">
+            <rect x="0" y="0" width="60" height="50" rx="5" fill="#e9ecef" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="30" y="15" class="ex-label" text-anchor="middle" font-weight="bold">Ejemplo 1</text>
+            <rect x="10" y="22" width="40" height="3" rx="1.5" fill="#4a5ba5" opacity="0.6"/>
+            <rect x="10" y="30" width="35" height="3" rx="1.5" fill="#4a5ba5" opacity="0.4"/>
+            <rect x="10" y="38" width="40" height="3" rx="1.5" fill="#4a5ba5" opacity="0.4"/>
+          </g>
+
+          <!-- Ejemplo 2 -->
+          <g transform="translate(110, 40)">
+            <rect x="0" y="0" width="60" height="50" rx="5" fill="#e9ecef" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="30" y="15" class="ex-label" text-anchor="middle" font-weight="bold">Ejemplo 2</text>
+            <circle cx="20" cy="30" r="3" fill="#4a5ba5" opacity="0.6"/>
+            <circle cx="30" cy="30" r="3" fill="#4a5ba5" opacity="0.6"/>
+            <circle cx="40" cy="30" r="3" fill="#4a5ba5" opacity="0.6"/>
+            <rect x="15" y="38" width="30" height="3" rx="1.5" fill="#4a5ba5" opacity="0.4"/>
+          </g>
+
+          <!-- Ejemplo 3 -->
+          <g transform="translate(190, 40)">
+            <rect x="0" y="0" width="60" height="50" rx="5" fill="#e9ecef" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="30" y="15" class="ex-label" text-anchor="middle" font-weight="bold">Ejemplo 3</text>
+            <rect x="10" y="25" width="15" height="15" rx="2" fill="#4a5ba5" opacity="0.5"/>
+            <rect x="30" y="25" width="20" height="8" rx="2" fill="#ff6b6b" opacity="0.5"/>
+          </g>
+
+          <!-- IA aprende -->
+          <g transform="translate(70, 110)">
+            <path d="M 10 0 L 80 0 L 75 -5 M 80 0 L 75 5" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+            <text x="45" y="15" class="ex-text" text-anchor="middle" fill="#ff6b6b">IA aprende el patrón</text>
+          </g>
+
+          <!-- Resultado -->
+          <g transform="translate(50, 140)">
+            <rect x="0" y="0" width="200" height="45" rx="8" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2">
+              <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="100" y="18" class="ex-text" text-anchor="middle" font-weight="bold" fill="#51cf66">Resultado personalizado</text>
+            <text x="100" y="32" class="ex-label" text-anchor="middle">Basado en tus ejemplos</text>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'formato',
+        title: 'Define el formato',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="currentColor" stroke-width="2"/>
+          <line x1="3" y1="15" x2="21" y2="15" stroke="currentColor" stroke-width="2"/>
+          <line x1="9" y1="3" x2="9" y2="21" stroke="currentColor" stroke-width="2"/>
+          <circle cx="15" cy="12" r="2" fill="currentColor">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
+        bullets: [
+          'Especifica cómo quieres la respuesta',
+          'Lista, tabla, párrafo, puntos, etc.',
+          'Define la estructura esperada',
+          'Indica longitud (corto, detallado, X palabras)'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .fmt-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; }
+              .fmt-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 9px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="fmt-text" text-anchor="middle" font-size="13px" font-weight="bold" fill="#4a5ba5">Formatos disponibles</text>
+
+          <!-- Lista -->
+          <g transform="translate(20, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="1.5"/>
+            <text x="40" y="15" class="fmt-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Lista</text>
+            <circle cx="10" cy="27" r="2" fill="#ff6b6b"/>
+            <rect x="15" y="25" width="55" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <circle cx="10" cy="37" r="2" fill="#ff6b6b"/>
+            <rect x="15" y="35" width="50" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <circle cx="10" cy="47" r="2" fill="#ff6b6b"/>
+            <rect x="15" y="45" width="60" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+          </g>
+
+          <!-- Tabla -->
+          <g transform="translate(110, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="1.5"/>
+            <text x="40" y="15" class="fmt-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Tabla</text>
+            <line x1="5" y1="22" x2="75" y2="22" stroke="#4a5ba5" stroke-width="1"/>
+            <line x1="40" y1="20" x2="40" y2="55" stroke="#4a5ba5" stroke-width="1"/>
+            <line x1="5" y1="35" x2="75" y2="35" stroke="#4a5ba5" stroke-width="1"/>
+            <line x1="5" y1="48" x2="75" y2="48" stroke="#4a5ba5" stroke-width="1"/>
+          </g>
+
+          <!-- Párrafo -->
+          <g transform="translate(200, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="1.5"/>
+            <text x="40" y="15" class="fmt-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Párrafo</text>
+            <rect x="8" y="22" width="64" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <rect x="8" y="28" width="60" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <rect x="8" y="34" width="64" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <rect x="8" y="40" width="58" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <rect x="8" y="46" width="64" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+            <rect x="8" y="52" width="45" height="2" rx="1" fill="#343a40" opacity="0.6"/>
+          </g>
+
+          <!-- JSON -->
+          <g transform="translate(60, 115)">
+            <rect x="0" y="0" width="180" height="60" rx="5" fill="#2d3748" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="10" y="15" class="fmt-label" fill="#51cf66" font-weight="bold">JSON / Código</text>
+            <text x="15" y="28" class="fmt-label" fill="#e9ecef" font-family="monospace">{"{"}</text>
+            <text x="25" y="38" class="fmt-label" fill="#e9ecef" font-family="monospace">"nombre": "valor",</text>
+            <text x="25" y="48" class="fmt-label" fill="#e9ecef" font-family="monospace">"items": [1, 2, 3]</text>
+            <text x="15" y="58" class="fmt-label" fill="#e9ecef" font-family="monospace">{"}"}</text>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'insiste',
+        title: 'Insiste y ajusta',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 3l3 3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="3s" repeatCount="indefinite"/>
+          </path>
+        </svg>`,
+        bullets: [
+          'Si no sale bien a la primera, ajusta y vuelve a intentar',
+          'Refina el prompt con más detalles',
+          'Pide variaciones: "Hazlo más [X]"',
+          'La iteración mejora el resultado'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .iter-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; }
+              .iter-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 9px; }
+            </style>
+            <marker id="arrowIter" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+              <polygon points="0 0, 10 5, 0 10" fill="#4a5ba5"/>
+            </marker>
+          </defs>
+
+          <!-- Ciclo de iteración -->
+          <g transform="translate(150, 100)">
+            <!-- Círculo central -->
+            <circle cx="0" cy="0" r="60" fill="none" stroke="#4a5ba5" stroke-width="2" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;-10" dur="2s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Intento 1 -->
+            <g transform="translate(-70, -70)">
+              <circle cx="0" cy="0" r="25" fill="#ff6b6b" opacity="0.3" stroke="#ff6b6b" stroke-width="2"/>
+              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#ff6b6b" font-weight="bold">1</text>
+              <text x="0" y="35" class="iter-label" text-anchor="middle">Intento</text>
+              <text x="0" y="45" class="iter-label" text-anchor="middle">inicial</text>
+            </g>
+
+            <!-- Flecha 1 -->
+            <path d="M -50 -50 Q -20 -20 0 -70" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- Intento 2 -->
+            <g transform="translate(0, -90)">
+              <circle cx="0" cy="0" r="25" fill="#ffa500" opacity="0.3" stroke="#ffa500" stroke-width="2"/>
+              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#ffa500" font-weight="bold">2</text>
+              <text x="0" y="35" class="iter-label" text-anchor="middle">Ajuste</text>
+            </g>
+
+            <!-- Flecha 2 -->
+            <path d="M 20 -70 Q 50 -50 70 -70" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" begin="1s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- Intento 3 -->
+            <g transform="translate(70, -70)">
+              <circle cx="0" cy="0" r="25" fill="#51cf66" opacity="0.3" stroke="#51cf66" stroke-width="2"/>
+              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#51cf66" font-weight="bold">3</text>
+              <text x="0" y="35" class="iter-label" text-anchor="middle">Refina</text>
+            </g>
+
+            <!-- Flecha 3 -->
+            <path d="M 70 -45 Q 50 -10 70 20" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
+              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" begin="2s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- Resultado perfecto -->
+            <g transform="translate(70, 50)">
+              <circle cx="0" cy="0" r="30" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="3">
+                <animate attributeName="r" values="30;33;30" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <text x="0" y="-5" class="iter-text" text-anchor="middle" fill="#51cf66" font-size="20px">✓</text>
+              <text x="0" y="40" class="iter-text" text-anchor="middle" font-weight="bold">Perfecto!</text>
+            </g>
+          </g>
+
+          <!-- Texto inferior -->
+          <text x="150" y="185" class="iter-label" text-anchor="middle" opacity="0.7">La iteración es clave para mejores resultados</text>
+        </svg>`
+      }
     ],
     order: 5
   },
