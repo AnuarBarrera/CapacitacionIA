@@ -1950,48 +1950,120 @@ export const slidesData: Slide[] = [
     id: 'los-5-grandes',
     title: 'Las 5 Plataformas Principales de IA',
     type: SlideType.CARD_GRID,
-    description: 'Elige una para conocerla a detalle',
+    description: 'Da clic en una para conocerla a detalle',
     cards: [
       {
         id: 'chatgpt',
         title: 'ChatGPT',
-        description: 'OpenAI',
-        icon: '🤖',
+        description: 'by OpenAI',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo estilo ChatGPT -->
+          <circle cx="12" cy="12" r="10" fill="url(#chatgptGrad)" opacity="0.2"/>
+          <path d="M7 9h10M7 12h10M7 15h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="18" cy="9" r="1.5" fill="currentColor">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <defs>
+            <linearGradient id="chatgptGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10a37f;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#1a7f64;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>`,
         link: 'chatgpt'
       },
       {
         id: 'gemini',
         title: 'Gemini',
-        description: 'Google',
-        icon: '💎',
+        description: 'by Google',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo estilo Gemini - Diamante/Estrella -->
+          <path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="url(#geminiGrad)" opacity="0.3" stroke="currentColor" stroke-width="1.5">
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+          <defs>
+            <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#ea4335;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fbbc04;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>`,
         link: 'gemini'
       },
       {
         id: 'claude',
         title: 'Claude',
-        description: 'Anthropic',
-        icon: '🧠',
+        description: 'by Anthropic',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo estilo Claude - Arcos concéntricos -->
+          <path d="M12 4 C12 4, 8 8, 8 12 C8 16, 12 20, 12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <path d="M12 4 C12 4, 16 8, 16 12 C16 16, 12 20, 12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" fill="url(#claudeGrad)" opacity="0.2">
+            <animate attributeName="r" values="6;6.5;6" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+          <defs>
+            <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#d97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#c45a3c;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>`,
         link: 'claude'
       },
       {
         id: 'grok',
         title: 'Grok',
-        description: 'X/Twitter',
-        icon: '🚀',
+        description: 'by X (Twitter)',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo estilo X/Grok -->
+          <path d="M4 4 L20 20 M20 4 L4 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+          <circle cx="12" cy="12" r="2" fill="currentColor">
+            <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
         link: 'grok'
       },
       {
         id: 'meta-ai',
         title: 'Meta AI',
-        description: 'Meta/Facebook',
-        icon: '💬',
+        description: 'by Meta',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Logo estilo Meta - Infinito -->
+          <path d="M8 12 C8 9, 10 7, 12 9 C14 7, 16 9, 16 12 C16 15, 14 17, 12 15 C10 17, 8 15, 8 12 Z" stroke="currentColor" stroke-width="2" fill="url(#metaGrad)" opacity="0.2">
+            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="8.5" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="15.5" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+          <defs>
+            <linearGradient id="metaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0081fb;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#0064e0;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#00c6ff;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>`,
         link: 'meta-ai'
       },
       {
         id: 'otras',
         title: 'Otras Herramientas',
-        description: 'Herramientas especializadas',
-        icon: '🛠️',
+        description: 'Especializadas',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Herramientas/Engranajes -->
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="8s" repeatCount="indefinite"/>
+          </path>
+          <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1" opacity="0.3">
+            <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
         link: 'otras'
       }
     ],
