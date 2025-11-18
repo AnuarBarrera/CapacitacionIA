@@ -3961,16 +3961,39 @@ export const slidesData: Slide[] = [
             </path>
           </g>
 
-          <!-- Sparkles -->
+          <!-- Sparkles - más puntos alrededor del círculo -->
           <g opacity="0.8">
+            <!-- Sparkle superior izquierda -->
             <path d="M100,80 L105,85 L100,90 L95,85 Z" fill="#1d9bf0">
               <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
             </path>
+            <!-- Sparkle superior derecha -->
             <path d="M280,100 L285,105 L280,110 L275,105 Z" fill="#1d9bf0">
               <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
             </path>
+            <!-- Sparkle izquierda inferior -->
             <path d="M120,160 L125,165 L120,170 L115,165 Z" fill="#0d7abf">
               <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle derecha inferior -->
+            <path d="M300,180 L305,185 L300,190 L295,185 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle superior centro -->
+            <path d="M190,55 L195,60 L190,65 L185,60 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.75s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle inferior centro -->
+            <path d="M210,195 L215,200 L210,205 L205,200 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.25s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle derecha centro -->
+            <path d="M340,130 L345,135 L340,140 L335,135 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.25s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle izquierda centro -->
+            <path d="M60,115 L65,120 L60,125 L55,120 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.75s" repeatCount="indefinite"/>
             </path>
           </g>
         </svg>`
