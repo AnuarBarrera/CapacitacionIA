@@ -4128,15 +4128,9 @@ export const slidesData: Slide[] = [
       },
       {
         type: 'app',
-        label: 'WhatsApp (Meta AI incluido)',
-        url: 'https://www.whatsapp.com/download',
-        icon: '💬'
-      },
-      {
-        type: 'app',
-        label: 'Instagram (Meta AI incluido)',
-        url: 'https://www.instagram.com/download',
-        icon: '📸'
+        label: 'App Meta AI',
+        url: 'https://www.meta.ai/download',
+        icon: '📱'
       }
     ],
     features: [
@@ -4180,56 +4174,62 @@ export const slidesData: Slide[] = [
               <stop offset="50%" style="stop-color:#25d366;stop-opacity:0.2" />
               <stop offset="100%" style="stop-color:#e4405f;stop-opacity:0.2" />
             </linearGradient>
+            <linearGradient id="instagramGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f58529;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#dd2a7b;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#8134af;stop-opacity:1" />
+            </linearGradient>
+            <marker id="arrowMeta" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#0084ff"/>
+            </marker>
           </defs>
 
           <rect width="400" height="250" fill="url(#metaGrad1)"/>
 
           <!-- WhatsApp conversation -->
           <g transform="translate(50, 60)">
-            <!-- WhatsApp icon -->
+            <!-- WhatsApp icon oficial -->
             <circle cx="0" cy="0" r="20" fill="#25d366"/>
-            <path d="M-8,-2 Q-8,-8 -2,-8 Q8,-8 8,-2 Q8,4 2,4 L-2,4 L-8,8 L-8,-2 Z" fill="white"/>
+            <!-- Teléfono con burbuja -->
+            <path d="M-2,-10 C-6,-10 -9,-7 -9,-3 L-9,3 C-9,7 -6,10 -2,10 L2,10 C6,10 9,7 9,3 L9,-3 C9,-7 6,-10 2,-10 L-2,-10 Z" fill="white"/>
+            <circle cx="0" cy="-1" r="5" fill="none" stroke="#25d366" stroke-width="1.5"/>
+            <path d="M-10,6 L-7,3" stroke="white" stroke-width="2" stroke-linecap="round"/>
 
-            <!-- Chat bubbles -->
-            <rect x="25" y="-15" width="70" height="20" rx="10" fill="#25d366" opacity="0.6">
-              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="0.5s" fill="freeze"/>
+            <!-- Chat bubbles más amplias -->
+            <rect x="25" y="-12" width="115" height="24" rx="12" fill="#25d366" opacity="0.7">
+              <animate attributeName="opacity" values="0;0.7" dur="1s" begin="0.5s" fill="freeze"/>
             </rect>
-            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¡Hola! ¿Cómo estás?</text>
+            <text x="32" y="5" fill="white" font-size="11" font-weight="500" opacity="0.95">¡Hola! ¿Cómo estás?</text>
           </g>
 
           <!-- Facebook Messenger conversation -->
           <g transform="translate(50, 125)">
-            <!-- Facebook Messenger icon -->
+            <!-- Facebook Messenger icon oficial -->
             <circle cx="0" cy="0" r="20" fill="#0084ff"/>
-            <path d="M0,-10 L-8,0 L-3,0 L-3,8 L3,0 L8,0 Z" fill="white"/>
+            <!-- Bolt/rayo de Messenger -->
+            <path d="M-2,-12 L-10,2 L0,-2 L2,12 L10,-2 L0,2 Z" fill="white"/>
 
-            <!-- Chat bubbles -->
-            <rect x="25" y="-15" width="80" height="20" rx="10" fill="#0084ff" opacity="0.6">
-              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1s" fill="freeze"/>
+            <!-- Chat bubbles más amplias -->
+            <rect x="25" y="-12" width="130" height="24" rx="12" fill="#0084ff" opacity="0.7">
+              <animate attributeName="opacity" values="0;0.7" dur="1s" begin="1s" fill="freeze"/>
             </rect>
-            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¿Me ayudas con algo?</text>
+            <text x="32" y="5" fill="white" font-size="11" font-weight="500" opacity="0.95">¿Me ayudas con algo?</text>
           </g>
 
           <!-- Instagram conversation -->
           <g transform="translate(50, 190)">
-            <!-- Instagram icon -->
-            <rect x="-20" y="-20" width="40" height="40" rx="12" fill="url(#instagramGrad)"/>
-            <defs>
-              <linearGradient id="instagramGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#f58529;stop-opacity:1" />
-                <stop offset="50%" style="stop-color:#dd2a7b;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#8134af;stop-opacity:1" />
-              </linearGradient>
-            </defs>
-            <rect x="-12" y="-12" width="24" height="24" rx="6" fill="none" stroke="white" stroke-width="2.5"/>
-            <circle cx="0" cy="0" r="6" fill="none" stroke="white" stroke-width="2.5"/>
-            <circle cx="8" cy="-8" r="2" fill="white"/>
+            <!-- Instagram icon oficial -->
+            <rect x="-20" y="-20" width="40" height="40" rx="10" fill="url(#instagramGrad)"/>
+            <!-- Cámara de Instagram -->
+            <rect x="-12" y="-12" width="24" height="24" rx="5" fill="none" stroke="white" stroke-width="2.2"/>
+            <circle cx="0" cy="0" r="5.5" fill="none" stroke="white" stroke-width="2.2"/>
+            <circle cx="7" cy="-7" r="1.8" fill="white"/>
 
-            <!-- Chat bubbles -->
-            <rect x="25" y="-15" width="85" height="20" rx="10" fill="#e4405f" opacity="0.6">
-              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1.5s" fill="freeze"/>
+            <!-- Chat bubbles más amplias -->
+            <rect x="25" y="-12" width="150" height="24" rx="12" fill="#e4405f" opacity="0.7">
+              <animate attributeName="opacity" values="0;0.7" dur="1s" begin="1.5s" fill="freeze"/>
             </rect>
-            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¿Puedes crear una imagen?</text>
+            <text x="32" y="5" fill="white" font-size="11" font-weight="500" opacity="0.95">¿Puedes crear una imagen?</text>
           </g>
 
           <!-- Meta AI brain/assistant -->
@@ -4246,22 +4246,16 @@ export const slidesData: Slide[] = [
 
           <!-- Connecting arrows -->
           <g opacity="0.4">
-            <path d="M120,70 Q200,70 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+            <path d="M140,70 Q200,70 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
               <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" fill="freeze"/>
             </path>
-            <path d="M130,135 Q200,130 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+            <path d="M155,135 Q220,130 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
               <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" begin="0.3s" fill="freeze"/>
             </path>
-            <path d="M135,200 Q230,160 285,135" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+            <path d="M175,200 Q240,160 285,135" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
               <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" begin="0.6s" fill="freeze"/>
             </path>
           </g>
-
-          <defs>
-            <marker id="arrowMeta" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-              <path d="M0,0 L0,6 L9,3 z" fill="#0084ff"/>
-            </marker>
-          </defs>
         </svg>`
       },
       {
@@ -4295,19 +4289,23 @@ export const slidesData: Slide[] = [
 
           <rect width="400" height="250" fill="url(#metaContentGrad)"/>
 
-          <!-- WhatsApp icon (top left) -->
+          <!-- WhatsApp icon oficial (top left) -->
           <g transform="translate(60, 60)">
             <circle r="25" fill="#25d366"/>
-            <path d="M-10,-2 Q-10,-10 -2,-10 Q10,-10 10,-2 Q10,5 2,5 L-2,5 L-10,10 L-10,-2 Z" fill="white"/>
+            <!-- Teléfono con burbuja de WhatsApp oficial -->
+            <path d="M-3,-12 C-7,-12 -11,-8 -11,-4 L-11,4 C-11,8 -7,12 -3,12 L3,12 C7,12 11,8 11,4 L11,-4 C11,-8 7,-12 3,-12 L-3,-12 Z" fill="white"/>
+            <circle cx="0" cy="0" r="6.5" fill="none" stroke="#25d366" stroke-width="2"/>
+            <path d="M-12,8 L-9,5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
             <circle r="30" fill="none" stroke="#25d366" stroke-width="2" opacity="0.3">
               <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite"/>
             </circle>
           </g>
 
-          <!-- Facebook icon (top right) -->
+          <!-- Facebook icon oficial (top right) -->
           <g transform="translate(340, 60)">
             <circle r="25" fill="#0084ff"/>
-            <path d="M5,-15 L5,15 M5,-5 L15,-5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <!-- F de Facebook -->
+            <path d="M6,-15 L-8,-15 L-8,-3 L-1,-3 L-1,15 L6,15 L6,-3 L12,-3 L12,-8 L6,-8 L6,-12 L12,-12 L12,-15 Z" fill="white"/>
             <circle r="30" fill="none" stroke="#0084ff" stroke-width="2" opacity="0.3">
               <animate attributeName="r" values="30;35;30" dur="2s" begin="0.5s" repeatCount="indefinite"/>
             </circle>
@@ -4398,20 +4396,41 @@ export const slidesData: Slide[] = [
 
           <rect width="400" height="250" fill="url(#metaAnalysisGrad)"/>
 
-          <!-- Pie chart (fixed - static, not rotating) -->
-          <g transform="translate(120, 125)">
-            <circle r="60" fill="none" stroke="#e5e7eb" stroke-width="2" opacity="0.2"/>
-            <!-- Segment 1: 40% (144 degrees) -->
-            <path d="M0,-60 A60,60 0 0,1 52,30 L0,0 Z" fill="#0084ff" opacity="0.6"/>
-            <!-- Segment 2: 35% (126 degrees) -->
-            <path d="M52,30 A60,60 0 0,1 -42,-42 L0,0 Z" fill="#25d366" opacity="0.6"/>
-            <!-- Segment 3: 25% (90 degrees) -->
-            <path d="M-42,-42 A60,60 0 0,1 0,-60 L0,0 Z" fill="#e4405f" opacity="0.6"/>
-            <!-- Subtle pulse on whole chart -->
-            <circle r="60" fill="none" stroke="#0084ff" stroke-width="2" opacity="0">
-              <animate attributeName="r" values="60;70" dur="2s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="0.3;0" dur="2s" repeatCount="indefinite"/>
-            </circle>
+          <!-- Bar chart -->
+          <g transform="translate(60, 195)">
+            <!-- Ejes -->
+            <line x1="0" y1="0" x2="140" y2="0" stroke="#e5e7eb" stroke-width="2"/>
+            <line x1="0" y1="0" x2="0" y2="-120" stroke="#e5e7eb" stroke-width="2"/>
+
+            <!-- Barra 1: 85% altura -->
+            <rect x="10" y="-102" width="25" height="102" rx="3" fill="#0084ff" opacity="0.7">
+              <animate attributeName="height" values="0;102" dur="1s" fill="freeze"/>
+              <animate attributeName="y" values="0;-102" dur="1s" fill="freeze"/>
+            </rect>
+
+            <!-- Barra 2: 70% altura -->
+            <rect x="45" y="-84" width="25" height="84" rx="3" fill="#25d366" opacity="0.7">
+              <animate attributeName="height" values="0;84" dur="1s" begin="0.2s" fill="freeze"/>
+              <animate attributeName="y" values="0;-84" dur="1s" begin="0.2s" fill="freeze"/>
+            </rect>
+
+            <!-- Barra 3: 95% altura -->
+            <rect x="80" y="-114" width="25" height="114" rx="3" fill="#e4405f" opacity="0.7">
+              <animate attributeName="height" values="0;114" dur="1s" begin="0.4s" fill="freeze"/>
+              <animate attributeName="y" values="0;-114" dur="1s" begin="0.4s" fill="freeze"/>
+            </rect>
+
+            <!-- Barra 4: 60% altura -->
+            <rect x="115" y="-72" width="25" height="72" rx="3" fill="#0084ff" opacity="0.7">
+              <animate attributeName="height" values="0;72" dur="1s" begin="0.6s" fill="freeze"/>
+              <animate attributeName="y" values="0;-72" dur="1s" begin="0.6s" fill="freeze"/>
+            </rect>
+
+            <!-- Etiquetas de las barras -->
+            <text x="22" y="15" fill="#0084ff" font-size="10" text-anchor="middle" font-weight="600">85%</text>
+            <text x="57" y="15" fill="#25d366" font-size="10" text-anchor="middle" font-weight="600">70%</text>
+            <text x="92" y="15" fill="#e4405f" font-size="10" text-anchor="middle" font-weight="600">95%</text>
+            <text x="127" y="15" fill="#0084ff" font-size="10" text-anchor="middle" font-weight="600">60%</text>
           </g>
 
           <!-- Data points chart (with all quadrants) -->
