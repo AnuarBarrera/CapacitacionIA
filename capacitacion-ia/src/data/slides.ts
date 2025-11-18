@@ -2456,6 +2456,196 @@ export const slidesData: Slide[] = [
     order: 11
   },
 
+  // Claude Slide 1: Introducción
+  {
+    id: 'claude-introduccion',
+    title: '¿Qué es Claude?',
+    type: SlideType.CONTENT,
+    content: 'Introducción a Claude',
+    bullets: [
+      'Asistente de IA desarrollado por Anthropic',
+      'Modelo actual: Claude Sonnet 4.5 (familia Claude 4)',
+      'Diseñado para conversaciones naturales y tareas complejas',
+      'Énfasis en seguridad y utilidad práctica'
+    ],
+    order: 11.1
+  },
+
+  // Claude Slide 2: Análisis de Documentos
+  {
+    id: 'claude-analisis-documentos',
+    title: 'Análisis y Procesamiento de Documentos',
+    type: SlideType.CONTENT,
+    content: 'Capacidades de análisis',
+    bullets: [
+      'Lee y analiza múltiples formatos: PDF, Word, Excel, imágenes, código',
+      'Extrae información clave de documentos largos',
+      'Compara y sintetiza información de varias fuentes',
+      'Transcribe texto de imágenes (OCR)'
+    ],
+    order: 11.2
+  },
+
+  // Claude Slide 3: Creación de Contenido
+  {
+    id: 'claude-creacion-contenido',
+    title: 'Creación de Contenido Profesional',
+    type: SlideType.CONTENT,
+    content: 'Generación de archivos y documentos',
+    bullets: [
+      'Redacción de documentos, reportes y propuestas',
+      'Creación de presentaciones (.pptx)',
+      'Hojas de cálculo con fórmulas (.xlsx)',
+      'Correos electrónicos y comunicaciones empresariales',
+      'Contenido para marketing y redes sociales'
+    ],
+    order: 11.3
+  },
+
+  // Claude Slide 4: Programación
+  {
+    id: 'claude-programacion',
+    title: 'Programación y Desarrollo',
+    type: SlideType.CONTENT,
+    content: 'Asistencia técnica',
+    bullets: [
+      'Escritura de código en múltiples lenguajes',
+      'Depuración y optimización de código existente',
+      'Explicación de conceptos técnicos complejos',
+      'Creación de scripts y automatizaciones',
+      'Desarrollo web (HTML, CSS, JavaScript, React, Vue, etc.)'
+    ],
+    order: 11.4
+  },
+
+  // Claude Slide 5: Claude Code Web
+  {
+    id: 'claude-code-web',
+    title: 'Claude Code (Interfaz Web)',
+    type: SlideType.CONTENT,
+    content: 'Entorno de desarrollo en el navegador',
+    bullets: [
+      'Entorno de desarrollo integrado en el navegador',
+      'Ejecuta código en tiempo real',
+      'Crea y edita archivos directamente',
+      'Vista previa de aplicaciones web',
+      'Ideal para prototipos rápidos y desarrollo interactivo'
+    ],
+    order: 11.5
+  },
+
+  // Claude Slide 6: Claude Code CLI
+  {
+    id: 'claude-code-cli',
+    title: 'Claude Code (CLI - Terminal)',
+    type: SlideType.CONTENT,
+    content: 'Herramienta de línea de comandos',
+    bullets: [
+      'Herramienta de línea de comandos para desarrolladores',
+      'Integración directa con tu entorno local',
+      'Delega tareas de código desde la terminal',
+      'Automatización de flujos de trabajo de desarrollo',
+      'Acceso mediante claude-sonnet-4-5-20250929'
+    ],
+    order: 11.6
+  },
+
+  // Claude Slide 7: Búsqueda Web
+  {
+    id: 'claude-busqueda-web',
+    title: 'Investigación y Búsqueda Web',
+    type: SlideType.CONTENT,
+    content: 'Acceso a información actualizada',
+    bullets: [
+      'Búsqueda de información actualizada en internet',
+      'Acceso a contenido de páginas web específicas',
+      'Verificación de datos y hechos recientes',
+      'Síntesis de información de múltiples fuentes',
+      'Mantiene actualización más allá de enero 2025'
+    ],
+    order: 11.7
+  },
+
+  // Claude Slide 8: Organización
+  {
+    id: 'claude-organizacion',
+    title: 'Organización y Productividad',
+    type: SlideType.CONTENT,
+    content: 'Herramientas de productividad',
+    bullets: [
+      'Gestión de calendario (crear, editar, buscar eventos)',
+      'Configuración de alarmas y temporizadores',
+      'Búsqueda en conversaciones anteriores',
+      'Memoria de contexto entre sesiones',
+      'Asistencia con ubicación y mapas'
+    ],
+    order: 11.8
+  },
+
+  // Claude Slide 9: Análisis de Datos
+  {
+    id: 'claude-analisis-datos',
+    title: 'Análisis de Datos y Visualización',
+    type: SlideType.CONTENT,
+    content: 'Procesamiento y análisis',
+    bullets: [
+      'Procesamiento de datos en Excel/CSV',
+      'Análisis estadístico básico',
+      'Creación de gráficos y visualizaciones',
+      'Interpretación de resultados',
+      'Generación de reportes con insights'
+    ],
+    order: 11.9
+  },
+
+  // Claude Slide 10: Casos de Uso
+  {
+    id: 'claude-casos-uso',
+    title: 'Casos de Uso para Emprendedores',
+    type: SlideType.CONTENT,
+    content: 'Aplicaciones prácticas',
+    bullets: [
+      'Consultoría tecnológica y estrategia digital',
+      'Desarrollo de MVPs y prototipos',
+      'Análisis de mercado y competencia',
+      'Automatización de procesos empresariales',
+      'Soporte en decisiones técnicas'
+    ],
+    order: 11.91
+  },
+
+  // Claude Slide 11: Formas de Acceso
+  {
+    id: 'claude-acceso',
+    title: 'Formas de Acceso',
+    type: SlideType.CONTENT,
+    content: 'Cómo usar Claude',
+    bullets: [
+      'Web: claude.ai (navegador)',
+      'Móvil: Aplicación iOS/Android',
+      'Desktop: Aplicación de escritorio',
+      'API: Integración en aplicaciones propias',
+      'Claude Code CLI: Terminal para desarrolladores'
+    ],
+    order: 11.92
+  },
+
+  // Claude Slide 12: Limitaciones
+  {
+    id: 'claude-limitaciones',
+    title: 'Limitaciones Importantes',
+    type: SlideType.CONTENT,
+    content: 'Consideraciones al usar Claude',
+    bullets: [
+      'Conocimiento confiable hasta enero 2025',
+      'No reemplaza criterio humano en decisiones críticas',
+      'No genera contenido malicioso o dañino',
+      'Requiere verificación para información crítica',
+      'Mejor como complemento al trabajo humano'
+    ],
+    order: 11.93
+  },
+
   // Vista 13: Grok
   {
     id: 'grok',
