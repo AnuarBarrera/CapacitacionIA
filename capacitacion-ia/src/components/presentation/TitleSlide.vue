@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ITitleSlide } from '@/interfaces/Slide'
+import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 const props = defineProps<{
   slide: ITitleSlide
@@ -7,15 +8,33 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   next: []
+  previous: []
+  'navigate-to-slide': [slideId: string]
 }>()
 
 const handleStartClick = () => {
   emit('next')
 }
+
+const handlePreviousClick = () => {
+  emit('previous')
+}
+
+const handleNavigateToSlide = (slideId: string) => {
+  emit('navigate-to-slide', slideId)
+}
 </script>
 
 <template>
   <div class="title-slide animate-fade-in-up">
+    <!-- Navigation Buttons (solo mostrar si no es la primera slide) -->
+    <NavigationButtons
+      v-if="slide.order !== 0"
+      :current-slide-id="slide.id"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
+
     <h1 class="main-title">{{ slide.title }}</h1>
     <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
     <p v-if="slide.author" class="author">{{ slide.author }}</p>

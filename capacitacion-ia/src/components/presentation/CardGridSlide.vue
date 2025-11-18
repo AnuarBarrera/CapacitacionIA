@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import type { ICardGridSlide } from '@/interfaces/Slide'
+import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 const props = defineProps<{
   slide: ICardGridSlide
@@ -9,6 +10,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   'navigate-to-slide': [slideId: string]
   next: []
+  previous: []
 }>()
 
 // Estado para controlar qué tarjetas están expandidas
@@ -64,10 +66,25 @@ const handleCardClick = (link?: string) => {
 const handleNextClick = () => {
   emit('next')
 }
+
+const handlePreviousClick = () => {
+  emit('previous')
+}
+
+const handleNavigateToSlide = (slideId: string) => {
+  emit('navigate-to-slide', slideId)
+}
 </script>
 
 <template>
   <div class="card-grid-slide">
+    <!-- Navigation Buttons -->
+    <NavigationButtons
+      :current-slide-id="slide.id"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
+
     <!-- Hero Section -->
     <div class="hero-section">
       <h2 class="hero-title">{{ slide.title }}</h2>
