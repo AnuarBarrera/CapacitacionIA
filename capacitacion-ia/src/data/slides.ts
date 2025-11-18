@@ -49,63 +49,63 @@ export const slidesData: Slide[] = [
         title: '¿Qué es la IA?',
         description: 'Introducción a la Inteligencia Artificial',
         icon: '🧠',
-        link: '#que-es-ia'
+        link: 'que-es-ia'
       },
       {
         id: 'menu-los-5-grandes',
         title: 'Las 5 Plataformas',
         description: 'Principales plataformas de IA',
         icon: '⭐',
-        link: '#los-5-grandes'
+        link: 'los-5-grandes'
       },
       {
         id: 'menu-chatgpt',
         title: 'ChatGPT',
         description: 'La IA más popular del mundo',
         icon: '💬',
-        link: '#chatgpt'
+        link: 'chatgpt'
       },
       {
         id: 'menu-gemini',
         title: 'Gemini',
         description: 'La IA multimodal de Google',
         icon: '🔷',
-        link: '#gemini'
+        link: 'gemini'
       },
       {
         id: 'menu-claude',
         title: 'Claude',
         description: 'IA experta en análisis y código',
         icon: '🟠',
-        link: '#claude'
+        link: 'claude'
       },
       {
         id: 'menu-grok',
         title: 'Grok',
         description: 'IA conectada a X/Twitter',
         icon: '🐦',
-        link: '#grok'
+        link: 'grok'
       },
       {
         id: 'menu-meta-ai',
         title: 'Meta AI',
         description: 'IA integrada en WhatsApp e Instagram',
         icon: '📱',
-        link: '#meta-ai'
+        link: 'meta-ai'
       },
       {
         id: 'menu-otras',
         title: 'Otras Herramientas',
         description: 'Herramientas especializadas',
         icon: '🛠️',
-        link: '#otras'
+        link: 'otras'
       },
       {
         id: 'menu-cierre',
         title: 'Contacto',
         description: 'Comienza tu transformación digital',
         icon: '🚀',
-        link: '#cierre'
+        link: 'cierre'
       }
     ],
     columns: 3,
