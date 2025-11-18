@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import type { ITypewriterSlide } from '@/interfaces/Slide'
+import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 const props = defineProps<{
   slide: ITypewriterSlide
@@ -8,6 +9,8 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   next: []
+  previous: []
+  'navigate-to-slide': [slideId: string]
 }>()
 
 const displayedText = ref<string[]>([])
@@ -17,6 +20,14 @@ const isComplete = ref(false)
 
 const handleContinueClick = () => {
   emit('next')
+}
+
+const handlePreviousClick = () => {
+  emit('previous')
+}
+
+const handleNavigateToSlide = (slideId: string) => {
+  emit('navigate-to-slide', slideId)
 }
 
 let intervalId: number | null = null
@@ -65,6 +76,13 @@ onUnmounted(() => {
 
 <template>
   <div class="typewriter-slide">
+    <!-- Navigation Buttons -->
+    <NavigationButtons
+      :current-slide-id="slide.id"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
+
     <h2 class="slide-title">{{ slide.title }}</h2>
 
     <div class="typewriter-container">

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { IResourceSlide } from '@/interfaces/Slide'
+import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 const props = defineProps<{
   slide: IResourceSlide
@@ -7,6 +8,8 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   next: []
+  previous: []
+  'navigate-to-slide': [slideId: string]
 }>()
 
 const getResourceIcon = (type: string): string => {
@@ -25,10 +28,25 @@ const openLink = (url: string) => {
 const handleNextClick = () => {
   emit('next')
 }
+
+const handlePreviousClick = () => {
+  emit('previous')
+}
+
+const handleNavigateToSlide = (slideId: string) => {
+  emit('navigate-to-slide', slideId)
+}
 </script>
 
 <template>
   <div class="resource-slide">
+    <!-- Navigation Buttons -->
+    <NavigationButtons
+      :current-slide-id="slide.id"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
+
     <div class="header">
       <div v-if="slide.logoUrl" class="logo">
         <img :src="slide.logoUrl" :alt="slide.platform" />

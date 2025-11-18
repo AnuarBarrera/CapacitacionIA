@@ -4056,6 +4056,9 @@ export const slidesData: Slide[] = [
             <path d="M60,190 L75,210 L110,170" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round">
               <animate attributeName="opacity" values="0;1" dur="1s" begin="1.5s" fill="freeze"/>
             </path>
+            <path d="M290,190 L305,210 L340,170" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round">
+              <animate attributeName="opacity" values="0;1" dur="1s" begin="2s" fill="freeze"/>
+            </path>
           </g>
         </svg>`
       },
@@ -4177,45 +4180,88 @@ export const slidesData: Slide[] = [
               <stop offset="50%" style="stop-color:#25d366;stop-opacity:0.2" />
               <stop offset="100%" style="stop-color:#e4405f;stop-opacity:0.2" />
             </linearGradient>
-            <linearGradient id="metaGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:1" />
-              <stop offset="50%" style="stop-color:#25d366;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#e4405f;stop-opacity:1" />
-            </linearGradient>
           </defs>
 
           <rect width="400" height="250" fill="url(#metaGrad1)"/>
 
-          <!-- Three interconnected circles representing Meta platforms -->
-          <g opacity="0.6">
-            <!-- WhatsApp -->
-            <circle cx="120" cy="125" r="50" fill="none" stroke="#25d366" stroke-width="3">
-              <animate attributeName="r" values="50;55;50" dur="3s" repeatCount="indefinite"/>
-            </circle>
-            <!-- Facebook -->
-            <circle cx="200" cy="80" r="45" fill="none" stroke="#0084ff" stroke-width="3">
-              <animate attributeName="r" values="45;50;45" dur="3s" begin="1s" repeatCount="indefinite"/>
-            </circle>
-            <!-- Instagram -->
-            <circle cx="280" cy="125" r="50" fill="none" stroke="#e4405f" stroke-width="3">
-              <animate attributeName="r" values="50;55;50" dur="3s" begin="2s" repeatCount="indefinite"/>
-            </circle>
+          <!-- WhatsApp conversation -->
+          <g transform="translate(50, 60)">
+            <!-- WhatsApp icon -->
+            <circle cx="0" cy="0" r="20" fill="#25d366"/>
+            <path d="M-8,-2 Q-8,-8 -2,-8 Q8,-8 8,-2 Q8,4 2,4 L-2,4 L-8,8 L-8,-2 Z" fill="white"/>
+
+            <!-- Chat bubbles -->
+            <rect x="25" y="-15" width="70" height="20" rx="10" fill="#25d366" opacity="0.6">
+              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="0.5s" fill="freeze"/>
+            </rect>
+            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¡Hola! ¿Cómo estás?</text>
           </g>
 
-          <!-- Connecting lines -->
-          <g opacity="0.3">
-            <line x1="150" y1="105" x2="180" y2="90" stroke="url(#metaGrad2)" stroke-width="2"/>
-            <line x1="220" y1="100" x2="260" y2="115" stroke="url(#metaGrad2)" stroke-width="2"/>
-            <line x1="140" y1="150" x2="260" y2="150" stroke="url(#metaGrad2)" stroke-width="2"/>
+          <!-- Facebook Messenger conversation -->
+          <g transform="translate(50, 125)">
+            <!-- Facebook Messenger icon -->
+            <circle cx="0" cy="0" r="20" fill="#0084ff"/>
+            <path d="M0,-10 L-8,0 L-3,0 L-3,8 L3,0 L8,0 Z" fill="white"/>
+
+            <!-- Chat bubbles -->
+            <rect x="25" y="-15" width="80" height="20" rx="10" fill="#0084ff" opacity="0.6">
+              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1s" fill="freeze"/>
+            </rect>
+            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¿Me ayudas con algo?</text>
           </g>
 
-          <!-- Center AI icon -->
-          <g transform="translate(200, 125)">
-            <circle r="20" fill="url(#metaGrad2)" opacity="0.2">
-              <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
-            </circle>
-            <path d="M-8,-8 L8,8 M8,-8 L-8,8" stroke="#0084ff" stroke-width="3" stroke-linecap="round"/>
+          <!-- Instagram conversation -->
+          <g transform="translate(50, 190)">
+            <!-- Instagram icon -->
+            <rect x="-20" y="-20" width="40" height="40" rx="12" fill="url(#instagramGrad)"/>
+            <defs>
+              <linearGradient id="instagramGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f58529;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#dd2a7b;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#8134af;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <rect x="-12" y="-12" width="24" height="24" rx="6" fill="none" stroke="white" stroke-width="2.5"/>
+            <circle cx="0" cy="0" r="6" fill="none" stroke="white" stroke-width="2.5"/>
+            <circle cx="8" cy="-8" r="2" fill="white"/>
+
+            <!-- Chat bubbles -->
+            <rect x="25" y="-15" width="85" height="20" rx="10" fill="#e4405f" opacity="0.6">
+              <animate attributeName="opacity" values="0;0.6" dur="1s" begin="1.5s" fill="freeze"/>
+            </rect>
+            <text x="35" y="0" fill="white" font-size="10" opacity="0.8">¿Puedes crear una imagen?</text>
           </g>
+
+          <!-- Meta AI brain/assistant -->
+          <g transform="translate(320, 125)">
+            <circle r="35" fill="#0084ff" opacity="0.15">
+              <animate attributeName="r" values="35;40;35" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- AI brain icon -->
+            <path d="M-15,-10 Q-15,-20 0,-20 Q15,-20 15,-10 Q20,-10 20,0 Q20,10 15,10 L15,15 L5,15 L5,20 L-5,20 L-5,15 L-15,15 L-15,10 Q-20,10 -20,0 Q-20,-10 -15,-10 Z" fill="#0084ff" opacity="0.8"/>
+            <circle cx="-8" cy="-8" r="2" fill="white"/>
+            <circle cx="8" cy="-8" r="2" fill="white"/>
+            <path d="M-6,0 Q0,3 6,0" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Connecting arrows -->
+          <g opacity="0.4">
+            <path d="M120,70 Q200,70 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+              <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" fill="freeze"/>
+            </path>
+            <path d="M130,135 Q200,130 285,125" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+              <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" begin="0.3s" fill="freeze"/>
+            </path>
+            <path d="M135,200 Q230,160 285,135" stroke="#0084ff" stroke-width="2" fill="none" marker-end="url(#arrowMeta)">
+              <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="2s" begin="0.6s" fill="freeze"/>
+            </path>
+          </g>
+
+          <defs>
+            <marker id="arrowMeta" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#0084ff"/>
+            </marker>
+          </defs>
         </svg>`
       },
       {
@@ -4249,7 +4295,25 @@ export const slidesData: Slide[] = [
 
           <rect width="400" height="250" fill="url(#metaContentGrad)"/>
 
-          <!-- Phone mockup -->
+          <!-- WhatsApp icon (top left) -->
+          <g transform="translate(60, 60)">
+            <circle r="25" fill="#25d366"/>
+            <path d="M-10,-2 Q-10,-10 -2,-10 Q10,-10 10,-2 Q10,5 2,5 L-2,5 L-10,10 L-10,-2 Z" fill="white"/>
+            <circle r="30" fill="none" stroke="#25d366" stroke-width="2" opacity="0.3">
+              <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Facebook icon (top right) -->
+          <g transform="translate(340, 60)">
+            <circle r="25" fill="#0084ff"/>
+            <path d="M5,-15 L5,15 M5,-5 L15,-5" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <circle r="30" fill="none" stroke="#0084ff" stroke-width="2" opacity="0.3">
+              <animate attributeName="r" values="30;35;30" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Phone mockup (center) -->
           <g transform="translate(150, 50)">
             <rect x="0" y="0" width="100" height="160" rx="10" fill="#ffffff" opacity="0.1" stroke="#0084ff" stroke-width="2"/>
             <rect x="35" y="5" width="30" height="4" rx="2" fill="#0084ff" opacity="0.3"/>
@@ -4267,16 +4331,34 @@ export const slidesData: Slide[] = [
             <rect x="20" y="80" width="70" height="15" rx="8" fill="#25d366" opacity="0.4">
               <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1.5s" fill="freeze"/>
             </rect>
+
+            <!-- Camera icon at bottom of phone -->
+            <g transform="translate(50, 130)">
+              <rect x="-15" y="-12" width="30" height="24" rx="3" fill="none" stroke="#e4405f" stroke-width="2"/>
+              <circle r="6" fill="none" stroke="#e4405f" stroke-width="2"/>
+            </g>
           </g>
 
-          <!-- Content icons -->
-          <g transform="translate(270, 100)">
-            <!-- Camera icon -->
-            <rect x="0" y="0" width="30" height="25" rx="3" fill="none" stroke="#e4405f" stroke-width="2"/>
-            <circle cx="15" cy="13" r="6" fill="none" stroke="#e4405f" stroke-width="2"/>
-            <!-- Sparkle -->
-            <path d="M35,5 L38,10 L35,15 L32,10 Z" fill="#0084ff" opacity="0.6">
-              <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+          <!-- Content creation sparkles -->
+          <g opacity="0.7">
+            <path d="M110,125 L115,130 L110,135 L105,130 Z" fill="#0084ff">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M290,125 L295,130 L290,135 L285,130 Z" fill="#25d366">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </path>
+            <path d="M200,30 L205,35 L200,40 L195,35 Z" fill="#e4405f">
+              <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </path>
+          </g>
+
+          <!-- Connecting lines from platforms to phone -->
+          <g opacity="0.3">
+            <path d="M85,60 Q120,60 150,80" stroke="#25d366" stroke-width="2" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
+            </path>
+            <path d="M315,60 Q280,60 250,80" stroke="#0084ff" stroke-width="2" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
             </path>
           </g>
         </svg>`
@@ -4316,36 +4398,52 @@ export const slidesData: Slide[] = [
 
           <rect width="400" height="250" fill="url(#metaAnalysisGrad)"/>
 
-          <!-- Pie chart -->
+          <!-- Pie chart (fixed - static, not rotating) -->
           <g transform="translate(120, 125)">
             <circle r="60" fill="none" stroke="#e5e7eb" stroke-width="2" opacity="0.2"/>
-            <path d="M0,-60 A60,60 0 0,1 52,-30 L0,0 Z" fill="#0084ff" opacity="0.5">
-              <animateTransform attributeName="transform" type="rotate"
-                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
-            </path>
-            <path d="M52,-30 A60,60 0 0,1 30,52 L0,0 Z" fill="#25d366" opacity="0.5">
-              <animateTransform attributeName="transform" type="rotate"
-                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
-            </path>
-            <path d="M30,52 A60,60 0 0,1 0,-60 L0,0 Z" fill="#e4405f" opacity="0.5">
-              <animateTransform attributeName="transform" type="rotate"
-                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
-            </path>
+            <!-- Segment 1: 40% (144 degrees) -->
+            <path d="M0,-60 A60,60 0 0,1 52,30 L0,0 Z" fill="#0084ff" opacity="0.6"/>
+            <!-- Segment 2: 35% (126 degrees) -->
+            <path d="M52,30 A60,60 0 0,1 -42,-42 L0,0 Z" fill="#25d366" opacity="0.6"/>
+            <!-- Segment 3: 25% (90 degrees) -->
+            <path d="M-42,-42 A60,60 0 0,1 0,-60 L0,0 Z" fill="#e4405f" opacity="0.6"/>
+            <!-- Subtle pulse on whole chart -->
+            <circle r="60" fill="none" stroke="#0084ff" stroke-width="2" opacity="0">
+              <animate attributeName="r" values="60;70" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.3;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
           </g>
 
-          <!-- Data points -->
+          <!-- Data points chart (with all quadrants) -->
           <g transform="translate(250, 125)">
-            <circle cx="0" cy="-40" r="4" fill="#0084ff">
-              <animate attributeName="cy" values="-40;-50;-40" dur="2s" repeatCount="indefinite"/>
+            <!-- Horizontal and vertical axes -->
+            <line x1="-10" y1="0" x2="100" y2="0" stroke="#e5e7eb" stroke-width="1" opacity="0.3"/>
+            <line x1="0" y1="-60" x2="0" y2="60" stroke="#e5e7eb" stroke-width="1" opacity="0.3"/>
+
+            <!-- Data points - Quadrant 1 (top-right) -->
+            <circle cx="20" cy="-40" r="5" fill="#0084ff">
+              <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="30" cy="-20" r="4" fill="#25d366">
-              <animate attributeName="cy" values="-20;-30;-20" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            <circle cx="50" cy="-20" r="5" fill="#25d366">
+              <animate attributeName="r" values="5;7;5" dur="2s" begin="0.3s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="60" cy="-35" r="4" fill="#e4405f">
-              <animate attributeName="cy" values="-35;-45;-35" dur="2s" begin="1s" repeatCount="indefinite"/>
+
+            <!-- Data points - Quadrant 2 (top-left) -->
+            <circle cx="-8" cy="-35" r="5" fill="#e4405f">
+              <animate attributeName="r" values="5;7;5" dur="2s" begin="0.6s" repeatCount="indefinite"/>
             </circle>
-            <circle cx="90" cy="-25" r="4" fill="#0084ff">
-              <animate attributeName="cy" values="-25;-35;-25" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+
+            <!-- Data points - Quadrant 3 (bottom-left) -->
+            <circle cx="-8" cy="25" r="5" fill="#0084ff">
+              <animate attributeName="r" values="5;7;5" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Data points - Quadrant 4 (bottom-right) -->
+            <circle cx="35" cy="40" r="5" fill="#25d366">
+              <animate attributeName="r" values="5;7;5" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="70" cy="30" r="5" fill="#e4405f">
+              <animate attributeName="r" values="5;7;5" dur="2s" begin="1.5s" repeatCount="indefinite"/>
             </circle>
           </g>
         </svg>`
@@ -4408,13 +4506,23 @@ export const slidesData: Slide[] = [
             </circle>
           </g>
 
-          <!-- Sparkles -->
+          <!-- Sparkles (all quadrants) -->
           <g opacity="0.7">
+            <!-- Top-left -->
             <path d="M90,70 L95,75 L90,80 L85,75 Z" fill="#0084ff">
               <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
             </path>
+            <!-- Top-right -->
             <path d="M300,90 L305,95 L300,100 L295,95 Z" fill="#25d366">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Bottom-left -->
+            <path d="M95,185 L100,190 L95,195 L90,190 Z" fill="#e4405f">
               <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </path>
+            <!-- Bottom-right -->
+            <path d="M305,175 L310,180 L305,185 L300,180 Z" fill="#833ab4">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
             </path>
           </g>
         </svg>`
@@ -4543,6 +4651,9 @@ export const slidesData: Slide[] = [
             </circle>
             <circle cx="80" cy="190" r="20" fill="#e4405f">
               <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1.5s" fill="freeze"/>
+            </circle>
+            <circle cx="320" cy="190" r="20" fill="#833ab4">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="2s" fill="freeze"/>
             </circle>
           </g>
         </svg>`

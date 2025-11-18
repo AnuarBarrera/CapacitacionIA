@@ -95,6 +95,7 @@ watch(currentSlideIndex, () => {
           :key="currentSlide.id"
           :slide="currentSlide"
           @next="nextSlide"
+          @previous="previousSlide"
           @navigation-allowed="handleNavigationAllowed"
           @navigate-to-slide="handleNavigateToSlide"
         />

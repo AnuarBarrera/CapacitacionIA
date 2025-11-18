@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import type { IContentSlide } from '@/interfaces/Slide'
+import NavigationButtons from '@/components/common/NavigationButtons.vue'
 
 const props = defineProps<{
   slide: IContentSlide
@@ -8,6 +9,8 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   next: []
+  previous: []
+  'navigate-to-slide': [slideId: string]
   'navigation-allowed': [allowed: boolean]
 }>()
 
@@ -136,6 +139,14 @@ const handleNextClick = () => {
   emit('next')
 }
 
+const handlePreviousClick = () => {
+  emit('previous')
+}
+
+const handleNavigateToSlide = (slideId: string) => {
+  emit('navigate-to-slide', slideId)
+}
+
 // Emitir estado inicial cuando se monta el componente
 onMounted(() => {
   checkNavigationAllowed()
@@ -144,6 +155,13 @@ onMounted(() => {
 
 <template>
   <div class="content-slide">
+    <!-- Navigation Buttons -->
+    <NavigationButtons
+      :current-slide-id="slide.id"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
+
     <!-- Hero Section -->
     <div class="hero-section">
       <h2 class="hero-title">{{ slide.title }}</h2>
