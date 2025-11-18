@@ -2670,6 +2670,216 @@ export const slidesData: Slide[] = [
     order: 12
   },
 
+  // Grok - Slides de Contenido Detallado
+  {
+    id: 'grok-titulo',
+    title: 'Grok 4',
+    type: SlideType.CONTENT,
+    content: 'El asistente IA más potente y sin censura',
+    customBullets: [
+      {
+        text: 'Desarrollado por xAI, la compañía de IA de Elon Musk',
+        keyword: '🚀 El Poder de la IA Sin Límites:'
+      },
+      {
+        text: 'Acceso directo a toda la información en tiempo real de X (antes Twitter)',
+        keyword: '🌐 Conectado al Pulso Mundial:'
+      },
+      {
+        text: 'Enfoque en respuestas directas, sin filtros excesivos',
+        keyword: '💡 Transparencia Total:'
+      },
+      {
+        text: 'Compite directamente con ChatGPT, Claude y Gemini',
+        keyword: '⚡ Competencia de Primera:'
+      }
+    ],
+    order: 12.1
+  },
+  {
+    id: 'grok-quien-es',
+    title: '¿Quién es Grok 4?',
+    type: SlideType.CONTENT,
+    content: 'Un asistente diferente',
+    bullets: [
+      'Asistente de IA conversacional desarrollado por xAI',
+      'Modelo actual: Grok 4 (versión más avanzada)',
+      'Entrenado con datos masivos de X y otras fuentes',
+      'Diseñado para ser útil, honesto y directo',
+      'Acceso exclusivo para suscriptores de X Premium+'
+    ],
+    order: 12.2
+  },
+  {
+    id: 'grok-capacidades-basicas',
+    title: 'Capacidades Básicas de Grok 4',
+    type: SlideType.CONTENT,
+    content: 'Lo que Grok puede hacer por ti',
+    customBullets: [
+      {
+        text: 'Conversaciones naturales e informativas • Respuestas con contexto • Explicaciones detalladas',
+        keyword: '💬 Conversación Inteligente:'
+      },
+      {
+        text: 'Resúmenes de texto • Redacción de correos • Creación de contenido • Traducciones',
+        keyword: '✍️ Generación de Contenido:'
+      },
+      {
+        text: 'Responde preguntas con información actualizada de X • Tendencias y noticias en tiempo real',
+        keyword: '🔍 Investigación en Tiempo Real:'
+      },
+      {
+        text: 'Solución de problemas matemáticos • Análisis de datos básicos',
+        keyword: '📊 Razonamiento y Análisis:'
+      }
+    ],
+    order: 12.3
+  },
+  {
+    id: 'grok-busqueda-tiempo-real',
+    title: 'Búsqueda y Análisis en Tiempo Real',
+    type: SlideType.CONTENT,
+    content: 'La ventaja competitiva de Grok',
+    customBullets: [
+      {
+        text: 'Conexión directa con X (Twitter) para información actualizada al segundo',
+        keyword: '🌍 Acceso Instantáneo a X:'
+      },
+      {
+        text: 'Análisis de tendencias, noticias y conversaciones globales en tiempo real',
+        keyword: '📈 Análisis de Tendencias:'
+      },
+      {
+        text: 'Ideal para monitoreo de marca, análisis de sentimiento y detección de crisis',
+        keyword: '🔔 Monitoreo de Marca:'
+      },
+      {
+        text: 'Información que otros modelos de IA no tienen hasta que se actualicen',
+        keyword: '⚡ Ventaja Temporal:'
+      }
+    ],
+    order: 12.4
+  },
+  {
+    id: 'grok-programacion',
+    title: 'Programación y Ejecución de Código',
+    type: SlideType.CONTENT,
+    content: 'Grok como asistente de desarrollo',
+    bullets: [
+      'Genera código en múltiples lenguajes (Python, JavaScript, Java, etc.)',
+      'Explica código existente línea por línea',
+      'Depura errores y sugiere mejoras',
+      'Puede ejecutar código Python en tiempo real',
+      'Crea scripts para automatización de tareas',
+      'Genera documentación técnica'
+    ],
+    order: 12.5
+  },
+  {
+    id: 'grok-analisis-archivos',
+    title: 'Análisis de Archivos',
+    type: SlideType.CONTENT,
+    content: 'Procesa tus documentos',
+    customBullets: [
+      {
+        text: 'Carga y analiza archivos PDF, TXT, CSV y más',
+        keyword: '📄 Formatos Soportados:'
+      },
+      {
+        text: 'Extracción de información clave • Resúmenes automáticos • Análisis de contenido',
+        keyword: '🔍 Procesamiento Inteligente:'
+      },
+      {
+        text: 'Análisis de hojas de cálculo • Identificación de patrones • Generación de insights',
+        keyword: '📊 Análisis de Datos:'
+      },
+      {
+        text: 'Ahorra horas de lectura y análisis manual',
+        keyword: '⏱️ Productividad:'
+      }
+    ],
+    order: 12.6
+  },
+  {
+    id: 'grok-graficos',
+    title: 'Gráficos y Visualización de Datos',
+    type: SlideType.CONTENT,
+    content: 'Convierte datos en visualizaciones',
+    bullets: [
+      'Genera gráficos y visualizaciones a partir de datos',
+      'Crea gráficos de barras, líneas, pastel, dispersión, etc.',
+      'Analiza tendencias con representaciones visuales',
+      'Exporta gráficos para presentaciones',
+      'Simplifica la interpretación de información compleja'
+    ],
+    order: 12.7
+  },
+  {
+    id: 'grok-imagenes',
+    title: 'Generación y Edición de Imágenes',
+    type: SlideType.CONTENT,
+    content: 'Creatividad visual con IA',
+    customBullets: [
+      {
+        text: 'Integración con Aurora (modelo de generación de imágenes de xAI)',
+        keyword: '🎨 Generación de Imágenes:'
+      },
+      {
+        text: 'Crea ilustraciones, logos, conceptos visuales desde texto',
+        keyword: '✨ Creación Visual:'
+      },
+      {
+        text: 'Edición y modificación de imágenes existentes',
+        keyword: '🖼️ Edición:'
+      },
+      {
+        text: 'Estilos personalizables: realista, artístico, minimalista, etc.',
+        keyword: '🎭 Estilos Variados:'
+      }
+    ],
+    order: 12.8
+  },
+  {
+    id: 'grok-limitaciones',
+    title: 'Lo que NO tiene Grok (por ahora)',
+    type: SlideType.CONTENT,
+    content: 'Conoce las limitaciones',
+    bullets: [
+      'No tiene acceso completo a internet (solo X y fuentes limitadas)',
+      'No puede navegar sitios web externos como Claude o Bing',
+      'Requiere suscripción de pago (X Premium+)',
+      'No tiene aplicación móvil dedicada (solo web)',
+      'Menos herramientas integradas comparado con ChatGPT o Claude',
+      'Comunidad de plugins y extensiones aún en desarrollo'
+    ],
+    order: 12.9
+  },
+  {
+    id: 'grok-conclusion',
+    title: 'Conclusión: ¿Cuándo usar Grok 4?',
+    type: SlideType.CONTENT,
+    content: 'El mejor momento para Grok',
+    customBullets: [
+      {
+        text: 'Información en tiempo real de X/Twitter • Monitoreo de tendencias • Análisis de conversaciones sociales',
+        keyword: '✅ Úsalo cuando necesites:'
+      },
+      {
+        text: 'Respuestas sin filtros excesivos • Perspectivas directas',
+        keyword: '✅ Úsalo si prefieres:'
+      },
+      {
+        text: 'Programación básica/intermedia • Visualización de datos • Generación de imágenes con Aurora',
+        keyword: '✅ Úsalo para:'
+      },
+      {
+        text: 'Investigación profunda en web externa • Análisis de documentos largos complejos • Desarrollo de software avanzado',
+        keyword: '❌ No es ideal para:'
+      }
+    ],
+    order: 12.93
+  },
+
   // Vista 14: Meta AI
   {
     id: 'meta-ai',
