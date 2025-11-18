@@ -39,7 +39,7 @@ const handleNextClick = () => {
 
     <div class="content-grid">
       <div class="resources-section">
-        <h3 class="section-title">📍 Acceso Rápido</h3>
+        <h3 class="section-title">📍 Links Oficiales</h3>
         <div class="resources-list">
           <a
             v-for="(resource, index) in slide.resources"

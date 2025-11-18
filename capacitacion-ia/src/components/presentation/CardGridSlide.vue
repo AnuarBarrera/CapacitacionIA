@@ -152,7 +152,7 @@ const handleNextClick = () => {
 
     <!-- Botón para continuar - Aparece cuando todas las tarjetas están expandidas O cuando no hay contenido expandible -->
     <Transition name="fade-in">
-      <button v-if="allCardsExpanded || expandableCardsCount === 0" class="next-button" @click="handleNextClick">
+      <button v-if="(allCardsExpanded || expandableCardsCount === 0) && slide.showContinueButton !== false" class="next-button" @click="handleNextClick">
         Click para continuar
         <svg
           viewBox="0 0 24 24"
