@@ -1201,14 +1201,26 @@ export const slidesData: Slide[] = [
             <rect x="8" y="52" width="45" height="2" rx="1" fill="#343a40" opacity="0.6"/>
           </g>
 
-          <!-- JSON -->
+          <!-- JSON con syntax highlighting -->
           <g transform="translate(60, 115)">
-            <rect x="0" y="0" width="180" height="60" rx="5" fill="#2d3748" stroke="#4a5ba5" stroke-width="2"/>
+            <rect x="0" y="0" width="180" height="60" rx="5" fill="#1e1e1e" stroke="#4a5ba5" stroke-width="2"/>
             <text x="10" y="15" class="fmt-label" fill="#51cf66" font-weight="bold">JSON / Código</text>
-            <text x="15" y="28" class="fmt-label" fill="#e9ecef" font-family="monospace">{"{"}</text>
-            <text x="25" y="38" class="fmt-label" fill="#e9ecef" font-family="monospace">"nombre": "valor",</text>
-            <text x="25" y="48" class="fmt-label" fill="#e9ecef" font-family="monospace">"items": [1, 2, 3]</text>
-            <text x="15" y="58" class="fmt-label" fill="#e9ecef" font-family="monospace">{"}"}</text>
+
+            <!-- Línea 1: { -->
+            <text x="15" y="28" class="fmt-label" fill="#ffd700" font-family="monospace">{"{"}</text>
+
+            <!-- Línea 2: "nombre": "valor", -->
+            <text x="25" y="38" class="fmt-label" font-family="monospace">
+              <tspan fill="#61afef">"nombre"</tspan><tspan fill="#abb2bf">: </tspan><tspan fill="#98c379">"valor"</tspan><tspan fill="#abb2bf">,</tspan>
+            </text>
+
+            <!-- Línea 3: "items": [1, 2, 3] -->
+            <text x="25" y="48" class="fmt-label" font-family="monospace">
+              <tspan fill="#61afef">"items"</tspan><tspan fill="#abb2bf">: [</tspan><tspan fill="#d19a66">1</tspan><tspan fill="#abb2bf">, </tspan><tspan fill="#d19a66">2</tspan><tspan fill="#abb2bf">, </tspan><tspan fill="#d19a66">3</tspan><tspan fill="#abb2bf">]</tspan>
+            </text>
+
+            <!-- Línea 4: } -->
+            <text x="15" y="58" class="fmt-label" fill="#ffd700" font-family="monospace">{"}"}</text>
           </g>
         </svg>`
       },
@@ -1227,73 +1239,82 @@ export const slidesData: Slide[] = [
           'Pide variaciones: "Hazlo más [X]"',
           'La iteración mejora el resultado'
         ],
-        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+        svgContent: `<svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
-              .iter-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; }
-              .iter-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 9px; }
+              .flow-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; }
+              .flow-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 9px; }
             </style>
-            <marker id="arrowIter" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-              <polygon points="0 0, 10 5, 0 10" fill="#4a5ba5"/>
+            <marker id="arrowFlow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+              <polygon points="0 0, 8 4, 0 8" fill="#4a5ba5"/>
             </marker>
           </defs>
 
-          <!-- Ciclo de iteración -->
-          <g transform="translate(150, 100)">
-            <!-- Círculo central -->
-            <circle cx="0" cy="0" r="60" fill="none" stroke="#4a5ba5" stroke-width="2" stroke-dasharray="5,5">
-              <animate attributeName="stroke-dashoffset" values="0;-10" dur="2s" repeatCount="indefinite"/>
-            </circle>
+          <!-- Diagrama de flujo vertical -->
 
-            <!-- Intento 1 -->
-            <g transform="translate(-70, -70)">
-              <circle cx="0" cy="0" r="25" fill="#ff6b6b" opacity="0.3" stroke="#ff6b6b" stroke-width="2"/>
-              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#ff6b6b" font-weight="bold">1</text>
-              <text x="0" y="35" class="iter-label" text-anchor="middle">Intento</text>
-              <text x="0" y="45" class="iter-label" text-anchor="middle">inicial</text>
-            </g>
-
-            <!-- Flecha 1 -->
-            <path d="M -50 -50 Q -20 -20 0 -70" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
-              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" repeatCount="indefinite"/>
-            </path>
-
-            <!-- Intento 2 -->
-            <g transform="translate(0, -90)">
-              <circle cx="0" cy="0" r="25" fill="#ffa500" opacity="0.3" stroke="#ffa500" stroke-width="2"/>
-              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#ffa500" font-weight="bold">2</text>
-              <text x="0" y="35" class="iter-label" text-anchor="middle">Ajuste</text>
-            </g>
-
-            <!-- Flecha 2 -->
-            <path d="M 20 -70 Q 50 -50 70 -70" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
-              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" begin="1s" repeatCount="indefinite"/>
-            </path>
-
-            <!-- Intento 3 -->
-            <g transform="translate(70, -70)">
-              <circle cx="0" cy="0" r="25" fill="#51cf66" opacity="0.3" stroke="#51cf66" stroke-width="2"/>
-              <text x="0" y="0" class="iter-text" text-anchor="middle" fill="#51cf66" font-weight="bold">3</text>
-              <text x="0" y="35" class="iter-label" text-anchor="middle">Refina</text>
-            </g>
-
-            <!-- Flecha 3 -->
-            <path d="M 70 -45 Q 50 -10 70 20" stroke="#4a5ba5" stroke-width="2" fill="none" marker-end="url(#arrowIter)">
-              <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" begin="2s" repeatCount="indefinite"/>
-            </path>
-
-            <!-- Resultado perfecto -->
-            <g transform="translate(70, 50)">
-              <circle cx="0" cy="0" r="30" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="3">
-                <animate attributeName="r" values="30;33;30" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <text x="0" y="-5" class="iter-text" text-anchor="middle" fill="#51cf66" font-size="20px">✓</text>
-              <text x="0" y="40" class="iter-text" text-anchor="middle" font-weight="bold">Perfecto!</text>
-            </g>
+          <!-- Paso 1: Intento inicial -->
+          <g transform="translate(150, 20)">
+            <rect x="-60" y="0" width="120" height="35" rx="5" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="0" y="15" class="flow-text" text-anchor="middle" fill="#ff6b6b">1. Intento inicial</text>
+            <text x="0" y="27" class="flow-label" text-anchor="middle">Primer prompt</text>
           </g>
 
-          <!-- Texto inferior -->
-          <text x="150" y="185" class="iter-label" text-anchor="middle" opacity="0.7">La iteración es clave para mejores resultados</text>
+          <!-- Flecha 1 -->
+          <line x1="150" y1="55" x2="150" y2="70" stroke="#4a5ba5" stroke-width="2" marker-end="url(#arrowFlow)">
+            <animate attributeName="stroke-dasharray" values="0,15;15,0" dur="1.5s" repeatCount="indefinite"/>
+          </line>
+
+          <!-- Paso 2: Analiza resultado -->
+          <g transform="translate(150, 75)">
+            <rect x="-60" y="0" width="120" height="35" rx="5" fill="#ffa500" opacity="0.2" stroke="#ffa500" stroke-width="2"/>
+            <text x="0" y="15" class="flow-text" text-anchor="middle" fill="#ffa500">2. Analiza resultado</text>
+            <text x="0" y="27" class="flow-label" text-anchor="middle">¿Qué falta?</text>
+          </g>
+
+          <!-- Flecha 2 -->
+          <line x1="150" y1="110" x2="150" y2="125" stroke="#4a5ba5" stroke-width="2" marker-end="url(#arrowFlow)">
+            <animate attributeName="stroke-dasharray" values="0,15;15,0" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+          </line>
+
+          <!-- Paso 3: Ajusta el prompt -->
+          <g transform="translate(150, 130)">
+            <rect x="-60" y="0" width="120" height="35" rx="5" fill="#4a90e2" opacity="0.2" stroke="#4a90e2" stroke-width="2"/>
+            <text x="0" y="15" class="flow-text" text-anchor="middle" fill="#4a90e2">3. Ajusta el prompt</text>
+            <text x="0" y="27" class="flow-label" text-anchor="middle">Refina detalles</text>
+          </g>
+
+          <!-- Flecha 3 -->
+          <line x1="150" y1="165" x2="150" y2="180" stroke="#4a5ba5" stroke-width="2" marker-end="url(#arrowFlow)">
+            <animate attributeName="stroke-dasharray" values="0,15;15,0" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
+          </line>
+
+          <!-- Decisión: ¿Satisfecho? -->
+          <g transform="translate(150, 195)">
+            <path d="M 0,-15 L 35,0 L 0,15 L -35,0 Z" fill="#e9ecef" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="0" y="-3" class="flow-label" text-anchor="middle" font-size="8px">¿Satisfecho?</text>
+          </g>
+
+          <!-- Flecha NO (regresa) -->
+          <g>
+            <path d="M 115 195 L 30 195 L 30 90 L 85 90" stroke="#ff6b6b" stroke-width="2" fill="none" marker-end="url(#arrowFlow)" stroke-dasharray="4,3"/>
+            <text x="45" y="192" class="flow-label" fill="#ff6b6b" font-weight="bold">NO</text>
+            <circle cx="30" cy="195" r="2" fill="#ff6b6b">
+              <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Flecha SÍ -->
+          <line x1="150" y1="210" x2="150" y2="220" stroke="#51cf66" stroke-width="2" marker-end="url(#arrowFlow)"/>
+          <text x="160" y="216" class="flow-label" fill="#51cf66" font-weight="bold">SÍ</text>
+
+          <!-- Resultado Final -->
+          <g transform="translate(150, 220)">
+            <rect x="-50" y="0" width="100" height="30" rx="8" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2.5">
+              <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <text x="-15" y="20" class="flow-text" text-anchor="middle" fill="#51cf66" font-size="16px">✓</text>
+            <text x="15" y="20" class="flow-text" text-anchor="middle" fill="#51cf66">¡Perfecto!</text>
+          </g>
         </svg>`
       }
     ],
