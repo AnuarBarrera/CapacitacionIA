@@ -2905,6 +2905,190 @@ export const slidesData: Slide[] = [
     order: 13
   },
 
+  // Meta AI - Slides de Contenido Detallado
+  {
+    id: 'meta-ai-introduccion',
+    title: 'Meta AI: La Inteligencia Artificial de Meta',
+    type: SlideType.CONTENT,
+    content: 'El asistente que vive donde tus clientes ya están',
+    customBullets: [
+      {
+        text: 'Desarrollado por Meta (Facebook, WhatsApp, Instagram)',
+        keyword: '🏢 Origen:'
+      },
+      {
+        text: 'Basado en Llama 4 (modelo de lenguaje de código abierto de Meta)',
+        keyword: '🤖 Modelo:'
+      },
+      {
+        text: 'Integrado directamente en WhatsApp, Facebook Messenger e Instagram',
+        keyword: '📱 Integración Nativa:'
+      },
+      {
+        text: 'Acceso gratuito sin aplicaciones adicionales',
+        keyword: '✨ Ventaja Competitiva:'
+      },
+      {
+        text: 'Ideal para empresas que ya usan plataformas de Meta para comunicación',
+        keyword: '💼 Caso de Uso Empresarial:'
+      }
+    ],
+    order: 13.1
+  },
+  {
+    id: 'meta-ai-nlp',
+    title: 'Procesamiento de Lenguaje Natural (NLP)',
+    type: SlideType.CONTENT,
+    content: 'Comprende y genera lenguaje humano',
+    bullets: [
+      'Conversaciones naturales y contextuales',
+      'Comprensión de intenciones y sentimientos',
+      'Respuestas en más de 100 idiomas',
+      'Traducciones en tiempo real durante conversaciones',
+      'Adaptación al tono y estilo de comunicación',
+      'Respuestas coherentes en conversaciones largas'
+    ],
+    order: 13.2
+  },
+  {
+    id: 'meta-ai-generacion-contenido',
+    title: 'Generación de Contenido',
+    type: SlideType.CONTENT,
+    content: 'Crea contenido para redes sociales y más',
+    customBullets: [
+      {
+        text: 'Posts para Facebook e Instagram • Captions atractivos • Hashtags relevantes',
+        keyword: '📝 Contenido Social:'
+      },
+      {
+        text: 'Correos electrónicos • Mensajes de WhatsApp Business • Respuestas automatizadas',
+        keyword: '✉️ Comunicación Empresarial:'
+      },
+      {
+        text: 'Ideas para campañas • Brainstorming creativo • Conceptos visuales',
+        keyword: '💡 Marketing y Publicidad:'
+      },
+      {
+        text: 'Scripts para videos • Guiones para Reels • Contenido para Stories',
+        keyword: '🎬 Contenido Multimedia:'
+      }
+    ],
+    order: 13.3
+  },
+  {
+    id: 'meta-ai-conversacion',
+    title: 'Conversación y Asistencia',
+    type: SlideType.CONTENT,
+    content: 'Asistente integrado en tus apps favoritas',
+    bullets: [
+      'Responde preguntas directamente en WhatsApp',
+      'Ayuda con tareas mientras chateas con amigos o clientes',
+      'Sugerencias inteligentes durante conversaciones',
+      'Búsqueda de información sin salir de la app',
+      'Asistencia para compras y recomendaciones',
+      'Programación de recordatorios y eventos'
+    ],
+    order: 13.4
+  },
+  {
+    id: 'meta-ai-analisis-prediccion',
+    title: 'Análisis y Predicción',
+    type: SlideType.CONTENT,
+    content: 'Insights para tu negocio',
+    customBullets: [
+      {
+        text: 'Análisis de conversaciones para detectar tendencias de clientes',
+        keyword: '📊 Análisis de Datos:'
+      },
+      {
+        text: 'Predicción de comportamiento de audiencia en redes sociales',
+        keyword: '🔮 Predicciones:'
+      },
+      {
+        text: 'Identificación de mejores horarios para publicar contenido',
+        keyword: '⏰ Optimización de Timing:'
+      },
+      {
+        text: 'Recomendaciones basadas en interacciones previas',
+        keyword: '🎯 Personalización:'
+      }
+    ],
+    order: 13.5
+  },
+  {
+    id: 'meta-ai-contenido-visual',
+    title: 'Creación de Contenido Visual',
+    type: SlideType.CONTENT,
+    content: 'Genera imágenes con IA',
+    bullets: [
+      'Generación de imágenes desde texto (text-to-image)',
+      'Creación de stickers personalizados para WhatsApp',
+      'Edición de fotos con comandos de texto',
+      'Generación de avatares y gráficos para redes sociales',
+      'Conceptos visuales para publicaciones',
+      'Integrado directamente en las apps de Meta'
+    ],
+    order: 13.6
+  },
+  {
+    id: 'meta-ai-integracion-api',
+    title: 'Integración y API',
+    type: SlideType.CONTENT,
+    content: 'Conecta Meta AI con tu negocio',
+    customBullets: [
+      {
+        text: 'WhatsApp Business API con integración de Meta AI',
+        keyword: '📱 WhatsApp Business:'
+      },
+      {
+        text: 'Chatbots inteligentes para atención al cliente 24/7',
+        keyword: '🤖 Automatización:'
+      },
+      {
+        text: 'Respuestas automáticas en Messenger para páginas de Facebook',
+        keyword: '💬 Messenger:'
+      },
+      {
+        text: 'Integración con sistemas CRM y plataformas de e-commerce',
+        keyword: '🔗 Ecosistema Empresarial:'
+      },
+      {
+        text: 'Modelo Llama disponible de forma gratuita para desarrolladores',
+        keyword: '🆓 Código Abierto:'
+      }
+    ],
+    order: 13.7
+  },
+  {
+    id: 'meta-ai-conclusion',
+    title: 'Conclusión: ¿Por qué elegir Meta AI?',
+    type: SlideType.CONTENT,
+    content: 'La ventaja de la integración',
+    customBullets: [
+      {
+        text: 'Tus clientes ya están en WhatsApp, Facebook e Instagram',
+        keyword: '✅ Úsalo si:'
+      },
+      {
+        text: 'Atención al cliente directa en WhatsApp Business',
+        keyword: '✅ Ideal para:'
+      },
+      {
+        text: 'Generación de contenido para redes sociales de Meta',
+        keyword: '✅ Perfecto para:'
+      },
+      {
+        text: 'Gratuito y sin instalación adicional (ya está integrado)',
+        keyword: '✅ Ventaja principal:'
+      },
+      {
+        text: 'Tareas avanzadas de programación • Análisis de documentos técnicos • Generación de video (aún no disponible)',
+        keyword: '❌ No es ideal para:'
+      }
+    ],
+    order: 13.93
+  },
+
   // Vista 15: Otras Herramientas
   {
     id: 'otras',
