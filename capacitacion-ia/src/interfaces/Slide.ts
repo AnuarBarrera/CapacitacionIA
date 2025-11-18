@@ -126,6 +126,7 @@ export interface ICardGridSlide extends ISlide {
   cards: ICard[]
   columns?: number
   flowDiagram?: string // SVG adicional al final de la slide
+  showContinueButton?: boolean // Si false, oculta el botón de continuar (por defecto: true)
 }
 
 /**

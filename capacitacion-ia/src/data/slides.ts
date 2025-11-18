@@ -1951,6 +1951,7 @@ export const slidesData: Slide[] = [
     title: 'Las 5 Plataformas Principales de IA',
     type: SlideType.CARD_GRID,
     description: 'Da clic en una para conocerla a detalle',
+    showContinueButton: false,
     cards: [
       {
         id: 'chatgpt',
@@ -2089,187 +2090,776 @@ export const slidesData: Slide[] = [
     order: 9
   },
 
-  // ChatGPT Slide 1: Modelos de Lenguaje
+  // ChatGPT Slide 1: Lo que puede hacer (fusionada con Funciones Técnicas)
   {
     id: 'chatgpt-modelos-lenguaje',
-    title: 'ChatGPT - Modelos de Lenguaje',
-    type: SlideType.CONTENT,
-    content: 'Qué puede hacer ChatGPT',
-    bullets: [
-      'Responder preguntas complejas con contexto y razonamiento',
-      'Explicar conceptos en cualquier nivel (básico → experto)',
-      'Redacción profesional: textos, correos, ensayos, guiones, discursos',
-      'Optimización y reescritura de contenido',
-      'Traducción avanzada y adaptación cultural',
-      'Análisis de documentos (resumen, extracción de datos, puntos clave)',
-      'Asistencia para toma de decisiones y análisis de escenarios',
-      'Simulación de roles (coach, consultor, analista, profesor)',
-      'Soporte en programación (debugging, explicación, generación segura de código)',
-      'Planificación: roadmaps, itinerarios, estrategias y guías paso a paso'
+    title: 'ChatGPT - Lo que puede hacer',
+    type: SlideType.CARD_GRID,
+    description: 'Explora las capacidades principales de ChatGPT',
+    cards: [
+      {
+        id: 'modelos-lenguaje',
+        title: 'Modelos de Lenguaje',
+        description: 'Capacidades de conversación y procesamiento de texto',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Responder preguntas complejas con contexto y razonamiento',
+          'Explicar conceptos en cualquier nivel (básico → experto)',
+          'Redacción profesional: textos, correos, ensayos, guiones, discursos',
+          'Optimización y reescritura de contenido',
+          'Traducción avanzada y adaptación cultural',
+          'Análisis de documentos (resumen, extracción de datos, puntos clave)',
+          'Asistencia para toma de decisiones y análisis de escenarios',
+          'Simulación de roles (coach, consultor, analista, profesor)',
+          'Soporte en programación (debugging, explicación, generación segura de código)',
+          'Planificación: roadmaps, itinerarios, estrategias y guías paso a paso'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="brain-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Cerebro central -->
+          <ellipse cx="200" cy="125" rx="80" ry="70" fill="url(#brain-gradient)" opacity="0.3"/>
+          <path d="M 140 125 Q 150 100 200 100 Q 250 100 260 125" stroke="#667eea" stroke-width="3" fill="none"/>
+          <path d="M 140 125 Q 150 150 200 150 Q 250 150 260 125" stroke="#667eea" stroke-width="3" fill="none"/>
+          <!-- Nodos de texto -->
+          <circle cx="100" cy="80" r="15" fill="#10b981"/>
+          <circle cx="300" cy="80" r="15" fill="#10b981"/>
+          <circle cx="100" cy="170" r="15" fill="#10b981"/>
+          <circle cx="300" cy="170" r="15" fill="#10b981"/>
+          <!-- Conexiones -->
+          <line x1="115" y1="80" x2="140" y2="110" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+          <line x1="285" y1="80" x2="260" y2="110" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+          <line x1="115" y1="170" x2="140" y2="140" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+          <line x1="285" y1="170" x2="260" y2="140" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+          <!-- Texto -->
+          <text x="100" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Entrada</text>
+          <text x="300" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Salida</text>
+          <text x="200" y="210" text-anchor="middle" fill="#667eea" font-size="14" font-weight="bold">Procesamiento Inteligente</text>
+        </svg>`
+      },
+      {
+        id: 'funciones-tecnicas',
+        title: 'Funciones Técnicas',
+        description: 'Capacidades avanzadas de análisis y generación',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Leer imágenes (análisis, OCR, diagnóstico visual, interpretación)',
+          'Leer archivos: PDF, Excel, docs, presentaciones, código',
+          'Generar archivos: PDF, Excel, Word, presentaciones, CSV',
+          'Análisis de datos: gráficas, estadísticas, limpieza y tabulación',
+          'Automatizaciones simples: scripts, workflows, lógica de negocio',
+          'Integración con APIs (explicación, creación, documentación)',
+          'Asesoría en arquitectura de software y ciberseguridad',
+          'Creación de materiales educativos (pruebas, dinámicas, ejercicios)',
+          'Diseño de interfaces (UI/UX): recomendaciones, prompts, wireframes'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="tech-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Documento -->
+          <rect x="50" y="60" width="80" height="100" rx="5" fill="url(#tech-gradient)" opacity="0.3"/>
+          <line x1="65" y1="80" x2="115" y2="80" stroke="#3b82f6" stroke-width="2"/>
+          <line x1="65" y1="100" x2="115" y2="100" stroke="#3b82f6" stroke-width="2"/>
+          <line x1="65" y1="120" x2="100" y2="120" stroke="#3b82f6" stroke-width="2"/>
+          <!-- Imagen -->
+          <rect x="160" y="60" width="80" height="60" rx="5" fill="url(#tech-gradient)" opacity="0.3"/>
+          <circle cx="180" cy="85" r="8" fill="#10b981"/>
+          <polygon points="160,120 190,95 220,110 240,100 240,120" fill="#8b5cf6" opacity="0.5"/>
+          <!-- Código -->
+          <rect x="270" y="60" width="80" height="100" rx="5" fill="#1f2937"/>
+          <text x="280" y="80" fill="#10b981" font-family="monospace" font-size="10">&lt;/&gt;</text>
+          <line x1="285" y1="90" x2="335" y2="90" stroke="#3b82f6" stroke-width="1"/>
+          <line x1="285" y1="100" x2="320" y2="100" stroke="#3b82f6" stroke-width="1"/>
+          <line x1="285" y1="110" x2="330" y2="110" stroke="#3b82f6" stroke-width="1"/>
+          <!-- Flechas procesamiento -->
+          <path d="M 130 110 L 155 90" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <path d="M 240 90 L 265 110" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <!-- Texto -->
+          <text x="200" y="210" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">Análisis Multimodal</text>
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#667eea"/>
+            </marker>
+          </defs>
+        </svg>`
+      }
     ],
     order: 9.1
   },
 
-  // ChatGPT Slide 2: Funciones Técnicas
+  // ChatGPT Slide 2: Buenas Prácticas
   {
-    id: 'chatgpt-funciones-tecnicas',
-    title: 'ChatGPT - Funciones Técnicas',
-    type: SlideType.CONTENT,
-    content: 'Qué puede hacer',
-    bullets: [
-      'Leer imágenes (análisis, OCR, diagnóstico visual, interpretación)',
-      'Leer archivos: PDF, Excel, docs, presentaciones, código',
-      'Generar archivos: PDF, Excel, Word, presentaciones, CSV',
-      'Análisis de datos: gráficas, estadísticas, limpieza y tabulación',
-      'Automatizaciones simples: scripts, workflows, lógica de negocio',
-      'Integración con APIs (explicación, creación, documentación)',
-      'Asesoría en arquitectura de software y ciberseguridad',
-      'Creación de materiales educativos (pruebas, dinámicas, ejercicios)',
-      'Diseño de interfaces (UI/UX): recomendaciones, prompts, wireframes'
+    id: 'chatgpt-limitaciones',
+    title: 'ChatGPT - Buenas Prácticas',
+    type: SlideType.CARD_GRID,
+    description: 'Aprende a usar ChatGPT de manera efectiva',
+    cards: [
+      {
+        id: 'buenas-practicas',
+        title: 'Buenas Prácticas',
+        description: 'Recomendaciones para obtener mejores resultados',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Pedir formatos claros y específicos',
+          'Dar ejemplos del resultado esperado',
+          'Solicitar iteraciones y mejoras',
+          'Usar prompts conversacionales, no comandos rígidos',
+          'Proporcionar contexto relevante',
+          'Ser específico sobre el tono y estilo deseado',
+          'No accede a sistemas privados del usuario',
+          'Puede equivocarse: siempre validar información crítica',
+          'No reemplaza decisiones legales, médicas o fiscales'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="practice-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Checklist -->
+          <rect x="80" y="40" width="240" height="180" rx="10" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+          <text x="200" y="70" text-anchor="middle" fill="#059669" font-size="16" font-weight="bold">Lista de Verificación</text>
+          <!-- Items con checks -->
+          <circle cx="110" cy="100" r="12" fill="url(#practice-gradient)"/>
+          <path d="M 105 100 L 108 103 L 115 96" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="135" y="105" fill="#374151" font-size="12">Contexto claro</text>
+          <circle cx="110" cy="135" r="12" fill="url(#practice-gradient)"/>
+          <path d="M 105 135 L 108 138 L 115 131" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="135" y="140" fill="#374151" font-size="12">Ejemplos específicos</text>
+          <circle cx="110" cy="170" r="12" fill="url(#practice-gradient)"/>
+          <path d="M 105 170 L 108 173 L 115 166" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="135" y="175" fill="#374151" font-size="12">Validar resultados</text>
+          <!-- Estrella de calidad -->
+          <polygon points="310,90 315,105 330,107 320,117 323,132 310,124 297,132 300,117 290,107 305,105" fill="#fbbf24"/>
+          <text x="310" y="155" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">Calidad</text>
+        </svg>`
+      }
     ],
     order: 9.2
   },
 
-  // ChatGPT Slide 3: Limitaciones y Buenas Prácticas
+  // ChatGPT Slide 3: DALL·E
   {
-    id: 'chatgpt-limitaciones',
-    title: 'ChatGPT - Limitaciones y Buenas Prácticas',
-    type: SlideType.CONTENT,
-    content: 'Limitaciones',
-    bullets: [
-      'No accede a sistemas privados del usuario',
-      'Puede equivocarse: siempre validar información crítica',
-      'No reemplaza decisiones legales, médicas o fiscales'
-    ],
-    customBullets: [
+    id: 'chatgpt-dalle',
+    title: 'DALL·E - Generación de Imágenes',
+    type: SlideType.CARD_GRID,
+    description: 'Creación de imágenes con inteligencia artificial',
+    cards: [
       {
-        text: 'Pedir formatos claros',
-        keyword: 'Buenas prácticas:'
-      },
-      {
-        text: 'Dar ejemplos'
-      },
-      {
-        text: 'Solicitar iteraciones'
-      },
-      {
-        text: 'Usar prompts conversacionales, no comandos rígidos'
+        id: 'dalle-capacidades',
+        title: 'Qué puede hacer',
+        description: 'Capacidades de generación de imágenes con IA',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+          <path d="M3 15L8 10L12 14L18 8L21 11V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15Z" fill="currentColor" opacity="0.3"/>
+        </svg>`,
+        bullets: [
+          'Crear imágenes realistas, ilustraciones o arte conceptual',
+          'Generar estilos específicos (corporativo, cartoon, hiperrealista, minimalista)',
+          'Modificar imágenes (inpainting y outpainting)',
+          'Crear logos, personajes, escenarios y assets para apps',
+          'Aumentar resolución y mejorar detalles',
+          'Diseñar mockups para productos, webs, apps y publicidad'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dalle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+            </linearGradient>
+            <clipPath id="frame-clip">
+              <rect x="60" y="50" width="280" height="150" rx="10"/>
+            </clipPath>
+          </defs>
+          <!-- Marco de imagen -->
+          <rect x="60" y="50" width="280" height="150" rx="10" fill="white" stroke="#ec4899" stroke-width="3"/>
+          <!-- Contenido artístico -->
+          <g clip-path="url(#frame-clip)">
+            <!-- Montañas -->
+            <polygon points="60,150 120,80 180,120 240,70 300,130 340,100 340,200 60,200" fill="url(#dalle-gradient)" opacity="0.6"/>
+            <!-- Sol -->
+            <circle cx="280" cy="90" r="25" fill="#fbbf24"/>
+            <!-- Nubes -->
+            <ellipse cx="120" cy="80" rx="30" ry="15" fill="white" opacity="0.8"/>
+            <ellipse cx="140" cy="75" rx="25" ry="12" fill="white" opacity="0.8"/>
+            <ellipse cx="260" cy="70" rx="35" ry="18" fill="white" opacity="0.8"/>
+            <ellipse cx="285" cy="65" rx="28" ry="14" fill="white" opacity="0.8"/>
+          </g>
+          <!-- Paleta de colores -->
+          <g transform="translate(100, 210)">
+            <circle cx="0" cy="0" r="12" fill="#ec4899"/>
+            <circle cx="30" cy="0" r="12" fill="#8b5cf6"/>
+            <circle cx="60" cy="0" r="12" fill="#3b82f6"/>
+            <circle cx="90" cy="0" r="12" fill="#10b981"/>
+            <circle cx="120" cy="0" r="12" fill="#fbbf24"/>
+          </g>
+          <!-- Pincel icono -->
+          <g transform="translate(320, 60) rotate(-45)">
+            <rect x="0" y="0" width="8" height="30" rx="2" fill="#8b5cf6"/>
+            <polygon points="0,30 8,30 4,40" fill="#ec4899"/>
+          </g>
+          <!-- Texto -->
+          <text x="200" y="235" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">Generación de Imágenes IA</text>
+        </svg>`
       }
     ],
     order: 9.3
   },
 
-  // ChatGPT Slide 4: DALL·E
+  // ChatGPT Slide 4: Sora
   {
-    id: 'chatgpt-dalle',
-    title: 'DALL·E - Generación de Imágenes',
-    type: SlideType.CONTENT,
-    content: 'Qué puede hacer',
-    bullets: [
-      'Crear imágenes realistas, ilustraciones o arte conceptual',
-      'Generar estilos específicos (corporativo, cartoon, hiperrealista, minimalista)',
-      'Modificar imágenes (inpainting y outpainting)',
-      'Crear logos, personajes, escenarios y assets para apps',
-      'Aumentar resolución y mejorar detalles',
-      'Diseñar mockups para productos, webs, apps y publicidad'
+    id: 'chatgpt-sora',
+    title: 'Sora - Generación de Video',
+    type: SlideType.CARD_GRID,
+    description: 'Creación de videos con inteligencia artificial',
+    cards: [
+      {
+        id: 'sora-usos',
+        title: 'Usos Típicos',
+        description: 'Aplicaciones principales de generación de video con IA',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+          <polygon points="10,9 10,15 15,12" fill="currentColor"/>
+        </svg>`,
+        bullets: [
+          'Generar videos realistas o estilizados a partir de texto',
+          'Transformar storyboard → video',
+          'Simular cámaras, movimientos y entornos complejos',
+          'Generar anuncios, reels, contenidos creativos',
+          'Crear animaciones con personajes y narrativas',
+          'Expandir o modificar videos ya existentes',
+          'Marketing y publicidad digital',
+          'Cine y producción de contenidos',
+          'Visualización de ideas y conceptos',
+          'Capacitación y educación interactiva'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sora-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Pantalla de video -->
+          <rect x="50" y="50" width="300" height="140" rx="8" fill="#1f2937" stroke="url(#sora-gradient)" stroke-width="3"/>
+          <!-- Frames de video -->
+          <g opacity="0.8">
+            <rect x="70" y="70" width="60" height="40" rx="3" fill="#4338ca"/>
+            <rect x="140" y="70" width="60" height="40" rx="3" fill="#7c3aed"/>
+            <rect x="210" y="70" width="60" height="40" rx="3" fill="#db2777"/>
+            <rect x="280" y="70" width="50" height="40" rx="3" fill="#ec4899"/>
+          </g>
+          <!-- Timeline -->
+          <rect x="70" y="130" width="260" height="10" rx="5" fill="#374151"/>
+          <rect x="70" y="130" width="140" height="10" rx="5" fill="url(#sora-gradient)"/>
+          <!-- Botón play -->
+          <circle cx="200" cy="115" r="20" fill="url(#sora-gradient)" opacity="0.9"/>
+          <polygon points="195,105 195,125 210,115" fill="white"/>
+          <!-- Iconos de cámara -->
+          <g transform="translate(80, 160)">
+            <rect x="0" y="0" width="30" height="20" rx="3" fill="#6366f1" opacity="0.7"/>
+            <circle cx="15" cy="10" r="6" fill="white"/>
+          </g>
+          <g transform="translate(290, 160)">
+            <rect x="0" y="0" width="30" height="20" rx="3" fill="#ec4899" opacity="0.7"/>
+            <circle cx="15" cy="10" r="6" fill="white"/>
+          </g>
+          <!-- Texto -->
+          <text x="200" y="215" text-anchor="middle" fill="#6366f1" font-size="14" font-weight="bold">Generación de Video IA</text>
+          <text x="200" y="235" text-anchor="middle" fill="#94a3b8" font-size="11">(Disponible próximamente en tu región)</text>
+        </svg>`
+      }
     ],
     order: 9.4
   },
 
-  // ChatGPT Slide 5: Sora
+  // ChatGPT Slide 5: Codex
   {
-    id: 'chatgpt-sora',
-    title: 'Sora - Generación de Video',
-    type: SlideType.CONTENT,
-    content: 'Qué puede hacer (cuando esté disponible en tu región)',
-    bullets: [
-      'Generar videos realistas o estilizados a partir de texto',
-      'Transformar storyboard → video',
-      'Simular cámaras, movimientos y entornos complejos',
-      'Generar anuncios, reels, contenidos creativos',
-      'Crear animaciones con personajes y narrativas',
-      'Expandir o modificar videos ya existentes'
-    ],
-    customBullets: [
+    id: 'chatgpt-codex',
+    title: 'Codex - Programación Asistida',
+    type: SlideType.CARD_GRID,
+    description: 'Tu asistente de programación con inteligencia artificial',
+    cards: [
       {
-        text: 'Marketing',
-        keyword: 'Usos típicos:'
-      },
-      {
-        text: 'Cine y contenidos'
-      },
-      {
-        text: 'Visualización de ideas'
-      },
-      {
-        text: 'Capacitación y educación'
+        id: 'codex-capacidades',
+        title: 'Qué puede hacer',
+        description: 'Capacidades de programación y desarrollo',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 18L22 12L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Generar código en múltiples lenguajes',
+          'Crear APIs completas y modelado MVC',
+          'Proponer arquitectura y patrones de diseño',
+          'Realizar debugging guiado paso a paso',
+          'Explicar código legacy o complejo',
+          'Convertir código entre lenguajes',
+          'Generar pruebas unitarias, integración y documentación técnica',
+          'Desarrollar componentes UI y lógica frontend/backend'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="codex-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Editor de código -->
+          <rect x="40" y="40" width="320" height="180" rx="8" fill="#1e293b" stroke="url(#codex-gradient)" stroke-width="3"/>
+          <!-- Barra superior -->
+          <rect x="40" y="40" width="320" height="30" rx="8" fill="#334155"/>
+          <rect x="40" y="55" width="320" height="15" fill="#334155"/>
+          <circle cx="55" cy="55" r="5" fill="#ef4444"/>
+          <circle cx="75" cy="55" r="5" fill="#fbbf24"/>
+          <circle cx="95" cy="55" r="5" fill="#10b981"/>
+          <!-- Código simulado -->
+          <g font-family="monospace" font-size="11">
+            <text x="55" y="90" fill="#0ea5e9">function</text>
+            <text x="110" y="90" fill="#fbbf24">processData</text>
+            <text x="185" y="90" fill="#cbd5e1">(data) {</text>
+            <text x="70" y="110" fill="#cbd5e1">return</text>
+            <text x="110" y="110" fill="#cbd5e1">data.</text>
+            <text x="145" y="110" fill="#a78bfa">map</text>
+            <text x="170" y="110" fill="#cbd5e1">(item =></text>
+            <text x="85" y="130" fill="#cbd5e1">item.</text>
+            <text x="120" y="130" fill="#10b981">value</text>
+            <text x="155" y="130" fill="#cbd5e1">* 2</text>
+            <text x="70" y="150" fill="#cbd5e1">)</text>
+            <text x="55" y="170" fill="#cbd5e1">}</text>
+          </g>
+          <!-- IA asistente -->
+          <g transform="translate(270, 120)">
+            <circle cx="30" cy="30" r="25" fill="url(#codex-gradient)" opacity="0.9"/>
+            <path d="M 20 30 L 25 35 L 40 20" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+          <!-- Iconos lenguajes -->
+          <g transform="translate(50, 190)">
+            <circle cx="0" cy="0" r="8" fill="#3b82f6"/>
+            <text x="0" y="4" text-anchor="middle" fill="white" font-size="8" font-weight="bold">JS</text>
+          </g>
+          <g transform="translate(80, 190)">
+            <circle cx="0" cy="0" r="8" fill="#10b981"/>
+            <text x="0" y="4" text-anchor="middle" fill="white" font-size="8" font-weight="bold">PY</text>
+          </g>
+          <g transform="translate(110, 190)">
+            <circle cx="0" cy="0" r="8" fill="#ef4444"/>
+            <text x="0" y="4" text-anchor="middle" fill="white" font-size="8" font-weight="bold">TS</text>
+          </g>
+          <!-- Texto -->
+          <text x="200" y="233" text-anchor="middle" fill="#0ea5e9" font-size="13" font-weight="bold">Programación Asistida por IA</text>
+        </svg>`
       }
     ],
     order: 9.5
   },
 
-  // ChatGPT Slide 6: Codex
+  // ChatGPT Slide 6: Integración
   {
-    id: 'chatgpt-codex',
-    title: 'Codex - Programación Asistida',
-    type: SlideType.CONTENT,
-    content: 'Qué puede hacer',
-    bullets: [
-      'Generar código en múltiples lenguajes',
-      'Crear APIs completas y modelado MVC',
-      'Proponer arquitectura y patrones de diseño',
-      'Realizar debugging guiado paso a paso',
-      'Explicar código legacy o complejo',
-      'Convertir código entre lenguajes',
-      'Generar pruebas unitarias, integración y documentación técnica',
-      'Desarrollar componentes UI y lógica frontend/backend'
+    id: 'chatgpt-integracion',
+    title: '¿Cómo integrarlas juntas?',
+    type: SlideType.CARD_GRID,
+    description: 'Sinergias entre herramientas de IA',
+    cards: [
+      {
+        id: 'chatgpt-dalle',
+        title: 'ChatGPT + DALL·E',
+        description: 'Creación de contenido visual y textual combinado',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2C16.75 2 21 6.25 21 11.5Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M22 2L2 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        bullets: [
+          'Guiones + imágenes para presentaciones',
+          'Landing pages completas con diseño',
+          'Contenido de marketing integrado',
+          'Publicidad visual con copy persuasivo'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="int1-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#ec4899;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="30" width="130" height="140" rx="8" fill="#f3f4f6" stroke="#667eea" stroke-width="2"/>
+          <text x="85" y="55" text-anchor="middle" fill="#667eea" font-size="12" font-weight="bold">ChatGPT</text>
+          <line x1="30" y1="75" x2="140" y2="75" stroke="#374151" stroke-width="1"/>
+          <line x1="30" y1="90" x2="140" y2="90" stroke="#374151" stroke-width="1"/>
+          <line x1="30" y1="105" x2="120" y2="105" stroke="#374151" stroke-width="1"/>
+          <rect x="200" y="30" width="130" height="140" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+          <text x="265" y="55" text-anchor="middle" fill="#ec4899" font-size="12" font-weight="bold">DALL·E</text>
+          <rect x="210" y="70" width="110" height="90" rx="4" fill="url(#int1-gradient)" opacity="0.3"/>
+          <path d="M 150 100 L 180 100" stroke="#10b981" stroke-width="3" marker-end="url(#arrow1)"/>
+          <defs>
+            <marker id="arrow1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+        </svg>`
+      },
+      {
+        id: 'chatgpt-codex',
+        title: 'ChatGPT + Codex',
+        description: 'Desarrollo de software de principio a fin',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Análisis de requerimientos',
+          'Diseño de arquitectura',
+          'Generación de código',
+          'Pruebas automatizadas'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="int2-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="70" cy="100" r="40" fill="#f3f4f6" stroke="#667eea" stroke-width="2"/>
+          <text x="70" y="90" text-anchor="middle" fill="#667eea" font-size="10" font-weight="bold">Chat</text>
+          <text x="70" y="105" text-anchor="middle" fill="#667eea" font-size="10" font-weight="bold">GPT</text>
+          <path d="M 110 100 L 135 100" stroke="#10b981" stroke-width="2" marker-end="url(#arrow2)"/>
+          <rect x="135" y="70" width="80" height="60" rx="5" fill="#1e293b" stroke="#0ea5e9" stroke-width="2"/>
+          <text x="175" y="90" text-anchor="middle" fill="#0ea5e9" font-size="10" font-weight="bold">Codex</text>
+          <text x="175" y="110" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="9">&lt;code/&gt;</text>
+          <path d="M 215 100 L 240 100" stroke="#10b981" stroke-width="2" marker-end="url(#arrow2)"/>
+          <circle cx="275" cy="100" r="35" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="2"/>
+          <path d="M 265 100 L 270 105 L 285 90" stroke="#10b981" stroke-width="3" fill="none"/>
+          <defs>
+            <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+        </svg>`
+      },
+      {
+        id: 'chatgpt-sora',
+        title: 'ChatGPT + Sora',
+        description: 'Producción de video con guiones IA',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="20" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M17 10.5V7.5L23 4V20L17 16.5V13.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Concepto y guión narrativo',
+          'Storyboard detallado',
+          'Generación de video IA',
+          'Post-producción y ajustes'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="int3-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="20" y="40" width="100" height="120" rx="6" fill="#f3f4f6" stroke="#667eea" stroke-width="2"/>
+          <text x="70" y="65" text-anchor="middle" fill="#667eea" font-size="11" font-weight="bold">Guión</text>
+          <rect x="30" y="80" width="80" height="5" rx="2" fill="#667eea" opacity="0.3"/>
+          <rect x="30" y="95" width="80" height="5" rx="2" fill="#667eea" opacity="0.3"/>
+          <rect x="30" y="110" width="60" height="5" rx="2" fill="#667eea" opacity="0.3"/>
+          <path d="M 120 100 L 160 100" stroke="#10b981" stroke-width="2" marker-end="url(#arrow3)"/>
+          <rect x="160" y="50" width="170" height="100" rx="8" fill="#1f2937" stroke="#6366f1" stroke-width="3"/>
+          <text x="245" y="75" text-anchor="middle" fill="#6366f1" font-size="12" font-weight="bold">Sora Video</text>
+          <rect x="175" y="85" width="50" height="35" rx="3" fill="#4338ca"/>
+          <rect x="235" y="85" width="50" height="35" rx="3" fill="#6366f1"/>
+          <polygon points="245,100 245,110 255,105" fill="#10b981"/>
+          <defs>
+            <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+        </svg>`
+      },
+      {
+        id: 'chatgpt-coordinador',
+        title: 'ChatGPT Coordinador',
+        description: 'Orquesta todo el proceso de creación',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 2V6M12 18V22M22 12H18M6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M19.07 4.93L16.24 7.76M7.76 16.24L4.93 19.07M19.07 19.07L16.24 16.24M7.76 7.76L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        bullets: [
+          'Planeación estratégica',
+          'Gestión de prompts',
+          'Iteraciones y mejoras',
+          'Revisiones de calidad'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="int4-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="175" cy="100" r="40" fill="url(#int4-gradient)"/>
+          <text x="175" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ChatGPT</text>
+          <circle cx="80" cy="50" r="25" fill="#ec4899" opacity="0.8"/>
+          <text x="80" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">DALL·E</text>
+          <circle cx="270" cy="50" r="25" fill="#6366f1" opacity="0.8"/>
+          <text x="270" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Sora</text>
+          <circle cx="80" cy="150" r="25" fill="#0ea5e9" opacity="0.8"/>
+          <text x="80" y="155" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Codex</text>
+          <circle cx="270" cy="150" r="25" fill="#10b981" opacity="0.8"/>
+          <text x="270" y="155" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Más</text>
+          <line x1="145" y1="75" x2="98" y2="60" stroke="#667eea" stroke-width="2"/>
+          <line x1="205" y1="75" x2="252" y2="60" stroke="#667eea" stroke-width="2"/>
+          <line x1="145" y1="125" x2="98" y2="140" stroke="#667eea" stroke-width="2"/>
+          <line x1="205" y1="125" x2="252" y2="140" stroke="#667eea" stroke-width="2"/>
+        </svg>`
+      }
     ],
     order: 9.6
   },
 
-  // ChatGPT Slide 7: Integración
+  // ChatGPT Slide 7: Casos Prácticos
   {
-    id: 'chatgpt-integracion',
-    title: '¿Cómo integrarlas juntas?',
-    type: SlideType.CONTENT,
-    content: 'Sinergias entre herramientas',
-    bullets: [
-      'ChatGPT + DALL·E: guiones + imágenes para presentaciones o landing pages',
-      'ChatGPT + Codex: análisis → diseño → generación → pruebas de software',
-      'ChatGPT + Sora: concepto → storyboard → video final',
-      'ChatGPT como coordinador general: planeación, prompts, iteraciones y revisiones'
+    id: 'chatgpt-casos-practicos',
+    title: 'Casos Prácticos',
+    type: SlideType.CARD_GRID,
+    description: 'Ejemplos reales que puedes implementar hoy',
+    cards: [
+      {
+        id: 'landing-page',
+        title: 'Landing Page Completa',
+        description: 'Crea una landing page en 1 hora',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M3 9H21" stroke="currentColor" stroke-width="2"/>
+          <path d="M9 3V9" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Prompt: "Crea el contenido para una landing page de [producto]. Incluye: título impactante, subtítulo, 3 beneficios clave, CTA persuasivo y sección de preguntas frecuentes"',
+          'Prompt: "Genera una imagen hero para esta landing page de [producto] con estilo [corporativo/moderno/minimalista]" (DALL·E)',
+          'Prompt: "Escribe el código HTML/CSS/JS para implementar esta landing page con diseño responsivo" (Codex)'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="30" width="250" height="140" rx="8" fill="white" stroke="#3b82f6" stroke-width="3"/>
+          <rect x="50" y="30" width="250" height="30" rx="8" fill="#3b82f6"/>
+          <text x="175" y="50" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Tu Landing Page</text>
+          <rect x="70" y="75" width="210" height="40" rx="4" fill="#dbeafe"/>
+          <text x="175" y="95" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="bold">Hero Section</text>
+          <rect x="70" y="125" width="100" height="30" rx="4" fill="#f3f4f6"/>
+          <rect x="180" y="125" width="100" height="30" rx="4" fill="#f3f4f6"/>
+          <rect x="120" y="162" width="110" height="15" rx="7" fill="#10b981"/>
+          <text x="175" y="172" text-anchor="middle" fill="white" font-size="8" font-weight="bold">LLAMADA A ACCIÓN</text>
+        </svg>`
+      },
+      {
+        id: 'pitch-completo',
+        title: 'Pitch Completo',
+        description: 'Guion + imágenes + video para tu presentación',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Prompt: "Crea un guion de pitch de 3 minutos para [startup/producto]. Incluye: problema, solución, mercado, modelo de negocio y llamado a la acción"',
+          'Prompt: "Genera 5 imágenes para ilustrar cada sección del pitch: [descripción de cada sección]" (DALL·E)',
+          'Prompt: "Crea un video de 30 segundos que resuma el pitch con los siguientes puntos clave: [lista]" (Sora)'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="30" width="100" height="140" rx="6" fill="#f3f4f6" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="90" y="50" text-anchor="middle" fill="#8b5cf6" font-size="9" font-weight="bold">Guion</text>
+          <line x1="55" y1="65" x2="125" y2="65" stroke="#8b5cf6" stroke-width="1"/>
+          <line x1="55" y1="75" x2="125" y2="75" stroke="#8b5cf6" stroke-width="1"/>
+          <rect x="160" y="30" width="70" height="60" rx="4" fill="#ec4899" opacity="0.3"/>
+          <text x="195" y="65" text-anchor="middle" fill="#ec4899" font-size="8" font-weight="bold">Imágenes</text>
+          <rect x="240" y="30" width="70" height="60" rx="4" fill="#6366f1" opacity="0.3"/>
+          <polygon points="265,50 265,65 280,57.5" fill="#6366f1"/>
+          <text x="275" y="82" text-anchor="middle" fill="#6366f1" font-size="8" font-weight="bold">Video</text>
+          <path d="M 90 175 L 90 185 L 195 185 L 195 95" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-pitch)"/>
+          <defs>
+            <marker id="arrow-pitch" markerWidth="8" markerHeight="8" refX="7" refY="2" orient="auto">
+              <polygon points="0 0, 8 2, 0 4" fill="#10b981"/>
+            </marker>
+          </defs>
+          <text x="175" y="165" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">Pitch Completo</text>
+        </svg>`
+      },
+      {
+        id: 'prototipo-app',
+        title: 'Prototipo de App',
+        description: 'Diseño y prototipo funcional rápido',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 18H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        bullets: [
+          'Prompt: "Diseña la arquitectura de una app de [tipo]. Define: pantallas principales, flujo de usuario, características clave y tecnologías recomendadas"',
+          'Prompt: "Genera mockups de 5 pantallas principales: [lista de pantallas]" (DALL·E)',
+          'Prompt: "Crea los componentes React/Vue para [pantalla específica] con el siguiente diseño: [descripción]" (Codex)'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="90" y="30" width="80" height="140" rx="8" fill="#1f2937" stroke="#0ea5e9" stroke-width="3"/>
+          <rect x="95" y="40" width="70" height="10" rx="3" fill="#374151"/>
+          <circle cx="130" cy="45" r="2" fill="#0ea5e9"/>
+          <rect x="100" y="60" width="60" height="30" rx="3" fill="#0ea5e9" opacity="0.3"/>
+          <rect x="100" y="95" width="60" height="8" rx="2" fill="#374151"/>
+          <rect x="100" y="108" width="60" height="8" rx="2" fill="#374151"/>
+          <rect x="100" y="121" width="40" height="8" rx="2" fill="#374151"/>
+          <circle cx="130" cy="150" r="15" fill="#0ea5e9"/>
+          <rect x="180" y="60" width="90" height="100" rx="6" fill="#f3f4f6" stroke="#10b981" stroke-width="2"/>
+          <text x="225" y="80" text-anchor="middle" fill="#10b981" font-size="9" font-weight="bold">Código</text>
+          <line x1="190" y1="90" x2="260" y2="90" stroke="#10b981" stroke-width="1"/>
+          <line x1="190" y1="100" x2="260" y2="100" stroke="#10b981" stroke-width="1"/>
+          <text x="175" y="190" text-anchor="middle" fill="#0ea5e9" font-size="11" font-weight="bold">Prototipo Funcional</text>
+        </svg>`
+      },
+      {
+        id: 'marketing-mensual',
+        title: 'Contenido de Marketing',
+        description: 'Plan de contenido mensual en minutos',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2C16.75 2 21 6.25 21 11.5Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M21 2V8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 15L21 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Prompt: "Crea un plan de contenido para [red social] durante 1 mes. Incluye: 4 posts semanales con copy, hashtags y llamadas a la acción para [producto/marca]"',
+          'Prompt: "Genera 16 imágenes para las publicaciones con estilo [descripción]" (DALL·E)',
+          'Prompt: "Optimiza estos copies para SEO y engagement. Sugiere variaciones A/B para testing"'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="20" width="290" height="160" rx="8" fill="white" stroke="#ec4899" stroke-width="2"/>
+          <text x="175" y="45" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">Plan de Contenido - Mes</text>
+          <rect x="50" y="60" width="60" height="50" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="80" y="80" text-anchor="middle" fill="#3b82f6" font-size="8">Semana 1</text>
+          <rect x="125" y="60" width="60" height="50" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="155" y="80" text-anchor="middle" fill="#3b82f6" font-size="8">Semana 2</text>
+          <rect x="200" y="60" width="60" height="50" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <text x="230" y="80" text-anchor="middle" fill="#3b82f6" font-size="8">Semana 3</text>
+          <rect x="275" y="60" width="30" height="50" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+          <rect x="50" y="120" width="255" height="50" rx="4" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+          <text x="177" y="145" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="bold">Analytics & Optimización</text>
+        </svg>`
+      },
+      {
+        id: 'presentacion-ejecutiva',
+        title: 'Presentación Ejecutiva',
+        description: 'Diseño profesional y contenido impactante',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 17V21M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        bullets: [
+          'Prompt: "Crea el contenido para una presentación ejecutiva sobre [tema]. 10 slides: portada, agenda, contexto, análisis, propuesta, beneficios, roadmap, inversión, ROI y cierre"',
+          'Prompt: "Genera gráficas y visualizaciones profesionales para los datos: [especificar datos]" (DALL·E)',
+          'Prompt: "Sugiere diseño de slides con paleta de colores corporativa y tipografía profesional"'
+        ],
+        svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="40" width="120" height="90" rx="6" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="110" y="60" text-anchor="middle" fill="#8b5cf6" font-size="9" font-weight="bold">Slide 1</text>
+          <rect x="60" y="70" width="100" height="50" rx="3" fill="#f3f4f6"/>
+          <rect x="185" y="40" width="120" height="90" rx="6" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="245" y="60" text-anchor="middle" fill="#8b5cf6" font-size="9" font-weight="bold">Slide 2</text>
+          <circle cx="210" cy="95" r="15" fill="#3b82f6" opacity="0.5"/>
+          <circle cx="245" cy="95" r="20" fill="#10b981" opacity="0.5"/>
+          <circle cx="280" cy="95" r="12" fill="#ec4899" opacity="0.5"/>
+          <text x="175" y="160" text-anchor="middle" fill="#8b5cf6" font-size="11" font-weight="bold">Presentación Profesional</text>
+          <path d="M 170 135 L 175 140" stroke="#10b981" stroke-width="2"/>
+          <path d="M 175 140 L 190 125" stroke="#10b981" stroke-width="2"/>
+        </svg>`
+      }
     ],
     order: 9.7
   },
 
-  // ChatGPT Slide 8: Casos Prácticos
-  {
-    id: 'chatgpt-casos-practicos',
-    title: 'Casos prácticos',
-    type: SlideType.CONTENT,
-    content: 'Ejemplos que puedes implementar',
-    bullets: [
-      'Crear una landing page completa en 1 hora',
-      'Generar un pitch completo (guion + imágenes + video)',
-      'Prototipar una app de forma rápida',
-      'Crear contenido de marketing mensual en minutos',
-      'Preparar presentaciones ejecutivas con diseño profesional'
-    ],
-    order: 9.8
-  },
-
-  // ChatGPT Slide 9: Cierre
+  // ChatGPT Slide 8: Cierre
   {
     id: 'chatgpt-cierre',
     title: 'La IA multiplica resultados',
-    type: SlideType.CONTENT,
-    content: 'La IA no sustituye talento; multiplica resultados',
-    bullets: [
-      'Permite que personas y empresas produzcan más rápido',
-      'Con mejor calidad',
-      'Con mayor creatividad'
+    type: SlideType.CARD_GRID,
+    description: 'La IA no sustituye talento; multiplica resultados',
+    cards: [
+      {
+        id: 'lo-que-si-hace-ia',
+        title: 'Lo que sí hace la IA',
+        description: 'El verdadero potencial de la inteligencia artificial',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Permite que personas y empresas produzcan más rápido',
+          'Mejora la calidad de los resultados',
+          'Potencia la creatividad y exploración de ideas',
+          'Automatiza tareas repetitivas y mecánicas',
+          'Libera tiempo para trabajo estratégico',
+          'Democratiza habilidades especializadas',
+          'Acelera el aprendizaje y desarrollo',
+          'Reduce costos de producción',
+          'Facilita la experimentación sin riesgo',
+          'Multiplica el impacto individual'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="final-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Persona -->
+          <circle cx="100" cy="100" r="30" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+          <circle cx="100" cy="90" r="10" fill="#374151"/>
+          <path d="M 85 105 Q 100 120 115 105" stroke="#374151" stroke-width="2" fill="none"/>
+          <text x="100" y="155" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">Persona</text>
+          <!-- Signo de multiplicación -->
+          <text x="165" y="110" text-anchor="middle" fill="url(#final-gradient)" font-size="40" font-weight="bold">×</text>
+          <!-- IA -->
+          <circle cx="230" cy="100" r="35" fill="url(#final-gradient)"/>
+          <text x="230" y="108" text-anchor="middle" fill="white" font-size="16" font-weight="bold">IA</text>
+          <text x="230" y="155" text-anchor="middle" fill="url(#final-gradient)" font-size="11" font-weight="bold">Inteligencia Artificial</text>
+          <!-- Signo igual -->
+          <text x="300" y="110" text-anchor="middle" fill="#374151" font-size="35" font-weight="bold">=</text>
+          <!-- Resultado multiplicado -->
+          <g transform="translate(340, 70)">
+            <polygon points="0,0 15,30 -15,30" fill="#10b981"/>
+            <polygon points="0,30 15,60 -15,60" fill="#3b82f6"/>
+            <polygon points="0,60 15,90 -15,90" fill="#8b5cf6"/>
+          </g>
+          <text x="340" y="180" text-anchor="middle" fill="#10b981" font-size="13" font-weight="bold">Resultados</text>
+          <text x="340" y="195" text-anchor="middle" fill="#10b981" font-size="13" font-weight="bold">Multiplicados</text>
+          <!-- Flechas de crecimiento -->
+          <path d="M 360 80 L 370 70 L 380 60" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-up)"/>
+          <path d="M 360 100 L 370 90 L 380 80" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrow-up)"/>
+          <path d="M 360 120 L 370 110 L 380 100" stroke="#8b5cf6" stroke-width="2" fill="none" marker-end="url(#arrow-up)"/>
+          <defs>
+            <marker id="arrow-up" markerWidth="8" markerHeight="8" refX="7" refY="2" orient="auto">
+              <polygon points="0 0, 8 2, 0 4" fill="#10b981"/>
+            </marker>
+          </defs>
+        </svg>`
+      }
     ],
-    order: 9.9
+    order: 9.8
   },
 
   // Vista 11: Gemini
