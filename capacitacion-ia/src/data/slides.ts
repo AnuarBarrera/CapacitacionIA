@@ -36,6 +36,82 @@ export const slidesData: Slide[] = [
     order: 1
   },
 
+  // Vista 2.5: Menú Principal / Índice
+  {
+    id: 'menu-principal',
+    title: 'Índice de Contenidos',
+    type: SlideType.CARD_GRID,
+    description: 'Explora los temas de la presentación',
+    showContinueButton: false,
+    cards: [
+      {
+        id: 'menu-que-es-ia',
+        title: '¿Qué es la IA?',
+        description: 'Introducción a la Inteligencia Artificial',
+        icon: '🧠',
+        link: '#que-es-ia'
+      },
+      {
+        id: 'menu-los-5-grandes',
+        title: 'Las 5 Plataformas',
+        description: 'Principales plataformas de IA',
+        icon: '⭐',
+        link: '#los-5-grandes'
+      },
+      {
+        id: 'menu-chatgpt',
+        title: 'ChatGPT',
+        description: 'La IA más popular del mundo',
+        icon: '💬',
+        link: '#chatgpt'
+      },
+      {
+        id: 'menu-gemini',
+        title: 'Gemini',
+        description: 'La IA multimodal de Google',
+        icon: '🔷',
+        link: '#gemini'
+      },
+      {
+        id: 'menu-claude',
+        title: 'Claude',
+        description: 'IA experta en análisis y código',
+        icon: '🟠',
+        link: '#claude'
+      },
+      {
+        id: 'menu-grok',
+        title: 'Grok',
+        description: 'IA conectada a X/Twitter',
+        icon: '🐦',
+        link: '#grok'
+      },
+      {
+        id: 'menu-meta-ai',
+        title: 'Meta AI',
+        description: 'IA integrada en WhatsApp e Instagram',
+        icon: '📱',
+        link: '#meta-ai'
+      },
+      {
+        id: 'menu-otras',
+        title: 'Otras Herramientas',
+        description: 'Herramientas especializadas',
+        icon: '🛠️',
+        link: '#otras'
+      },
+      {
+        id: 'menu-cierre',
+        title: 'Contacto',
+        description: 'Comienza tu transformación digital',
+        icon: '🚀',
+        link: '#cierre'
+      }
+    ],
+    columns: 3,
+    order: 1.5
+  },
+
   // Vista 3: ¿Qué es la IA?
   {
     id: 'que-es-ia',
@@ -2087,6 +2163,14 @@ export const slidesData: Slide[] = [
         icon: '📱'
       }
     ],
+    features: [
+      'Conversación natural y contextual',
+      'Generación de contenido y redacción',
+      'Análisis y resumen de documentos',
+      'Programación y depuración de código',
+      'Versión gratuita disponible',
+      'Aplicación móvil para iOS y Android'
+    ],
     order: 9
   },
 
@@ -2873,9 +2957,15 @@ export const slidesData: Slide[] = [
     resources: [
       {
         type: 'web',
-        label: 'Gemini Web',
+        label: 'Sitio Web',
         url: 'https://gemini.google.com',
         icon: '🌐'
+      },
+      {
+        type: 'app',
+        label: 'App Móvil',
+        url: 'https://play.google.com/store/apps/details?id=com.google.android.apps.bard',
+        icon: '📱'
       },
       {
         type: 'tool',
@@ -2893,7 +2983,8 @@ export const slidesData: Slide[] = [
     features: [
       'Vinculado a tu cuenta de Google',
       'NotebookLM: Analiza documentos y crea podcasts de IA',
-      'Veo 3.1: Generación de video con IA'
+      'Veo 3.1: Generación de video con IA',
+      'Aplicación móvil para Android e iOS'
     ],
     order: 10
   },
@@ -3140,15 +3231,22 @@ export const slidesData: Slide[] = [
     resources: [
       {
         type: 'web',
-        label: 'Claude Web',
+        label: 'Sitio Web',
         url: 'https://claude.ai',
         icon: '🌐'
+      },
+      {
+        type: 'app',
+        label: 'App Móvil',
+        url: 'https://claude.ai/download',
+        icon: '📱'
       }
     ],
     features: [
       'Excelente para análisis de documentos largos',
       'Muy bueno para código',
-      'Conversaciones más naturales'
+      'Conversaciones más naturales',
+      'Aplicación móvil para iOS y Android'
     ],
     order: 11
   },
@@ -3546,15 +3644,22 @@ export const slidesData: Slide[] = [
     resources: [
       {
         type: 'web',
-        label: 'Grok en X',
-        url: 'https://x.com',
+        label: 'Sitio Web',
+        url: 'https://x.com/i/grok',
         icon: '🌐'
+      },
+      {
+        type: 'app',
+        label: 'App X (Grok incluido)',
+        url: 'https://x.com/download',
+        icon: '📱'
       }
     ],
     features: [
-      'Requiere cuenta de X (Twitter)',
+      'Requiere suscripción X Premium+',
       'Acceso a información en tiempo real de Twitter/X',
-      'Útil para tendencias y noticias actuales'
+      'Útil para tendencias y noticias actuales',
+      'Disponible dentro de la app de X/Twitter'
     ],
     order: 12
   },
@@ -3609,23 +3714,47 @@ export const slidesData: Slide[] = [
                   fill="url(#grokGrad2)" opacity="0.1"/>
           </g>
 
-          <!-- Orbiting elements -->
+          <!-- Orbiting elements - más puntos para composición homogénea -->
           <g opacity="0.6">
+            <!-- Punto 1: Norte (arriba) -->
             <circle cx="200" cy="50" r="8" fill="#1d9bf0">
               <animateTransform attributeName="transform" type="rotate"
                 from="0 200 125" to="360 200 125" dur="20s" repeatCount="indefinite"/>
             </circle>
+            <!-- Punto 2: Sur (abajo) -->
             <circle cx="200" cy="200" r="6" fill="#1d9bf0">
               <animateTransform attributeName="transform" type="rotate"
                 from="180 200 125" to="540 200 125" dur="15s" repeatCount="indefinite"/>
             </circle>
+            <!-- Punto 3: Oeste (izquierda) -->
             <circle cx="100" cy="125" r="5" fill="#0d7abf">
               <animateTransform attributeName="transform" type="rotate"
                 from="90 200 125" to="450 200 125" dur="18s" repeatCount="indefinite"/>
             </circle>
+            <!-- Punto 4: Este (derecha) -->
             <circle cx="300" cy="125" r="7" fill="#0d7abf">
               <animateTransform attributeName="transform" type="rotate"
                 from="270 200 125" to="630 200 125" dur="22s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Punto 5: Noreste -->
+            <circle cx="260" cy="75" r="6" fill="#1d9bf0">
+              <animateTransform attributeName="transform" type="rotate"
+                from="45 200 125" to="405 200 125" dur="17s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Punto 6: Sureste -->
+            <circle cx="260" cy="175" r="5" fill="#0d7abf">
+              <animateTransform attributeName="transform" type="rotate"
+                from="135 200 125" to="495 200 125" dur="19s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Punto 7: Suroeste -->
+            <circle cx="140" cy="175" r="7" fill="#1d9bf0">
+              <animateTransform attributeName="transform" type="rotate"
+                from="225 200 125" to="585 200 125" dur="21s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Punto 8: Noroeste -->
+            <circle cx="140" cy="75" r="6" fill="#0d7abf">
+              <animateTransform attributeName="transform" type="rotate"
+                from="315 200 125" to="675 200 125" dur="16s" repeatCount="indefinite"/>
             </circle>
           </g>
 
@@ -3676,16 +3805,6 @@ export const slidesData: Slide[] = [
               <animate attributeName="r" values="40;70;40" dur="2s" begin="1s" repeatCount="indefinite"/>
               <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
             </circle>
-          </g>
-
-          <!-- Data streams -->
-          <g opacity="0.5">
-            <path d="M50,50 Q100,100 150,50" stroke="#1d9bf0" stroke-width="2" fill="none">
-              <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
-            </path>
-            <path d="M250,200 Q300,150 350,200" stroke="#1d9bf0" stroke-width="2" fill="none">
-              <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-            </path>
           </g>
         </svg>`
       }
@@ -3842,16 +3961,39 @@ export const slidesData: Slide[] = [
             </path>
           </g>
 
-          <!-- Sparkles -->
+          <!-- Sparkles - más puntos alrededor del círculo -->
           <g opacity="0.8">
+            <!-- Sparkle superior izquierda -->
             <path d="M100,80 L105,85 L100,90 L95,85 Z" fill="#1d9bf0">
               <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
             </path>
+            <!-- Sparkle superior derecha -->
             <path d="M280,100 L285,105 L280,110 L275,105 Z" fill="#1d9bf0">
               <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
             </path>
+            <!-- Sparkle izquierda inferior -->
             <path d="M120,160 L125,165 L120,170 L115,165 Z" fill="#0d7abf">
               <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle derecha inferior -->
+            <path d="M300,180 L305,185 L300,190 L295,185 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle superior centro -->
+            <path d="M190,55 L195,60 L190,65 L185,60 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.75s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle inferior centro -->
+            <path d="M210,195 L215,200 L210,205 L205,200 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.25s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle derecha centro -->
+            <path d="M340,130 L345,135 L340,140 L335,135 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.25s" repeatCount="indefinite"/>
+            </path>
+            <!-- Sparkle izquierda centro -->
+            <path d="M60,115 L65,120 L60,125 L55,120 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.75s" repeatCount="indefinite"/>
             </path>
           </g>
         </svg>`
@@ -3977,16 +4119,29 @@ export const slidesData: Slide[] = [
     resources: [
       {
         type: 'web',
-        label: 'Meta AI Web',
+        label: 'Sitio Web',
         url: 'https://www.meta.ai',
         icon: '🌐'
+      },
+      {
+        type: 'app',
+        label: 'WhatsApp (Meta AI incluido)',
+        url: 'https://www.whatsapp.com/download',
+        icon: '💬'
+      },
+      {
+        type: 'app',
+        label: 'Instagram (Meta AI incluido)',
+        url: 'https://www.instagram.com/download',
+        icon: '📸'
       }
     ],
     features: [
       'Integrado en WhatsApp, Facebook e Instagram',
       'No requiere instalación adicional',
       'Ya está donde tus clientes están',
-      'Fácil acceso desde mensajería'
+      'Fácil acceso desde mensajería',
+      'Disponible en apps de Meta (WhatsApp, Instagram, Facebook)'
     ],
     order: 13
   },
