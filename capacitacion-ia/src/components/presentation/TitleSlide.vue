@@ -31,6 +31,7 @@ const handleNavigateToSlide = (slideId: string) => {
     <NavigationButtons
       v-if="slide.order !== 0"
       :current-slide-id="slide.id"
+      :current-slide-order="slide.order"
       @navigate-to-slide="handleNavigateToSlide"
       @previous="handlePreviousClick"
     />

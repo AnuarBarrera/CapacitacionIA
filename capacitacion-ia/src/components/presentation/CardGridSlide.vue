@@ -81,6 +81,7 @@ const handleNavigateToSlide = (slideId: string) => {
     <!-- Navigation Buttons -->
     <NavigationButtons
       :current-slide-id="slide.id"
+      :current-slide-order="slide.order"
       @navigate-to-slide="handleNavigateToSlide"
       @previous="handlePreviousClick"
     />

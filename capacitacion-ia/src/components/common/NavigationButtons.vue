@@ -3,6 +3,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   currentSlideId: string
+  currentSlideOrder?: number
 }>()
 
 const emit = defineEmits<{
@@ -24,6 +25,11 @@ const isLastSlideOfLLM = computed(() => {
   return lastSlidesOfLLMs.includes(props.currentSlideId)
 })
 
+// Solo mostrar los botones si el order es mayor a 1.5 (después del menú principal)
+const shouldShowButtons = computed(() => {
+  return props.currentSlideOrder !== undefined && props.currentSlideOrder > 1.5
+})
+
 const handleMenuClick = () => {
   emit('navigate-to-slide', 'menu-principal')
 }
@@ -38,7 +44,7 @@ const handlePlatformsClick = () => {
 </script>
 
 <template>
-  <div class="navigation-buttons">
+  <div v-if="shouldShowButtons" class="navigation-buttons">
     <div class="button-group">
       <!-- Botón: Regresar al Menú -->
       <button class="nav-btn menu-btn" @click="handleMenuClick" aria-label="Regresar al menú principal">
