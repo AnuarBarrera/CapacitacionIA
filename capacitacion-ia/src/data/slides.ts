@@ -1956,19 +1956,9 @@ export const slidesData: Slide[] = [
         id: 'chatgpt',
         title: 'ChatGPT',
         description: 'by OpenAI',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Logo estilo ChatGPT -->
-          <circle cx="12" cy="12" r="10" fill="url(#chatgptGrad)" opacity="0.2"/>
-          <path d="M7 9h10M7 12h10M7 15h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="18" cy="9" r="1.5" fill="currentColor">
-            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <defs>
-            <linearGradient id="chatgptGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#10a37f;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#1a7f64;stop-opacity:1" />
-            </linearGradient>
-          </defs>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#10A37F"/>
+          <path d="M28.5 16.5c0-1.5-1-2.8-2.5-3.3.2-.6.3-1.2.3-1.8 0-2.8-2.2-5-5-5-.8 0-1.5.2-2.2.5-.8-1.2-2.2-2-3.8-2-2.5 0-4.5 2-4.5 4.5 0 .3 0 .6.1.9-1.4.6-2.4 2-2.4 3.6 0 1.5 1 2.8 2.5 3.3-.2.6-.3 1.2-.3 1.8 0 2.8 2.2 5 5 5 .8 0 1.5-.2 2.2-.5.8 1.2 2.2 2 3.8 2 2.5 0 4.5-2 4.5-4.5 0-.3 0-.6-.1-.9 1.4-.6 2.4-2 2.4-3.6zm-13.2 7.8c-1.9 0-3.5-1.6-3.5-3.5 0-.5.1-1 .3-1.4l.3.1c1.2.5 2.5.7 3.8.7.5 0 1-.1 1.5-.2-.5 2.2-2.3 3.8-4.4 4.3zm8.8-3.8c0 1.9-1.6 3.5-3.5 3.5-.2 0-.5 0-.7-.1.5-2.2 2.3-3.8 4.4-4.3-.1.3-.2.6-.2.9zm-3.5-8.8c1.9 0 3.5 1.6 3.5 3.5 0 .5-.1 1-.3 1.4l-.3-.1c-1.2-.5-2.5-.7-3.8-.7-.5 0-1 .1-1.5.2.5-2.2 2.3-3.8 4.4-4.3zm-8.8 3.8c0-1.9 1.6-3.5 3.5-3.5.2 0 .5 0 .7.1-.5 2.2-2.3 3.8-4.4 4.3.1-.3.2-.6.2-.9z" fill="white"/>
         </svg>`,
         link: 'chatgpt'
       },
@@ -1976,19 +1966,18 @@ export const slidesData: Slide[] = [
         id: 'gemini',
         title: 'Gemini',
         description: 'by Google',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Logo estilo Gemini - Diamante/Estrella -->
-          <path d="M12 2 L15 9 L22 12 L15 15 L12 22 L9 15 L2 12 L9 9 Z" fill="url(#geminiGrad)" opacity="0.3" stroke="currentColor" stroke-width="1.5">
-            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
-          </path>
-          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
-              <stop offset="50%" style="stop-color:#ea4335;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#fbbc04;stop-opacity:1" />
+              <stop offset="0%" style="stop-color:#4285f4" />
+              <stop offset="33%" style="stop-color:#ea4335" />
+              <stop offset="66%" style="stop-color:#fbbc04" />
+              <stop offset="100%" style="stop-color:#34a853" />
             </linearGradient>
           </defs>
+          <rect width="40" height="40" rx="8" fill="url(#geminiGrad)"/>
+          <path d="M20 10 L24 18 L30 20 L24 22 L20 30 L16 22 L10 20 L16 18 Z" fill="#ffffff" opacity="0.9"/>
+          <circle cx="20" cy="20" r="4" fill="#1A73E8"/>
         </svg>`,
         link: 'gemini'
       },
@@ -1996,20 +1985,13 @@ export const slidesData: Slide[] = [
         id: 'claude',
         title: 'Claude',
         description: 'by Anthropic',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Logo estilo Claude - Arcos concéntricos -->
-          <path d="M12 4 C12 4, 8 8, 8 12 C8 16, 12 20, 12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
-          <path d="M12 4 C12 4, 16 8, 16 12 C16 16, 12 20, 12 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
-          <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2" fill="url(#claudeGrad)" opacity="0.2">
-            <animate attributeName="r" values="6;6.5;6" dur="2s" repeatCount="indefinite"/>
-          </path>
-          <circle cx="12" cy="12" r="2" fill="currentColor"/>
-          <defs>
-            <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#d97757;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#c45a3c;stop-opacity:1" />
-            </linearGradient>
-          </defs>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#D97757"/>
+          <path d="M14 11 L16 19 L14 27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M20 11 L20 29" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M26 11 L24 19 L26 27" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M11 15 C11 15, 14 17.5, 14 20 C14 22.5, 11 25, 11 25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          <path d="M29 15 C29 15, 26 17.5, 26 20 C26 22.5, 29 25, 29 25" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
         </svg>`,
         link: 'claude'
       },
@@ -2017,15 +1999,10 @@ export const slidesData: Slide[] = [
         id: 'grok',
         title: 'Grok',
         description: 'by X (Twitter)',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Logo estilo X/Grok -->
-          <path d="M4 4 L20 20 M20 4 L4 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
-          </path>
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" opacity="0.3"/>
-          <circle cx="12" cy="12" r="2" fill="currentColor">
-            <animate attributeName="r" values="2;3;2" dur="2s" repeatCount="indefinite"/>
-          </circle>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#000000"/>
+          <path d="M12 12 L28 28" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M28 12 L12 28" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
         </svg>`,
         link: 'grok'
       },
@@ -2033,20 +2010,18 @@ export const slidesData: Slide[] = [
         id: 'meta-ai',
         title: 'Meta AI',
         description: 'by Meta',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Logo estilo Meta - Infinito -->
-          <path d="M8 12 C8 9, 10 7, 12 9 C14 7, 16 9, 16 12 C16 15, 14 17, 12 15 C10 17, 8 15, 8 12 Z" stroke="currentColor" stroke-width="2" fill="url(#metaGrad)" opacity="0.2">
-            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
-          </path>
-          <circle cx="8.5" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="15.5" cy="12" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="metaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#0081fb;stop-opacity:1" />
-              <stop offset="50%" style="stop-color:#0064e0;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#00c6ff;stop-opacity:1" />
+              <stop offset="0%" style="stop-color:#0081fb" />
+              <stop offset="50%" style="stop-color:#0064e0" />
+              <stop offset="100%" style="stop-color:#00c6ff" />
             </linearGradient>
           </defs>
+          <rect width="40" height="40" rx="8" fill="url(#metaGrad)"/>
+          <path d="M14 20 C14 16.5, 16.5 14, 20 16.5 C23.5 14, 26 16.5, 26 20 C26 23.5, 23.5 26, 20 23.5 C16.5 26, 14 23.5, 14 20 Z" fill="#ffffff" opacity="0.3"/>
+          <circle cx="14.5" cy="20" r="3" fill="white"/>
+          <circle cx="25.5" cy="20" r="3" fill="white"/>
         </svg>`,
         link: 'meta-ai'
       },
@@ -2054,15 +2029,19 @@ export const slidesData: Slide[] = [
         id: 'otras',
         title: 'Otras Herramientas',
         description: 'Especializadas',
-        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Herramientas/Engranajes -->
-          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="8s" repeatCount="indefinite"/>
-          </path>
-          <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1" opacity="0.3">
-            <animate attributeName="r" values="8;9;8" dur="2s" repeatCount="indefinite"/>
-          </circle>
+        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="8" fill="#6366F1"/>
+          <circle cx="20" cy="20" r="4" fill="white"/>
+          <g stroke="white" stroke-width="2.5" stroke-linecap="round">
+            <line x1="20" y1="8" x2="20" y2="12"/>
+            <line x1="20" y1="28" x2="20" y2="32"/>
+            <line x1="8" y1="20" x2="12" y2="20"/>
+            <line x1="28" y1="20" x2="32" y2="20"/>
+            <line x1="11.5" y1="11.5" x2="14.3" y2="14.3"/>
+            <line x1="25.7" y1="25.7" x2="28.5" y2="28.5"/>
+            <line x1="11.5" y1="28.5" x2="14.3" y2="25.7"/>
+            <line x1="25.7" y1="14.3" x2="28.5" y2="11.5"/>
+          </g>
         </svg>`,
         link: 'otras'
       }

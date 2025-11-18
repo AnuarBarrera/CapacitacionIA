@@ -150,9 +150,9 @@ const handleNextClick = () => {
       <div class="flow-diagram" v-html="slide.flowDiagram"></div>
     </div>
 
-    <!-- Botón para continuar - Solo aparece cuando todas las tarjetas están expandidas -->
+    <!-- Botón para continuar - Solo aparece cuando todas las tarjetas están expandidas y hay contenido expandible -->
     <Transition name="fade-in">
-      <button v-if="allCardsExpanded" class="next-button" @click="handleNextClick">
+      <button v-if="allCardsExpanded && expandableCardsCount > 0" class="next-button" @click="handleNextClick">
         Click para continuar
         <svg
           viewBox="0 0 24 24"
@@ -295,6 +295,14 @@ const handleNextClick = () => {
   box-shadow: var(--shadow-sm);
 }
 
+/* Para tarjetas con link pero sin contenido expandible (como las plataformas de IA) */
+.card:not(.has-content) .card-icon {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 .icon-emoji {
   font-size: var(--text-2xl);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -312,6 +320,15 @@ const handleNextClick = () => {
 .icon-svg svg {
   width: 100%;
   height: 100%;
+}
+
+/* Para tarjetas sin contenido, no aplicar color para permitir que los SVG usen sus propios colores */
+.card:not(.has-content) .icon-svg {
+  color: inherit;
+}
+
+.card:not(.has-content) .icon-svg svg {
+  display: block;
 }
 
 .icon-image {
