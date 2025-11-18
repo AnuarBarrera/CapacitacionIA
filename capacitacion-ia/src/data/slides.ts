@@ -1325,13 +1325,339 @@ export const slidesData: Slide[] = [
   {
     id: 'context-engineering',
     title: 'Context Engineering',
-    type: SlideType.CONTENT,
-    content: 'Formas y métodos para compartirle contexto a la IA para que entienda mejor tu situación.',
-    bullets: [
-      'Subir archivos (documentos, imágenes)',
-      'Explicar tu negocio en el primer mensaje',
-      'Dar ejemplos de tu trabajo previo',
-      'Compartir tu audiencia objetivo'
+    type: SlideType.CARD_GRID,
+    description: 'Formas y métodos para compartirle contexto a la IA para que entienda mejor tu situación.',
+    cards: [
+      {
+        id: 'subir-archivos',
+        title: 'Subir archivos',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 12v6" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </path>
+          <path d="M9 15l3-3 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </path>
+        </svg>`,
+        bullets: [
+          'Sube documentos relevantes (PDF, Word, Excel)',
+          'Comparte imágenes de referencia o inspiración',
+          'Sube capturas de pantalla de tu trabajo',
+          'La IA puede leer y analizar el contenido'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .file-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .file-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="file-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#4a5ba5">Tipos de archivos que puedes compartir</text>
+
+          <!-- Documento PDF -->
+          <g transform="translate(40, 40)">
+            <rect x="0" y="0" width="50" height="65" rx="3" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <path d="M 35 0 L 50 15 L 35 15 Z" fill="#ff6b6b" opacity="0.2"/>
+            <text x="25" y="35" class="file-text" text-anchor="middle" fill="#ff6b6b" font-weight="bold">PDF</text>
+            <rect x="8" y="42" width="34" height="2" rx="1" fill="#ff6b6b" opacity="0.5"/>
+            <rect x="8" y="48" width="30" height="2" rx="1" fill="#ff6b6b" opacity="0.4"/>
+            <rect x="8" y="54" width="34" height="2" rx="1" fill="#ff6b6b" opacity="0.4"/>
+            <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Imagen -->
+          <g transform="translate(110, 40)">
+            <rect x="0" y="0" width="50" height="65" rx="3" fill="#4a90e2" opacity="0.2" stroke="#4a90e2" stroke-width="2"/>
+            <circle cx="15" cy="20" r="5" fill="#4a90e2" opacity="0.5"/>
+            <path d="M 5 45 L 20 30 L 30 40 L 45 25 L 45 55 L 5 55 Z" fill="#4a90e2" opacity="0.4"/>
+            <text x="25" y="37" class="file-label" text-anchor="middle" fill="#4a90e2" font-weight="bold">JPG/PNG</text>
+            <animate attributeName="opacity" values="1;0.7;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Excel -->
+          <g transform="translate(180, 40)">
+            <rect x="0" y="0" width="50" height="65" rx="3" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2"/>
+            <path d="M 35 0 L 50 15 L 35 15 Z" fill="#51cf66" opacity="0.2"/>
+            <line x1="8" y1="25" x2="42" y2="25" stroke="#51cf66" stroke-width="1.5"/>
+            <line x1="8" y1="35" x2="42" y2="35" stroke="#51cf66" stroke-width="1.5"/>
+            <line x1="8" y1="45" x2="42" y2="45" stroke="#51cf66" stroke-width="1.5"/>
+            <line x1="25" y1="20" x2="25" y2="55" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="25" y="58" class="file-label" text-anchor="middle" fill="#51cf66" font-weight="bold">EXCEL</text>
+            <animate attributeName="opacity" values="1;0.7;1" dur="3s" begin="1s" repeatCount="indefinite"/>
+          </g>
+
+          <!-- Usuario subiendo -->
+          <g transform="translate(50, 125)">
+            <!-- Persona -->
+            <circle cx="20" cy="15" r="8" fill="#4a5ba5" opacity="0.3"/>
+            <path d="M 8 40 Q 8 25 20 25 Q 32 25 32 40 L 28 55 L 12 55 Z" fill="#4a5ba5" opacity="0.3"/>
+
+            <!-- Flecha subiendo -->
+            <path d="M 60 40 L 100 40" stroke="#ff6b6b" stroke-width="2" marker-end="url(#arrowFile)">
+              <animate attributeName="stroke-dasharray" values="0,40;40,0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <defs>
+              <marker id="arrowFile" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                <polygon points="0 0, 8 4, 0 8" fill="#ff6b6b"/>
+              </marker>
+            </defs>
+
+            <!-- Nube IA -->
+            <g transform="translate(120, 20)">
+              <ellipse cx="0" cy="10" rx="15" ry="10" fill="#4a5ba5" opacity="0.2"/>
+              <ellipse cx="-10" cy="15" rx="12" ry="8" fill="#4a5ba5" opacity="0.2"/>
+              <ellipse cx="10" cy="15" rx="12" ry="8" fill="#4a5ba5" opacity="0.2"/>
+              <text x="0" y="18" class="file-text" text-anchor="middle" fill="#4a5ba5" font-size="14px">IA</text>
+              <circle cx="20" cy="8" r="3" fill="#51cf66">
+                <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </g>
+
+          <!-- Mensaje inferior -->
+          <text x="150" y="185" class="file-label" text-anchor="middle" opacity="0.7">La IA analiza el contenido y lo usa como contexto</text>
+        </svg>`
+      },
+      {
+        id: 'explicar-negocio',
+        title: 'Explicar negocio',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="17" cy="7" r="3" fill="currentColor">
+            <animate attributeName="r" values="3;3.5;3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`,
+        bullets: [
+          'En el primer mensaje, describe tu negocio',
+          'Explica qué vendes o qué servicio ofreces',
+          'Menciona tu público objetivo',
+          'La IA adaptará sus respuestas a tu contexto'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .biz-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .biz-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+              .biz-example { fill: #4a5ba5; font-family: 'Inter', sans-serif; font-size: 9px; font-style: italic; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="biz-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#4a5ba5">Contexto de negocio en el primer mensaje</text>
+
+          <!-- Cuadro de chat ejemplo -->
+          <g transform="translate(20, 35)">
+            <rect x="0" y="0" width="260" height="140" rx="8" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="2"/>
+
+            <!-- Header del chat -->
+            <rect x="0" y="0" width="260" height="30" rx="8" fill="#4a5ba5" opacity="0.1"/>
+            <circle cx="15" cy="15" r="8" fill="#4a5ba5" opacity="0.3"/>
+            <text x="30" y="20" class="biz-text" fill="#4a5ba5" font-weight="bold">Conversación con IA</text>
+
+            <!-- Mensaje del usuario -->
+            <g transform="translate(10, 40)">
+              <rect x="0" y="0" width="240" height="90" rx="5" fill="white" stroke="#e9ecef" stroke-width="1"/>
+
+              <text x="10" y="15" class="biz-text" fill="#ff6b6b" font-weight="bold">Tú:</text>
+
+              <text x="10" y="28" class="biz-example">"Hola, tengo una panadería artesanal</text>
+              <text x="10" y="40" class="biz-example">en el centro de la ciudad. Vendo pan</text>
+              <text x="10" y="52" class="biz-example">dulce tradicional mexicano.</text>
+
+              <text x="10" y="67" class="biz-example">Mi público son familias y personas</text>
+              <text x="10" y="79" class="biz-example">nostálgicas de 30-60 años."</text>
+
+              <!-- Checkmarks -->
+              <circle cx="225" cy="28" r="6" fill="#51cf66" opacity="0.3">
+                <animate attributeName="r" values="6;7;6" dur="2s" repeatCount="indefinite"/>
+              </circle>
+              <path d="M 222 28 L 224 30 L 228 26" stroke="#51cf66" stroke-width="1.5" fill="none"/>
+            </g>
+          </g>
+
+          <!-- Flechas de beneficio -->
+          <g transform="translate(150, 185)">
+            <text x="0" y="0" class="biz-label" text-anchor="middle" fill="#51cf66" font-weight="bold">
+              ✓ La IA ahora sabe tu contexto y puede personalizar
+            </text>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'da-ejemplos',
+        title: 'Da ejemplos',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="13" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="3" y="13" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="13" y="13" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+          </rect>
+        </svg>`,
+        bullets: [
+          'Muestra ejemplos de tu trabajo anterior',
+          'Comparte diseños o textos que te gustan',
+          'Indica qué funciona bien para tu audiencia',
+          'La IA aprenderá tu estilo y preferencias'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .ex2-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .ex2-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="ex2-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#4a5ba5">Ejemplos de tu trabajo previo</text>
+
+          <!-- Ejemplo 1: Diseño anterior -->
+          <g transform="translate(20, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="40" y="12" class="ex2-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Diseño anterior</text>
+
+            <!-- Mini diseño -->
+            <rect x="10" y="20" width="60" height="30" rx="2" fill="#ff6b6b" opacity="0.3"/>
+            <circle cx="25" cy="30" r="4" fill="white"/>
+            <rect x="35" y="25" width="30" height="3" rx="1" fill="white"/>
+            <rect x="35" y="32" width="25" height="2" rx="1" fill="white"/>
+
+            <text x="40" y="58" class="ex2-label" text-anchor="middle" fill="#51cf66">✓ Me gusta</text>
+          </g>
+
+          <!-- Ejemplo 2: Post exitoso -->
+          <g transform="translate(110, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="40" y="12" class="ex2-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Post exitoso</text>
+
+            <!-- Mini post -->
+            <rect x="10" y="20" width="60" height="30" rx="2" fill="#4a90e2" opacity="0.2"/>
+            <rect x="15" y="25" width="50" height="2" rx="1" fill="#4a90e2"/>
+            <rect x="15" y="30" width="45" height="2" rx="1" fill="#4a90e2"/>
+            <rect x="15" y="35" width="50" height="2" rx="1" fill="#4a90e2"/>
+            <path d="M 15 43 L 18 46 L 22 42" stroke="#ff6b6b" stroke-width="1.5" fill="none"/>
+            <text x="26" y="46" class="ex2-label" fill="#ff6b6b" font-size="7px">1.2k likes</text>
+
+            <text x="40" y="58" class="ex2-label" text-anchor="middle" fill="#51cf66">✓ Funcionó</text>
+          </g>
+
+          <!-- Ejemplo 3: Estilo favorito -->
+          <g transform="translate(200, 40)">
+            <rect x="0" y="0" width="80" height="60" rx="5" fill="#f8f9fa" stroke="#4a5ba5" stroke-width="2"/>
+            <text x="40" y="12" class="ex2-label" text-anchor="middle" font-weight="bold" fill="#4a5ba5">Estilo favorito</text>
+
+            <!-- Mini estilo -->
+            <circle cx="40" cy="35" r="15" fill="#ffa500" opacity="0.3"/>
+            <path d="M 30 35 Q 40 25 50 35 Q 40 45 30 35" fill="#ffa500" opacity="0.5"/>
+
+            <text x="40" y="58" class="ex2-label" text-anchor="middle" fill="#51cf66">✓ Este estilo</text>
+          </g>
+
+          <!-- IA aprendiendo -->
+          <g transform="translate(150, 115)">
+            <path d="M -50 0 L -20 0" stroke="#4a5ba5" stroke-width="2"/>
+            <path d="M 20 0 L 50 0" stroke="#4a5ba5" stroke-width="2"/>
+            <circle cx="0" cy="0" r="20" fill="#4a5ba5" opacity="0.1" stroke="#4a5ba5" stroke-width="2">
+              <animate attributeName="r" values="20;23;20" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="0" y="-8" class="ex2-text" text-anchor="middle" fill="#4a5ba5" font-size="16px">🧠</text>
+            <text x="0" y="6" class="ex2-label" text-anchor="middle" font-weight="bold">IA</text>
+            <text x="0" y="14" class="ex2-label" text-anchor="middle" font-size="7px">aprende</text>
+          </g>
+
+          <!-- Resultado -->
+          <g transform="translate(50, 150)">
+            <rect x="0" y="0" width="200" height="35" rx="5" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2"/>
+            <text x="100" y="15" class="ex2-text" text-anchor="middle" font-weight="bold" fill="#51cf66">Nuevo contenido en tu estilo</text>
+            <text x="100" y="27" class="ex2-label" text-anchor="middle">Basado en tus ejemplos favoritos</text>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'comparte',
+        title: 'Comparte',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/>
+          <circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+          <circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2">
+            <animate attributeName="r" values="3;3.5;3" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <line x1="8.5" y1="13" x2="15.5" y2="18" stroke="currentColor" stroke-width="2"/>
+          <line x1="8.5" y1="11" x2="15.5" y2="6" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Comparte información sobre tu audiencia objetivo',
+          'Menciona la edad, intereses y comportamiento',
+          'Describe los problemas que resuelves',
+          'Esto ayuda a la IA a crear contenido efectivo'
+        ],
+        svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .aud-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .aud-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="aud-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#4a5ba5">Define tu audiencia objetivo</text>
+
+          <!-- Audiencia 1: Edad -->
+          <g transform="translate(30, 40)">
+            <circle cx="30" cy="30" r="25" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="30" y="25" class="aud-text" text-anchor="middle" fill="#ff6b6b" font-size="16px">👥</text>
+            <text x="30" y="40" class="aud-label" text-anchor="middle" font-weight="bold">30-60 años</text>
+            <text x="30" y="70" class="aud-label" text-anchor="middle">Edad</text>
+          </g>
+
+          <!-- Audiencia 2: Intereses -->
+          <g transform="translate(105, 40)">
+            <circle cx="30" cy="30" r="25" fill="#4a90e2" opacity="0.2" stroke="#4a90e2" stroke-width="2"/>
+            <text x="30" y="25" class="aud-text" text-anchor="middle" fill="#4a90e2" font-size="16px">❤️</text>
+            <text x="30" y="40" class="aud-label" text-anchor="middle" font-weight="bold">Tradición</text>
+            <text x="30" y="70" class="aud-label" text-anchor="middle">Intereses</text>
+          </g>
+
+          <!-- Audiencia 3: Comportamiento -->
+          <g transform="translate(180, 40)">
+            <circle cx="30" cy="30" r="25" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2"/>
+            <text x="30" y="25" class="aud-text" text-anchor="middle" fill="#51cf66" font-size="16px">🛒</text>
+            <text x="30" y="40" class="aud-label" text-anchor="middle" font-weight="bold">Compran local</text>
+            <text x="30" y="70" class="aud-label" text-anchor="middle">Comportamiento</text>
+          </g>
+
+          <!-- Conectores -->
+          <line x1="75" y1="70" x2="120" y2="70" stroke="#4a5ba5" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+          <line x1="150" y1="70" x2="195" y2="70" stroke="#4a5ba5" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+
+          <!-- Flecha hacia abajo -->
+          <g transform="translate(150, 95)">
+            <path d="M 0 0 L 0 20" stroke="#4a5ba5" stroke-width="2"/>
+            <path d="M -5 15 L 0 20 L 5 15" stroke="#4a5ba5" stroke-width="2" fill="none"/>
+          </g>
+
+          <!-- Resultado: Mensaje personalizado -->
+          <g transform="translate(50, 125)">
+            <rect x="0" y="0" width="200" height="60" rx="8" fill="#ffa500" opacity="0.1" stroke="#ffa500" stroke-width="2">
+              <animate attributeName="opacity" values="0.1;0.2;0.1" dur="2s" repeatCount="indefinite"/>
+            </rect>
+
+            <text x="100" y="18" class="aud-text" text-anchor="middle" font-weight="bold" fill="#ffa500">Mensaje personalizado</text>
+
+            <text x="100" y="32" class="aud-label" text-anchor="middle" style="font-style: italic;">"¿Recuerdas el pan dulce de tu</text>
+            <text x="100" y="42" class="aud-label" text-anchor="middle" style="font-style: italic;">infancia? Esa concha recién horneada...</text>
+            <text x="100" y="52" class="aud-label" text-anchor="middle" style="font-style: italic;">¡Visítanos en el centro!"</text>
+          </g>
+
+          <!-- Nota final -->
+          <text x="150" y="195" class="aud-label" text-anchor="middle" opacity="0.7" fill="#51cf66">✓ Mensaje conecta emocionalmente con la audiencia correcta</text>
+        </svg>`
+      }
     ],
     order: 6
   },
