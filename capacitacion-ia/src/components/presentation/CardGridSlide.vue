@@ -150,9 +150,9 @@ const handleNextClick = () => {
       <div class="flow-diagram" v-html="slide.flowDiagram"></div>
     </div>
 
-    <!-- Botón para continuar - Solo aparece cuando todas las tarjetas están expandidas y hay contenido expandible -->
+    <!-- Botón para continuar - Aparece cuando todas las tarjetas están expandidas O cuando no hay contenido expandible -->
     <Transition name="fade-in">
-      <button v-if="allCardsExpanded && expandableCardsCount > 0" class="next-button" @click="handleNextClick">
+      <button v-if="allCardsExpanded || expandableCardsCount === 0" class="next-button" @click="handleNextClick">
         Click para continuar
         <svg
           viewBox="0 0 24 24"
