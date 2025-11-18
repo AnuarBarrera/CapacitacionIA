@@ -2456,6 +2456,196 @@ export const slidesData: Slide[] = [
     order: 11
   },
 
+  // Claude Slide 1: Introducción
+  {
+    id: 'claude-introduccion',
+    title: '¿Qué es Claude?',
+    type: SlideType.CONTENT,
+    content: 'Introducción a Claude',
+    bullets: [
+      'Asistente de IA desarrollado por Anthropic',
+      'Modelo actual: Claude Sonnet 4.5 (familia Claude 4)',
+      'Diseñado para conversaciones naturales y tareas complejas',
+      'Énfasis en seguridad y utilidad práctica'
+    ],
+    order: 11.1
+  },
+
+  // Claude Slide 2: Análisis de Documentos
+  {
+    id: 'claude-analisis-documentos',
+    title: 'Análisis y Procesamiento de Documentos',
+    type: SlideType.CONTENT,
+    content: 'Capacidades de análisis',
+    bullets: [
+      'Lee y analiza múltiples formatos: PDF, Word, Excel, imágenes, código',
+      'Extrae información clave de documentos largos',
+      'Compara y sintetiza información de varias fuentes',
+      'Transcribe texto de imágenes (OCR)'
+    ],
+    order: 11.2
+  },
+
+  // Claude Slide 3: Creación de Contenido
+  {
+    id: 'claude-creacion-contenido',
+    title: 'Creación de Contenido Profesional',
+    type: SlideType.CONTENT,
+    content: 'Generación de archivos y documentos',
+    bullets: [
+      'Redacción de documentos, reportes y propuestas',
+      'Creación de presentaciones (.pptx)',
+      'Hojas de cálculo con fórmulas (.xlsx)',
+      'Correos electrónicos y comunicaciones empresariales',
+      'Contenido para marketing y redes sociales'
+    ],
+    order: 11.3
+  },
+
+  // Claude Slide 4: Programación
+  {
+    id: 'claude-programacion',
+    title: 'Programación y Desarrollo',
+    type: SlideType.CONTENT,
+    content: 'Asistencia técnica',
+    bullets: [
+      'Escritura de código en múltiples lenguajes',
+      'Depuración y optimización de código existente',
+      'Explicación de conceptos técnicos complejos',
+      'Creación de scripts y automatizaciones',
+      'Desarrollo web (HTML, CSS, JavaScript, React, Vue, etc.)'
+    ],
+    order: 11.4
+  },
+
+  // Claude Slide 5: Claude Code Web
+  {
+    id: 'claude-code-web',
+    title: 'Claude Code (Interfaz Web)',
+    type: SlideType.CONTENT,
+    content: 'Entorno de desarrollo en el navegador',
+    bullets: [
+      'Entorno de desarrollo integrado en el navegador',
+      'Ejecuta código en tiempo real',
+      'Crea y edita archivos directamente',
+      'Vista previa de aplicaciones web',
+      'Ideal para prototipos rápidos y desarrollo interactivo'
+    ],
+    order: 11.5
+  },
+
+  // Claude Slide 6: Claude Code CLI
+  {
+    id: 'claude-code-cli',
+    title: 'Claude Code (CLI - Terminal)',
+    type: SlideType.CONTENT,
+    content: 'Herramienta de línea de comandos',
+    bullets: [
+      'Herramienta de línea de comandos para desarrolladores',
+      'Integración directa con tu entorno local',
+      'Delega tareas de código desde la terminal',
+      'Automatización de flujos de trabajo de desarrollo',
+      'Acceso mediante claude-sonnet-4-5-20250929'
+    ],
+    order: 11.6
+  },
+
+  // Claude Slide 7: Búsqueda Web
+  {
+    id: 'claude-busqueda-web',
+    title: 'Investigación y Búsqueda Web',
+    type: SlideType.CONTENT,
+    content: 'Acceso a información actualizada',
+    bullets: [
+      'Búsqueda de información actualizada en internet',
+      'Acceso a contenido de páginas web específicas',
+      'Verificación de datos y hechos recientes',
+      'Síntesis de información de múltiples fuentes',
+      'Mantiene actualización más allá de enero 2025'
+    ],
+    order: 11.7
+  },
+
+  // Claude Slide 8: Organización
+  {
+    id: 'claude-organizacion',
+    title: 'Organización y Productividad',
+    type: SlideType.CONTENT,
+    content: 'Herramientas de productividad',
+    bullets: [
+      'Gestión de calendario (crear, editar, buscar eventos)',
+      'Configuración de alarmas y temporizadores',
+      'Búsqueda en conversaciones anteriores',
+      'Memoria de contexto entre sesiones',
+      'Asistencia con ubicación y mapas'
+    ],
+    order: 11.8
+  },
+
+  // Claude Slide 9: Análisis de Datos
+  {
+    id: 'claude-analisis-datos',
+    title: 'Análisis de Datos y Visualización',
+    type: SlideType.CONTENT,
+    content: 'Procesamiento y análisis',
+    bullets: [
+      'Procesamiento de datos en Excel/CSV',
+      'Análisis estadístico básico',
+      'Creación de gráficos y visualizaciones',
+      'Interpretación de resultados',
+      'Generación de reportes con insights'
+    ],
+    order: 11.9
+  },
+
+  // Claude Slide 10: Casos de Uso
+  {
+    id: 'claude-casos-uso',
+    title: 'Casos de Uso para Emprendedores',
+    type: SlideType.CONTENT,
+    content: 'Aplicaciones prácticas',
+    bullets: [
+      'Consultoría tecnológica y estrategia digital',
+      'Desarrollo de MVPs y prototipos',
+      'Análisis de mercado y competencia',
+      'Automatización de procesos empresariales',
+      'Soporte en decisiones técnicas'
+    ],
+    order: 11.91
+  },
+
+  // Claude Slide 11: Formas de Acceso
+  {
+    id: 'claude-acceso',
+    title: 'Formas de Acceso',
+    type: SlideType.CONTENT,
+    content: 'Cómo usar Claude',
+    bullets: [
+      'Web: claude.ai (navegador)',
+      'Móvil: Aplicación iOS/Android',
+      'Desktop: Aplicación de escritorio',
+      'API: Integración en aplicaciones propias',
+      'Claude Code CLI: Terminal para desarrolladores'
+    ],
+    order: 11.92
+  },
+
+  // Claude Slide 12: Limitaciones
+  {
+    id: 'claude-limitaciones',
+    title: 'Limitaciones Importantes',
+    type: SlideType.CONTENT,
+    content: 'Consideraciones al usar Claude',
+    bullets: [
+      'Conocimiento confiable hasta enero 2025',
+      'No reemplaza criterio humano en decisiones críticas',
+      'No genera contenido malicioso o dañino',
+      'Requiere verificación para información crítica',
+      'Mejor como complemento al trabajo humano'
+    ],
+    order: 11.93
+  },
+
   // Vista 13: Grok
   {
     id: 'grok',
@@ -2478,6 +2668,216 @@ export const slidesData: Slide[] = [
       'Útil para tendencias y noticias actuales'
     ],
     order: 12
+  },
+
+  // Grok - Slides de Contenido Detallado
+  {
+    id: 'grok-titulo',
+    title: 'Grok 4',
+    type: SlideType.CONTENT,
+    content: 'El asistente IA más potente y sin censura',
+    customBullets: [
+      {
+        text: 'Desarrollado por xAI, la compañía de IA de Elon Musk',
+        keyword: '🚀 El Poder de la IA Sin Límites:'
+      },
+      {
+        text: 'Acceso directo a toda la información en tiempo real de X (antes Twitter)',
+        keyword: '🌐 Conectado al Pulso Mundial:'
+      },
+      {
+        text: 'Enfoque en respuestas directas, sin filtros excesivos',
+        keyword: '💡 Transparencia Total:'
+      },
+      {
+        text: 'Compite directamente con ChatGPT, Claude y Gemini',
+        keyword: '⚡ Competencia de Primera:'
+      }
+    ],
+    order: 12.1
+  },
+  {
+    id: 'grok-quien-es',
+    title: '¿Quién es Grok 4?',
+    type: SlideType.CONTENT,
+    content: 'Un asistente diferente',
+    bullets: [
+      'Asistente de IA conversacional desarrollado por xAI',
+      'Modelo actual: Grok 4 (versión más avanzada)',
+      'Entrenado con datos masivos de X y otras fuentes',
+      'Diseñado para ser útil, honesto y directo',
+      'Acceso exclusivo para suscriptores de X Premium+'
+    ],
+    order: 12.2
+  },
+  {
+    id: 'grok-capacidades-basicas',
+    title: 'Capacidades Básicas de Grok 4',
+    type: SlideType.CONTENT,
+    content: 'Lo que Grok puede hacer por ti',
+    customBullets: [
+      {
+        text: 'Conversaciones naturales e informativas • Respuestas con contexto • Explicaciones detalladas',
+        keyword: '💬 Conversación Inteligente:'
+      },
+      {
+        text: 'Resúmenes de texto • Redacción de correos • Creación de contenido • Traducciones',
+        keyword: '✍️ Generación de Contenido:'
+      },
+      {
+        text: 'Responde preguntas con información actualizada de X • Tendencias y noticias en tiempo real',
+        keyword: '🔍 Investigación en Tiempo Real:'
+      },
+      {
+        text: 'Solución de problemas matemáticos • Análisis de datos básicos',
+        keyword: '📊 Razonamiento y Análisis:'
+      }
+    ],
+    order: 12.3
+  },
+  {
+    id: 'grok-busqueda-tiempo-real',
+    title: 'Búsqueda y Análisis en Tiempo Real',
+    type: SlideType.CONTENT,
+    content: 'La ventaja competitiva de Grok',
+    customBullets: [
+      {
+        text: 'Conexión directa con X (Twitter) para información actualizada al segundo',
+        keyword: '🌍 Acceso Instantáneo a X:'
+      },
+      {
+        text: 'Análisis de tendencias, noticias y conversaciones globales en tiempo real',
+        keyword: '📈 Análisis de Tendencias:'
+      },
+      {
+        text: 'Ideal para monitoreo de marca, análisis de sentimiento y detección de crisis',
+        keyword: '🔔 Monitoreo de Marca:'
+      },
+      {
+        text: 'Información que otros modelos de IA no tienen hasta que se actualicen',
+        keyword: '⚡ Ventaja Temporal:'
+      }
+    ],
+    order: 12.4
+  },
+  {
+    id: 'grok-programacion',
+    title: 'Programación y Ejecución de Código',
+    type: SlideType.CONTENT,
+    content: 'Grok como asistente de desarrollo',
+    bullets: [
+      'Genera código en múltiples lenguajes (Python, JavaScript, Java, etc.)',
+      'Explica código existente línea por línea',
+      'Depura errores y sugiere mejoras',
+      'Puede ejecutar código Python en tiempo real',
+      'Crea scripts para automatización de tareas',
+      'Genera documentación técnica'
+    ],
+    order: 12.5
+  },
+  {
+    id: 'grok-analisis-archivos',
+    title: 'Análisis de Archivos',
+    type: SlideType.CONTENT,
+    content: 'Procesa tus documentos',
+    customBullets: [
+      {
+        text: 'Carga y analiza archivos PDF, TXT, CSV y más',
+        keyword: '📄 Formatos Soportados:'
+      },
+      {
+        text: 'Extracción de información clave • Resúmenes automáticos • Análisis de contenido',
+        keyword: '🔍 Procesamiento Inteligente:'
+      },
+      {
+        text: 'Análisis de hojas de cálculo • Identificación de patrones • Generación de insights',
+        keyword: '📊 Análisis de Datos:'
+      },
+      {
+        text: 'Ahorra horas de lectura y análisis manual',
+        keyword: '⏱️ Productividad:'
+      }
+    ],
+    order: 12.6
+  },
+  {
+    id: 'grok-graficos',
+    title: 'Gráficos y Visualización de Datos',
+    type: SlideType.CONTENT,
+    content: 'Convierte datos en visualizaciones',
+    bullets: [
+      'Genera gráficos y visualizaciones a partir de datos',
+      'Crea gráficos de barras, líneas, pastel, dispersión, etc.',
+      'Analiza tendencias con representaciones visuales',
+      'Exporta gráficos para presentaciones',
+      'Simplifica la interpretación de información compleja'
+    ],
+    order: 12.7
+  },
+  {
+    id: 'grok-imagenes',
+    title: 'Generación y Edición de Imágenes',
+    type: SlideType.CONTENT,
+    content: 'Creatividad visual con IA',
+    customBullets: [
+      {
+        text: 'Integración con Aurora (modelo de generación de imágenes de xAI)',
+        keyword: '🎨 Generación de Imágenes:'
+      },
+      {
+        text: 'Crea ilustraciones, logos, conceptos visuales desde texto',
+        keyword: '✨ Creación Visual:'
+      },
+      {
+        text: 'Edición y modificación de imágenes existentes',
+        keyword: '🖼️ Edición:'
+      },
+      {
+        text: 'Estilos personalizables: realista, artístico, minimalista, etc.',
+        keyword: '🎭 Estilos Variados:'
+      }
+    ],
+    order: 12.8
+  },
+  {
+    id: 'grok-limitaciones',
+    title: 'Lo que NO tiene Grok (por ahora)',
+    type: SlideType.CONTENT,
+    content: 'Conoce las limitaciones',
+    bullets: [
+      'No tiene acceso completo a internet (solo X y fuentes limitadas)',
+      'No puede navegar sitios web externos como Claude o Bing',
+      'Requiere suscripción de pago (X Premium+)',
+      'No tiene aplicación móvil dedicada (solo web)',
+      'Menos herramientas integradas comparado con ChatGPT o Claude',
+      'Comunidad de plugins y extensiones aún en desarrollo'
+    ],
+    order: 12.9
+  },
+  {
+    id: 'grok-conclusion',
+    title: 'Conclusión: ¿Cuándo usar Grok 4?',
+    type: SlideType.CONTENT,
+    content: 'El mejor momento para Grok',
+    customBullets: [
+      {
+        text: 'Información en tiempo real de X/Twitter • Monitoreo de tendencias • Análisis de conversaciones sociales',
+        keyword: '✅ Úsalo cuando necesites:'
+      },
+      {
+        text: 'Respuestas sin filtros excesivos • Perspectivas directas',
+        keyword: '✅ Úsalo si prefieres:'
+      },
+      {
+        text: 'Programación básica/intermedia • Visualización de datos • Generación de imágenes con Aurora',
+        keyword: '✅ Úsalo para:'
+      },
+      {
+        text: 'Investigación profunda en web externa • Análisis de documentos largos complejos • Desarrollo de software avanzado',
+        keyword: '❌ No es ideal para:'
+      }
+    ],
+    order: 12.93
   },
 
   // Vista 14: Meta AI
