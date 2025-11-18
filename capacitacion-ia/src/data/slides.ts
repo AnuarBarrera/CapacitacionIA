@@ -2898,128 +2898,235 @@ export const slidesData: Slide[] = [
     order: 10
   },
 
-  // Gemini Slide 1: Introducción - Gemini Cerebro Fundacional
+  // Gemini Slide 1: Capacidades Principales
   {
-    id: 'gemini-introduccion',
-    title: 'Gemini: El Cerebro Fundacional',
-    type: SlideType.CONTENT,
-    content: 'La Inteligencia Artificial al Servicio de la Productividad y la Creatividad',
-    customBullets: [
+    id: 'gemini-capacidades',
+    title: 'Gemini - Capacidades Principales',
+    type: SlideType.CARD_GRID,
+    description: 'IA multimodal de Google para productividad y creatividad',
+    cards: [
       {
-        text: 'Gemini es un modelo de IA multimodal diseñado para comprender, operar y combinar información de diferentes tipos (texto, código, imágenes, audio)',
-        keyword: 'Concepto Clave:'
+        id: 'procesamiento-multimodal',
+        title: 'Procesamiento Multimodal',
+        description: 'Comprende y combina diferentes tipos de información',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+          <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Procesa texto, código, imágenes y audio simultáneamente',
+          'Razonamiento avanzado para tareas complejas de lógica y matemáticas',
+          'Contexto ampliado: mantiene conversaciones largas',
+          'Generación multimodal: responde con diferentes formatos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gemini-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#34a853;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fbbc04;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="125" r="60" fill="url(#gemini-grad1)" opacity="0.3"/>
+          <circle cx="120" cy="80" r="30" fill="#4285f4" opacity="0.7"/>
+          <text x="120" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Texto</text>
+          <circle cx="280" cy="80" r="30" fill="#34a853" opacity="0.7"/>
+          <text x="280" y="85" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Código</text>
+          <circle cx="120" cy="170" r="30" fill="#fbbc04" opacity="0.7"/>
+          <text x="120" y="175" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Imagen</text>
+          <circle cx="280" cy="170" r="30" fill="#ea4335" opacity="0.7"/>
+          <text x="280" y="175" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Audio</text>
+          <line x1="145" y1="90" x2="175" y2="110" stroke="#4285f4" stroke-width="2"/>
+          <line x1="255" y1="90" x2="225" y2="110" stroke="#34a853" stroke-width="2"/>
+          <line x1="145" y1="160" x2="175" y2="140" stroke="#fbbc04" stroke-width="2"/>
+          <line x1="255" y1="160" x2="225" y2="140" stroke="#ea4335" stroke-width="2"/>
+          <text x="200" y="220" text-anchor="middle" fill="#4285f4" font-size="14" font-weight="bold">Procesamiento Unificado</text>
+        </svg>`
       },
       {
-        text: 'Generación Multimodal: Procesa y genera contenido a partir de texto, imágenes y audio',
-        keyword: 'Funcionalidades:'
-      },
-      {
-        text: 'Razonamiento Avanzado: Maneja tareas complejas de lógica, matemáticas y codificación'
-      },
-      {
-        text: 'Contexto Ampliado: Mantiene conversaciones largas y recuerda el contexto'
+        id: 'capacidades-centrales',
+        title: 'Capacidades Centrales',
+        description: 'Herramientas para trabajo profesional y creativo',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Generación de contenido: correos, artículos, guiones y contenido creativo',
+          'Análisis de datos: visualizaciones, tablas y gráficos',
+          'Codificación y debugging en múltiples lenguajes',
+          'Interacción con imágenes: descripción y análisis visual',
+          'Traducción avanzada y resumen de documentos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gemini-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#34a853;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="50" y="50" width="80" height="100" rx="8" fill="#f3f4f6" stroke="#4285f4" stroke-width="2"/>
+          <text x="90" y="75" text-anchor="middle" fill="#4285f4" font-size="10" font-weight="bold">Contenido</text>
+          <line x1="60" y1="90" x2="120" y2="90" stroke="#4285f4" stroke-width="1"/>
+          <line x1="60" y1="100" x2="120" y2="100" stroke="#4285f4" stroke-width="1"/>
+          <line x1="60" y1="110" x2="100" y2="110" stroke="#4285f4" stroke-width="1"/>
+          <rect x="160" y="50" width="80" height="100" rx="8" fill="#1f2937" stroke="#34a853" stroke-width="2"/>
+          <text x="200" y="75" text-anchor="middle" fill="#34a853" font-size="10" font-weight="bold">Código</text>
+          <text x="200" y="100" text-anchor="middle" fill="#34a853" font-family="monospace" font-size="9">&lt;/&gt;</text>
+          <rect x="270" y="50" width="80" height="100" rx="8" fill="#fef3c7" stroke="#fbbc04" stroke-width="2"/>
+          <text x="310" y="75" text-anchor="middle" fill="#fbbc04" font-size="10" font-weight="bold">Análisis</text>
+          <circle cx="295" cy="100" r="15" fill="#4285f4" opacity="0.3"/>
+          <rect x="320" y="110" width="15" height="30" fill="#34a853" opacity="0.5"/>
+          <rect x="335" y="120" width="10" height="20" fill="#ea4335" opacity="0.5"/>
+          <text x="200" y="220" text-anchor="middle" fill="#34a853" font-size="13" font-weight="bold">Suite de Herramientas Profesionales</text>
+        </svg>`
       }
     ],
     order: 10.1
   },
 
-  // Gemini Slide 2: Capacidades Centrales
+  // Gemini Slide 2: Herramientas Especializadas
   {
-    id: 'gemini-capacidades',
-    title: 'Gemini - El Asistente Personal y Profesional',
-    type: SlideType.CONTENT,
-    content: 'Capacidades Centrales de Gemini',
-    bullets: [
-      'Generación de Contenido: Redacción de correos, artículos, ensayos, guiones y contenido creativo. Traducción y resumen de documentos extensos',
-      'Análisis de Datos: Analiza datos estructurados, genera visualizaciones e interpreta tablas y gráficos en imágenes',
-      'Codificación y Debugging: Genera código en múltiples lenguajes (Python, JavaScript, etc.). Explica bloques de código complejos y ayuda a depurar',
-      'Interacción con Imágenes: Responde preguntas sobre el contenido de una imagen, describe escenas o crea subtítulos'
+    id: 'gemini-herramientas',
+    title: 'Gemini - Herramientas Especializadas',
+    type: SlideType.CARD_GRID,
+    description: 'Potencia tu flujo de trabajo con herramientas especializadas de Google',
+    cards: [
+      {
+        id: 'notebooklm',
+        title: 'NotebookLM',
+        description: 'Asistente de investigación con análisis de fuentes',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Transforma documentos (PDFs, Google Docs, URLs) en conocimiento interactivo',
+          '"Conversa" con tus fuentes: pregunta y obtén respuestas fundamentadas',
+          'Genera resúmenes, fichas de estudio y planes de acción',
+          'Grounding: cita siempre la fuente exacta de la información',
+          'Organiza e interconecta ideas entre diferentes fuentes',
+          'Crea podcasts de IA a partir de tus documentos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="notebook-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="60" y="40" width="130" height="170" rx="8" fill="white" stroke="url(#notebook-grad)" stroke-width="3"/>
+          <rect x="60" y="40" width="130" height="30" fill="url(#notebook-grad)"/>
+          <text x="125" y="60" text-anchor="middle" fill="white" font-size="11" font-weight="bold">NotebookLM</text>
+          <circle cx="80" cy="95" r="8" fill="#4285f4"/>
+          <line x1="95" y1="95" x2="170" y2="95" stroke="#374151" stroke-width="1"/>
+          <circle cx="80" cy="120" r="8" fill="#34a853"/>
+          <line x1="95" y1="120" x2="170" y2="120" stroke="#374151" stroke-width="1"/>
+          <circle cx="80" cy="145" r="8" fill="#fbbc04"/>
+          <line x1="95" y1="145" x2="160" y2="145" stroke="#374151" stroke-width="1"/>
+          <rect x="70" y="170" width="110" height="30" rx="4" fill="#f3f4f6"/>
+          <text x="125" y="188" text-anchor="middle" fill="#4285f4" font-size="9" font-weight="bold">Fuentes Citadas</text>
+          <g transform="translate(220, 80)">
+            <circle cx="40" cy="40" r="35" fill="url(#notebook-grad)" opacity="0.2"/>
+            <path d="M 30 40 Q 40 30 50 40 T 70 40" stroke="#4285f4" stroke-width="2" fill="none"/>
+            <circle cx="40" cy="55" r="3" fill="#4285f4"/>
+            <path d="M 25 50 L 30 55 L 40 45" stroke="#4285f4" stroke-width="2" fill="none"/>
+          </g>
+          <text x="200" y="230" text-anchor="middle" fill="#4285f4" font-size="12" font-weight="bold">Investigación Inteligente</text>
+        </svg>`
+      },
+      {
+        id: 'generacion-imagenes',
+        title: 'Generación de Imágenes',
+        description: 'Creación visual instantánea con Imagen 3',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+          <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Crea imágenes únicas de alta calidad desde texto',
+          'Text-to-Image: fotorrealistas o estilos artísticos variados',
+          'Edición creativa: modifica partes específicas con instrucciones',
+          'Seguridad: filtros y marcas de agua digitales'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="imagen-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#ea4335;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fbbc04;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="50" y="40" width="140" height="170" rx="10" fill="white" stroke="url(#imagen-grad)" stroke-width="3"/>
+          <rect x="60" y="50" width="120" height="100" rx="5" fill="url(#imagen-grad)" opacity="0.3"/>
+          <circle cx="90" cy="80" r="15" fill="#fbbc04"/>
+          <polygon points="60,150 90,110 120,130 150,100 180,150" fill="url(#imagen-grad)" opacity="0.5"/>
+          <g transform="translate(70, 165)">
+            <circle cx="0" cy="0" r="6" fill="#ea4335"/>
+            <circle cx="20" cy="0" r="6" fill="#fbbc04"/>
+            <circle cx="40" cy="0" r="6" fill="#34a853"/>
+            <circle cx="60" cy="0" r="6" fill="#4285f4"/>
+          </g>
+          <g transform="translate(230, 90)">
+            <path d="M 0 0 L 40 0 L 40 40 L 0 40 Z" stroke="#4285f4" stroke-width="2" fill="none"/>
+            <path d="M 10 20 L 30 20 M 20 10 L 20 30" stroke="#4285f4" stroke-width="2"/>
+          </g>
+          <g transform="translate(280, 90)">
+            <rect x="0" y="0" width="40" height="40" rx="4" fill="#34a853" opacity="0.2"/>
+            <path d="M 10 20 L 15 25 L 30 10" stroke="#34a853" stroke-width="2" fill="none"/>
+          </g>
+          <text x="200" y="230" text-anchor="middle" fill="#ea4335" font-size="13" font-weight="bold">Creación Visual Instantánea</text>
+        </svg>`
+      },
+      {
+        id: 'google-ai-studio',
+        title: 'Google AI Studio',
+        description: 'Laboratorio de IA para desarrolladores',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 3H10V10H3V3Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M14 3H21V10H14V3Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M14 14H21V21H14V14Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M3 14H10V21H3V14Z" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Prompt Engineering: diseña, prueba y optimiza prompts',
+          'Acceso a API: gestiona claves y llamadas fácilmente',
+          'Configuración del modelo: ajusta temperatura y creatividad',
+          'Integración con Búsqueda de Google para respuestas actualizadas',
+          'Despliegue: genera código para Node.js, Python, etc.'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="studio-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4285f4;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#ea4335;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="40" width="320" height="180" rx="10" fill="#1f2937" stroke="url(#studio-grad)" stroke-width="3"/>
+          <rect x="40" y="40" width="320" height="35" fill="#374151"/>
+          <circle cx="60" cy="57" r="6" fill="#ea4335"/>
+          <circle cx="80" cy="57" r="6" fill="#fbbc04"/>
+          <circle cx="100" cy="57" r="6" fill="#34a853"/>
+          <text x="200" y="63" text-anchor="middle" fill="#4285f4" font-size="12" font-weight="bold">AI Studio</text>
+          <rect x="55" y="95" width="150" height="110" rx="5" fill="#0f172a"/>
+          <text x="130" y="115" text-anchor="middle" fill="#4285f4" font-size="10" font-weight="bold">Prompt</text>
+          <line x1="65" y1="130" x2="195" y2="130" stroke="#34a853" stroke-width="1"/>
+          <line x1="65" y1="145" x2="195" y2="145" stroke="#34a853" stroke-width="1"/>
+          <line x1="65" y1="160" x2="180" y2="160" stroke="#34a853" stroke-width="1"/>
+          <rect x="225" y="95" width="120" height="110" rx="5" fill="#f3f4f6"/>
+          <text x="285" y="115" text-anchor="middle" fill="#4285f4" font-size="10" font-weight="bold">Respuesta</text>
+          <circle cx="250" cy="140" r="12" fill="#4285f4" opacity="0.3"/>
+          <path d="M 245 140 L 250 145 L 260 135" stroke="#4285f4" stroke-width="2" fill="none"/>
+          <rect x="250" y="165" width="70" height="8" rx="2" fill="#34a853" opacity="0.4"/>
+          <rect x="250" y="178" width="60" height="8" rx="2" fill="#fbbc04" opacity="0.4"/>
+          <text x="200" y="240" text-anchor="middle" fill="#4285f4" font-size="12" font-weight="bold">Laboratorio de Desarrollo IA</text>
+        </svg>`
+      }
     ],
     order: 10.2
-  },
-
-  // Gemini Slide 3: NotebookLM
-  {
-    id: 'gemini-notebooklm',
-    title: 'NotebookLM - Asistente de Investigación',
-    type: SlideType.CONTENT,
-    content: 'NotebookLM: Su Aliado en la Investigación (Análisis de Fuentes)',
-    customBullets: [
-      {
-        text: 'Transforma tus documentos personales (PDFs, Google Docs, URLs) en una fuente de conocimiento interactiva y citada',
-        keyword: 'Propósito:'
-      },
-      {
-        text: '"Conversar" con las Fuentes: Permite hacer preguntas a tus documentos y obtener respuestas basadas exclusivamente en ese material',
-        keyword: 'Funcionalidades:'
-      },
-      {
-        text: 'Resumen y Guías: Genera resúmenes, fichas de estudio, planes de acción o borradores'
-      },
-      {
-        text: 'Grounding (Fundamentación): Siempre cita la fuente exacta de donde extrajo la información'
-      },
-      {
-        text: 'Organización: Ayuda a interconectar ideas entre diferentes fuentes cargadas'
-      }
-    ],
-    order: 10.3
-  },
-
-  // Gemini Slide 4: Generación de Imágenes
-  {
-    id: 'gemini-imagenes',
-    title: 'Creación Visual Instantánea',
-    type: SlideType.CONTENT,
-    content: 'Generación de Imágenes (Impulsado por Imagen)',
-    customBullets: [
-      {
-        text: 'Crear imágenes únicas y de alta calidad a partir de descripciones de texto',
-        keyword: 'Propósito:'
-      },
-      {
-        text: 'Text-to-Image: Convierte descripciones detalladas en imágenes fotorrealistas o estilos artísticos variados',
-        keyword: 'Funcionalidades:'
-      },
-      {
-        text: 'Edición Creativa: Permite refinar o modificar partes específicas de una imagen con instrucciones de texto'
-      },
-      {
-        text: 'Seguridad: Incluye filtros para evitar contenido dañino y marcas de agua digitales'
-      }
-    ],
-    order: 10.4
-  },
-
-  // Gemini Slide 5: Google AI Studio
-  {
-    id: 'gemini-ai-studio',
-    title: 'Google AI Studio - El Laboratorio de IA',
-    type: SlideType.CONTENT,
-    content: 'Google AI Studio: Prototipado y Desarrollo Ágil',
-    customBullets: [
-      {
-        text: 'Herramienta para desarrolladores que quieren construir aplicaciones usando los modelos de Google',
-        keyword: 'Propósito:'
-      },
-      {
-        text: 'Prompt Engineering: Entorno interactivo para diseñar, probar y optimizar prompts',
-        keyword: 'Funcionalidades:'
-      },
-      {
-        text: 'Acceso a API: Entorno fácil para obtener la clave API y gestionar llamadas'
-      },
-      {
-        text: 'Configuración del Modelo: Ajusta parámetros (temperatura, top-k, top-p) para controlar creatividad'
-      },
-      {
-        text: 'Integración de Datos: Incorpora Búsqueda de Google para respuestas actualizadas'
-      },
-      {
-        text: 'Despliegue: Genera código base para integrar en aplicaciones (Node.js, Python, etc.)'
-      }
-    ],
-    order: 10.5
   },
 
   // Vista 12: Claude
@@ -3046,194 +3153,386 @@ export const slidesData: Slide[] = [
     order: 11
   },
 
-  // Claude Slide 1: Introducción
+  // Claude Slide 1: Capacidades Principales
   {
-    id: 'claude-introduccion',
-    title: '¿Qué es Claude?',
-    type: SlideType.CONTENT,
-    content: 'Introducción a Claude',
-    bullets: [
-      'Asistente de IA desarrollado por Anthropic',
-      'Modelo actual: Claude Sonnet 4.5 (familia Claude 4)',
-      'Diseñado para conversaciones naturales y tareas complejas',
-      'Énfasis en seguridad y utilidad práctica'
+    id: 'claude-capacidades',
+    title: 'Claude - Capacidades Principales',
+    type: SlideType.CARD_GRID,
+    description: 'IA conversacional de Anthropic enfocada en análisis profundo y desarrollo',
+    cards: [
+      {
+        id: 'analisis-creacion',
+        title: 'Análisis y Creación de Contenido',
+        description: 'Procesamiento inteligente de documentos y generación profesional',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Lee y analiza PDF, Word, Excel, imágenes y código',
+          'Extrae información clave de documentos largos (hasta 200k tokens)',
+          'Compara y sintetiza información de múltiples fuentes',
+          'OCR: transcribe texto de imágenes',
+          'Redacción profesional: documentos, reportes, propuestas',
+          'Crea presentaciones (.pptx) y hojas de cálculo (.xlsx)',
+          'Correos electrónicos y contenido para marketing'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="claude-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#c96643;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="50" y="40" width="140" height="170" rx="10" fill="white" stroke="url(#claude-grad1)" stroke-width="3"/>
+          <rect x="60" y="50" width="120" height="25" rx="4" fill="url(#claude-grad1)" opacity="0.2"/>
+          <text x="120" y="68" text-anchor="middle" fill="#D97757" font-size="10" font-weight="bold">Documento</text>
+          <line x1="70" y1="90" x2="170" y2="90" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="70" y1="105" x2="170" y2="105" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="70" y1="120" x2="160" y2="120" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="70" y1="135" x2="170" y2="135" stroke="#D97757" stroke-width="1.5"/>
+          <rect x="70" y="155" width="110" height="45" rx="6" fill="#fef3f0"/>
+          <text x="125" y="175" text-anchor="middle" fill="#D97757" font-size="9" font-weight="bold">Análisis</text>
+          <text x="125" y="188" text-anchor="middle" fill="#c96643" font-size="8">Insights</text>
+          <path d="M 190 125 L 220 125" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-claude)"/>
+          <rect x="220" y="60" width="130" height="130" rx="10" fill="#fef3f0" stroke="#10b981" stroke-width="2"/>
+          <text x="285" y="85" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">Resultado</text>
+          <rect x="235" y="100" width="100" height="8" rx="2" fill="#D97757" opacity="0.4"/>
+          <rect x="235" y="115" width="90" height="8" rx="2" fill="#D97757" opacity="0.4"/>
+          <rect x="235" y="130" width="100" height="8" rx="2" fill="#D97757" opacity="0.4"/>
+          <rect x="235" y="145" width="85" height="8" rx="2" fill="#D97757" opacity="0.4"/>
+          <circle cx="285" cy="170" r="12" fill="#10b981" opacity="0.3"/>
+          <path d="M 280 170 L 283 173 L 290 166" stroke="#10b981" stroke-width="2" fill="none"/>
+          <defs>
+            <marker id="arrow-claude" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+          <text x="200" y="230" text-anchor="middle" fill="#D97757" font-size="13" font-weight="bold">Procesamiento Inteligente</text>
+        </svg>`
+      },
+      {
+        id: 'programacion-desarrollo',
+        title: 'Programación y Desarrollo',
+        description: 'Asistencia técnica avanzada para desarrolladores',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 18L22 12L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Escritura de código en múltiples lenguajes',
+          'Depuración y optimización de código existente',
+          'Explicación de conceptos técnicos complejos',
+          'Creación de scripts y automatizaciones',
+          'Desarrollo web: HTML, CSS, JavaScript, React, Vue',
+          'Arquitectura de software y mejores prácticas'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="claude-code-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="40" width="320" height="170" rx="10" fill="#1e293b" stroke="url(#claude-code-grad)" stroke-width="3"/>
+          <rect x="40" y="40" width="320" height="30" fill="#334155"/>
+          <circle cx="60" cy="55" r="5" fill="#ef4444"/>
+          <circle cx="80" cy="55" r="5" fill="#fbbf24"/>
+          <circle cx="100" cy="55" r="5" fill="#10b981"/>
+          <text x="200" y="60" text-anchor="middle" fill="#D97757" font-size="11" font-weight="bold">code.js</text>
+          <g font-family="monospace" font-size="10">
+            <text x="55" y="95" fill="#c792ea">function</text>
+            <text x="115" y="95" fill="#82aaff">processData</text>
+            <text x="195" y="95" fill="#c3e88d">(data) {</text>
+            <text x="70" y="115" fill="#89ddff">const</text>
+            <text x="110" y="115" fill="#eeffff">result</text>
+            <text x="155" y="115" fill="#89ddff">=</text>
+            <text x="175" y="115" fill="#eeffff">data.</text>
+            <text x="215" y="115" fill="#82aaff">map</text>
+            <text x="245" y="115" fill="#c3e88d">(</text>
+            <text x="85" y="135" fill="#f07178">item</text>
+            <text x="120" y="135" fill="#89ddff">=></text>
+            <text x="150" y="135" fill="#f07178">item</text>
+            <text x="185" y="135" fill="#eeffff">.</text>
+            <text x="195" y="135" fill="#82aaff">value</text>
+            <text x="235" y="135" fill="#89ddff">*</text>
+            <text x="250" y="135" fill="#f78c6c">2</text>
+            <text x="70" y="155" fill="#c3e88d">)</text>
+            <text x="70" y="175" fill="#89ddff">return</text>
+            <text x="125" y="175" fill="#eeffff">result</text>
+            <text x="55" y="195" fill="#c3e88d">}</text>
+          </g>
+          <text x="200" y="235" text-anchor="middle" fill="#D97757" font-size="12" font-weight="bold">Asistencia en Desarrollo</text>
+        </svg>`
+      }
     ],
     order: 11.1
   },
 
-  // Claude Slide 2: Análisis de Documentos
+  // Claude Slide 2: Claude Code
   {
-    id: 'claude-analisis-documentos',
-    title: 'Análisis y Procesamiento de Documentos',
-    type: SlideType.CONTENT,
-    content: 'Capacidades de análisis',
-    bullets: [
-      'Lee y analiza múltiples formatos: PDF, Word, Excel, imágenes, código',
-      'Extrae información clave de documentos largos',
-      'Compara y sintetiza información de varias fuentes',
-      'Transcribe texto de imágenes (OCR)'
+    id: 'claude-code',
+    title: 'Claude Code - Entorno de Desarrollo',
+    type: SlideType.CARD_GRID,
+    description: 'Herramientas especializadas para desarrollo de software',
+    cards: [
+      {
+        id: 'code-web',
+        title: 'Claude Code Web',
+        description: 'Entorno de desarrollo en el navegador',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M8 2V5M16 2V5M2 10H22" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Entorno de desarrollo integrado en el navegador',
+          'Ejecuta código en tiempo real',
+          'Crea y edita archivos directamente',
+          'Vista previa de aplicaciones web',
+          'Ideal para prototipos rápidos y desarrollo interactivo',
+          'Sin necesidad de configuración local'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="code-web-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#4285f4;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="40" width="320" height="180" rx="10" fill="white" stroke="url(#code-web-grad)" stroke-width="3"/>
+          <rect x="40" y="40" width="320" height="35" fill="url(#code-web-grad)"/>
+          <text x="200" y="62" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Claude Code Web</text>
+          <rect x="50" y="90" width="140" height="120" rx="5" fill="#0f172a"/>
+          <text x="120" y="110" text-anchor="middle" fill="#D97757" font-size="9" font-weight="bold">Editor</text>
+          <line x1="60" y1="125" x2="180" y2="125" stroke="#10b981" stroke-width="1"/>
+          <line x1="60" y1="140" x2="180" y2="140" stroke="#10b981" stroke-width="1"/>
+          <line x1="60" y1="155" x2="165" y2="155" stroke="#10b981" stroke-width="1"/>
+          <line x1="60" y1="170" x2="180" y2="170" stroke="#10b981" stroke-width="1"/>
+          <rect x="210" y="90" width="140" height="120" rx="5" fill="#f0f9ff"/>
+          <text x="280" y="110" text-anchor="middle" fill="#4285f4" font-size="9" font-weight="bold">Vista Previa</text>
+          <rect x="220" y="125" width="120" height="75" rx="4" fill="white" stroke="#4285f4" stroke-width="1"/>
+          <rect x="225" y="130" width="110" height="15" fill="#4285f4" opacity="0.2"/>
+          <rect x="230" y="155" width="50" height="35" fill="#10b981" opacity="0.3"/>
+          <rect x="290" y="155" width="35" height="35" fill="#D97757" opacity="0.3"/>
+          <text x="200" y="238" text-anchor="middle" fill="#D97757" font-size="11" font-weight="bold">Desarrollo en el Navegador</text>
+        </svg>`
+      },
+      {
+        id: 'code-cli',
+        title: 'Claude Code CLI',
+        description: 'Herramienta de línea de comandos',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M6 8L10 12L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 16H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
+        bullets: [
+          'Herramienta de línea de comandos para desarrolladores',
+          'Integración directa con tu entorno local',
+          'Delega tareas de código desde la terminal',
+          'Automatización de flujos de trabajo',
+          'Acceso al modelo claude-sonnet-4-5',
+          'Perfecto para CI/CD y scripts'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cli-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#D97757;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="40" y="50" width="320" height="160" rx="8" fill="#0f172a" stroke="url(#cli-grad)" stroke-width="3"/>
+          <rect x="40" y="50" width="320" height="30" fill="#1e293b"/>
+          <circle cx="60" cy="65" r="5" fill="#ef4444"/>
+          <circle cx="80" cy="65" r="5" fill="#fbbf24"/>
+          <circle cx="100" cy="65" r="5" fill="#10b981"/>
+          <text x="200" y="70" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">terminal</text>
+          <g font-family="monospace" font-size="10">
+            <text x="55" y="105" fill="#10b981">$</text>
+            <text x="70" y="105" fill="#82aaff">claude</text>
+            <text x="120" y="105" fill="#c3e88d">code</text>
+            <text x="160" y="105" fill="#f78c6c">--task</text>
+            <text x="210" y="105" fill="#eeffff">"create app"</text>
+            <rect x="55" y="115" width="10" height="12" fill="#10b981" opacity="0.5">
+              <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite"/>
+            </rect>
+            <text x="55" y="145" fill="#eeffff">Creating</text>
+            <text x="115" y="145" fill="#82aaff">React</text>
+            <text x="160" y="145" fill="#eeffff">app...</text>
+            <text x="55" y="165" fill="#10b981">✓</text>
+            <text x="70" y="165" fill="#10b981">App</text>
+            <text x="105" y="165" fill="#eeffff">created</text>
+            <text x="165" y="165" fill="#eeffff">successfully</text>
+            <text x="55" y="185" fill="#10b981">$</text>
+            <rect x="70" y="175" width="10" height="12" fill="#10b981"/>
+          </g>
+          <text x="200" y="232" text-anchor="middle" fill="#10b981" font-size="11" font-weight="bold">Desarrollo desde Terminal</text>
+        </svg>`
+      }
     ],
     order: 11.2
   },
 
-  // Claude Slide 3: Creación de Contenido
+  // Claude Slide 3: Herramientas Avanzadas y Casos de Uso
   {
-    id: 'claude-creacion-contenido',
-    title: 'Creación de Contenido Profesional',
-    type: SlideType.CONTENT,
-    content: 'Generación de archivos y documentos',
-    bullets: [
-      'Redacción de documentos, reportes y propuestas',
-      'Creación de presentaciones (.pptx)',
-      'Hojas de cálculo con fórmulas (.xlsx)',
-      'Correos electrónicos y comunicaciones empresariales',
-      'Contenido para marketing y redes sociales'
+    id: 'claude-herramientas-acceso',
+    title: 'Claude - Herramientas y Acceso',
+    type: SlideType.CARD_GRID,
+    description: 'Funcionalidades avanzadas y formas de usar Claude',
+    cards: [
+      {
+        id: 'herramientas-avanzadas',
+        title: 'Herramientas Avanzadas',
+        description: 'Funcionalidades especializadas para productividad',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2V6M12 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 12H6M18 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>`,
+        bullets: [
+          'Búsqueda web: información actualizada más allá de enero 2025',
+          'Gestión de calendario: crear, editar y buscar eventos',
+          'Análisis de datos: procesamiento de Excel/CSV con visualizaciones',
+          'Configuración de alarmas y temporizadores',
+          'Búsqueda en conversaciones anteriores',
+          'Memoria de contexto entre sesiones'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="tools-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#4285f4;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="125" r="45" fill="url(#tools-grad)" opacity="0.3"/>
+          <circle cx="200" cy="125" r="25" fill="url(#tools-grad)"/>
+          <text x="200" y="132" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Claude</text>
+          <g transform="translate(110, 75)">
+            <circle cx="0" cy="0" r="18" fill="#4285f4" opacity="0.8"/>
+            <path d="M -5 0 L 0 5 L 8 -5" stroke="white" stroke-width="2" fill="none"/>
+          </g>
+          <text x="110" y="108" text-anchor="middle" fill="#4285f4" font-size="8">Web</text>
+          <g transform="translate(290, 75)">
+            <circle cx="0" cy="0" r="18" fill="#10b981" opacity="0.8"/>
+            <rect x="-6" y="-6" width="12" height="12" stroke="white" stroke-width="1.5" fill="none"/>
+          </g>
+          <text x="290" y="108" text-anchor="middle" fill="#10b981" font-size="8">Calendario</text>
+          <g transform="translate(110, 175)">
+            <circle cx="0" cy="0" r="18" fill="#fbbf24" opacity="0.8"/>
+            <rect x="-5" y="-2" width="10" height="6" fill="white"/>
+            <rect x="-3" y="1" width="6" height="3" fill="#fbbf24"/>
+          </g>
+          <text x="110" y="208" text-anchor="middle" fill="#fbbf24" font-size="8">Datos</text>
+          <g transform="translate(290, 175)">
+            <circle cx="0" cy="0" r="18" fill="#ec4899" opacity="0.8"/>
+            <circle cx="0" cy="0" r="5" stroke="white" stroke-width="1.5" fill="none"/>
+            <circle cx="0" cy="-9" r="2" fill="white"/>
+          </g>
+          <text x="290" y="208" text-anchor="middle" fill="#ec4899" font-size="8">Búsqueda</text>
+          <line x1="175" y1="105" x2="140" y2="85" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="225" y1="105" x2="260" y2="85" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="175" y1="145" x2="140" y2="165" stroke="#D97757" stroke-width="1.5"/>
+          <line x1="225" y1="145" x2="260" y2="165" stroke="#D97757" stroke-width="1.5"/>
+        </svg>`
+      },
+      {
+        id: 'emprendedores-acceso',
+        title: 'Para Emprendedores y Empresas',
+        description: 'Aplicaciones prácticas y formas de acceso',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+          <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`,
+        bullets: [
+          'Consultoría tecnológica y estrategia digital',
+          'Desarrollo de MVPs y prototipos rápidos',
+          'Análisis de mercado y competencia',
+          'Automatización de procesos empresariales',
+          'Web: claude.ai | Móvil: iOS/Android | Desktop: App escritorio',
+          'API: Integración en apps propias | CLI: Terminal'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="business-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D97757;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <rect x="60" y="60" width="100" height="130" rx="8" fill="#fef3f0" stroke="#D97757" stroke-width="2"/>
+          <text x="110" y="85" text-anchor="middle" fill="#D97757" font-size="10" font-weight="bold">Empresa</text>
+          <rect x="75" y="100" width="70" height="20" rx="3" fill="#D97757" opacity="0.2"/>
+          <text x="110" y="113" text-anchor="middle" fill="#D97757" font-size="8">Estrategia</text>
+          <rect x="75" y="130" width="70" height="20" rx="3" fill="#D97757" opacity="0.2"/>
+          <text x="110" y="143" text-anchor="middle" fill="#D97757" font-size="8">Desarrollo</text>
+          <rect x="75" y="160" width="70" height="20" rx="3" fill="#D97757" opacity="0.2"/>
+          <text x="110" y="173" text-anchor="middle" fill="#D97757" font-size="8">Análisis</text>
+          <path d="M 160 125 L 185 125" stroke="#10b981" stroke-width="3" marker-end="url(#arrow-biz)"/>
+          <circle cx="225" cy="125" r="40" fill="url(#business-grad)" opacity="0.3"/>
+          <circle cx="225" cy="125" r="25" fill="url(#business-grad)"/>
+          <text x="225" y="132" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Claude</text>
+          <g transform="translate(285, 90)">
+            <rect x="0" y="0" width="40" height="30" rx="3" fill="white" stroke="#4285f4" stroke-width="1.5"/>
+            <text x="20" y="18" text-anchor="middle" fill="#4285f4" font-size="7">Web</text>
+          </g>
+          <g transform="translate(285, 130)">
+            <rect x="0" y="0" width="40" height="30" rx="3" fill="white" stroke="#10b981" stroke-width="1.5"/>
+            <text x="20" y="18" text-anchor="middle" fill="#10b981" font-size="7">API</text>
+          </g>
+          <defs>
+            <marker id="arrow-biz" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+              <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+            </marker>
+          </defs>
+          <text x="200" y="225" text-anchor="middle" fill="#D97757" font-size="11" font-weight="bold">Soluciones Empresariales</text>
+        </svg>`
+      },
+      {
+        id: 'consideraciones',
+        title: 'Consideraciones Importantes',
+        description: 'Limitaciones y mejores prácticas',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="16" r="0.5" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+        </svg>`,
+        bullets: [
+          'Conocimiento base hasta enero 2025 (búsqueda web para info actual)',
+          'No reemplaza criterio humano en decisiones críticas',
+          'Requiere verificación para información crítica',
+          'No genera contenido malicioso o dañino',
+          'Mejor como complemento al trabajo humano',
+          'Énfasis en seguridad y utilidad práctica'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="warning-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="125" r="60" fill="url(#warning-grad)" opacity="0.2"/>
+          <path d="M 200 70 L 240 165 L 160 165 Z" stroke="url(#warning-grad)" stroke-width="3" fill="none"/>
+          <path d="M 200 110 L 200 135" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="200" cy="150" r="3" fill="#fbbf24"/>
+          <text x="200" y="200" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="bold">Verificar Información Crítica</text>
+          <g transform="translate(280, 80)">
+            <circle cx="0" cy="0" r="20" fill="#10b981" opacity="0.3"/>
+            <path d="M -8 0 L -3 5 L 8 -7" stroke="#10b981" stroke-width="2.5" fill="none"/>
+          </g>
+          <text x="280" y="115" text-anchor="middle" fill="#10b981" font-size="8">Complemento</text>
+          <g transform="translate(120, 80)">
+            <circle cx="0" cy="0" r="20" fill="#D97757" opacity="0.3"/>
+            <circle cx="0" cy="0" r="10" stroke="#D97757" stroke-width="2" fill="none"/>
+          </g>
+          <text x="120" y="115" text-anchor="middle" fill="#D97757" font-size="8">Seguridad</text>
+        </svg>`
+      }
     ],
     order: 11.3
-  },
-
-  // Claude Slide 4: Programación
-  {
-    id: 'claude-programacion',
-    title: 'Programación y Desarrollo',
-    type: SlideType.CONTENT,
-    content: 'Asistencia técnica',
-    bullets: [
-      'Escritura de código en múltiples lenguajes',
-      'Depuración y optimización de código existente',
-      'Explicación de conceptos técnicos complejos',
-      'Creación de scripts y automatizaciones',
-      'Desarrollo web (HTML, CSS, JavaScript, React, Vue, etc.)'
-    ],
-    order: 11.4
-  },
-
-  // Claude Slide 5: Claude Code Web
-  {
-    id: 'claude-code-web',
-    title: 'Claude Code (Interfaz Web)',
-    type: SlideType.CONTENT,
-    content: 'Entorno de desarrollo en el navegador',
-    bullets: [
-      'Entorno de desarrollo integrado en el navegador',
-      'Ejecuta código en tiempo real',
-      'Crea y edita archivos directamente',
-      'Vista previa de aplicaciones web',
-      'Ideal para prototipos rápidos y desarrollo interactivo'
-    ],
-    order: 11.5
-  },
-
-  // Claude Slide 6: Claude Code CLI
-  {
-    id: 'claude-code-cli',
-    title: 'Claude Code (CLI - Terminal)',
-    type: SlideType.CONTENT,
-    content: 'Herramienta de línea de comandos',
-    bullets: [
-      'Herramienta de línea de comandos para desarrolladores',
-      'Integración directa con tu entorno local',
-      'Delega tareas de código desde la terminal',
-      'Automatización de flujos de trabajo de desarrollo',
-      'Acceso mediante claude-sonnet-4-5-20250929'
-    ],
-    order: 11.6
-  },
-
-  // Claude Slide 7: Búsqueda Web
-  {
-    id: 'claude-busqueda-web',
-    title: 'Investigación y Búsqueda Web',
-    type: SlideType.CONTENT,
-    content: 'Acceso a información actualizada',
-    bullets: [
-      'Búsqueda de información actualizada en internet',
-      'Acceso a contenido de páginas web específicas',
-      'Verificación de datos y hechos recientes',
-      'Síntesis de información de múltiples fuentes',
-      'Mantiene actualización más allá de enero 2025'
-    ],
-    order: 11.7
-  },
-
-  // Claude Slide 8: Organización
-  {
-    id: 'claude-organizacion',
-    title: 'Organización y Productividad',
-    type: SlideType.CONTENT,
-    content: 'Herramientas de productividad',
-    bullets: [
-      'Gestión de calendario (crear, editar, buscar eventos)',
-      'Configuración de alarmas y temporizadores',
-      'Búsqueda en conversaciones anteriores',
-      'Memoria de contexto entre sesiones',
-      'Asistencia con ubicación y mapas'
-    ],
-    order: 11.8
-  },
-
-  // Claude Slide 9: Análisis de Datos
-  {
-    id: 'claude-analisis-datos',
-    title: 'Análisis de Datos y Visualización',
-    type: SlideType.CONTENT,
-    content: 'Procesamiento y análisis',
-    bullets: [
-      'Procesamiento de datos en Excel/CSV',
-      'Análisis estadístico básico',
-      'Creación de gráficos y visualizaciones',
-      'Interpretación de resultados',
-      'Generación de reportes con insights'
-    ],
-    order: 11.9
-  },
-
-  // Claude Slide 10: Casos de Uso
-  {
-    id: 'claude-casos-uso',
-    title: 'Casos de Uso para Emprendedores',
-    type: SlideType.CONTENT,
-    content: 'Aplicaciones prácticas',
-    bullets: [
-      'Consultoría tecnológica y estrategia digital',
-      'Desarrollo de MVPs y prototipos',
-      'Análisis de mercado y competencia',
-      'Automatización de procesos empresariales',
-      'Soporte en decisiones técnicas'
-    ],
-    order: 11.91
-  },
-
-  // Claude Slide 11: Formas de Acceso
-  {
-    id: 'claude-acceso',
-    title: 'Formas de Acceso',
-    type: SlideType.CONTENT,
-    content: 'Cómo usar Claude',
-    bullets: [
-      'Web: claude.ai (navegador)',
-      'Móvil: Aplicación iOS/Android',
-      'Desktop: Aplicación de escritorio',
-      'API: Integración en aplicaciones propias',
-      'Claude Code CLI: Terminal para desarrolladores'
-    ],
-    order: 11.92
-  },
-
-  // Claude Slide 12: Limitaciones
-  {
-    id: 'claude-limitaciones',
-    title: 'Limitaciones Importantes',
-    type: SlideType.CONTENT,
-    content: 'Consideraciones al usar Claude',
-    bullets: [
-      'Conocimiento confiable hasta enero 2025',
-      'No reemplaza criterio humano en decisiones críticas',
-      'No genera contenido malicioso o dañino',
-      'Requiere verificación para información crítica',
-      'Mejor como complemento al trabajo humano'
-    ],
-    order: 11.93
   },
 
   // Vista 13: Grok
@@ -3262,212 +3561,409 @@ export const slidesData: Slide[] = [
 
   // Grok - Slides de Contenido Detallado
   {
-    id: 'grok-titulo',
-    title: 'Grok 4',
-    type: SlideType.CONTENT,
-    content: 'El asistente IA más potente y sin censura',
-    customBullets: [
+    id: 'grok-capacidades-principales',
+    title: 'Grok 4 - Capacidades Principales',
+    type: SlideType.CARD_GRID,
+    description: 'La IA sin censura con acceso en tiempo real a X/Twitter',
+    cards: [
       {
-        text: 'Desarrollado por xAI, la compañía de IA de Elon Musk',
-        keyword: '🚀 El Poder de la IA Sin Límites:'
+        id: 'grok-introduccion',
+        title: 'Grok 4 - El Asistente Sin Límites',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="7.5 4.21 12 6.81 16.5 4.21"/>
+          <polyline points="7.5 19.79 7.5 14.6 3 12"/>
+          <polyline points="21 12 16.5 14.6 16.5 19.79"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>`,
+        bullets: [
+          'Desarrollado por xAI, la compañía de IA de Elon Musk',
+          'Modelo actual: Grok 4 (versión más avanzada)',
+          'Enfoque en respuestas directas, sin filtros excesivos',
+          'Acceso exclusivo para suscriptores de X Premium+',
+          'Entrenado con datos masivos de X y otras fuentes',
+          'Diseñado para ser útil, honesto y transparente',
+          'Compite directamente con ChatGPT, Claude y Gemini'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.05" />
+            </linearGradient>
+            <linearGradient id="grokGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0d7abf;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+
+          <!-- Background pattern -->
+          <rect width="400" height="250" fill="url(#grokGrad1)"/>
+
+          <!-- Central hexagon -->
+          <g transform="translate(200, 125)">
+            <path d="M0,-60 L52,-30 L52,30 L0,60 L-52,30 L-52,-30 Z"
+                  fill="none" stroke="url(#grokGrad2)" stroke-width="3" opacity="0.8"/>
+            <path d="M0,-45 L39,-22.5 L39,22.5 L0,45 L-39,22.5 L-39,-22.5 Z"
+                  fill="url(#grokGrad2)" opacity="0.1"/>
+          </g>
+
+          <!-- Orbiting elements -->
+          <g opacity="0.6">
+            <circle cx="200" cy="50" r="8" fill="#1d9bf0">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 200 125" to="360 200 125" dur="20s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="200" r="6" fill="#1d9bf0">
+              <animateTransform attributeName="transform" type="rotate"
+                from="180 200 125" to="540 200 125" dur="15s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="100" cy="125" r="5" fill="#0d7abf">
+              <animateTransform attributeName="transform" type="rotate"
+                from="90 200 125" to="450 200 125" dur="18s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="300" cy="125" r="7" fill="#0d7abf">
+              <animateTransform attributeName="transform" type="rotate"
+                from="270 200 125" to="630 200 125" dur="22s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Center icon -->
+          <g transform="translate(200, 125)">
+            <path d="M-15,-20 L0,-10 L15,-20 M-15,20 L0,10 L15,20 M-20,0 L20,0"
+                  stroke="#1d9bf0" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>`
       },
       {
-        text: 'Acceso directo a toda la información en tiempo real de X (antes Twitter)',
-        keyword: '🌐 Conectado al Pulso Mundial:'
-      },
-      {
-        text: 'Enfoque en respuestas directas, sin filtros excesivos',
-        keyword: '💡 Transparencia Total:'
-      },
-      {
-        text: 'Compite directamente con ChatGPT, Claude y Gemini',
-        keyword: '⚡ Competencia de Primera:'
+        id: 'grok-tiempo-real',
+        title: 'Búsqueda en Tiempo Real - La Ventaja Clave',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>`,
+        bullets: [
+          'Conversaciones naturales e informativas con contexto',
+          'Resúmenes, redacción de correos y creación de contenido',
+          'Conexión directa con X (Twitter) para información actualizada al segundo',
+          'Análisis de tendencias, noticias y conversaciones globales en tiempo real',
+          'Ideal para monitoreo de marca, análisis de sentimiento y detección de crisis',
+          'Información que otros modelos de IA no tienen hasta que se actualicen',
+          'Solución de problemas matemáticos y análisis de datos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokRealTimeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokRealTimeGrad)"/>
+
+          <!-- Globe -->
+          <g transform="translate(200, 125)">
+            <circle r="60" fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.3"/>
+            <ellipse rx="60" ry="20" fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.3"/>
+            <ellipse rx="20" ry="60" fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.3"/>
+
+            <!-- Pulse waves -->
+            <circle r="40" fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.8">
+              <animate attributeName="r" values="40;70;40" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="40" fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.8">
+              <animate attributeName="r" values="40;70;40" dur="2s" begin="1s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Data streams -->
+          <g opacity="0.5">
+            <path d="M50,50 Q100,100 150,50" stroke="#1d9bf0" stroke-width="2" fill="none">
+              <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M250,200 Q300,150 350,200" stroke="#1d9bf0" stroke-width="2" fill="none">
+              <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </svg>`
       }
     ],
     order: 12.1
   },
   {
-    id: 'grok-quien-es',
-    title: '¿Quién es Grok 4?',
-    type: SlideType.CONTENT,
-    content: 'Un asistente diferente',
-    bullets: [
-      'Asistente de IA conversacional desarrollado por xAI',
-      'Modelo actual: Grok 4 (versión más avanzada)',
-      'Entrenado con datos masivos de X y otras fuentes',
-      'Diseñado para ser útil, honesto y directo',
-      'Acceso exclusivo para suscriptores de X Premium+'
+    id: 'grok-herramientas',
+    title: 'Grok 4 - Herramientas Especializadas',
+    type: SlideType.CARD_GRID,
+    description: 'Potentes capacidades para desarrollo, análisis y creatividad',
+    cards: [
+      {
+        id: 'grok-programacion',
+        title: 'Programación y Ejecución de Código',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/>
+          <polyline points="8 6 2 12 8 18"/>
+        </svg>`,
+        bullets: [
+          'Genera código en múltiples lenguajes (Python, JavaScript, Java, etc.)',
+          'Explica código existente línea por línea',
+          'Depura errores y sugiere mejoras',
+          'Puede ejecutar código Python en tiempo real',
+          'Crea scripts para automatización de tareas',
+          'Genera documentación técnica completa'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokCodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokCodeGrad)"/>
+
+          <!-- Code window -->
+          <rect x="50" y="40" width="300" height="170" rx="8" fill="#ffffff" opacity="0.1" stroke="#1d9bf0" stroke-width="2"/>
+          <rect x="50" y="40" width="300" height="30" rx="8" fill="#1d9bf0" opacity="0.3"/>
+          <circle cx="70" cy="55" r="5" fill="#1d9bf0"/>
+          <circle cx="90" cy="55" r="5" fill="#1d9bf0" opacity="0.6"/>
+          <circle cx="110" cy="55" r="5" fill="#1d9bf0" opacity="0.3"/>
+
+          <!-- Code lines -->
+          <rect x="70" y="90" width="120" height="4" fill="#1d9bf0" opacity="0.6" rx="2"/>
+          <rect x="70" y="110" width="180" height="4" fill="#1d9bf0" opacity="0.4" rx="2"/>
+          <rect x="90" y="130" width="140" height="4" fill="#1d9bf0" opacity="0.6" rx="2"/>
+          <rect x="90" y="150" width="160" height="4" fill="#1d9bf0" opacity="0.4" rx="2"/>
+          <rect x="70" y="170" width="100" height="4" fill="#1d9bf0" opacity="0.6" rx="2"/>
+
+          <!-- Cursor blink -->
+          <rect x="230" y="108" width="3" height="8" fill="#1d9bf0">
+            <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+          </rect>
+        </svg>`
+      },
+      {
+        id: 'grok-analisis-visualizacion',
+        title: 'Análisis de Archivos y Visualización',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>`,
+        bullets: [
+          'Carga y analiza archivos PDF, TXT, CSV y más',
+          'Extracción de información clave y resúmenes automáticos',
+          'Análisis de hojas de cálculo e identificación de patrones',
+          'Genera gráficos y visualizaciones a partir de datos',
+          'Crea gráficos de barras, líneas, pastel, dispersión, etc.',
+          'Analiza tendencias con representaciones visuales',
+          'Ahorra horas de lectura y análisis manual'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokDataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokDataGrad)"/>
+
+          <!-- Bar chart -->
+          <g transform="translate(80, 180)">
+            <rect x="0" y="-80" width="30" height="80" fill="#1d9bf0" opacity="0.6">
+              <animate attributeName="y" values="-80;-60;-80" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="height" values="80;60;80" dur="3s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="50" y="-120" width="30" height="120" fill="#1d9bf0" opacity="0.7">
+              <animate attributeName="y" values="-120;-100;-120" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+              <animate attributeName="height" values="120;100;120" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="100" y="-60" width="30" height="60" fill="#1d9bf0" opacity="0.6">
+              <animate attributeName="y" values="-60;-80;-60" dur="3s" begin="1s" repeatCount="indefinite"/>
+              <animate attributeName="height" values="60;80;60" dur="3s" begin="1s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="150" y="-100" width="30" height="100" fill="#1d9bf0" opacity="0.8">
+              <animate attributeName="y" values="-100;-90;-100" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+              <animate attributeName="height" values="100;90;100" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+
+          <!-- Line chart overlay -->
+          <path d="M95,100 L145,60 L195,120 L245,80" stroke="#1d9bf0" stroke-width="3" fill="none" opacity="0.5" stroke-dasharray="5,5">
+            <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
+          </path>
+        </svg>`
+      },
+      {
+        id: 'grok-imagenes-aurora',
+        title: 'Generación de Imágenes con Aurora',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>`,
+        bullets: [
+          'Integración con Aurora (modelo de generación de imágenes de xAI)',
+          'Crea ilustraciones, logos y conceptos visuales desde texto',
+          'Edición y modificación de imágenes existentes',
+          'Estilos personalizables: realista, artístico, minimalista, etc.',
+          'Generación rápida y de alta calidad',
+          'Ideal para prototipos y conceptos creativos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokImageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.05" />
+            </linearGradient>
+            <linearGradient id="grokPaintGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#1d9bf0;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#0d7abf;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#1d9bf0;stop-opacity:0.6" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokImageGrad)"/>
+
+          <!-- Canvas/Image frame -->
+          <rect x="80" y="40" width="240" height="170" rx="8" fill="#ffffff" opacity="0.1" stroke="#1d9bf0" stroke-width="2"/>
+
+          <!-- Artistic shapes inside -->
+          <g transform="translate(200, 125)">
+            <circle r="40" fill="url(#grokPaintGrad)" opacity="0.3">
+              <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M-30,-30 Q0,-50 30,-30 Q50,0 30,30 Q0,50 -30,30 Q-50,0 -30,-30"
+                  fill="none" stroke="#1d9bf0" stroke-width="2" opacity="0.6">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+            </path>
+          </g>
+
+          <!-- Sparkles -->
+          <g opacity="0.8">
+            <path d="M100,80 L105,85 L100,90 L95,85 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M280,100 L285,105 L280,110 L275,105 Z" fill="#1d9bf0">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </path>
+            <path d="M120,160 L125,165 L120,170 L115,165 Z" fill="#0d7abf">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </svg>`
+      }
     ],
+    columns: 3,
     order: 12.2
   },
   {
-    id: 'grok-capacidades-basicas',
-    title: 'Capacidades Básicas de Grok 4',
-    type: SlideType.CONTENT,
-    content: 'Lo que Grok puede hacer por ti',
-    customBullets: [
+    id: 'grok-cuando-usar',
+    title: 'Grok 4 - Cuándo Usarlo',
+    type: SlideType.CARD_GRID,
+    description: 'Conoce las fortalezas y limitaciones de Grok',
+    cards: [
       {
-        text: 'Conversaciones naturales e informativas • Respuestas con contexto • Explicaciones detalladas',
-        keyword: '💬 Conversación Inteligente:'
+        id: 'grok-casos-uso',
+        title: '✅ Cuándo Usar Grok 4',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>`,
+        bullets: [
+          'Información en tiempo real de X/Twitter',
+          'Monitoreo de tendencias y análisis de conversaciones sociales',
+          'Análisis de sentimiento y detección de crisis',
+          'Respuestas sin filtros excesivos y perspectivas directas',
+          'Programación básica e intermedia',
+          'Visualización de datos y gráficos',
+          'Generación de imágenes con Aurora',
+          'Cuando necesitas información actualizada al segundo'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokCheckGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokCheckGrad)"/>
+
+          <!-- Large checkmark -->
+          <g transform="translate(200, 125)">
+            <path d="M-40,0 L-10,40 L60,-40" stroke="#10b981" stroke-width="12"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+            <path d="M-40,0 L-10,40 L60,-40" stroke="#10b981" stroke-width="6"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2s" fill="freeze"/>
+              <animate attributeName="stroke-dashoffset" values="200;0" dur="2s" fill="freeze"/>
+            </path>
+          </g>
+
+          <!-- Surrounding check icons -->
+          <g opacity="0.5">
+            <path d="M60,60 L75,80 L110,40" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round">
+              <animate attributeName="opacity" values="0;1" dur="1s" begin="0.5s" fill="freeze"/>
+            </path>
+            <path d="M290,60 L305,80 L340,40" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round">
+              <animate attributeName="opacity" values="0;1" dur="1s" begin="1s" fill="freeze"/>
+            </path>
+            <path d="M60,190 L75,210 L110,170" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round">
+              <animate attributeName="opacity" values="0;1" dur="1s" begin="1.5s" fill="freeze"/>
+            </path>
+          </g>
+        </svg>`
       },
       {
-        text: 'Resúmenes de texto • Redacción de correos • Creación de contenido • Traducciones',
-        keyword: '✍️ Generación de Contenido:'
-      },
-      {
-        text: 'Responde preguntas con información actualizada de X • Tendencias y noticias en tiempo real',
-        keyword: '🔍 Investigación en Tiempo Real:'
-      },
-      {
-        text: 'Solución de problemas matemáticos • Análisis de datos básicos',
-        keyword: '📊 Razonamiento y Análisis:'
+        id: 'grok-limitaciones',
+        title: '⚠️ Limitaciones a Considerar',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>`,
+        bullets: [
+          'No tiene acceso completo a internet (solo X y fuentes limitadas)',
+          'No puede navegar sitios web externos como Claude o Bing',
+          'Requiere suscripción de pago (X Premium+)',
+          'No tiene aplicación móvil dedicada (solo web)',
+          'Menos herramientas integradas comparado con ChatGPT o Claude',
+          'No es ideal para investigación profunda en web externa',
+          'No es óptimo para análisis de documentos largos complejos',
+          'No es la mejor opción para desarrollo de software avanzado'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grokWarningGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#grokWarningGrad)"/>
+
+          <!-- Warning triangle -->
+          <g transform="translate(200, 130)">
+            <path d="M0,-60 L60,50 L-60,50 Z" fill="none" stroke="#f59e0b" stroke-width="4" opacity="0.3"/>
+            <path d="M0,-45 L45,35 L-45,35 Z" fill="#f59e0b" opacity="0.1"/>
+
+            <!-- Exclamation mark -->
+            <line x1="0" y1="-20" x2="0" y2="10" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="0" cy="25" r="3" fill="#f59e0b"/>
+          </g>
+
+          <!-- Pulsing effect -->
+          <circle cx="200" cy="130" r="80" fill="none" stroke="#f59e0b" stroke-width="2" opacity="0">
+            <animate attributeName="r" values="80;100" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;0" dur="2s" repeatCount="indefinite"/>
+          </circle>
+        </svg>`
       }
     ],
     order: 12.3
-  },
-  {
-    id: 'grok-busqueda-tiempo-real',
-    title: 'Búsqueda y Análisis en Tiempo Real',
-    type: SlideType.CONTENT,
-    content: 'La ventaja competitiva de Grok',
-    customBullets: [
-      {
-        text: 'Conexión directa con X (Twitter) para información actualizada al segundo',
-        keyword: '🌍 Acceso Instantáneo a X:'
-      },
-      {
-        text: 'Análisis de tendencias, noticias y conversaciones globales en tiempo real',
-        keyword: '📈 Análisis de Tendencias:'
-      },
-      {
-        text: 'Ideal para monitoreo de marca, análisis de sentimiento y detección de crisis',
-        keyword: '🔔 Monitoreo de Marca:'
-      },
-      {
-        text: 'Información que otros modelos de IA no tienen hasta que se actualicen',
-        keyword: '⚡ Ventaja Temporal:'
-      }
-    ],
-    order: 12.4
-  },
-  {
-    id: 'grok-programacion',
-    title: 'Programación y Ejecución de Código',
-    type: SlideType.CONTENT,
-    content: 'Grok como asistente de desarrollo',
-    bullets: [
-      'Genera código en múltiples lenguajes (Python, JavaScript, Java, etc.)',
-      'Explica código existente línea por línea',
-      'Depura errores y sugiere mejoras',
-      'Puede ejecutar código Python en tiempo real',
-      'Crea scripts para automatización de tareas',
-      'Genera documentación técnica'
-    ],
-    order: 12.5
-  },
-  {
-    id: 'grok-analisis-archivos',
-    title: 'Análisis de Archivos',
-    type: SlideType.CONTENT,
-    content: 'Procesa tus documentos',
-    customBullets: [
-      {
-        text: 'Carga y analiza archivos PDF, TXT, CSV y más',
-        keyword: '📄 Formatos Soportados:'
-      },
-      {
-        text: 'Extracción de información clave • Resúmenes automáticos • Análisis de contenido',
-        keyword: '🔍 Procesamiento Inteligente:'
-      },
-      {
-        text: 'Análisis de hojas de cálculo • Identificación de patrones • Generación de insights',
-        keyword: '📊 Análisis de Datos:'
-      },
-      {
-        text: 'Ahorra horas de lectura y análisis manual',
-        keyword: '⏱️ Productividad:'
-      }
-    ],
-    order: 12.6
-  },
-  {
-    id: 'grok-graficos',
-    title: 'Gráficos y Visualización de Datos',
-    type: SlideType.CONTENT,
-    content: 'Convierte datos en visualizaciones',
-    bullets: [
-      'Genera gráficos y visualizaciones a partir de datos',
-      'Crea gráficos de barras, líneas, pastel, dispersión, etc.',
-      'Analiza tendencias con representaciones visuales',
-      'Exporta gráficos para presentaciones',
-      'Simplifica la interpretación de información compleja'
-    ],
-    order: 12.7
-  },
-  {
-    id: 'grok-imagenes',
-    title: 'Generación y Edición de Imágenes',
-    type: SlideType.CONTENT,
-    content: 'Creatividad visual con IA',
-    customBullets: [
-      {
-        text: 'Integración con Aurora (modelo de generación de imágenes de xAI)',
-        keyword: '🎨 Generación de Imágenes:'
-      },
-      {
-        text: 'Crea ilustraciones, logos, conceptos visuales desde texto',
-        keyword: '✨ Creación Visual:'
-      },
-      {
-        text: 'Edición y modificación de imágenes existentes',
-        keyword: '🖼️ Edición:'
-      },
-      {
-        text: 'Estilos personalizables: realista, artístico, minimalista, etc.',
-        keyword: '🎭 Estilos Variados:'
-      }
-    ],
-    order: 12.8
-  },
-  {
-    id: 'grok-limitaciones',
-    title: 'Lo que NO tiene Grok (por ahora)',
-    type: SlideType.CONTENT,
-    content: 'Conoce las limitaciones',
-    bullets: [
-      'No tiene acceso completo a internet (solo X y fuentes limitadas)',
-      'No puede navegar sitios web externos como Claude o Bing',
-      'Requiere suscripción de pago (X Premium+)',
-      'No tiene aplicación móvil dedicada (solo web)',
-      'Menos herramientas integradas comparado con ChatGPT o Claude',
-      'Comunidad de plugins y extensiones aún en desarrollo'
-    ],
-    order: 12.9
-  },
-  {
-    id: 'grok-conclusion',
-    title: 'Conclusión: ¿Cuándo usar Grok 4?',
-    type: SlideType.CONTENT,
-    content: 'El mejor momento para Grok',
-    customBullets: [
-      {
-        text: 'Información en tiempo real de X/Twitter • Monitoreo de tendencias • Análisis de conversaciones sociales',
-        keyword: '✅ Úsalo cuando necesites:'
-      },
-      {
-        text: 'Respuestas sin filtros excesivos • Perspectivas directas',
-        keyword: '✅ Úsalo si prefieres:'
-      },
-      {
-        text: 'Programación básica/intermedia • Visualización de datos • Generación de imágenes con Aurora',
-        keyword: '✅ Úsalo para:'
-      },
-      {
-        text: 'Investigación profunda en web externa • Análisis de documentos largos complejos • Desarrollo de software avanzado',
-        keyword: '❌ No es ideal para:'
-      }
-    ],
-    order: 12.93
   },
 
   // Vista 14: Meta AI
@@ -3497,186 +3993,407 @@ export const slidesData: Slide[] = [
 
   // Meta AI - Slides de Contenido Detallado
   {
-    id: 'meta-ai-introduccion',
-    title: 'Meta AI: La Inteligencia Artificial de Meta',
-    type: SlideType.CONTENT,
-    content: 'El asistente que vive donde tus clientes ya están',
-    customBullets: [
+    id: 'meta-ai-capacidades-principales',
+    title: 'Meta AI - Capacidades Principales',
+    type: SlideType.CARD_GRID,
+    description: 'El asistente que vive donde tus clientes ya están: WhatsApp, Facebook e Instagram',
+    cards: [
       {
-        text: 'Desarrollado por Meta (Facebook, WhatsApp, Instagram)',
-        keyword: '🏢 Origen:'
+        id: 'meta-ai-introduccion-nlp',
+        title: 'Meta AI - Integración y Lenguaje Natural',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>`,
+        bullets: [
+          'Desarrollado por Meta (Facebook, WhatsApp, Instagram)',
+          'Basado en Llama 4 (modelo de lenguaje de código abierto)',
+          'Integrado directamente en WhatsApp, Facebook Messenger e Instagram',
+          'Acceso gratuito sin aplicaciones adicionales',
+          'Conversaciones naturales y contextuales',
+          'Comprensión de intenciones y sentimientos',
+          'Respuestas en más de 100 idiomas',
+          'Traducciones en tiempo real durante conversaciones',
+          'Adaptación al tono y estilo de comunicación'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:0.3" />
+              <stop offset="50%" style="stop-color:#25d366;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#e4405f;stop-opacity:0.2" />
+            </linearGradient>
+            <linearGradient id="metaGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:1" />
+              <stop offset="50%" style="stop-color:#25d366;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#e4405f;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaGrad1)"/>
+
+          <!-- Three interconnected circles representing Meta platforms -->
+          <g opacity="0.6">
+            <!-- WhatsApp -->
+            <circle cx="120" cy="125" r="50" fill="none" stroke="#25d366" stroke-width="3">
+              <animate attributeName="r" values="50;55;50" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Facebook -->
+            <circle cx="200" cy="80" r="45" fill="none" stroke="#0084ff" stroke-width="3">
+              <animate attributeName="r" values="45;50;45" dur="3s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Instagram -->
+            <circle cx="280" cy="125" r="50" fill="none" stroke="#e4405f" stroke-width="3">
+              <animate attributeName="r" values="50;55;50" dur="3s" begin="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Connecting lines -->
+          <g opacity="0.3">
+            <line x1="150" y1="105" x2="180" y2="90" stroke="url(#metaGrad2)" stroke-width="2"/>
+            <line x1="220" y1="100" x2="260" y2="115" stroke="url(#metaGrad2)" stroke-width="2"/>
+            <line x1="140" y1="150" x2="260" y2="150" stroke="url(#metaGrad2)" stroke-width="2"/>
+          </g>
+
+          <!-- Center AI icon -->
+          <g transform="translate(200, 125)">
+            <circle r="20" fill="url(#metaGrad2)" opacity="0.2">
+              <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M-8,-8 L8,8 M8,-8 L-8,8" stroke="#0084ff" stroke-width="3" stroke-linecap="round"/>
+          </g>
+        </svg>`
       },
       {
-        text: 'Basado en Llama 4 (modelo de lenguaje de código abierto de Meta)',
-        keyword: '🤖 Modelo:'
-      },
-      {
-        text: 'Integrado directamente en WhatsApp, Facebook Messenger e Instagram',
-        keyword: '📱 Integración Nativa:'
-      },
-      {
-        text: 'Acceso gratuito sin aplicaciones adicionales',
-        keyword: '✨ Ventaja Competitiva:'
-      },
-      {
-        text: 'Ideal para empresas que ya usan plataformas de Meta para comunicación',
-        keyword: '💼 Caso de Uso Empresarial:'
+        id: 'meta-ai-contenido-conversacion',
+        title: 'Generación de Contenido y Asistencia',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>`,
+        bullets: [
+          'Posts para Facebook e Instagram con captions atractivos y hashtags',
+          'Correos electrónicos y mensajes de WhatsApp Business',
+          'Ideas para campañas, brainstorming creativo y conceptos visuales',
+          'Scripts para videos, guiones para Reels y contenido para Stories',
+          'Responde preguntas directamente en WhatsApp',
+          'Sugerencias inteligentes durante conversaciones',
+          'Búsqueda de información sin salir de la app',
+          'Asistencia para compras y recomendaciones',
+          'Programación de recordatorios y eventos'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaContentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#0084ff;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaContentGrad)"/>
+
+          <!-- Phone mockup -->
+          <g transform="translate(150, 50)">
+            <rect x="0" y="0" width="100" height="160" rx="10" fill="#ffffff" opacity="0.1" stroke="#0084ff" stroke-width="2"/>
+            <rect x="35" y="5" width="30" height="4" rx="2" fill="#0084ff" opacity="0.3"/>
+
+            <!-- Message bubbles -->
+            <rect x="10" y="20" width="60" height="15" rx="8" fill="#0084ff" opacity="0.4">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" fill="freeze"/>
+            </rect>
+            <rect x="30" y="40" width="60" height="15" rx="8" fill="#25d366" opacity="0.4">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="0.5s" fill="freeze"/>
+            </rect>
+            <rect x="10" y="60" width="70" height="15" rx="8" fill="#0084ff" opacity="0.4">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1s" fill="freeze"/>
+            </rect>
+            <rect x="20" y="80" width="70" height="15" rx="8" fill="#25d366" opacity="0.4">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1.5s" fill="freeze"/>
+            </rect>
+          </g>
+
+          <!-- Content icons -->
+          <g transform="translate(270, 100)">
+            <!-- Camera icon -->
+            <rect x="0" y="0" width="30" height="25" rx="3" fill="none" stroke="#e4405f" stroke-width="2"/>
+            <circle cx="15" cy="13" r="6" fill="none" stroke="#e4405f" stroke-width="2"/>
+            <!-- Sparkle -->
+            <path d="M35,5 L38,10 L35,15 L32,10 Z" fill="#0084ff" opacity="0.6">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </svg>`
       }
     ],
     order: 13.1
   },
   {
-    id: 'meta-ai-nlp',
-    title: 'Procesamiento de Lenguaje Natural (NLP)',
-    type: SlideType.CONTENT,
-    content: 'Comprende y genera lenguaje humano',
-    bullets: [
-      'Conversaciones naturales y contextuales',
-      'Comprensión de intenciones y sentimientos',
-      'Respuestas en más de 100 idiomas',
-      'Traducciones en tiempo real durante conversaciones',
-      'Adaptación al tono y estilo de comunicación',
-      'Respuestas coherentes en conversaciones largas'
+    id: 'meta-ai-analisis-visual',
+    title: 'Meta AI - Análisis y Creación Visual',
+    type: SlideType.CARD_GRID,
+    description: 'Potencia tu negocio con insights y contenido visual generado por IA',
+    cards: [
+      {
+        id: 'meta-ai-analisis',
+        title: 'Análisis y Predicción para tu Negocio',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+          <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+        </svg>`,
+        bullets: [
+          'Análisis de conversaciones para detectar tendencias de clientes',
+          'Predicción de comportamiento de audiencia en redes sociales',
+          'Identificación de mejores horarios para publicar contenido',
+          'Recomendaciones basadas en interacciones previas',
+          'Optimización de estrategias de contenido',
+          'Detección de patrones de engagement',
+          'Insights en tiempo real sobre tu audiencia'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaAnalysisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#0084ff;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaAnalysisGrad)"/>
+
+          <!-- Pie chart -->
+          <g transform="translate(120, 125)">
+            <circle r="60" fill="none" stroke="#e5e7eb" stroke-width="2" opacity="0.2"/>
+            <path d="M0,-60 A60,60 0 0,1 52,-30 L0,0 Z" fill="#0084ff" opacity="0.5">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+            </path>
+            <path d="M52,-30 A60,60 0 0,1 30,52 L0,0 Z" fill="#25d366" opacity="0.5">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+            </path>
+            <path d="M30,52 A60,60 0 0,1 0,-60 L0,0 Z" fill="#e4405f" opacity="0.5">
+              <animateTransform attributeName="transform" type="rotate"
+                from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+            </path>
+          </g>
+
+          <!-- Data points -->
+          <g transform="translate(250, 125)">
+            <circle cx="0" cy="-40" r="4" fill="#0084ff">
+              <animate attributeName="cy" values="-40;-50;-40" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="30" cy="-20" r="4" fill="#25d366">
+              <animate attributeName="cy" values="-20;-30;-20" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="60" cy="-35" r="4" fill="#e4405f">
+              <animate attributeName="cy" values="-35;-45;-35" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="90" cy="-25" r="4" fill="#0084ff">
+              <animate attributeName="cy" values="-25;-35;-25" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>`
+      },
+      {
+        id: 'meta-ai-visual',
+        title: 'Creación de Contenido Visual',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>`,
+        bullets: [
+          'Generación de imágenes desde texto (text-to-image)',
+          'Creación de stickers personalizados para WhatsApp',
+          'Edición de fotos con comandos de texto',
+          'Generación de avatares y gráficos para redes sociales',
+          'Conceptos visuales para publicaciones',
+          'Integrado directamente en las apps de Meta',
+          'Ideal para crear contenido rápido y atractivo'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaVisualGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#e4405f;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#e4405f;stop-opacity:0.05" />
+            </linearGradient>
+            <linearGradient id="metaPaletteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0084ff;stop-opacity:1" />
+              <stop offset="33%" style="stop-color:#25d366;stop-opacity:1" />
+              <stop offset="66%" style="stop-color:#e4405f;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#833ab4;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaVisualGrad)"/>
+
+          <!-- Image frame -->
+          <rect x="70" y="40" width="260" height="170" rx="12" fill="#ffffff" opacity="0.1" stroke="#e4405f" stroke-width="2"/>
+
+          <!-- Grid inside -->
+          <g opacity="0.4">
+            <line x1="200" y1="40" x2="200" y2="210" stroke="#e4405f" stroke-width="1"/>
+            <line x1="70" y1="125" x2="330" y2="125" stroke="#e4405f" stroke-width="1"/>
+          </g>
+
+          <!-- Color palette spots -->
+          <g transform="translate(200, 125)">
+            <circle cx="-40" cy="-30" r="15" fill="#0084ff" opacity="0.6">
+              <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="40" cy="-30" r="15" fill="#25d366" opacity="0.6">
+              <animate attributeName="r" values="15;18;15" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="-40" cy="30" r="15" fill="#e4405f" opacity="0.6">
+              <animate attributeName="r" values="15;18;15" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="40" cy="30" r="15" fill="#833ab4" opacity="0.6">
+              <animate attributeName="r" values="15;18;15" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Sparkles -->
+          <g opacity="0.7">
+            <path d="M90,70 L95,75 L90,80 L85,75 Z" fill="#0084ff">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <path d="M300,90 L305,95 L300,100 L295,95 Z" fill="#25d366">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1s" repeatCount="indefinite"/>
+            </path>
+          </g>
+        </svg>`
+      }
     ],
     order: 13.2
   },
   {
-    id: 'meta-ai-generacion-contenido',
-    title: 'Generación de Contenido',
-    type: SlideType.CONTENT,
-    content: 'Crea contenido para redes sociales y más',
-    customBullets: [
+    id: 'meta-ai-integracion',
+    title: 'Meta AI - Integración Empresarial',
+    type: SlideType.CARD_GRID,
+    description: 'Conecta Meta AI con tu negocio y aprovecha todo su potencial',
+    cards: [
       {
-        text: 'Posts para Facebook e Instagram • Captions atractivos • Hashtags relevantes',
-        keyword: '📝 Contenido Social:'
+        id: 'meta-ai-api',
+        title: 'Integración y API para Empresas',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="8.5" cy="7" r="4"/>
+          <polyline points="17 11 19 13 23 9"/>
+        </svg>`,
+        bullets: [
+          'WhatsApp Business API con integración de Meta AI',
+          'Chatbots inteligentes para atención al cliente 24/7',
+          'Respuestas automáticas en Messenger para páginas de Facebook',
+          'Integración con sistemas CRM y plataformas de e-commerce',
+          'Modelo Llama disponible de forma gratuita para desarrolladores',
+          'Automatización de flujos de conversación',
+          'Escalabilidad para grandes volúmenes de mensajes'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaAPIGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#25d366;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#25d366;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaAPIGrad)"/>
+
+          <!-- Central hub -->
+          <g transform="translate(200, 125)">
+            <circle r="30" fill="#25d366" opacity="0.2"/>
+            <circle r="25" fill="none" stroke="#25d366" stroke-width="2"/>
+            <text x="0" y="5" text-anchor="middle" fill="#25d366" font-size="12" font-weight="bold">API</text>
+          </g>
+
+          <!-- Connected nodes -->
+          <g opacity="0.6">
+            <!-- WhatsApp -->
+            <line x1="200" y1="125" x2="120" y2="70" stroke="#25d366" stroke-width="2"/>
+            <circle cx="120" cy="70" r="15" fill="#25d366" opacity="0.3"/>
+
+            <!-- Messenger -->
+            <line x1="200" y1="125" x2="280" y2="70" stroke="#0084ff" stroke-width="2"/>
+            <circle cx="280" cy="70" r="15" fill="#0084ff" opacity="0.3"/>
+
+            <!-- CRM -->
+            <line x1="200" y1="125" x2="120" y2="180" stroke="#e4405f" stroke-width="2"/>
+            <circle cx="120" cy="180" r="15" fill="#e4405f" opacity="0.3"/>
+
+            <!-- E-commerce -->
+            <line x1="200" y1="125" x2="280" y2="180" stroke="#833ab4" stroke-width="2"/>
+            <circle cx="280" cy="180" r="15" fill="#833ab4" opacity="0.3"/>
+          </g>
+
+          <!-- Data flow animation -->
+          <g>
+            <circle cx="120" cy="70" r="3" fill="#25d366">
+              <animate attributeName="cx" values="120;200" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="70;125" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="280" cy="70" r="3" fill="#0084ff">
+              <animate attributeName="cx" values="280;200" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+              <animate attributeName="cy" values="70;125" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="1;0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>`
       },
       {
-        text: 'Correos electrónicos • Mensajes de WhatsApp Business • Respuestas automatizadas',
-        keyword: '✉️ Comunicación Empresarial:'
-      },
-      {
-        text: 'Ideas para campañas • Brainstorming creativo • Conceptos visuales',
-        keyword: '💡 Marketing y Publicidad:'
-      },
-      {
-        text: 'Scripts para videos • Guiones para Reels • Contenido para Stories',
-        keyword: '🎬 Contenido Multimedia:'
+        id: 'meta-ai-por-que-elegir',
+        title: '✅ Por qué Elegir Meta AI',
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>`,
+        bullets: [
+          'Tus clientes ya están en WhatsApp, Facebook e Instagram',
+          'Atención al cliente directa en WhatsApp Business',
+          'Generación de contenido para redes sociales de Meta',
+          'Gratuito y sin instalación adicional (ya está integrado)',
+          'Ideal para PyMEs y empresas con presencia en redes sociales',
+          'Fácil de usar sin conocimientos técnicos',
+          '⚠️ No es ideal para: programación avanzada, análisis de documentos técnicos, generación de video'
+        ],
+        svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="metaCheckGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.2" />
+              <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.05" />
+            </linearGradient>
+          </defs>
+
+          <rect width="400" height="250" fill="url(#metaCheckGrad)"/>
+
+          <!-- Large checkmark -->
+          <g transform="translate(200, 125)">
+            <path d="M-50,0 L-15,45 L70,-50" stroke="#10b981" stroke-width="14"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.2"/>
+            <path d="M-50,0 L-15,45 L70,-50" stroke="#10b981" stroke-width="7"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <animate attributeName="stroke-dasharray" values="0,220;220,0" dur="2s" fill="freeze"/>
+              <animate attributeName="stroke-dashoffset" values="220;0" dur="2s" fill="freeze"/>
+            </path>
+          </g>
+
+          <!-- App icons -->
+          <g opacity="0.4">
+            <circle cx="80" cy="80" r="20" fill="#25d366">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="0.5s" fill="freeze"/>
+            </circle>
+            <circle cx="320" cy="80" r="20" fill="#0084ff">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1s" fill="freeze"/>
+            </circle>
+            <circle cx="80" cy="190" r="20" fill="#e4405f">
+              <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1.5s" fill="freeze"/>
+            </circle>
+          </g>
+        </svg>`
       }
     ],
     order: 13.3
-  },
-  {
-    id: 'meta-ai-conversacion',
-    title: 'Conversación y Asistencia',
-    type: SlideType.CONTENT,
-    content: 'Asistente integrado en tus apps favoritas',
-    bullets: [
-      'Responde preguntas directamente en WhatsApp',
-      'Ayuda con tareas mientras chateas con amigos o clientes',
-      'Sugerencias inteligentes durante conversaciones',
-      'Búsqueda de información sin salir de la app',
-      'Asistencia para compras y recomendaciones',
-      'Programación de recordatorios y eventos'
-    ],
-    order: 13.4
-  },
-  {
-    id: 'meta-ai-analisis-prediccion',
-    title: 'Análisis y Predicción',
-    type: SlideType.CONTENT,
-    content: 'Insights para tu negocio',
-    customBullets: [
-      {
-        text: 'Análisis de conversaciones para detectar tendencias de clientes',
-        keyword: '📊 Análisis de Datos:'
-      },
-      {
-        text: 'Predicción de comportamiento de audiencia en redes sociales',
-        keyword: '🔮 Predicciones:'
-      },
-      {
-        text: 'Identificación de mejores horarios para publicar contenido',
-        keyword: '⏰ Optimización de Timing:'
-      },
-      {
-        text: 'Recomendaciones basadas en interacciones previas',
-        keyword: '🎯 Personalización:'
-      }
-    ],
-    order: 13.5
-  },
-  {
-    id: 'meta-ai-contenido-visual',
-    title: 'Creación de Contenido Visual',
-    type: SlideType.CONTENT,
-    content: 'Genera imágenes con IA',
-    bullets: [
-      'Generación de imágenes desde texto (text-to-image)',
-      'Creación de stickers personalizados para WhatsApp',
-      'Edición de fotos con comandos de texto',
-      'Generación de avatares y gráficos para redes sociales',
-      'Conceptos visuales para publicaciones',
-      'Integrado directamente en las apps de Meta'
-    ],
-    order: 13.6
-  },
-  {
-    id: 'meta-ai-integracion-api',
-    title: 'Integración y API',
-    type: SlideType.CONTENT,
-    content: 'Conecta Meta AI con tu negocio',
-    customBullets: [
-      {
-        text: 'WhatsApp Business API con integración de Meta AI',
-        keyword: '📱 WhatsApp Business:'
-      },
-      {
-        text: 'Chatbots inteligentes para atención al cliente 24/7',
-        keyword: '🤖 Automatización:'
-      },
-      {
-        text: 'Respuestas automáticas en Messenger para páginas de Facebook',
-        keyword: '💬 Messenger:'
-      },
-      {
-        text: 'Integración con sistemas CRM y plataformas de e-commerce',
-        keyword: '🔗 Ecosistema Empresarial:'
-      },
-      {
-        text: 'Modelo Llama disponible de forma gratuita para desarrolladores',
-        keyword: '🆓 Código Abierto:'
-      }
-    ],
-    order: 13.7
-  },
-  {
-    id: 'meta-ai-conclusion',
-    title: 'Conclusión: ¿Por qué elegir Meta AI?',
-    type: SlideType.CONTENT,
-    content: 'La ventaja de la integración',
-    customBullets: [
-      {
-        text: 'Tus clientes ya están en WhatsApp, Facebook e Instagram',
-        keyword: '✅ Úsalo si:'
-      },
-      {
-        text: 'Atención al cliente directa en WhatsApp Business',
-        keyword: '✅ Ideal para:'
-      },
-      {
-        text: 'Generación de contenido para redes sociales de Meta',
-        keyword: '✅ Perfecto para:'
-      },
-      {
-        text: 'Gratuito y sin instalación adicional (ya está integrado)',
-        keyword: '✅ Ventaja principal:'
-      },
-      {
-        text: 'Tareas avanzadas de programación • Análisis de documentos técnicos • Generación de video (aún no disponible)',
-        keyword: '❌ No es ideal para:'
-      }
-    ],
-    order: 13.93
   },
 
   // Vista 15: Otras Herramientas
