@@ -2308,6 +2308,130 @@ export const slidesData: Slide[] = [
     order: 10
   },
 
+  // Gemini Slide 1: Introducción - Gemini Cerebro Fundacional
+  {
+    id: 'gemini-introduccion',
+    title: 'Gemini: El Cerebro Fundacional',
+    type: SlideType.CONTENT,
+    content: 'La Inteligencia Artificial al Servicio de la Productividad y la Creatividad',
+    customBullets: [
+      {
+        text: 'Gemini es un modelo de IA multimodal diseñado para comprender, operar y combinar información de diferentes tipos (texto, código, imágenes, audio)',
+        keyword: 'Concepto Clave:'
+      },
+      {
+        text: 'Generación Multimodal: Procesa y genera contenido a partir de texto, imágenes y audio',
+        keyword: 'Funcionalidades:'
+      },
+      {
+        text: 'Razonamiento Avanzado: Maneja tareas complejas de lógica, matemáticas y codificación'
+      },
+      {
+        text: 'Contexto Ampliado: Mantiene conversaciones largas y recuerda el contexto'
+      }
+    ],
+    order: 10.1
+  },
+
+  // Gemini Slide 2: Capacidades Centrales
+  {
+    id: 'gemini-capacidades',
+    title: 'Gemini - El Asistente Personal y Profesional',
+    type: SlideType.CONTENT,
+    content: 'Capacidades Centrales de Gemini',
+    bullets: [
+      'Generación de Contenido: Redacción de correos, artículos, ensayos, guiones y contenido creativo. Traducción y resumen de documentos extensos',
+      'Análisis de Datos: Analiza datos estructurados, genera visualizaciones e interpreta tablas y gráficos en imágenes',
+      'Codificación y Debugging: Genera código en múltiples lenguajes (Python, JavaScript, etc.). Explica bloques de código complejos y ayuda a depurar',
+      'Interacción con Imágenes: Responde preguntas sobre el contenido de una imagen, describe escenas o crea subtítulos'
+    ],
+    order: 10.2
+  },
+
+  // Gemini Slide 3: NotebookLM
+  {
+    id: 'gemini-notebooklm',
+    title: 'NotebookLM - Asistente de Investigación',
+    type: SlideType.CONTENT,
+    content: 'NotebookLM: Su Aliado en la Investigación (Análisis de Fuentes)',
+    customBullets: [
+      {
+        text: 'Transforma tus documentos personales (PDFs, Google Docs, URLs) en una fuente de conocimiento interactiva y citada',
+        keyword: 'Propósito:'
+      },
+      {
+        text: '"Conversar" con las Fuentes: Permite hacer preguntas a tus documentos y obtener respuestas basadas exclusivamente en ese material',
+        keyword: 'Funcionalidades:'
+      },
+      {
+        text: 'Resumen y Guías: Genera resúmenes, fichas de estudio, planes de acción o borradores'
+      },
+      {
+        text: 'Grounding (Fundamentación): Siempre cita la fuente exacta de donde extrajo la información'
+      },
+      {
+        text: 'Organización: Ayuda a interconectar ideas entre diferentes fuentes cargadas'
+      }
+    ],
+    order: 10.3
+  },
+
+  // Gemini Slide 4: Generación de Imágenes
+  {
+    id: 'gemini-imagenes',
+    title: 'Creación Visual Instantánea',
+    type: SlideType.CONTENT,
+    content: 'Generación de Imágenes (Impulsado por Imagen)',
+    customBullets: [
+      {
+        text: 'Crear imágenes únicas y de alta calidad a partir de descripciones de texto',
+        keyword: 'Propósito:'
+      },
+      {
+        text: 'Text-to-Image: Convierte descripciones detalladas en imágenes fotorrealistas o estilos artísticos variados',
+        keyword: 'Funcionalidades:'
+      },
+      {
+        text: 'Edición Creativa: Permite refinar o modificar partes específicas de una imagen con instrucciones de texto'
+      },
+      {
+        text: 'Seguridad: Incluye filtros para evitar contenido dañino y marcas de agua digitales'
+      }
+    ],
+    order: 10.4
+  },
+
+  // Gemini Slide 5: Google AI Studio
+  {
+    id: 'gemini-ai-studio',
+    title: 'Google AI Studio - El Laboratorio de IA',
+    type: SlideType.CONTENT,
+    content: 'Google AI Studio: Prototipado y Desarrollo Ágil',
+    customBullets: [
+      {
+        text: 'Herramienta para desarrolladores que quieren construir aplicaciones usando los modelos de Google',
+        keyword: 'Propósito:'
+      },
+      {
+        text: 'Prompt Engineering: Entorno interactivo para diseñar, probar y optimizar prompts',
+        keyword: 'Funcionalidades:'
+      },
+      {
+        text: 'Acceso a API: Entorno fácil para obtener la clave API y gestionar llamadas'
+      },
+      {
+        text: 'Configuración del Modelo: Ajusta parámetros (temperatura, top-k, top-p) para controlar creatividad'
+      },
+      {
+        text: 'Integración de Datos: Incorpora Búsqueda de Google para respuestas actualizadas'
+      },
+      {
+        text: 'Despliegue: Genera código base para integrar en aplicaciones (Node.js, Python, etc.)'
+      }
+    ],
+    order: 10.5
+  },
+
   // Vista 12: Claude
   {
     id: 'claude',
