@@ -2089,6 +2089,189 @@ export const slidesData: Slide[] = [
     order: 9
   },
 
+  // ChatGPT Slide 1: Modelos de Lenguaje
+  {
+    id: 'chatgpt-modelos-lenguaje',
+    title: 'ChatGPT - Modelos de Lenguaje',
+    type: SlideType.CONTENT,
+    content: 'Qué puede hacer ChatGPT',
+    bullets: [
+      'Responder preguntas complejas con contexto y razonamiento',
+      'Explicar conceptos en cualquier nivel (básico → experto)',
+      'Redacción profesional: textos, correos, ensayos, guiones, discursos',
+      'Optimización y reescritura de contenido',
+      'Traducción avanzada y adaptación cultural',
+      'Análisis de documentos (resumen, extracción de datos, puntos clave)',
+      'Asistencia para toma de decisiones y análisis de escenarios',
+      'Simulación de roles (coach, consultor, analista, profesor)',
+      'Soporte en programación (debugging, explicación, generación segura de código)',
+      'Planificación: roadmaps, itinerarios, estrategias y guías paso a paso'
+    ],
+    order: 9.1
+  },
+
+  // ChatGPT Slide 2: Funciones Técnicas
+  {
+    id: 'chatgpt-funciones-tecnicas',
+    title: 'ChatGPT - Funciones Técnicas',
+    type: SlideType.CONTENT,
+    content: 'Qué puede hacer',
+    bullets: [
+      'Leer imágenes (análisis, OCR, diagnóstico visual, interpretación)',
+      'Leer archivos: PDF, Excel, docs, presentaciones, código',
+      'Generar archivos: PDF, Excel, Word, presentaciones, CSV',
+      'Análisis de datos: gráficas, estadísticas, limpieza y tabulación',
+      'Automatizaciones simples: scripts, workflows, lógica de negocio',
+      'Integración con APIs (explicación, creación, documentación)',
+      'Asesoría en arquitectura de software y ciberseguridad',
+      'Creación de materiales educativos (pruebas, dinámicas, ejercicios)',
+      'Diseño de interfaces (UI/UX): recomendaciones, prompts, wireframes'
+    ],
+    order: 9.2
+  },
+
+  // ChatGPT Slide 3: Limitaciones y Buenas Prácticas
+  {
+    id: 'chatgpt-limitaciones',
+    title: 'ChatGPT - Limitaciones y Buenas Prácticas',
+    type: SlideType.CONTENT,
+    content: 'Limitaciones',
+    bullets: [
+      'No accede a sistemas privados del usuario',
+      'Puede equivocarse: siempre validar información crítica',
+      'No reemplaza decisiones legales, médicas o fiscales'
+    ],
+    customBullets: [
+      {
+        text: 'Pedir formatos claros',
+        keyword: 'Buenas prácticas:'
+      },
+      {
+        text: 'Dar ejemplos'
+      },
+      {
+        text: 'Solicitar iteraciones'
+      },
+      {
+        text: 'Usar prompts conversacionales, no comandos rígidos'
+      }
+    ],
+    order: 9.3
+  },
+
+  // ChatGPT Slide 4: DALL·E
+  {
+    id: 'chatgpt-dalle',
+    title: 'DALL·E - Generación de Imágenes',
+    type: SlideType.CONTENT,
+    content: 'Qué puede hacer',
+    bullets: [
+      'Crear imágenes realistas, ilustraciones o arte conceptual',
+      'Generar estilos específicos (corporativo, cartoon, hiperrealista, minimalista)',
+      'Modificar imágenes (inpainting y outpainting)',
+      'Crear logos, personajes, escenarios y assets para apps',
+      'Aumentar resolución y mejorar detalles',
+      'Diseñar mockups para productos, webs, apps y publicidad'
+    ],
+    order: 9.4
+  },
+
+  // ChatGPT Slide 5: Sora
+  {
+    id: 'chatgpt-sora',
+    title: 'Sora - Generación de Video',
+    type: SlideType.CONTENT,
+    content: 'Qué puede hacer (cuando esté disponible en tu región)',
+    bullets: [
+      'Generar videos realistas o estilizados a partir de texto',
+      'Transformar storyboard → video',
+      'Simular cámaras, movimientos y entornos complejos',
+      'Generar anuncios, reels, contenidos creativos',
+      'Crear animaciones con personajes y narrativas',
+      'Expandir o modificar videos ya existentes'
+    ],
+    customBullets: [
+      {
+        text: 'Marketing',
+        keyword: 'Usos típicos:'
+      },
+      {
+        text: 'Cine y contenidos'
+      },
+      {
+        text: 'Visualización de ideas'
+      },
+      {
+        text: 'Capacitación y educación'
+      }
+    ],
+    order: 9.5
+  },
+
+  // ChatGPT Slide 6: Codex
+  {
+    id: 'chatgpt-codex',
+    title: 'Codex - Programación Asistida',
+    type: SlideType.CONTENT,
+    content: 'Qué puede hacer',
+    bullets: [
+      'Generar código en múltiples lenguajes',
+      'Crear APIs completas y modelado MVC',
+      'Proponer arquitectura y patrones de diseño',
+      'Realizar debugging guiado paso a paso',
+      'Explicar código legacy o complejo',
+      'Convertir código entre lenguajes',
+      'Generar pruebas unitarias, integración y documentación técnica',
+      'Desarrollar componentes UI y lógica frontend/backend'
+    ],
+    order: 9.6
+  },
+
+  // ChatGPT Slide 7: Integración
+  {
+    id: 'chatgpt-integracion',
+    title: '¿Cómo integrarlas juntas?',
+    type: SlideType.CONTENT,
+    content: 'Sinergias entre herramientas',
+    bullets: [
+      'ChatGPT + DALL·E: guiones + imágenes para presentaciones o landing pages',
+      'ChatGPT + Codex: análisis → diseño → generación → pruebas de software',
+      'ChatGPT + Sora: concepto → storyboard → video final',
+      'ChatGPT como coordinador general: planeación, prompts, iteraciones y revisiones'
+    ],
+    order: 9.7
+  },
+
+  // ChatGPT Slide 8: Casos Prácticos
+  {
+    id: 'chatgpt-casos-practicos',
+    title: 'Casos prácticos',
+    type: SlideType.CONTENT,
+    content: 'Ejemplos que puedes implementar',
+    bullets: [
+      'Crear una landing page completa en 1 hora',
+      'Generar un pitch completo (guion + imágenes + video)',
+      'Prototipar una app de forma rápida',
+      'Crear contenido de marketing mensual en minutos',
+      'Preparar presentaciones ejecutivas con diseño profesional'
+    ],
+    order: 9.8
+  },
+
+  // ChatGPT Slide 9: Cierre
+  {
+    id: 'chatgpt-cierre',
+    title: 'La IA multiplica resultados',
+    type: SlideType.CONTENT,
+    content: 'La IA no sustituye talento; multiplica resultados',
+    bullets: [
+      'Permite que personas y empresas produzcan más rápido',
+      'Con mejor calidad',
+      'Con mayor creatividad'
+    ],
+    order: 9.9
+  },
+
   // Vista 11: Gemini
   {
     id: 'gemini',
