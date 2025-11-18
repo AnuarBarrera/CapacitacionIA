@@ -1666,22 +1666,281 @@ export const slidesData: Slide[] = [
   {
     id: 'seguridad',
     title: 'Qué SÍ y qué NO compartir con la IA',
-    type: SlideType.CONTENT,
-    content: 'Lo que escribes puede ser usado para entrenar la IA. Si es confidencial, NO lo compartas.',
-    bullets: [
-      '🟢 SÍ puedes compartir:',
-      '• Ideas de negocio',
-      '• Preguntas generales',
-      '• Descripciones de productos/servicios',
-      '• Solicitudes de contenido',
-      '• Problemas que necesitas resolver',
-      '🔴 NO compartas NUNCA:',
-      '• Contraseñas o claves',
-      '• Datos bancarios',
-      '• INE o documentos oficiales completos',
-      '• Información privada de clientes',
-      '• Datos sensibles de tu empresa',
-      'TIP: Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA'
+    type: SlideType.CARD_GRID,
+    description: 'Lo que escribes puede ser usado para entrenar la IA. Si es confidencial, NO lo compartas.',
+    cards: [
+      {
+        id: 'si-compartir',
+        title: 'Sí compartir',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" opacity="0.1"/>
+          <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="stroke-dasharray" values="0,20;20,0" dur="2s" repeatCount="indefinite"/>
+          </path>
+        </svg>`,
+        bullets: [
+          '✓ Ideas de negocio',
+          '✓ Preguntas generales',
+          '✓ Descripciones de productos/servicios',
+          '✓ Solicitudes de contenido',
+          '✓ Problemas que necesitas resolver'
+        ],
+        svgContent: `<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .safe-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .safe-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="safe-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#51cf66">Información segura para compartir</text>
+
+          <!-- Icono de escudo protector central -->
+          <g transform="translate(150, 110)">
+            <path d="M 0 -40 L 25 -30 L 25 -10 C 25 10 0 25 0 25 C 0 25 -25 10 -25 -10 L -25 -30 Z" fill="#51cf66" opacity="0.2" stroke="#51cf66" stroke-width="2">
+              <animate attributeName="opacity" values="0.2;0.3;0.2" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M -10 -5 L -5 0 L 10 -15" stroke="#51cf66" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Círculos con ejemplos alrededor del escudo -->
+          <!-- Ideas de negocio -->
+          <g transform="translate(40, 50)">
+            <circle cx="0" cy="0" r="20" fill="#51cf66" opacity="0.15" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="0" y="-8" class="safe-text" text-anchor="middle" font-size="18px">💡</text>
+            <text x="0" y="25" class="safe-label" text-anchor="middle" font-weight="bold">Ideas</text>
+            <circle cx="15" cy="-15" r="4" fill="#51cf66">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Preguntas -->
+          <g transform="translate(260, 50)">
+            <circle cx="0" cy="0" r="20" fill="#51cf66" opacity="0.15" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="0" y="-8" class="safe-text" text-anchor="middle" font-size="18px">❓</text>
+            <text x="0" y="25" class="safe-label" text-anchor="middle" font-weight="bold">Preguntas</text>
+            <circle cx="15" cy="-15" r="4" fill="#51cf66">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Productos -->
+          <g transform="translate(40, 160)">
+            <circle cx="0" cy="0" r="20" fill="#51cf66" opacity="0.15" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="0" y="-8" class="safe-text" text-anchor="middle" font-size="18px">📦</text>
+            <text x="0" y="25" class="safe-label" text-anchor="middle" font-weight="bold">Productos</text>
+            <circle cx="15" cy="-15" r="4" fill="#51cf66">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Contenido -->
+          <g transform="translate(260, 160)">
+            <circle cx="0" cy="0" r="20" fill="#51cf66" opacity="0.15" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="0" y="-8" class="safe-text" text-anchor="middle" font-size="18px">📝</text>
+            <text x="0" y="25" class="safe-label" text-anchor="middle" font-weight="bold">Contenido</text>
+            <circle cx="15" cy="-15" r="4" fill="#51cf66">
+              <animate attributeName="opacity" values="0;1;0" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+
+          <!-- Líneas conectando al escudo central -->
+          <line x1="60" y1="60" x2="130" y2="90" stroke="#51cf66" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+          <line x1="240" y1="60" x2="170" y2="90" stroke="#51cf66" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+          <line x1="60" y1="160" x2="130" y2="130" stroke="#51cf66" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+          <line x1="240" y1="160" x2="170" y2="130" stroke="#51cf66" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+
+          <!-- Mensaje inferior -->
+          <text x="150" y="210" class="safe-label" text-anchor="middle" opacity="0.7" fill="#51cf66">✓ Información general que ayuda a la IA a entender tu contexto</text>
+        </svg>`
+      },
+      {
+        id: 'no-compartir',
+        title: 'No compartir',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.1"/>
+          <line x1="8" y1="8" x2="16" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </line>
+          <line x1="16" y1="8" x2="8" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+          </line>
+        </svg>`,
+        bullets: [
+          '✗ Contraseñas o claves',
+          '✗ Datos bancarios',
+          '✗ INE o documentos oficiales completos',
+          '✗ Información privada de clientes',
+          '✗ Datos sensibles de tu empresa'
+        ],
+        svgContent: `<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .danger-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .danger-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="danger-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#ff6b6b">NUNCA compartas información confidencial</text>
+
+          <!-- Candado cerrado central -->
+          <g transform="translate(150, 110)">
+            <rect x="-20" y="0" width="40" height="30" rx="3" fill="#ff6b6b" opacity="0.2" stroke="#ff6b6b" stroke-width="2"/>
+            <path d="M -15 0 L -15 -12 C -15 -20 -8 -25 0 -25 C 8 -25 15 -20 15 -12 L 15 0" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+            <circle cx="0" cy="15" r="4" fill="#ff6b6b"/>
+            <rect x="-2" y="15" width="4" height="8" fill="#ff6b6b"/>
+
+            <!-- Símbolo de prohibido sobre el candado -->
+            <circle cx="0" cy="0" r="35" fill="none" stroke="#ff6b6b" stroke-width="3" opacity="0.8">
+              <animate attributeName="r" values="35;38;35" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <line x1="-25" y1="-25" x2="25" y2="25" stroke="#ff6b6b" stroke-width="3" opacity="0.8"/>
+          </g>
+
+          <!-- Ejemplos de información peligrosa alrededor -->
+          <!-- Contraseña -->
+          <g transform="translate(40, 50)">
+            <rect x="-25" y="-12" width="50" height="24" rx="4" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" stroke-width="1.5"/>
+            <text x="0" y="-2" class="danger-label" text-anchor="middle" fill="#ff6b6b">password123</text>
+            <text x="0" y="8" class="danger-label" text-anchor="middle" fill="#ff6b6b">••••••••</text>
+            <path d="M -20 -18 L -15 -23 L -25 -28" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+            <path d="M 20 -18 L 25 -23 L 15 -28" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+          </g>
+
+          <!-- Tarjeta de crédito -->
+          <g transform="translate(260, 50)">
+            <rect x="-30" y="-15" width="60" height="35" rx="4" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" stroke-width="1.5"/>
+            <rect x="-30" y="-10" width="60" height="8" fill="#ff6b6b" opacity="0.3"/>
+            <text x="0" y="8" class="danger-label" text-anchor="middle" fill="#ff6b6b" font-size="7px">**** **** **** 1234</text>
+            <line x1="-30" y1="0" x2="30" y2="20" stroke="#ff6b6b" stroke-width="2"/>
+          </g>
+
+          <!-- INE / Documento -->
+          <g transform="translate(40, 160)">
+            <rect x="-25" y="-15" width="50" height="30" rx="3" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" stroke-width="1.5"/>
+            <circle cx="-10" cy="-3" r="6" fill="#ff6b6b" opacity="0.3"/>
+            <rect x="0" y="-8" width="15" height="3" rx="1" fill="#ff6b6b" opacity="0.3"/>
+            <rect x="0" y="-2" width="15" height="3" rx="1" fill="#ff6b6b" opacity="0.3"/>
+            <rect x="0" y="4" width="12" height="3" rx="1" fill="#ff6b6b" opacity="0.3"/>
+            <text x="0" y="25" class="danger-label" text-anchor="middle" fill="#ff6b6b" font-weight="bold">INE</text>
+            <line x1="-25" y1="-15" x2="25" y2="15" stroke="#ff6b6b" stroke-width="2"/>
+          </g>
+
+          <!-- Datos de clientes -->
+          <g transform="translate(260, 160)">
+            <rect x="-28" y="-15" width="56" height="30" rx="3" fill="#ff6b6b" opacity="0.1" stroke="#ff6b6b" stroke-width="1.5"/>
+            <circle cx="-15" cy="-5" r="5" fill="#ff6b6b" opacity="0.3"/>
+            <circle cx="0" cy="-5" r="5" fill="#ff6b6b" opacity="0.3"/>
+            <circle cx="15" cy="-5" r="5" fill="#ff6b6b" opacity="0.3"/>
+            <rect x="-20" y="5" width="40" height="2" rx="1" fill="#ff6b6b" opacity="0.3"/>
+            <rect x="-20" y="9" width="35" height="2" rx="1" fill="#ff6b6b" opacity="0.3"/>
+            <text x="0" y="25" class="danger-label" text-anchor="middle" fill="#ff6b6b" font-weight="bold">Clientes</text>
+            <line x1="-28" y1="-15" x2="28" y2="15" stroke="#ff6b6b" stroke-width="2"/>
+          </g>
+
+          <!-- Mensaje inferior -->
+          <text x="150" y="210" class="danger-label" text-anchor="middle" opacity="0.7" fill="#ff6b6b">⚠️ Información confidencial que podría comprometer tu seguridad</text>
+        </svg>`
+      },
+      {
+        id: 'tip-elevador',
+        title: 'Tip',
+        icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 16v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="8" r="1" fill="currentColor">
+            <animate attributeName="r" values="1;1.5;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M 8 6 L 12 2 L 16 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+          </path>
+        </svg>`,
+        bullets: [
+          'Regla simple para decidir qué compartir:',
+          '',
+          '"Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA"',
+          '',
+          '• Conversación casual = OK ✓',
+          '• Información confidencial = NO ✗'
+        ],
+        svgContent: `<svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .tip-text { fill: #343a40; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 500; }
+              .tip-label { fill: #495057; font-family: 'Inter', sans-serif; font-size: 8px; }
+            </style>
+          </defs>
+
+          <!-- Título -->
+          <text x="150" y="20" class="tip-text" text-anchor="middle" font-size="12px" font-weight="bold" fill="#ffa500">La regla del elevador</text>
+
+          <!-- Edificio y elevador -->
+          <g transform="translate(80, 40)">
+            <!-- Edificio -->
+            <rect x="0" y="0" width="140" height="160" rx="5" fill="#e9ecef" stroke="#4a5ba5" stroke-width="2"/>
+
+            <!-- Ventanas del edificio -->
+            <rect x="10" y="10" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="30" y="10" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="95" y="10" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="115" y="10" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+
+            <rect x="10" y="28" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="30" y="28" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="95" y="28" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+            <rect x="115" y="28" width="15" height="12" rx="1" fill="#4a5ba5" opacity="0.2"/>
+
+            <!-- Elevador en el centro -->
+            <g transform="translate(55, 50)">
+              <rect x="0" y="0" width="30" height="100" rx="2" fill="#ffa500" opacity="0.15" stroke="#ffa500" stroke-width="2">
+                <animate attributeName="y" values="0;-10;0" dur="4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4s" repeatCount="indefinite"/>
+              </rect>
+
+              <!-- Personas dentro del elevador -->
+              <g transform="translate(0, 0)">
+                <animate attributeName="transform" values="translate(0,0);translate(0,-10);translate(0,0)" dur="4s" repeatCount="indefinite"/>
+
+                <!-- Persona 1 -->
+                <circle cx="8" cy="30" r="4" fill="#4a5ba5" opacity="0.5"/>
+                <path d="M 4 50 Q 4 38 8 38 Q 12 38 12 50" fill="#4a5ba5" opacity="0.5"/>
+
+                <!-- Persona 2 -->
+                <circle cx="22" cy="30" r="4" fill="#ff6b6b" opacity="0.5"/>
+                <path d="M 18 50 Q 18 38 22 38 Q 26 38 26 50" fill="#ff6b6b" opacity="0.5"/>
+
+                <!-- Burbuja de conversación -->
+                <ellipse cx="15" cy="15" rx="10" ry="6" fill="white" stroke="#4a5ba5" stroke-width="1" opacity="0.8"/>
+                <path d="M 12 18 L 10 22 L 14 20" fill="white" stroke="#4a5ba5" stroke-width="1" opacity="0.8"/>
+                <text x="15" y="17" class="tip-label" text-anchor="middle" font-size="6px">💬</text>
+              </g>
+            </g>
+
+            <!-- Botones del elevador -->
+            <rect x="92" y="60" width="8" height="8" rx="1" fill="#4a5ba5" opacity="0.3"/>
+            <rect x="92" y="72" width="8" height="8" rx="1" fill="#4a5ba5" opacity="0.3"/>
+            <rect x="102" y="60" width="8" height="8" rx="1" fill="#4a5ba5" opacity="0.3"/>
+            <rect x="102" y="72" width="8" height="8" rx="1" fill="#51cf66" opacity="0.5">
+              <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+
+          <!-- Comparación debajo -->
+          <g transform="translate(30, 210)">
+            <!-- Conversación casual OK -->
+            <rect x="0" y="0" width="110" height="25" rx="4" fill="#51cf66" opacity="0.15" stroke="#51cf66" stroke-width="1.5"/>
+            <text x="55" y="10" class="tip-label" text-anchor="middle" fill="#51cf66" font-weight="bold">Casual ✓</text>
+            <text x="55" y="20" class="tip-label" text-anchor="middle" font-size="7px">"¿Cómo mejorar mi negocio?"</text>
+
+            <!-- Confidencial NO -->
+            <rect x="120" y="0" width="110" height="25" rx="4" fill="#ff6b6b" opacity="0.15" stroke="#ff6b6b" stroke-width="1.5"/>
+            <text x="175" y="10" class="tip-label" text-anchor="middle" fill="#ff6b6b" font-weight="bold">Confidencial ✗</text>
+            <text x="175" y="20" class="tip-label" text-anchor="middle" font-size="7px">"Mi contraseña es..."</text>
+          </g>
+        </svg>`
+      }
     ],
     order: 7
   },
