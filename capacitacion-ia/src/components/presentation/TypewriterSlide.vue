@@ -170,7 +170,7 @@ onUnmounted(() => {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: bold;
   margin-bottom: 2rem;
-  color: white;
+  color: white !important;
   text-align: center;
 }
 
