@@ -59,41 +59,6 @@ export const slidesData: Slide[] = [
         link: 'los-5-grandes'
       },
       {
-        id: 'menu-chatgpt',
-        title: 'ChatGPT',
-        description: 'La IA más popular del mundo',
-        icon: '💬',
-        link: 'chatgpt'
-      },
-      {
-        id: 'menu-gemini',
-        title: 'Gemini',
-        description: 'La IA multimodal de Google',
-        icon: '🔷',
-        link: 'gemini'
-      },
-      {
-        id: 'menu-claude',
-        title: 'Claude',
-        description: 'IA experta en análisis y código',
-        icon: '🟠',
-        link: 'claude'
-      },
-      {
-        id: 'menu-grok',
-        title: 'Grok',
-        description: 'IA conectada a X/Twitter',
-        icon: '🐦',
-        link: 'grok'
-      },
-      {
-        id: 'menu-meta-ai',
-        title: 'Meta AI',
-        description: 'IA integrada en WhatsApp e Instagram',
-        icon: '📱',
-        link: 'meta-ai'
-      },
-      {
         id: 'menu-otras',
         title: 'Otras Herramientas',
         description: 'Herramientas especializadas',

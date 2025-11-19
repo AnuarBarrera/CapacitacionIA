@@ -77,7 +77,7 @@ const handleNavigateToSlide = (slideId: string) => {
 .subtitle {
   font-family: var(--font-primary);
   font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
-  color: var(--color-text-secondary);
+  color: white;
   margin-bottom: var(--spacing-4);
   max-width: 800px;
   line-height: 1.6;
