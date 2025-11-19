@@ -1,0 +1,13 @@
+# robots.txt para Capacitación IA
+# https://aprendia.anuarbarrera.dev
+
+User-agent: *
+Allow: /
+
+# Bloquear acceso a archivos de configuración
+Disallow: /.env
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Sitemap
+Sitemap: https://aprendia.anuarbarrera.dev/sitemap.xml
