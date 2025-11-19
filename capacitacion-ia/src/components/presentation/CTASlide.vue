@@ -40,28 +40,34 @@ const handleNavigateToSlide = (slideId: string) => {
 
 <template>
   <div class="cta-slide">
-    <!-- Navigation Buttons -->
-    <NavigationButtons
-      :current-slide-id="slide.id"
-      :current-slide-order="slide.order"
-      @navigate-to-slide="handleNavigateToSlide"
-      @previous="handlePreviousClick"
-    />
+    <!-- Background image con blur -->
+    <div class="background-image-blur"></div>
+    <div class="background-overlay"></div>
 
-    <div class="message-section">
-      <h2 class="slide-title">{{ slide.title }}</h2>
+    <!-- Contenido con z-index superior -->
+    <div class="content-container">
+      <!-- Navigation Buttons -->
+      <NavigationButtons
+        :current-slide-id="slide.id"
+        :current-slide-order="slide.order"
+        @navigate-to-slide="handleNavigateToSlide"
+        @previous="handlePreviousClick"
+      />
 
-      <div class="message-content">
-        <p v-for="(line, index) in slide.message" :key="index" class="message-line">
-          {{ line }}
-        </p>
+      <div class="message-section">
+        <h2 class="slide-title">{{ slide.title }}</h2>
+
+        <div class="message-content">
+          <p v-for="(line, index) in slide.message" :key="index" class="message-line">
+            {{ line }}
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="contact-section">
-      <div class="contact-card">
-        <h3 class="contact-name">{{ slide.contactInfo.name }}</h3>
-        <p class="contact-company">{{ slide.contactInfo.company }}</p>
+      <div class="contact-section">
+        <div class="contact-card">
+          <h3 class="contact-name">{{ slide.contactInfo.name }}</h3>
+          <p class="contact-company">{{ slide.contactInfo.company }}</p>
 
         <div class="contact-details">
           <a
@@ -150,11 +156,48 @@ const handleNavigateToSlide = (slideId: string) => {
         </div>
       </div>
     </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .cta-slide {
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-image-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/logoAnuarBarrera.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
   padding: var(--spacing-4) var(--spacing-8);
   max-width: var(--container-xl);
   width: 100%;
@@ -175,7 +218,7 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
   font-weight: var(--font-extrabold);
   margin-bottom: var(--spacing-4);
-  color: var(--color-text-primary);
+  color: #1a202c;
 }
 
 .message-content {
@@ -325,7 +368,7 @@ const handleNavigateToSlide = (slideId: string) => {
 }
 
 @media (max-width: 768px) {
-  .cta-slide {
+  .content-container {
     padding: var(--spacing-2);
     gap: var(--spacing-4);
   }
