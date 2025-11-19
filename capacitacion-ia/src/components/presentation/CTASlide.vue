@@ -40,20 +40,20 @@ const handleNavigateToSlide = (slideId: string) => {
 
 <template>
   <div class="cta-slide">
-    <!-- Background image con blur -->
-    <div class="background-image-blur"></div>
-    <div class="background-overlay"></div>
+    <!-- Navigation Buttons -->
+    <NavigationButtons
+      :current-slide-id="slide.id"
+      :current-slide-order="slide.order"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
 
-    <!-- Contenido con z-index superior -->
+    <!-- Logo en la parte superior -->
+    <div class="logo-container">
+      <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
+    </div>
+
     <div class="content-container">
-      <!-- Navigation Buttons -->
-      <NavigationButtons
-        :current-slide-id="slide.id"
-        :current-slide-order="slide.order"
-        @navigate-to-slide="handleNavigateToSlide"
-        @previous="handlePreviousClick"
-      />
-
       <div class="message-section">
         <h2 class="slide-title">{{ slide.title }}</h2>
 
@@ -156,7 +156,6 @@ const handleNavigateToSlide = (slideId: string) => {
         </div>
       </div>
     </div>
-    </div>
   </div>
 </template>
 
@@ -164,45 +163,29 @@ const handleNavigateToSlide = (slideId: string) => {
 .cta-slide {
   width: 100%;
   min-height: 70vh;
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-6);
+  max-width: var(--container-xl);
+  margin: 0 auto;
 }
 
-.background-image-blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/logoAnuarBarrera.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(8px);
-  transform: scale(1.1);
-  z-index: 0;
+.logo-container {
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.logo-image {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
 }
 
 .content-container {
-  position: relative;
-  z-index: 2;
-  padding: var(--spacing-4) var(--spacing-8);
-  max-width: var(--container-xl);
   width: 100%;
-  margin: 0 auto;
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -218,12 +201,7 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
   font-weight: var(--font-extrabold);
   margin-bottom: var(--spacing-4);
-  color: #1a202c !important;
-}
-
-/* Sobrescribir estilos globales de h2 con mayor especificidad */
-.cta-slide h2.slide-title {
-  color: #1a202c !important;
+  color: var(--color-text-primary);
 }
 
 .message-content {
@@ -236,7 +214,7 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
   line-height: 1.8;
   margin: var(--spacing-1) 0;
-  color: white;
+  color: var(--color-text-secondary);
   font-weight: var(--font-medium);
 }
 
@@ -373,8 +351,15 @@ const handleNavigateToSlide = (slideId: string) => {
 }
 
 @media (max-width: 768px) {
+  .cta-slide {
+    padding: var(--spacing-4);
+  }
+
+  .logo-image {
+    max-width: 120px;
+  }
+
   .content-container {
-    padding: var(--spacing-2);
     gap: var(--spacing-4);
   }
 
