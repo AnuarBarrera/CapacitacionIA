@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps<{
   currentSlideId: string
@@ -10,6 +10,8 @@ const emit = defineEmits<{
   'navigate-to-slide': [slideId: string]
   'previous': []
 }>()
+
+const isCollapsed = ref(true)
 
 // IDs de las últimas slides de cada LLM
 const lastSlidesOfLLMs = [
@@ -30,22 +32,77 @@ const shouldShowButtons = computed(() => {
   return props.currentSlideOrder !== undefined && props.currentSlideOrder > 1.5
 })
 
+const toggleCollapse = () => {
+  isCollapsed.value = !isCollapsed.value
+}
+
 const handleMenuClick = () => {
   emit('navigate-to-slide', 'menu-principal')
+  isCollapsed.value = true
 }
 
 const handlePreviousClick = () => {
   emit('previous')
+  isCollapsed.value = true
 }
 
 const handlePlatformsClick = () => {
   emit('navigate-to-slide', 'los-5-grandes')
+  isCollapsed.value = true
 }
 </script>
 
 <template>
-  <div v-if="shouldShowButtons" class="navigation-buttons">
-    <div class="button-group">
+  <div v-if="shouldShowButtons" class="navigation-buttons" :class="{ 'collapsed': isCollapsed }">
+    <!-- Pestañas colapsadas -->
+    <div v-if="isCollapsed" class="tabs-collapsed">
+      <button class="tab menu-tab" @click="handleMenuClick" aria-label="Índice de contenido" title="Índice de contenido">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="tab prev-tab" @click="handlePreviousClick" aria-label="Slide anterior" title="Slide anterior">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <button class="tab expand-tab" @click="toggleCollapse" aria-label="Expandir menú" title="Expandir menú">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Botones expandidos -->
+    <div v-else class="button-group">
       <!-- Botón: Regresar al Menú -->
       <button class="nav-btn menu-btn" @click="handleMenuClick" aria-label="Regresar al menú principal">
         <svg
@@ -61,7 +118,7 @@ const handlePlatformsClick = () => {
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
-        <span>Menú</span>
+        <span>Índice de contenido</span>
       </button>
 
       <!-- Botón: Anterior -->
@@ -77,7 +134,7 @@ const handlePlatformsClick = () => {
         >
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
-        <span>Anterior</span>
+        <span>Slide anterior</span>
       </button>
 
       <!-- Botón Especial: Regresar a Las 5 Plataformas (solo en última slide de cada LLM) -->
@@ -103,6 +160,21 @@ const handlePlatformsClick = () => {
         </svg>
         <span>Las 5 Plataformas</span>
       </button>
+
+      <!-- Botón para colapsar -->
+      <button class="nav-btn collapse-btn" @click="toggleCollapse" aria-label="Colapsar menú">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 </template>
@@ -110,13 +182,65 @@ const handlePlatformsClick = () => {
 <style scoped>
 .navigation-buttons {
   position: fixed;
-  top: var(--spacing-4);
-  right: var(--spacing-4);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   z-index: 100;
-  display: flex;
-  gap: var(--spacing-2);
+  transition: all var(--transition-base);
 }
 
+.navigation-buttons.collapsed {
+  right: -10px;
+}
+
+/* Pestañas colapsadas */
+.tabs-collapsed {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tab {
+  width: 40px;
+  height: 50px;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab:hover {
+  transform: translateX(-8px);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.tab .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-tab {
+  background: linear-gradient(135deg, var(--color-neutral-600) 0%, var(--color-neutral-700) 100%);
+  color: white;
+}
+
+.prev-tab {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+  color: white;
+}
+
+.expand-tab {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  color: white;
+}
+
+/* Botones expandidos */
 .button-group {
   display: flex;
   gap: var(--spacing-2);
@@ -184,6 +308,19 @@ const handlePlatformsClick = () => {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   animation: none;
+}
+
+/* Botón Colapsar */
+.collapse-btn {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  color: white;
+  padding: var(--spacing-2);
+}
+
+.collapse-btn:hover {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Animación de pulso para el botón especial */

@@ -196,7 +196,7 @@ const handleNavigateToSlide = (slideId: string) => {
 }
 
 .message-line {
-  font-family: var(--font-display);
+  font-family: 'Poppins', sans-serif;
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-2xl));
   line-height: 1.8;
   margin: var(--spacing-1) 0;
