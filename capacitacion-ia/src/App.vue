@@ -65,26 +65,45 @@ onMounted(() => {
 
 :root {
   --font-heading: 'Poppins', sans-serif;
-  --color-heading: #ffffff;
-  --color-text: #e0e0e0;
   --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0066ff 50%, #00d4ff 100%);
   --gradient-secondary: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
   --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+  /* Colores para modo claro */
+  --bg-light: #ffffff;
   --bg-dark: #000000;
+  --color-heading-light: #1a1f36;
+  --color-text-light: #2d3561;
+  --color-heading-dark: #ffffff;
+  --color-text-dark: #e0e0e0;
+
+  /* Por defecto, modo oscuro */
+  --app-bg: var(--bg-dark);
+  --color-heading: var(--color-heading-dark);
+  --color-text: var(--color-text-dark);
+}
+
+/* Modo claro */
+@media (prefers-color-scheme: light) {
+  :root {
+    --app-bg: var(--bg-light);
+    --color-heading: var(--color-heading-light);
+    --color-text: var(--color-text-light);
+  }
 }
 
 body {
-  background: var(--bg-dark);
+  background: var(--app-bg);
   color: var(--color-text);
 }
 
 #app {
   min-height: 100vh;
-  background: #000000;
+  background: var(--app-bg);
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   position: relative;
   overflow-x: hidden;
-  color: #ffffff;
+  color: var(--color-text);
 }
 
 /* Grid Blueprint de fondo */
@@ -100,6 +119,14 @@ body {
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 1;
+}
+
+@media (prefers-color-scheme: light) {
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(0, 102, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 102, 255, 0.08) 1px, transparent 1px);
+  }
 }
 
 /* Contenedor de partículas */
@@ -120,6 +147,12 @@ body {
   border-radius: 50%;
   animation: floatUp linear infinite;
   filter: blur(1px);
+}
+
+@media (prefers-color-scheme: light) {
+  .particle {
+    background: radial-gradient(circle, rgba(0, 102, 255, 0.3) 0%, rgba(0, 150, 255, 0.15) 50%, transparent 100%);
+  }
 }
 
 @keyframes floatUp {
@@ -173,6 +206,15 @@ body {
   pointer-events: none;
   z-index: 0;
   animation: gradientMove 15s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  #app::before {
+    background:
+      radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(75, 166, 234, 0.03) 0%, transparent 50%);
+  }
 }
 
 @keyframes gradientMove {

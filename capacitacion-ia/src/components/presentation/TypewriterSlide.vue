@@ -198,11 +198,18 @@ onUnmounted(() => {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+@media (prefers-color-scheme: light) {
+  .typewriter-content {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
 .typewriter-line {
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   line-height: 1.8;
   margin: 0.5rem 0;
-  color: var(--color-text);
+  color: #1a1f36;
   font-family: 'Courier New', monospace;
   min-height: 1.8em;
 }
@@ -214,7 +221,7 @@ onUnmounted(() => {
 .cursor {
   display: inline-block;
   animation: blink 1s infinite;
-  color: var(--color-heading);
+  color: #0066ff;
   font-weight: bold;
   margin-left: 2px;
 }
