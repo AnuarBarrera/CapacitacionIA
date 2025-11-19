@@ -100,7 +100,9 @@ const handleNavigateToSlide = (slideId: string) => {
     <div
       class="card-grid"
       :style="{
-        gridTemplateColumns: `repeat(auto-fit, minmax(250px, 1fr))`
+        gridTemplateColumns: slide.columns === 1
+          ? '1fr'
+          : `repeat(auto-fit, minmax(250px, 1fr))`
       }"
     >
       <div
@@ -171,7 +173,7 @@ const handleNavigateToSlide = (slideId: string) => {
     <!-- Botón para continuar - Aparece cuando todas las tarjetas están expandidas O cuando no hay contenido expandible -->
     <Transition name="fade-in">
       <button v-if="(allCardsExpanded || expandableCardsCount === 0) && slide.showContinueButton !== false" class="next-button" @click="handleNextClick">
-        Click para continuar
+        {{ slide.continueButtonText || 'Click para continuar' }}
         <svg
           viewBox="0 0 24 24"
           fill="none"
