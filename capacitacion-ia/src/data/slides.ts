@@ -3962,7 +3962,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
-    columns: 3,
+    columns: 1,
     order: 12.2
   },
   {

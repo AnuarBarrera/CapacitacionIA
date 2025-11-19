@@ -76,48 +76,87 @@ onUnmounted(() => {
 
 <template>
   <div class="typewriter-slide">
-    <!-- Navigation Buttons -->
-    <NavigationButtons
-      :current-slide-id="slide.id"
-      :current-slide-order="slide.order"
-      @navigate-to-slide="handleNavigateToSlide"
-      @previous="handlePreviousClick"
-    />
+    <!-- Background image con blur -->
+    <div class="background-image-blur"></div>
+    <div class="background-overlay"></div>
 
-    <h2 class="slide-title">{{ slide.title }}</h2>
+    <!-- Contenido con z-index superior -->
+    <div class="content-container">
+      <!-- Navigation Buttons -->
+      <NavigationButtons
+        :current-slide-id="slide.id"
+        :current-slide-order="slide.order"
+        @navigate-to-slide="handleNavigateToSlide"
+        @previous="handlePreviousClick"
+      />
 
-    <div class="typewriter-container">
-      <div v-if="slide.imageUrl" class="background-image">
-        <img :src="slide.imageUrl" :alt="slide.title" />
+      <h2 class="slide-title">{{ slide.title }}</h2>
+
+      <div class="typewriter-container">
+        <div class="typewriter-content">
+          <p
+            v-for="(line, index) in displayedText"
+            :key="index"
+            class="typewriter-line"
+            :class="{ empty: line === '' }"
+          >
+            {{ line }}<span v-if="index === currentLineIndex && !isComplete" class="cursor">|</span>
+          </p>
+        </div>
       </div>
 
-      <div class="typewriter-content">
-        <p
-          v-for="(line, index) in displayedText"
-          :key="index"
-          class="typewriter-line"
-          :class="{ empty: line === '' }"
+      <!-- Botón flotante que aparece cuando termina la animación -->
+      <Transition name="fade-slide-up">
+        <button
+          v-if="isComplete"
+          class="continue-button"
+          @click="handleContinueClick"
         >
-          {{ line }}<span v-if="index === currentLineIndex && !isComplete" class="cursor">|</span>
-        </p>
-      </div>
+          Click para continuar
+        </button>
+      </Transition>
     </div>
-
-    <!-- Botón flotante que aparece cuando termina la animación -->
-    <Transition name="fade-slide-up">
-      <button
-        v-if="isComplete"
-        class="continue-button"
-        @click="handleContinueClick"
-      >
-        Click para continuar
-      </button>
-    </Transition>
   </div>
 </template>
 
 <style scoped>
 .typewriter-slide {
+  width: 100%;
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.background-image-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/capa.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 2;
   padding: 2rem 4rem;
   max-width: 1600px;
   width: 100%;
@@ -131,7 +170,7 @@ onUnmounted(() => {
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: bold;
   margin-bottom: 2rem;
-  color: var(--color-heading);
+  color: white;
   text-align: center;
 }
 
@@ -141,20 +180,6 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.background-image {
-  position: absolute;
-  inset: 0;
-  opacity: 0.15;
-  z-index: 0;
-}
-
-.background-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .typewriter-content {
@@ -252,7 +277,7 @@ onUnmounted(() => {
 }
 
 @media (max-width: 768px) {
-  .typewriter-slide {
+  .content-container {
     padding: 1rem;
   }
 

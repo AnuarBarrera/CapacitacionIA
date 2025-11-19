@@ -26,28 +26,35 @@ const handleNavigateToSlide = (slideId: string) => {
 </script>
 
 <template>
-  <div class="title-slide animate-fade-in-up">
-    <!-- Navigation Buttons (solo mostrar si no es la primera slide) -->
-    <NavigationButtons
-      v-if="slide.order !== 0"
-      :current-slide-id="slide.id"
-      :current-slide-order="slide.order"
-      @navigate-to-slide="handleNavigateToSlide"
-      @previous="handlePreviousClick"
-    />
+  <div class="title-slide animate-fade-in-up" :class="{ 'with-background': slide.order === 0 }">
+    <!-- Background image con blur (solo en primera slide) -->
+    <div v-if="slide.order === 0" class="background-image"></div>
+    <div v-if="slide.order === 0" class="background-overlay"></div>
 
-    <h1 class="main-title">{{ slide.title }}</h1>
-    <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
-    <p v-if="slide.author" class="author">{{ slide.author }}</p>
+    <!-- Contenido (con z-index superior) -->
+    <div class="content-wrapper">
+      <!-- Navigation Buttons (solo mostrar si no es la primera slide) -->
+      <NavigationButtons
+        v-if="slide.order !== 0"
+        :current-slide-id="slide.id"
+        :current-slide-order="slide.order"
+        @navigate-to-slide="handleNavigateToSlide"
+        @previous="handlePreviousClick"
+      />
 
-    <!-- Botón "Comienza Aquí" solo en la primera slide -->
-    <button
-      v-if="slide.order === 0"
-      class="start-button"
-      @click="handleStartClick"
-    >
-      Comienza Aquí
-    </button>
+      <h1 class="main-title">{{ slide.title }}</h1>
+      <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
+      <p v-if="slide.author" class="author">{{ slide.author }}</p>
+
+      <!-- Botón "Comienza Aquí" solo en la primera slide -->
+      <button
+        v-if="slide.order === 0"
+        class="start-button"
+        @click="handleStartClick"
+      >
+        Comienza Aquí
+      </button>
+    </div>
   </div>
 </template>
 
@@ -63,6 +70,51 @@ const handleNavigateToSlide = (slideId: string) => {
   width: 100%;
   max-width: var(--container-xl);
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.title-slide.with-background {
+  max-width: 100%;
+  padding: 0;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/logoAnuarBarrera.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-6);
+  position: relative;
+  z-index: 2;
+  min-height: 70vh;
+  width: 100%;
 }
 
 .main-title {
