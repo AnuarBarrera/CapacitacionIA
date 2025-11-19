@@ -48,11 +48,6 @@ const handleNavigateToSlide = (slideId: string) => {
       @previous="handlePreviousClick"
     />
 
-    <!-- Logo en la parte superior -->
-    <div class="logo-container">
-      <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
-    </div>
-
     <div class="content-container">
       <div class="message-section">
         <h2 class="slide-title">{{ slide.title }}</h2>
@@ -66,7 +61,11 @@ const handleNavigateToSlide = (slideId: string) => {
 
       <div class="contact-section">
         <div class="contact-card">
-          <h3 class="contact-name">{{ slide.contactInfo.name }}</h3>
+          <!-- Logo en lugar del nombre de contacto -->
+          <div class="logo-container">
+            <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
+          </div>
+
           <p class="contact-company">{{ slide.contactInfo.company }}</p>
 
         <div class="contact-details">
@@ -235,13 +234,6 @@ const handleNavigateToSlide = (slideId: string) => {
   width: 100%;
 }
 
-.contact-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
-  margin-bottom: var(--spacing-1);
-}
-
 .contact-company {
   font-family: var(--font-primary);
   font-size: var(--text-lg);
@@ -370,10 +362,6 @@ const handleNavigateToSlide = (slideId: string) => {
 
   .contact-card {
     padding: var(--spacing-3);
-  }
-
-  .contact-name {
-    font-size: var(--text-2xl);
   }
 
   .contact-company {
