@@ -61,11 +61,7 @@ const handleNavigateToSlide = (slideId: string) => {
 
       <div class="contact-section">
         <div class="contact-card">
-          <!-- Logo en lugar del nombre de contacto -->
-          <div class="logo-container">
-            <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
-          </div>
-
+          <h3 class="contact-name">{{ slide.contactInfo.name }}</h3>
           <p class="contact-company">{{ slide.contactInfo.company }}</p>
 
         <div class="contact-details">
@@ -171,19 +167,6 @@ const handleNavigateToSlide = (slideId: string) => {
   margin: 0 auto;
 }
 
-.logo-container {
-  margin-bottom: var(--spacing-4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-image {
-  max-width: 200px;
-  height: auto;
-  object-fit: contain;
-}
-
 .content-container {
   width: 100%;
   display: flex;
@@ -232,6 +215,13 @@ const handleNavigateToSlide = (slideId: string) => {
   box-shadow: var(--shadow-2xl);
   max-width: 500px;
   width: 100%;
+}
+
+.contact-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--spacing-1);
 }
 
 .contact-company {
@@ -348,10 +338,6 @@ const handleNavigateToSlide = (slideId: string) => {
     padding: var(--spacing-4);
   }
 
-  .logo-image {
-    max-width: 120px;
-  }
-
   .content-container {
     gap: var(--spacing-4);
   }
@@ -362,6 +348,10 @@ const handleNavigateToSlide = (slideId: string) => {
 
   .contact-card {
     padding: var(--spacing-3);
+  }
+
+  .contact-name {
+    font-size: var(--text-2xl);
   }
 
   .contact-company {

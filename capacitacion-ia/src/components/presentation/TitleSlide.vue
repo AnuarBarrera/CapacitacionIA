@@ -39,11 +39,7 @@ const handleNavigateToSlide = (slideId: string) => {
     <div class="content-wrapper">
       <h1 class="main-title">{{ slide.title }}</h1>
       <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
-
-      <!-- Logo en lugar del texto de autor (solo en primera slide) -->
-      <div v-if="slide.order === 0" class="logo-container">
-        <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
-      </div>
+      <p v-if="slide.author" class="author">{{ slide.author }}</p>
 
       <!-- Botón "Comienza Aquí" solo en la primera slide -->
       <button
@@ -72,19 +68,6 @@ const handleNavigateToSlide = (slideId: string) => {
   position: relative;
 }
 
-.logo-container {
-  margin-bottom: var(--spacing-4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-image {
-  max-width: 200px;
-  height: auto;
-  object-fit: contain;
-}
-
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -110,6 +93,14 @@ const handleNavigateToSlide = (slideId: string) => {
   margin-bottom: var(--spacing-4);
   max-width: 800px;
   line-height: 1.6;
+}
+
+.author {
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
+  color: var(--color-text-tertiary);
+  opacity: 0.8;
+  font-style: italic;
 }
 
 .start-button {
@@ -165,10 +156,6 @@ const handleNavigateToSlide = (slideId: string) => {
 @media (max-width: 768px) {
   .title-slide {
     padding: var(--spacing-4);
-  }
-
-  .logo-image {
-    max-width: 120px;
   }
 
   .main-title {
