@@ -86,7 +86,7 @@ const handlePlatformsClick = () => {
         </svg>
       </button>
 
-      <button class="tab expand-tab" @click="toggleCollapse" aria-label="Expandir menú" title="Expandir menú">
+      <button class="tab expand-tab" @click="toggleCollapse" aria-label="Menú de controles" title="Menú de controles">
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -182,9 +182,8 @@ const handlePlatformsClick = () => {
 <style scoped>
 .navigation-buttons {
   position: fixed;
-  top: 50%;
+  top: var(--spacing-4);
   right: 0;
-  transform: translateY(-50%);
   z-index: 100;
   transition: all var(--transition-base);
 }
@@ -341,60 +340,72 @@ const handlePlatformsClick = () => {
 @media (max-width: 768px) {
   .navigation-buttons {
     top: var(--spacing-2);
-    right: var(--spacing-2);
-    left: var(--spacing-2);
+  }
+
+  .navigation-buttons.collapsed {
+    right: 0;
+  }
+
+  .tabs-collapsed {
+    flex-direction: row;
+    gap: 2px;
+  }
+
+  .tab {
+    width: 44px;
+    height: 44px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tab:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
   }
 
   .button-group {
-    width: 100%;
-    justify-content: space-between;
-    padding: var(--spacing-1);
+    flex-direction: column;
     gap: var(--spacing-1);
+    padding: var(--spacing-2);
   }
 
   .nav-btn {
-    padding: var(--spacing-1) var(--spacing-2);
-    font-size: var(--text-xs);
-    flex: 1;
-    justify-content: center;
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--text-sm);
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .nav-btn span {
-    display: none;
+    display: inline;
   }
 
   .nav-btn .icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* En móvil, mostrar texto para el botón especial */
-  .platforms-btn span {
-    display: inline;
-    font-size: var(--text-xs);
+    width: 18px;
+    height: 18px;
   }
 
   .platforms-btn .icon {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
 }
 
 @media (max-width: 480px) {
-  .button-group {
+  .tabs-collapsed {
     flex-direction: column;
-    width: auto;
-    right: var(--spacing-2);
-    left: auto;
+    gap: 2px;
   }
 
-  .nav-btn {
-    width: auto;
-    min-width: 44px;
+  .tab {
+    width: 40px;
+    height: 40px;
   }
 
-  .platforms-btn {
-    width: 100%;
+  .button-group {
+    min-width: 200px;
   }
 }
 </style>

@@ -588,6 +588,59 @@ const handleNavigateToSlide = (slideId: string) => {
   max-height: 500px;
 }
 
+/* Desktop - Optimizaciones */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-4);
+  }
+
+  .card {
+    padding: var(--spacing-4);
+  }
+
+  .card-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon-emoji {
+    font-size: var(--text-3xl);
+  }
+
+  .card-title {
+    font-size: var(--text-lg);
+  }
+
+  .card-description {
+    font-size: var(--text-lg);
+  }
+
+  .card-bullets li {
+    font-size: var(--text-lg);
+    padding: var(--spacing-3) var(--spacing-4);
+    padding-left: var(--spacing-5);
+  }
+
+  .card-svg-content svg {
+    max-width: 450px;
+    max-height: 300px;
+  }
+
+  .hero-title {
+    font-size: var(--text-5xl);
+  }
+
+  .hero-description {
+    font-size: var(--text-xl);
+  }
+
+  .next-button {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--text-xl);
+  }
+}
+
 @media (max-width: 768px) {
   .card-grid-slide {
     padding: var(--spacing-3);
