@@ -150,18 +150,6 @@ const handleNavigateToSlide = (slideId: string) => {
         </div>
       </div>
     </div>
-
-    <div v-if="slide.ctaButtons && slide.ctaButtons.length > 0" class="cta-buttons">
-      <button
-        v-for="(button, index) in slide.ctaButtons"
-        :key="index"
-        @click="handleButtonClick(button.action)"
-        class="cta-button"
-        :class="button.variant || 'primary'"
-      >
-        {{ button.label }}
-      </button>
-    </div>
   </div>
 </template>
 
@@ -221,7 +209,7 @@ const handleNavigateToSlide = (slideId: string) => {
 }
 
 .contact-name {
-  font-family: var(--font-display);
+  font-family: 'Poppins', sans-serif;
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   margin-bottom: var(--spacing-1);
