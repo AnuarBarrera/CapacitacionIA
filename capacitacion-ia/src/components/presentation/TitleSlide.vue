@@ -26,22 +26,22 @@ const handleNavigateToSlide = (slideId: string) => {
 </script>
 
 <template>
-  <div class="title-slide animate-fade-in-up" :class="{ 'with-background': slide.order === 0 }">
-    <!-- Background image con blur (solo en primera slide) -->
-    <div v-if="slide.order === 0" class="background-image"></div>
-    <div v-if="slide.order === 0" class="background-overlay"></div>
+  <div class="title-slide animate-fade-in-up">
+    <!-- Navigation Buttons (solo mostrar si no es la primera slide) -->
+    <NavigationButtons
+      v-if="slide.order !== 0"
+      :current-slide-id="slide.id"
+      :current-slide-order="slide.order"
+      @navigate-to-slide="handleNavigateToSlide"
+      @previous="handlePreviousClick"
+    />
 
-    <!-- Contenido (con z-index superior) -->
+    <!-- Logo en la parte superior (solo en primera slide) -->
+    <div v-if="slide.order === 0" class="logo-container">
+      <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
+    </div>
+
     <div class="content-wrapper">
-      <!-- Navigation Buttons (solo mostrar si no es la primera slide) -->
-      <NavigationButtons
-        v-if="slide.order !== 0"
-        :current-slide-id="slide.id"
-        :current-slide-order="slide.order"
-        @navigate-to-slide="handleNavigateToSlide"
-        @previous="handlePreviousClick"
-      />
-
       <h1 class="main-title">{{ slide.title }}</h1>
       <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
       <p v-if="slide.author" class="author">{{ slide.author }}</p>
@@ -71,37 +71,19 @@ const handleNavigateToSlide = (slideId: string) => {
   max-width: var(--container-xl);
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
 
-.title-slide.with-background {
-  max-width: 100%;
-  padding: 0;
+.logo-container {
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/logoAnuarBarrera.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(8px);
-  transform: scale(1.1);
-  z-index: 0;
-}
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.logo-image {
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
 }
 
 .content-wrapper {
@@ -110,10 +92,6 @@ const handleNavigateToSlide = (slideId: string) => {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: var(--spacing-6);
-  position: relative;
-  z-index: 2;
-  min-height: 70vh;
   width: 100%;
 }
 
@@ -122,19 +100,14 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
   font-weight: var(--font-extrabold);
   margin-bottom: var(--spacing-3);
-  color: #1a202c !important;
+  color: var(--color-text-primary);
   line-height: 1.2;
-}
-
-/* Sobrescribir estilos globales con mayor especificidad */
-.title-slide h1.main-title {
-  color: #1a202c !important;
 }
 
 .subtitle {
   font-family: var(--font-primary);
   font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
-  color: white;
+  color: var(--color-text-secondary);
   margin-bottom: var(--spacing-4);
   max-width: 800px;
   line-height: 1.6;
@@ -143,14 +116,9 @@ const handleNavigateToSlide = (slideId: string) => {
 .author {
   font-family: var(--font-primary);
   font-size: var(--text-lg);
-  color: #2d3748 !important;
-  opacity: 0.9;
+  color: var(--color-text-tertiary);
+  opacity: 0.8;
   font-style: italic;
-}
-
-/* Sobrescribir estilos globales del autor */
-.title-slide p.author {
-  color: #2d3748 !important;
 }
 
 .start-button {
@@ -206,6 +174,10 @@ const handleNavigateToSlide = (slideId: string) => {
 @media (max-width: 768px) {
   .title-slide {
     padding: var(--spacing-4);
+  }
+
+  .logo-image {
+    max-width: 120px;
   }
 
   .main-title {
