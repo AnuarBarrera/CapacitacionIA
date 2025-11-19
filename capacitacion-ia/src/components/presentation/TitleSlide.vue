@@ -36,15 +36,14 @@ const handleNavigateToSlide = (slideId: string) => {
       @previous="handlePreviousClick"
     />
 
-    <!-- Logo en la parte superior (solo en primera slide) -->
-    <div v-if="slide.order === 0" class="logo-container">
-      <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
-    </div>
-
     <div class="content-wrapper">
       <h1 class="main-title">{{ slide.title }}</h1>
       <p v-if="slide.subtitle" class="subtitle">{{ slide.subtitle }}</p>
-      <p v-if="slide.author" class="author">{{ slide.author }}</p>
+
+      <!-- Logo en lugar del texto de autor (solo en primera slide) -->
+      <div v-if="slide.order === 0" class="logo-container">
+        <img src="/logoAnuarBarrera.webp" alt="Logo Anuar Barrera" class="logo-image" />
+      </div>
 
       <!-- Botón "Comienza Aquí" solo en la primera slide -->
       <button
@@ -111,14 +110,6 @@ const handleNavigateToSlide = (slideId: string) => {
   margin-bottom: var(--spacing-4);
   max-width: 800px;
   line-height: 1.6;
-}
-
-.author {
-  font-family: var(--font-primary);
-  font-size: var(--text-lg);
-  color: var(--color-text-tertiary);
-  opacity: 0.8;
-  font-style: italic;
 }
 
 .start-button {
