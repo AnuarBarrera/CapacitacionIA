@@ -218,7 +218,7 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
   font-weight: var(--font-extrabold);
   margin-bottom: var(--spacing-4);
-  color: #1a202c;
+  color: #1a202c !important;
 }
 
 .message-content {
