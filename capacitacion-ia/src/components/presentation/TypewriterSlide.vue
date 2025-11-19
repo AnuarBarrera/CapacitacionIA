@@ -174,6 +174,11 @@ onUnmounted(() => {
   text-align: center;
 }
 
+/* Sobrescribir estilos globales de h2 con mayor especificidad */
+.typewriter-slide h2.slide-title {
+  color: white !important;
+}
+
 .typewriter-container {
   position: relative;
   flex: 1;

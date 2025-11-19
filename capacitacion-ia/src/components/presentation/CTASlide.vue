@@ -221,6 +221,11 @@ const handleNavigateToSlide = (slideId: string) => {
   color: #1a202c !important;
 }
 
+/* Sobrescribir estilos globales de h2 con mayor especificidad */
+.cta-slide h2.slide-title {
+  color: #1a202c !important;
+}
+
 .message-content {
   max-width: 800px;
   margin: 0 auto;

@@ -126,6 +126,11 @@ const handleNavigateToSlide = (slideId: string) => {
   line-height: 1.2;
 }
 
+/* Sobrescribir estilos globales con mayor especificidad */
+.title-slide h1.main-title {
+  color: #1a202c !important;
+}
+
 .subtitle {
   font-family: var(--font-primary);
   font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
@@ -141,6 +146,11 @@ const handleNavigateToSlide = (slideId: string) => {
   color: #2d3748 !important;
   opacity: 0.9;
   font-style: italic;
+}
+
+/* Sobrescribir estilos globales del autor */
+.title-slide p.author {
+  color: #2d3748 !important;
 }
 
 .start-button {
