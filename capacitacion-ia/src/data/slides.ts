@@ -828,11 +828,11 @@ export const slidesData: Slide[] = [
         bullets: [
           'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
           'AHORA CON IA:',
-          '  • QUE: Quiero lona para vender pan dulce',
-          '  • COMO: estilo épico, inspiración anime, formato horizontal 1.20m',
-          '  • CONTEXTO: Con precios desde 10 pesos mexicanos',
+          '   QUE: Quiero lona para vender pan dulce',
+          '   COMO: estilo épico, inspiración anime, formato horizontal 1.20m',
+          '   CONTEXTO: Con precios desde 10 pesos mexicanos',
           'Resultado: Diseño profesional, gratis, en 5 minutos',
-          '✨ ESTO es el poder de la IA'
+          ' ESTO es el poder de la IA'
         ],
         svgContent: `<svg viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1723,11 +1723,11 @@ export const slidesData: Slide[] = [
           </path>
         </svg>`,
         bullets: [
-          '✓ Ideas de negocio',
-          '✓ Preguntas generales',
-          '✓ Descripciones de productos/servicios',
-          '✓ Solicitudes de contenido',
-          '✓ Problemas que necesitas resolver'
+          ' Ideas de negocio',
+          ' Preguntas generales',
+          ' Descripciones de productos/servicios',
+          ' Solicitudes de contenido',
+          ' Problemas que necesitas resolver'
         ],
         svgContent: `<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1812,11 +1812,11 @@ export const slidesData: Slide[] = [
           </line>
         </svg>`,
         bullets: [
-          '✗ Contraseñas o claves',
-          '✗ Datos bancarios',
-          '✗ INE o documentos oficiales completos',
-          '✗ Información privada de clientes',
-          '✗ Datos sensibles de tu empresa'
+          ' Contraseñas o claves',
+          ' Datos bancarios',
+          ' INE o documentos oficiales completos',
+          ' Información privada de clientes',
+          ' Datos sensibles de tu empresa'
         ],
         svgContent: `<svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1902,12 +1902,10 @@ export const slidesData: Slide[] = [
           </path>
         </svg>`,
         bullets: [
-          'Regla simple para decidir qué compartir:',
-          '',
-          '"Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA"',
-          '',
-          '• Conversación casual = OK ✓',
-          '• Información confidencial = NO ✗'
+          'Regla simple para decidir qué compartir',
+          'Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA',
+          ' Conversación casual = OK ✓',
+          ' Información confidencial = NO ✗'
         ],
         svgContent: `<svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2046,9 +2044,9 @@ export const slidesData: Slide[] = [
         description: 'by X (Twitter)',
         icon: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
           <rect width="100" height="100" rx="12" fill="#000000"/>
-          <g transform="translate(10, 15) scale(1.8)">
-            <path d="M7.95,12.62L14.61,7.71c0.33-0.24 0.79-0.16 1-0.09 0.82,1.94 0.46,4.47-1.47,6.41-1.93,1.94-4.41,2.29-6.25,1.48l-2.26,0.99c3.26,2.22,6.95,1.77,9.24-0.52 1.95-1.95 2.45-4.45 2-6.98l0.01,0.01C25.99,4.8,26.89,3.39,28.97,0.51,29.01,0.44,29.05,0.37,29.09,0.3l-2.75,2.75v-0.01L7.93,12.63" fill="#FFFFFF"/>
-            <path d="M6.57,13.82C4.24,11.59,4.64,8.15,6.62,6.17c1.47-1.47,3.92-2.07,6-1.27l2.26-1c-0.41-0.29-0.99-0.61-1.63-0.83-2.7-1.11-5.92-0.5-8.19,1.77-2.13,2.13-2.73,5.33-1.47,8.12 0.85,2.07-0.3,3.56-1.64,5.01-0.5,0.52-1,1.05-1.46,1.61L6.56,13.83" fill="#FFFFFF"/>
+          <g transform="translate(6, 33.5) scale(1)">
+            <path d="M13.2371 21.0407L24.3186 12.8506C24.8619 12.4491 25.6384 12.6057 25.8973 13.2294C27.2597 16.5185 26.651 20.4712 23.9403 23.1851C21.2297 25.8989 17.4581 26.4941 14.0108 25.1386L10.2449 26.8843C15.6463 30.5806 22.2053 29.6665 26.304 25.5601C29.5551 22.3051 30.562 17.8683 29.6205 13.8673L29.629 13.8758C28.2637 7.99809 29.9647 5.64871 33.449 0.844576C33.5314 0.730667 33.6139 0.616757 33.6964 0.5L29.1113 5.09055V5.07631L13.2343 21.0436" fill="#FFFFFF"/>
+            <path d="M10.9503 23.0313C7.07343 19.3235 7.74185 13.5853 11.0498 10.2763C13.4959 7.82722 17.5036 6.82767 21.0021 8.2971L24.7595 6.55998C24.0826 6.07017 23.215 5.54334 22.2195 5.17313C17.7198 3.31926 12.3326 4.24192 8.67479 7.90126C5.15635 11.4239 4.0499 16.8403 5.94992 21.4622C7.36924 24.9165 5.04257 27.3598 2.69884 29.826C1.86829 30.7002 1.0349 31.5745 0.36364 32.5L10.9474 23.0341" fill="#FFFFFF"/>
           </g>
         </svg>`,
         link: 'grok'
@@ -2196,8 +2194,7 @@ export const slidesData: Slide[] = [
           'Automatizaciones simples: scripts, workflows, lógica de negocio',
           'Integración con APIs (explicación, creación, documentación)',
           'Asesoría en arquitectura de software y ciberseguridad',
-          'Creación de materiales educativos (pruebas, dinámicas, ejercicios)',
-          'Diseño de interfaces (UI/UX): recomendaciones, prompts, wireframes'
+          'Creación de materiales educativos (pruebas, dinámicas, ejercicios)'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2256,7 +2253,6 @@ export const slidesData: Slide[] = [
         bullets: [
           'Pedir formatos claros y específicos',
           'Dar ejemplos del resultado esperado',
-          'Solicitar iteraciones y mejoras',
           'Usar prompts conversacionales, no comandos rígidos',
           'Proporcionar contexto relevante',
           'Ser específico sobre el tono y estilo deseado',
@@ -2313,10 +2309,10 @@ export const slidesData: Slide[] = [
         bullets: [
           'Crear imágenes realistas, ilustraciones o arte conceptual',
           'Generar estilos específicos (corporativo, cartoon, hiperrealista, minimalista)',
-          'Modificar imágenes (inpainting y outpainting)',
-          'Crear logos, personajes, escenarios y assets para apps',
+          'Modificar imágenes',
+          'Crear logos, personajes, escenarios',
           'Aumentar resolución y mejorar detalles',
-          'Diseñar mockups para productos, webs, apps y publicidad'
+          'Diseños para productos, webs, apps y publicidad'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -3602,26 +3598,24 @@ export const slidesData: Slide[] = [
     type: SlideType.RESOURCE,
     platform: 'Grok - X/Twitter',
     description: 'IA con acceso a información en tiempo real de Twitter/X',
-    logoUrl: `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="12" fill="#000000"/><g transform="translate(20, 30)"><path d="M7.95,12.62L14.61,7.71c0.33-0.24 0.79-0.16 1-0.09 0.82,1.94 0.46,4.47-1.47,6.41-1.93,1.94-4.41,2.29-6.25,1.48l-2.26,0.99c3.26,2.22,6.95,1.77,9.24-0.52 1.95-1.95 2.45-4.45 2-6.98l0.01,0.01C25.99,4.8,26.89,3.39,28.97,0.51,29.01,0.44,29.05,0.37,29.09,0.3l-2.75,2.75v-0.01L7.93,12.63" fill="#FFFFFF"/><path d="M6.57,13.82C4.24,11.59,4.64,8.15,6.62,6.17c1.47-1.47,3.92-2.07,6-1.27l2.26-1c-0.41-0.29-0.99-0.61-1.63-0.83-2.7-1.11-5.92-0.5-8.19,1.77-2.13,2.13-2.73,5.33-1.47,8.12 0.85,2.07-0.3,3.56-1.64,5.01-0.5,0.52-1,1.05-1.46,1.61L6.56,13.83" fill="#FFFFFF"/></g></svg>`)}`,
+    logoUrl: `data:image/svg+xml,${encodeURIComponent(`<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="12" fill="#000000"/><g transform="translate(6, 33.5) scale(1)"><path d="M13.2371 21.0407L24.3186 12.8506C24.8619 12.4491 25.6384 12.6057 25.8973 13.2294C27.2597 16.5185 26.651 20.4712 23.9403 23.1851C21.2297 25.8989 17.4581 26.4941 14.0108 25.1386L10.2449 26.8843C15.6463 30.5806 22.2053 29.6665 26.304 25.5601C29.5551 22.3051 30.562 17.8683 29.6205 13.8673L29.629 13.8758C28.2637 7.99809 29.9647 5.64871 33.449 0.844576C33.5314 0.730667 33.6139 0.616757 33.6964 0.5L29.1113 5.09055V5.07631L13.2343 21.0436" fill="#FFFFFF"/><path d="M10.9503 23.0313C7.07343 19.3235 7.74185 13.5853 11.0498 10.2763C13.4959 7.82722 17.5036 6.82767 21.0021 8.2971L24.7595 6.55998C24.0826 6.07017 23.215 5.54334 22.2195 5.17313C17.7198 3.31926 12.3326 4.24192 8.67479 7.90126C5.15635 11.4239 4.0499 16.8403 5.94992 21.4622C7.36924 24.9165 5.04257 27.3598 2.69884 29.826C1.86829 30.7002 1.0349 31.5745 0.36364 32.5L10.9474 23.0341" fill="#FFFFFF"/></g></svg>`)}`,
     resources: [
       {
         type: 'web',
         label: 'Sitio Web',
-        url: 'https://x.com/i/grok',
+        url: 'https://grok.com/',
         icon: '🌐'
       },
       {
         type: 'app',
-        label: 'App X (Grok incluido)',
-        url: 'https://x.com/download',
+        label: 'App',
+        url: 'https://play.google.com/store/apps/details?id=ai.x.grok',
         icon: '📱'
       }
     ],
     features: [
-      'Requiere suscripción X Premium+',
       'Acceso a información en tiempo real de Twitter/X',
       'Útil para tendencias y noticias actuales',
-      'Disponible dentro de la app de X/Twitter'
     ],
     order: 12
   },
@@ -3646,9 +3640,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Desarrollado por xAI, la compañía de IA de Elon Musk',
-          'Modelo actual: Grok 4 (versión más avanzada)',
           'Enfoque en respuestas directas, sin filtros excesivos',
-          'Acceso exclusivo para suscriptores de X Premium+',
           'Entrenado con datos masivos de X y otras fuentes',
           'Diseñado para ser útil, honesto y transparente',
           'Compite directamente con ChatGPT, Claude y Gemini'
@@ -4034,14 +4026,9 @@ export const slidesData: Slide[] = [
           <line x1="12" y1="16" x2="12.01" y2="16"/>
         </svg>`,
         bullets: [
-          'No tiene acceso completo a internet (solo X y fuentes limitadas)',
-          'No puede navegar sitios web externos como Claude o Bing',
-          'Requiere suscripción de pago (X Premium+)',
-          'No tiene aplicación móvil dedicada (solo web)',
-          'Menos herramientas integradas comparado con ChatGPT o Claude',
-          'No es ideal para investigación profunda en web externa',
-          'No es óptimo para análisis de documentos largos complejos',
-          'No es la mejor opción para desarrollo de software avanzado'
+          'Requiere suscripción de pago (X Premium+) para su modelo más avanzado',
+          'Menos herramientas integradas comparado con ChatGPT',
+          'No es óptimo para análisis de documentos largos complejos'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4093,13 +4080,13 @@ export const slidesData: Slide[] = [
       {
         type: 'app',
         label: 'App Meta AI',
-        url: 'https://www.meta.ai/download',
+        url: 'https://play.google.com/store/apps/details?id=com.facebook.stella',
         icon: '📱'
       }
     ],
     features: [
       'Integrado en WhatsApp, Facebook e Instagram',
-      'No requiere instalación adicional',
+      'Su app adicional tiene generación de video',
       'Ya está donde tus clientes están',
       'Fácil acceso desde mensajería',
       'Disponible en apps de Meta (WhatsApp, Instagram, Facebook)'
@@ -4151,10 +4138,9 @@ export const slidesData: Slide[] = [
           <g transform="translate(50, 60)">
             <!-- WhatsApp icon oficial -->
             <circle cx="0" cy="0" r="20" fill="#25d366"/>
-            <!-- Teléfono con burbuja -->
-            <path d="M-2,-10 C-6,-10 -9,-7 -9,-3 L-9,3 C-9,7 -6,10 -2,10 L2,10 C6,10 9,7 9,3 L9,-3 C9,-7 6,-10 2,-10 L-2,-10 Z" fill="white"/>
-            <circle cx="0" cy="-1" r="5" fill="none" stroke="#25d366" stroke-width="1.5"/>
-            <path d="M-10,6 L-7,3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <g transform="translate(0, 0) scale(0.85)">
+              <path d="M0.057,-10.571c-5.84,0-10.571,4.731-10.571,10.571c0,2.024,0.578,3.915,1.572,5.521l-1.646,6.065l6.228-1.633c1.55,0.849,3.331,1.333,5.229,1.333c5.839,0,10.571-4.731,10.571-10.571S5.896,-10.571,0.057,-10.571z M6.629,4.229c-0.277,0.78-1.636,1.429-2.254,1.521c-0.602,0.09-1.164,0.122-2.046-0.122c-0.537-0.149-1.228-0.348-2.106-0.683c-3.686-1.408-6.088-5.131-6.271-5.367c-0.183-0.236-1.485-1.975-1.485-3.767c0-1.792,0.94-2.673,1.274-3.039c0.334-0.365,0.729-0.457,0.972-0.457c0.243,0,0.486,0.002,0.699,0.012c0.224,0.011,0.524-0.085,0.82,0.626c0.304,0.729,1.031,2.521,1.121,2.704c0.091,0.183,0.152,0.396,0.031,0.632c-0.122,0.236-0.182,0.382-0.365,0.59c-0.183,0.208-0.385,0.465-0.548,0.623c-0.183,0.177-0.374,0.368-0.161,0.721c0.214,0.353,0.949,1.564,2.036,2.534c1.399,1.247,2.578,1.634,2.943,1.817c0.365,0.183,0.577,0.152,0.79-0.091c0.213-0.243,0.912-1.065,1.155-1.431c0.243-0.365,0.486-0.304,0.82-0.183c0.334,0.122,2.122,1.001,2.486,1.183c0.365,0.183,0.607,0.274,0.699,0.427C6.906,2.803,6.906,3.449,6.629,4.229z" fill="white"/>
+            </g>
 
             <!-- Chat bubbles más amplias -->
             <rect x="25" y="-12" width="115" height="24" rx="12" fill="#25d366" opacity="0.7">
@@ -4167,8 +4153,9 @@ export const slidesData: Slide[] = [
           <g transform="translate(50, 125)">
             <!-- Facebook Messenger icon oficial -->
             <circle cx="0" cy="0" r="20" fill="#0084ff"/>
-            <!-- Bolt/rayo de Messenger -->
-            <path d="M-2,-12 L-10,2 L0,-2 L2,12 L10,-2 L0,2 Z" fill="white"/>
+            <g transform="translate(0, 0) scale(0.75)">
+              <path d="M0,-13.333c-7.364,0-13.333,5.614-13.333,12.533c0,3.95,1.97,7.466,5.043,9.777v5.023l4.836-2.653c1.291,0.357,2.66,0.55,4.121,0.55c7.364,0,13.333-5.614,13.333-12.533S7.364,-13.333,0,-13.333z M1.467,2.933l-3.417-3.644l-6.667,3.644l7.333-7.784l3.5,3.645l6.584-3.645L1.467,2.933z" fill="white"/>
+            </g>
 
             <!-- Chat bubbles más amplias -->
             <rect x="25" y="-12" width="130" height="24" rx="12" fill="#0084ff" opacity="0.7">
@@ -4230,8 +4217,7 @@ export const slidesData: Slide[] = [
           'Responde preguntas directamente en WhatsApp',
           'Sugerencias inteligentes durante conversaciones',
           'Búsqueda de información sin salir de la app',
-          'Asistencia para compras y recomendaciones',
-          'Programación de recordatorios y eventos'
+          'Asistencia para compras y recomendaciones'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4246,10 +4232,9 @@ export const slidesData: Slide[] = [
           <!-- WhatsApp icon oficial (top left) -->
           <g transform="translate(60, 60)">
             <circle r="25" fill="#25d366"/>
-            <!-- Teléfono con burbuja de WhatsApp oficial -->
-            <path d="M-3,-12 C-7,-12 -11,-8 -11,-4 L-11,4 C-11,8 -7,12 -3,12 L3,12 C7,12 11,8 11,4 L11,-4 C11,-8 7,-12 3,-12 L-3,-12 Z" fill="white"/>
-            <circle cx="0" cy="0" r="6.5" fill="none" stroke="#25d366" stroke-width="2"/>
-            <path d="M-12,8 L-9,5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <g transform="scale(1.1)">
+              <path d="M0.057,-10.571c-5.84,0-10.571,4.731-10.571,10.571c0,2.024,0.578,3.915,1.572,5.521l-1.646,6.065l6.228-1.633c1.55,0.849,3.331,1.333,5.229,1.333c5.839,0,10.571-4.731,10.571-10.571S5.896,-10.571,0.057,-10.571z M6.629,4.229c-0.277,0.78-1.636,1.429-2.254,1.521c-0.602,0.09-1.164,0.122-2.046-0.122c-0.537-0.149-1.228-0.348-2.106-0.683c-3.686-1.408-6.088-5.131-6.271-5.367c-0.183-0.236-1.485-1.975-1.485-3.767c0-1.792,0.94-2.673,1.274-3.039c0.334-0.365,0.729-0.457,0.972-0.457c0.243,0,0.486,0.002,0.699,0.012c0.224,0.011,0.524-0.085,0.82,0.626c0.304,0.729,1.031,2.521,1.121,2.704c0.091,0.183,0.152,0.396,0.031,0.632c-0.122,0.236-0.182,0.382-0.365,0.59c-0.183,0.208-0.385,0.465-0.548,0.623c-0.183,0.177-0.374,0.368-0.161,0.721c0.214,0.353,0.949,1.564,2.036,2.534c1.399,1.247,2.578,1.634,2.943,1.817c0.365,0.183,0.577,0.152,0.79-0.091c0.213-0.243,0.912-1.065,1.155-1.431c0.243-0.365,0.486-0.304,0.82-0.183c0.334,0.122,2.122,1.001,2.486,1.183c0.365,0.183,0.607,0.274,0.699,0.427C6.906,2.803,6.906,3.449,6.629,4.229z" fill="white"/>
+            </g>
             <circle r="30" fill="none" stroke="#25d366" stroke-width="2" opacity="0.3">
               <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite"/>
             </circle>
@@ -4257,10 +4242,11 @@ export const slidesData: Slide[] = [
 
           <!-- Facebook icon oficial (top right) -->
           <g transform="translate(340, 60)">
-            <circle r="25" fill="#0084ff"/>
-            <!-- F de Facebook -->
-            <path d="M6,-15 L-8,-15 L-8,-3 L-1,-3 L-1,15 L6,15 L6,-3 L12,-3 L12,-8 L6,-8 L6,-12 L12,-12 L12,-15 Z" fill="white"/>
-            <circle r="30" fill="none" stroke="#0084ff" stroke-width="2" opacity="0.3">
+            <circle r="25" fill="#1877f2"/>
+            <g transform="translate(-6, 0) scale(1.8)">
+              <path d="M3.5,-8 L3.5,-5 L1.5,-5 L1.5,-2 L3.5,-2 L3.5,8 L6.5,8 L6.5,-2 L9,-2 L9.5,-5 L6.5,-5 L6.5,-6.5 C6.5,-7.3 6.7,-7.5 7.5,-7.5 L9.5,-7.5 L9.5,-10.5 C9.5,-10.5 8.3,-10.7 7.3,-10.7 C5,-10.7 3.5,-9.5 3.5,-7 L3.5,-8 Z" fill="white"/>
+            </g>
+            <circle r="30" fill="none" stroke="#1877f2" stroke-width="2" opacity="0.3">
               <animate attributeName="r" values="30;35;30" dur="2s" begin="0.5s" repeatCount="indefinite"/>
             </circle>
           </g>
@@ -4284,10 +4270,19 @@ export const slidesData: Slide[] = [
               <animate attributeName="opacity" values="0;0.4" dur="1s" begin="1.5s" fill="freeze"/>
             </rect>
 
-            <!-- Camera icon at bottom of phone -->
+            <!-- Instagram icon at bottom of phone -->
             <g transform="translate(50, 130)">
-              <rect x="-15" y="-12" width="30" height="24" rx="3" fill="none" stroke="#e4405f" stroke-width="2"/>
-              <circle r="6" fill="none" stroke="#e4405f" stroke-width="2"/>
+              <defs>
+                <linearGradient id="instagramGradPhone" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#f58529;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#dd2a7b;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#8134af;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect x="-12" y="-12" width="24" height="24" rx="5" fill="url(#instagramGradPhone)"/>
+              <rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="white" stroke-width="1.8"/>
+              <circle r="4" fill="none" stroke="white" stroke-width="1.8"/>
+              <circle cx="5" cy="-5" r="1.2" fill="white"/>
             </g>
           </g>
 
@@ -4334,8 +4329,7 @@ export const slidesData: Slide[] = [
           'Identificación de mejores horarios para publicar contenido',
           'Recomendaciones basadas en interacciones previas',
           'Optimización de estrategias de contenido',
-          'Detección de patrones de engagement',
-          'Insights en tiempo real sobre tu audiencia'
+          'Detección de patrones de engagement'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4428,7 +4422,8 @@ export const slidesData: Slide[] = [
           'Generación de avatares y gráficos para redes sociales',
           'Conceptos visuales para publicaciones',
           'Integrado directamente en las apps de Meta',
-          'Ideal para crear contenido rápido y atractivo'
+          'Ideal para crear contenido rápido y atractivo',
+	  'Generación de videos en su app listos para publicar'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4511,13 +4506,8 @@ export const slidesData: Slide[] = [
           <polyline points="17 11 19 13 23 9"/>
         </svg>`,
         bullets: [
-          'WhatsApp Business API con integración de Meta AI',
-          'Chatbots inteligentes para atención al cliente 24/7',
-          'Respuestas automáticas en Messenger para páginas de Facebook',
-          'Integración con sistemas CRM y plataformas de e-commerce',
           'Modelo Llama disponible de forma gratuita para desarrolladores',
-          'Automatización de flujos de conversación',
-          'Escalabilidad para grandes volúmenes de mensajes'
+	  'Opcion de conectar via API con el modelo'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4582,9 +4572,8 @@ export const slidesData: Slide[] = [
           'Atención al cliente directa en WhatsApp Business',
           'Generación de contenido para redes sociales de Meta',
           'Gratuito y sin instalación adicional (ya está integrado)',
-          'Ideal para PyMEs y empresas con presencia en redes sociales',
           'Fácil de usar sin conocimientos técnicos',
-          '⚠️ No es ideal para: programación avanzada, análisis de documentos técnicos, generación de video'
+          'No es ideal para: programación avanzada, análisis de documentos técnicos'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -4653,7 +4642,7 @@ export const slidesData: Slide[] = [
       {
         id: 'ollama',
         title: 'Ollama',
-        description: 'IA que funciona en tu computadora (sin internet)',
+        description: 'Modelos open souce para correr en local (Tu computadora).',
         icon: '💻',
         link: 'https://ollama.ai'
       }
