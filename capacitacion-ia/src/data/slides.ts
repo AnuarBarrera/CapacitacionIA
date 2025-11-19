@@ -1032,6 +1032,7 @@ export const slidesData: Slide[] = [
         </text>
       </g>
     </svg>`,
+    columns: 1,
     order: 4
   },
 
@@ -1359,6 +1360,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 5
   },
 
@@ -1700,6 +1702,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 6
   },
 
@@ -1983,6 +1986,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 7
   },
 
@@ -2230,6 +2234,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.1
   },
 
@@ -2285,6 +2290,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.2
   },
 
@@ -2354,6 +2360,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.3
   },
 
@@ -2421,6 +2428,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.4
   },
 
@@ -2502,6 +2510,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.5
   },
 
@@ -2664,6 +2673,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.6
   },
 
@@ -2818,6 +2828,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.7
   },
 
@@ -2888,6 +2899,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 9.8
   },
 
@@ -3021,6 +3033,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 10.1
   },
 
@@ -3162,6 +3175,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 10.2
   },
 
@@ -3309,6 +3323,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 11.1
   },
 
@@ -3413,6 +3428,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 11.2
   },
 
@@ -3575,6 +3591,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 11.3
   },
 
@@ -3754,6 +3771,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 12.1
   },
   {
@@ -4053,6 +4071,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 12.3
   },
 
@@ -4297,6 +4316,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 13.1
   },
   {
@@ -4473,6 +4493,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 13.2
   },
   {
@@ -4604,6 +4625,7 @@ export const slidesData: Slide[] = [
         </svg>`
       }
     ],
+    columns: 1,
     order: 13.3
   },
 
@@ -4637,6 +4659,7 @@ export const slidesData: Slide[] = [
       }
     ],
     columns: 3,
+    continueButtonText: 'Click para finalizar',
     order: 14
   },
 
