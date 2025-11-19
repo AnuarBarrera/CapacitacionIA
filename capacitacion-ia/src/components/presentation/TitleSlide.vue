@@ -122,7 +122,7 @@ const handleNavigateToSlide = (slideId: string) => {
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
   font-weight: var(--font-extrabold);
   margin-bottom: var(--spacing-3);
-  color: var(--color-text-primary);
+  color: #1a202c;
   line-height: 1.2;
 }
 
@@ -138,8 +138,8 @@ const handleNavigateToSlide = (slideId: string) => {
 .author {
   font-family: var(--font-primary);
   font-size: var(--text-lg);
-  color: var(--color-text-tertiary);
-  opacity: 0.8;
+  color: #2d3748;
+  opacity: 0.9;
   font-style: italic;
 }
 
