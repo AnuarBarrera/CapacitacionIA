@@ -156,6 +156,7 @@ const handleNavigateToSlide = (slideId: string) => {
         </div>
       </div>
     </div>
+    </div>
   </div>
 </template>
 
