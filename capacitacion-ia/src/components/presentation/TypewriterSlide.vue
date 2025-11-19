@@ -214,6 +214,12 @@ onUnmounted(() => {
   min-height: 1.8em;
 }
 
+@media (prefers-color-scheme: dark) {
+  .typewriter-line {
+    color: #2d3561;
+  }
+}
+
 .typewriter-line.empty {
   min-height: 0.9em;
 }
@@ -312,6 +318,10 @@ onUnmounted(() => {
 @media (prefers-color-scheme: dark) {
   .typewriter-content {
     background: rgba(0, 0, 0, 0.85);
+  }
+
+  .typewriter-line {
+    color: #e0e0e0;
   }
 }
 </style>

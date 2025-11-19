@@ -359,6 +359,18 @@ const handleNavigateToSlide = (slideId: string) => {
 }
 
 @media (prefers-color-scheme: dark) {
+  .slide-title {
+    color: #ffffff;
+  }
+
+  .description {
+    color: #e0e0e0;
+  }
+
+  .section-title {
+    color: #ffffff;
+  }
+
   .resources-section,
   .features-section {
     background: #1f2937;
@@ -367,10 +379,15 @@ const handleNavigateToSlide = (slideId: string) => {
   .resource-item {
     background: #111827;
     border-color: #374151;
+    color: #e0e0e0;
   }
 
   .resource-item:hover {
     border-color: #667eea;
+  }
+
+  .feature-item {
+    color: #e0e0e0;
   }
 }
 </style>
