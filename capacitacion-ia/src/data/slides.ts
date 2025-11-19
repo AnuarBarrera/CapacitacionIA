@@ -2080,26 +2080,6 @@ export const slidesData: Slide[] = [
           </g>
         </svg>`,
         link: 'meta-ai'
-      },
-      {
-        id: 'otras',
-        title: 'Otras Herramientas',
-        description: 'Especializadas',
-        icon: `<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-          <rect width="40" height="40" rx="8" fill="#6366F1"/>
-          <circle cx="20" cy="20" r="4" fill="white"/>
-          <g stroke="white" stroke-width="2.5" stroke-linecap="round">
-            <line x1="20" y1="8" x2="20" y2="12"/>
-            <line x1="20" y1="28" x2="20" y2="32"/>
-            <line x1="8" y1="20" x2="12" y2="20"/>
-            <line x1="28" y1="20" x2="32" y2="20"/>
-            <line x1="11.5" y1="11.5" x2="14.3" y2="14.3"/>
-            <line x1="25.7" y1="25.7" x2="28.5" y2="28.5"/>
-            <line x1="11.5" y1="28.5" x2="14.3" y2="25.7"/>
-            <line x1="25.7" y1="14.3" x2="28.5" y2="11.5"/>
-          </g>
-        </svg>`,
-        link: 'otras'
       }
     ],
     columns: 3,
@@ -4118,9 +4098,6 @@ export const slidesData: Slide[] = [
       {
         id: 'meta-ai-introduccion-nlp',
         title: 'Meta AI - Integración y Lenguaje Natural',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-        </svg>`,
         bullets: [
           'Desarrollado por Meta (Facebook, WhatsApp, Instagram)',
           'Basado en Llama 4 (modelo de lenguaje de código abierto)',
@@ -4226,13 +4203,6 @@ export const slidesData: Slide[] = [
       {
         id: 'meta-ai-contenido-conversacion',
         title: 'Generación de Contenido y Asistencia',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-          <polyline points="10 9 9 9 8 9"/>
-        </svg>`,
         bullets: [
           'Posts para Facebook e Instagram con captions atractivos y hashtags',
           'Correos electrónicos y mensajes de WhatsApp Business',
@@ -4338,10 +4308,6 @@ export const slidesData: Slide[] = [
       {
         id: 'meta-ai-analisis',
         title: 'Análisis y Predicción para tu Negocio',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
-          <path d="M22 12A10 10 0 0 0 12 2v10z"/>
-        </svg>`,
         bullets: [
           'Análisis de conversaciones para detectar tendencias de clientes',
           'Predicción de comportamiento de audiencia en redes sociales',
@@ -4435,11 +4401,6 @@ export const slidesData: Slide[] = [
       {
         id: 'meta-ai-visual',
         title: 'Creación de Contenido Visual',
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
-        </svg>`,
         bullets: [
           'Generación de imágenes desde texto (text-to-image)',
           'Creación de stickers personalizados para WhatsApp',

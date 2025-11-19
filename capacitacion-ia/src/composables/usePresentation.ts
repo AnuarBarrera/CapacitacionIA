@@ -1,6 +1,8 @@
-import { ref, computed, type Ref } from 'vue'
+import { ref, computed, watch, type Ref } from 'vue'
 import type { Slide } from '@/interfaces/Slide'
 import type { IPresentationService } from '@/interfaces/IPresentationService'
+
+const STORAGE_KEY = 'presentation-current-slide-index'
 
 /**
  * Composable para gestionar la navegación de una presentación
@@ -9,7 +11,9 @@ import type { IPresentationService } from '@/interfaces/IPresentationService'
  * @param presentationService - Servicio de presentación (Inyección de Dependencia)
  */
 export function usePresentation(presentationService: IPresentationService) {
-  const currentSlideIndex: Ref<number> = ref(0)
+  // Cargar el índice desde localStorage o usar 0 como default
+  const savedIndex = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10)
+  const currentSlideIndex: Ref<number> = ref(savedIndex)
 
   const currentSlide = computed<Slide | undefined>(() => {
     return presentationService.getSlideByIndex(currentSlideIndex.value)
@@ -57,6 +61,11 @@ export function usePresentation(presentationService: IPresentationService) {
   const goToLastSlide = (): void => {
     currentSlideIndex.value = totalSlides.value - 1
   }
+
+  // Guardar el índice en localStorage cada vez que cambia
+  watch(currentSlideIndex, (newIndex) => {
+    localStorage.setItem(STORAGE_KEY, newIndex.toString())
+  })
 
   return {
     currentSlide,
