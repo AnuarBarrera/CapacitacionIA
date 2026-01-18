@@ -2519,7 +2519,7 @@ export const slidesData: Slide[] = [
     cards: [
       {
         id: 'chatgpt-dalle',
-        title: 'ChatGPT + DALL·E',
+        title: 'ChatGPT + image-1',
         description: 'Creación de contenido visual y textual combinado',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2C16.75 2 21 6.25 21 11.5Z" stroke="currentColor" stroke-width="2"/>
@@ -2544,7 +2544,7 @@ export const slidesData: Slide[] = [
           <line x1="30" y1="90" x2="140" y2="90" stroke="#374151" stroke-width="1"/>
           <line x1="30" y1="105" x2="120" y2="105" stroke="#374151" stroke-width="1"/>
           <rect x="200" y="30" width="130" height="140" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
-          <text x="265" y="55" text-anchor="middle" fill="#ec4899" font-size="12" font-weight="bold">DALL·E</text>
+          <text x="265" y="55" text-anchor="middle" fill="#ec4899" font-size="12" font-weight="bold">image-1</text>
           <rect x="210" y="70" width="110" height="90" rx="4" fill="url(#int1-gradient)" opacity="0.3"/>
           <path d="M 150 100 L 180 100" stroke="#10b981" stroke-width="3" marker-end="url(#arrow1)"/>
           <defs>
@@ -2655,7 +2655,7 @@ export const slidesData: Slide[] = [
           <circle cx="175" cy="100" r="40" fill="url(#int4-gradient)"/>
           <text x="175" y="105" text-anchor="middle" fill="white" font-size="12" font-weight="bold">ChatGPT</text>
           <circle cx="80" cy="50" r="25" fill="#ec4899" opacity="0.8"/>
-          <text x="80" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">DALL·E</text>
+          <text x="80" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">image-1</text>
           <circle cx="270" cy="50" r="25" fill="#6366f1" opacity="0.8"/>
           <text x="270" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Sora</text>
           <circle cx="80" cy="150" r="25" fill="#0ea5e9" opacity="0.8"/>
@@ -2691,7 +2691,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Prompt: "Crea el contenido para una landing page de [producto]. Incluye: título impactante, subtítulo, 3 beneficios clave, CTA persuasivo y sección de preguntas frecuentes"',
-          'Prompt: "Genera una imagen hero para esta landing page de [producto] con estilo [corporativo/moderno/minimalista]" (DALL·E)',
+          'Prompt: "Genera una imagen hero para esta landing page de [producto] con estilo [corporativo/moderno/minimalista]" (image-1)',
           'Prompt: "Escribe el código HTML/CSS/JS para implementar esta landing page con diseño responsivo" (Codex)'
         ],
         svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
@@ -2717,7 +2717,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Prompt: "Crea un guion de pitch de 3 minutos para [startup/producto]. Incluye: problema, solución, mercado, modelo de negocio y llamado a la acción"',
-          'Prompt: "Genera 5 imágenes para ilustrar cada sección del pitch: [descripción de cada sección]" (DALL·E)',
+          'Prompt: "Genera 5 imágenes para ilustrar cada sección del pitch: [descripción de cada sección]" (image-1)',
           'Prompt: "Crea un video de 30 segundos que resuma el pitch con los siguientes puntos clave: [lista]" (Sora)'
         ],
         svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
@@ -2749,7 +2749,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Prompt: "Diseña la arquitectura de una app de [tipo]. Define: pantallas principales, flujo de usuario, características clave y tecnologías recomendadas"',
-          'Prompt: "Genera mockups de 5 pantallas principales: [lista de pantallas]" (DALL·E)',
+          'Prompt: "Genera mockups de 5 pantallas principales: [lista de pantallas]" (image-1)',
           'Prompt: "Crea los componentes React/Vue para [pantalla específica] con el siguiente diseño: [descripción]" (Codex)'
         ],
         svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
@@ -2779,7 +2779,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Prompt: "Crea un plan de contenido para [red social] durante 1 mes. Incluye: 4 posts semanales con copy, hashtags y llamadas a la acción para [producto/marca]"',
-          'Prompt: "Genera 16 imágenes para las publicaciones con estilo [descripción]" (DALL·E)',
+          'Prompt: "Genera 16 imágenes para las publicaciones con estilo [descripción]" (image-1)',
           'Prompt: "Optimiza estos copies para SEO y engagement. Sugiere variaciones A/B para testing"'
         ],
         svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
@@ -2806,7 +2806,7 @@ export const slidesData: Slide[] = [
         </svg>`,
         bullets: [
           'Prompt: "Crea el contenido para una presentación ejecutiva sobre [tema]. 10 slides: portada, agenda, contexto, análisis, propuesta, beneficios, roadmap, inversión, ROI y cierre"',
-          'Prompt: "Genera gráficas y visualizaciones profesionales para los datos: [especificar datos]" (DALL·E)',
+          'Prompt: "Genera gráficas y visualizaciones profesionales para los datos: [especificar datos]" (image-1)',
           'Prompt: "Sugiere diseño de slides con paleta de colores corporativa y tipografía profesional"'
         ],
         svgContent: `<svg viewBox="0 0 350 200" xmlns="http://www.w3.org/2000/svg">
