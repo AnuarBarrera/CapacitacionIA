@@ -2290,10 +2290,10 @@ export const slidesData: Slide[] = [
     order: 9.2
   },
 
-  // ChatGPT Slide 3: DALL·E
+  // ChatGPT Slide 3: Image-1
   {
     id: 'chatgpt-dalle',
-    title: 'DALL·E - Generación de Imágenes',
+    title: 'Image-1 - Generación de Imágenes',
     type: SlideType.CARD_GRID,
     description: 'Creación de imágenes con inteligencia artificial',
     cards: [
