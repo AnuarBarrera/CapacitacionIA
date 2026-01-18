@@ -62,6 +62,36 @@ npm run type-check
 npm run lint
 ```
 
+## 🌐 Deployment a Cloudflare Pages
+
+El proyecto está desplegado en Cloudflare Pages. Para hacer deploy de nuevos cambios:
+
+### Requisitos previos
+```bash
+# Instalar Wrangler globalmente (solo la primera vez)
+npm install -g wrangler
+
+# Autenticarse con Cloudflare (solo la primera vez)
+wrangler login
+```
+
+### Deploy a producción
+```bash
+# 1. Navegar al directorio del proyecto
+cd capacitacion-ia
+
+# 2. Crear el build de producción
+npm run build
+
+# 3. Desplegar a Cloudflare Pages
+wrangler pages deploy dist --project-name=aprendia
+```
+
+### Deploy rápido (todo en un comando)
+```bash
+cd capacitacion-ia && npm run build && wrangler pages deploy dist --project-name=aprendia
+```
+
 ## 📁 Estructura del Proyecto
 
 ```
