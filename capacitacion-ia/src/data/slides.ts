@@ -2126,28 +2126,26 @@ export const slidesData: Slide[] = [
     id: 'chatgpt-modelos-lenguaje',
     title: 'ChatGPT - Lo que puede hacer',
     type: SlideType.CARD_GRID,
-    description: 'Explora las capacidades principales de ChatGPT',
+    description: 'Explora las capacidades principales de ChatGPT y sus modelos de razonamiento (Actualización Julio 2026)',
     cards: [
       {
         id: 'modelos-lenguaje',
-        title: 'Modelos de Lenguaje',
-        description: 'Capacidades de conversación y procesamiento de texto',
+        title: 'Modelos de Lenguaje & Razonamiento',
+        description: 'Capacidades de conversación, lógica profunda y procesamiento multimodal',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>`,
         bullets: [
-          'Responder preguntas complejas con contexto y razonamiento',
-          'Explicar conceptos en cualquier nivel (básico → experto)',
-          'Redacción profesional: textos, correos, ensayos, guiones, discursos',
-          'Optimización y reescritura de contenido',
-          'Traducción avanzada y adaptación cultural',
-          'Análisis de documentos (resumen, extracción de datos, puntos clave)',
-          'Asistencia para toma de decisiones y análisis de escenarios',
-          'Simulación de roles (coach, consultor, analista, profesor)',
-          'Soporte en programación (debugging, explicación, generación segura de código)',
-          'Planificación: roadmaps, itinerarios, estrategias y guías paso a paso'
+          'Modelos de razonamiento o1 y o3-mini: pensamiento reflexivo antes de responder problemas científicos y matemáticos',
+          'Modelos multimodales de última generación (GPT-5 series y GPT-4o) para interacción agéntica fluida',
+          'Responder preguntas complejas con contexto profundo y citas',
+          'Redacción profesional: propuestas comerciales, correos, ensayos, guiones y código',
+          'Análisis de documentos extensos (PDFs, Excel, presentaciones y bases de código)',
+          'Simulación de roles (consultor de negocios, programador senior, coach, analista)',
+          'Navegación web en tiempo real con verificación de fuentes',
+          'Modo de voz avanzado para conversaciones naturales con baja latencia'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2171,15 +2169,15 @@ export const slidesData: Slide[] = [
           <line x1="115" y1="170" x2="140" y2="140" stroke="#667eea" stroke-width="2" opacity="0.5"/>
           <line x1="285" y1="170" x2="260" y2="140" stroke="#667eea" stroke-width="2" opacity="0.5"/>
           <!-- Texto -->
-          <text x="100" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Entrada</text>
-          <text x="300" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Salida</text>
-          <text x="200" y="210" text-anchor="middle" fill="#667eea" font-size="14" font-weight="bold">Procesamiento Inteligente</text>
+          <text x="100" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Entrada Multimodal</text>
+          <text x="300" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Razonamiento & Acción</text>
+          <text x="200" y="210" text-anchor="middle" fill="#667eea" font-size="14" font-weight="bold">OpenAI o1 / o3 / GPT-5 (Julio 2026)</text>
         </svg>`
       },
       {
         id: 'funciones-tecnicas',
-        title: 'Funciones Técnicas',
-        description: 'Capacidades avanzadas de análisis y generación',
+        title: 'Funciones Técnicas & Canvas',
+        description: 'Capacidades avanzadas de análisis, programación y trabajo colaborativo',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
           <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
@@ -2187,14 +2185,12 @@ export const slidesData: Slide[] = [
           <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
         </svg>`,
         bullets: [
-          'Leer imágenes (análisis, OCR, diagnóstico visual, interpretación)',
-          'Leer archivos: PDF, Excel, docs, presentaciones, código',
-          'Generar archivos: PDF, Excel, Word, presentaciones, CSV',
-          'Análisis de datos: gráficas, estadísticas, limpieza y tabulación',
-          'Automatizaciones simples: scripts, workflows, lógica de negocio',
-          'Integración con APIs (explicación, creación, documentación)',
-          'Asesoría en arquitectura de software y ciberseguridad',
-          'Creación de materiales educativos (pruebas, dinámicas, ejercicios)'
+          'Interface Canvas: espacio de trabajo dedicado para escribir textos y programar en tiempo real',
+          'Analizar imágenes, maquetas de UI, gráficos y diagramas complejos con alta visión computacional',
+          'Procesamiento de datos con Python (Advanced Data Analysis) en entorno aislado',
+          'Generación de archivos descargables: PDF, Excel, Word, CSV, ZIP',
+          'Creación de GPTs personalizados y workflows agénticos automatizados',
+          'Integración con APIs e herramientas de terceros'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2222,7 +2218,7 @@ export const slidesData: Slide[] = [
           <path d="M 130 110 L 155 90" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead)"/>
           <path d="M 240 90 L 265 110" stroke="#667eea" stroke-width="2" marker-end="url(#arrowhead)"/>
           <!-- Texto -->
-          <text x="200" y="210" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">Análisis Multimodal</text>
+          <text x="200" y="210" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="bold">Análisis & Canvas Colaborativo</text>
           <defs>
             <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
               <polygon points="0 0, 10 3, 0 6" fill="#667eea"/>
@@ -2251,14 +2247,12 @@ export const slidesData: Slide[] = [
           <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
         </svg>`,
         bullets: [
-          'Pedir formatos claros y específicos',
-          'Dar ejemplos del resultado esperado',
-          'Usar prompts conversacionales, no comandos rígidos',
-          'Proporcionar contexto relevante',
-          'Ser específico sobre el tono y estilo deseado',
-          'No accede a sistemas privados del usuario',
-          'Puede equivocarse: siempre validar información crítica',
-          'No reemplaza decisiones legales, médicas o fiscales'
+          'Pedir formatos claros y específicos (listas, JSON, tablas)',
+          'Dar ejemplos del resultado esperado (Few-shot prompting)',
+          'Aprovechar los modelos de razonamiento (o1/o3) para problemas analíticos',
+          'Usar Canvas para textos y código que requieran iteración',
+          'Proporcionar contexto relevante y definir el rol deseado',
+          'Validar siempre información crítica (legal, médica, contable)'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2276,7 +2270,7 @@ export const slidesData: Slide[] = [
           <text x="135" y="105" fill="#374151" font-size="12">Contexto claro</text>
           <circle cx="110" cy="135" r="12" fill="url(#practice-gradient)"/>
           <path d="M 105 135 L 108 138 L 115 131" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <text x="135" y="140" fill="#374151" font-size="12">Ejemplos específicos</text>
+          <text x="135" y="140" fill="#374151" font-size="12">Modelo adecuado (o1 / GPT-5)</text>
           <circle cx="110" cy="170" r="12" fill="url(#practice-gradient)"/>
           <path d="M 105 170 L 108 173 L 115 166" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
           <text x="135" y="175" fill="#374151" font-size="12">Validar resultados</text>
@@ -2290,29 +2284,28 @@ export const slidesData: Slide[] = [
     order: 9.2
   },
 
-  // ChatGPT Slide 3: Image-1
+  // ChatGPT Slide 3: DALL-E & Generación de Imágenes
   {
     id: 'chatgpt-dalle',
-    title: 'Image-1 - Generación de Imágenes',
+    title: 'Generación de Imágenes (DALL-E 3 & Canvas Visual)',
     type: SlideType.CARD_GRID,
-    description: 'Creación de imágenes con inteligencia artificial',
+    description: 'Creación y edición de imágenes con inteligencia artificial (Actualización Julio 2026)',
     cards: [
       {
         id: 'dalle-capacidades',
-        title: 'Qué puede hacer',
-        description: 'Capacidades de generación de imágenes con IA',
+        title: 'Capacidades Visuales en ChatGPT',
+        description: 'Generación fotorrealista y diseño asistido por IA',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
           <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
           <path d="M3 15L8 10L12 14L18 8L21 11V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V15Z" fill="currentColor" opacity="0.3"/>
         </svg>`,
         bullets: [
-          'Crear imágenes realistas, ilustraciones o arte conceptual',
-          'Generar estilos específicos (corporativo, cartoon, hiperrealista, minimalista)',
-          'Modificar imágenes',
-          'Crear logos, personajes, escenarios',
-          'Aumentar resolución y mejorar detalles',
-          'Diseños para productos, webs, apps y publicidad'
+          'Generación de imágenes fotorrealistas, ilustraciones 3D, arte conceptual y vectores',
+          'Edición por zonas (inpainting): modifica elementos específicos conversando con el modelo',
+          'Mantenimiento de coherencia de estilo y personajes a través de múltiples imágenes',
+          'Creación de logos, prototipos de producto, banners y conceptos para redes sociales',
+          'Control de relación de aspecto (16:9, 1:1, 9:16) y resolución optimizada'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2352,7 +2345,7 @@ export const slidesData: Slide[] = [
             <polygon points="0,30 8,30 4,40" fill="#ec4899"/>
           </g>
           <!-- Texto -->
-          <text x="200" y="235" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">Generación de Imágenes IA</text>
+          <text x="200" y="235" text-anchor="middle" fill="#ec4899" font-size="13" font-weight="bold">DALL-E 3 & Canvas Visual</text>
         </svg>`
       }
     ],
@@ -2363,29 +2356,24 @@ export const slidesData: Slide[] = [
   // ChatGPT Slide 4: Sora
   {
     id: 'chatgpt-sora',
-    title: 'Sora - Generación de Video',
+    title: 'Sora / Sora 2 - Generación de Video',
     type: SlideType.CARD_GRID,
-    description: 'Creación de videos con inteligencia artificial',
+    description: 'Creación y edición de video hiperrealista con inteligencia artificial (Julio 2026)',
     cards: [
       {
         id: 'sora-usos',
-        title: 'Usos Típicos',
-        description: 'Aplicaciones principales de generación de video con IA',
+        title: 'Aplicaciones y Capacidades de Video',
+        description: 'Modelos de video fotorrealistas de OpenAI para creadores y empresas',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
           <polygon points="10,9 10,15 15,12" fill="currentColor"/>
         </svg>`,
         bullets: [
-          'Generar videos realistas o estilizados a partir de texto',
-          'Transformar storyboard → video',
-          'Simular cámaras, movimientos y entornos complejos',
-          'Generar anuncios, reels, contenidos creativos',
-          'Crear animaciones con personajes y narrativas',
-          'Expandir o modificar videos ya existentes',
-          'Marketing y publicidad digital',
-          'Cine y producción de contenidos',
-          'Visualización de ideas y conceptos',
-          'Capacitación y educación interactiva'
+          'Generar videos hiperrealistas de hasta 1080p a partir de instrucciones de texto',
+          'Convertir storyboards e imágenes estáticas en secuencias en movimiento',
+          'Simulación de físicas complejas, iluminación cinemática y movimientos de cámara',
+          'Integrado directamente en ChatGPT Plus/Pro y API para desarrollo de aplicaciones',
+          'Ideal para anuncios publicitarios, reels, prototipos cinematográficos y educación'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2419,8 +2407,7 @@ export const slidesData: Slide[] = [
             <circle cx="15" cy="10" r="6" fill="white"/>
           </g>
           <!-- Texto -->
-          <text x="200" y="215" text-anchor="middle" fill="#6366f1" font-size="14" font-weight="bold">Generación de Video IA</text>
-          <text x="200" y="235" text-anchor="middle" fill="#94a3b8" font-size="11">(Disponible próximamente en tu región)</text>
+          <text x="200" y="215" text-anchor="middle" fill="#6366f1" font-size="14" font-weight="bold">Generación de Video Sora (Julio 2026)</text>
         </svg>`
       }
     ],
@@ -2922,21 +2909,21 @@ export const slidesData: Slide[] = [
       },
       {
         type: 'tool',
-        label: 'NotebookLM',
+        label: 'Gemini Notebook',
         url: 'https://notebooklm.google.com',
         icon: '📓'
       },
       {
         type: 'tool',
-        label: 'Veo 3.1 (Video IA)',
+        label: 'Veo 3.1 / Veo 2 (Video IA)',
         url: 'https://aistudio.google.com',
         icon: '🎬'
       }
     ],
     features: [
-      'Vinculado a tu cuenta de Google',
-      'NotebookLM: Analiza documentos y crea podcasts de IA',
-      'Veo 3.1: Generación de video con IA',
+      'Vinculado a tu cuenta de Google y Workspace',
+      'Gemini Notebook (antes NotebookLM): Asistente grounded con ejecución de código y Audio/Video Overviews (Julio 2026)',
+      'Veo 3.1 & Imagen 3: Generación de video y fotografía hiperrealista con IA',
       'Aplicación móvil para Android e iOS'
     ],
     order: 10
@@ -2947,11 +2934,11 @@ export const slidesData: Slide[] = [
     id: 'gemini-capacidades',
     title: 'Gemini - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'IA multimodal de Google para productividad y creatividad',
+    description: 'IA multimodal de Google para productividad y creatividad (Actualización Julio 2026)',
     cards: [
       {
         id: 'procesamiento-multimodal',
-        title: 'Procesamiento Multimodal',
+        title: 'Procesamiento Multimodal Avanzado',
         description: 'Comprende y combina diferentes tipos de información',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
@@ -2960,10 +2947,10 @@ export const slidesData: Slide[] = [
           <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
         </svg>`,
         bullets: [
-          'Procesa texto, código, imágenes y audio simultáneamente',
-          'Razonamiento avanzado para tareas complejas de lógica y matemáticas',
-          'Contexto ampliado: mantiene conversaciones largas',
-          'Generación multimodal: responde con diferentes formatos'
+          'Modelos Gemini 3.5 y 2.0 Flash/Pro para velocidad y alta precisión',
+          'Procesa texto, código, imágenes, video y audio simultáneamente',
+          'Razonamiento avanzado para tareas complejas de lógica, finanzas y ciencias',
+          'Ventana de contexto ultra amplia: mantiene millones de tokens de memoria'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -2981,12 +2968,12 @@ export const slidesData: Slide[] = [
           <circle cx="120" cy="170" r="30" fill="#fbbc04" opacity="0.7"/>
           <text x="120" y="175" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Imagen</text>
           <circle cx="280" cy="170" r="30" fill="#ea4335" opacity="0.7"/>
-          <text x="280" y="175" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Audio</text>
+          <text x="280" y="175" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Audio/Video</text>
           <line x1="145" y1="90" x2="175" y2="110" stroke="#4285f4" stroke-width="2"/>
           <line x1="255" y1="90" x2="225" y2="110" stroke="#34a853" stroke-width="2"/>
           <line x1="145" y1="160" x2="175" y2="140" stroke="#fbbc04" stroke-width="2"/>
           <line x1="255" y1="160" x2="225" y2="140" stroke="#ea4335" stroke-width="2"/>
-          <text x="200" y="220" text-anchor="middle" fill="#4285f4" font-size="14" font-weight="bold">Procesamiento Unificado</text>
+          <text x="200" y="220" text-anchor="middle" fill="#4285f4" font-size="14" font-weight="bold">Procesamiento Unificado (Julio 2026)</text>
         </svg>`
       },
       {
@@ -2999,11 +2986,11 @@ export const slidesData: Slide[] = [
           <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>`,
         bullets: [
-          'Generación de contenido: correos, artículos, guiones y contenido creativo',
-          'Análisis de datos: visualizaciones, tablas y gráficos',
-          'Codificación y debugging en múltiples lenguajes',
-          'Interacción con imágenes: descripción y análisis visual',
-          'Traducción avanzada y resumen de documentos'
+          'Generación de contenido: correos, artículos, guiones y estrategias',
+          'Análisis de datos: creación de dashboards, tablas y gráficos interactivos',
+          'Codificación y debugging en más de 40 lenguajes',
+          'Interacción con imágenes y video: descripción, edición y comprensión',
+          'Integración profunda con Google Docs, Gmail, Drive y Maps'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -3038,23 +3025,23 @@ export const slidesData: Slide[] = [
     id: 'gemini-herramientas',
     title: 'Gemini - Herramientas Especializadas',
     type: SlideType.CARD_GRID,
-    description: 'Potencia tu flujo de trabajo con herramientas especializadas de Google',
+    description: 'Potencia tu flujo de trabajo con herramientas especializadas de Google (Nota de actualización: Julio 2026)',
     cards: [
       {
-        id: 'notebooklm',
-        title: 'NotebookLM',
-        description: 'Asistente de investigación con análisis de fuentes',
+        id: 'gemini-notebook',
+        title: 'Gemini Notebook (antes NotebookLM)',
+        description: 'Asistente de investigación grounded con ejecución de código y Audio/Video Overviews',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>`,
         bullets: [
-          'Transforma documentos (PDFs, Google Docs, URLs) en conocimiento interactivo',
-          '"Conversa" con tus fuentes: pregunta y obtén respuestas fundamentadas',
-          'Genera resúmenes, fichas de estudio y planes de acción',
-          'Grounding: cita siempre la fuente exacta de la información',
-          'Organiza e interconecta ideas entre diferentes fuentes',
-          'Crea podcasts de IA a partir de tus documentos'
+          'Rebranding oficial de NotebookLM a Gemini Notebook en Julio de 2026',
+          'Transforma documentos (PDFs, Docs, URLs, YouTube) en conocimiento interactivo',
+          'Ejecución de código nativo en la nube para generar gráficos y tablas dinámicas',
+          'Crea Audio Overviews (podcasts) y Video Overviews automáticos sobre tus temas',
+          'Grounding: cita siempre las fuentes exactas y evita alucinaciones',
+          'Genera infografías, mapas mentales y fichas de estudio interactivas'
         ],
         svgContent: `<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -3063,24 +3050,24 @@ export const slidesData: Slide[] = [
               <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
             </linearGradient>
           </defs>
-          <rect x="60" y="40" width="130" height="170" rx="8" fill="white" stroke="url(#notebook-grad)" stroke-width="3"/>
-          <rect x="60" y="40" width="130" height="30" fill="url(#notebook-grad)"/>
-          <text x="125" y="60" text-anchor="middle" fill="white" font-size="11" font-weight="bold">NotebookLM</text>
-          <circle cx="80" cy="95" r="8" fill="#4285f4"/>
-          <line x1="95" y1="95" x2="170" y2="95" stroke="#374151" stroke-width="1"/>
-          <circle cx="80" cy="120" r="8" fill="#34a853"/>
-          <line x1="95" y1="120" x2="170" y2="120" stroke="#374151" stroke-width="1"/>
-          <circle cx="80" cy="145" r="8" fill="#fbbc04"/>
-          <line x1="95" y1="145" x2="160" y2="145" stroke="#374151" stroke-width="1"/>
-          <rect x="70" y="170" width="110" height="30" rx="4" fill="#f3f4f6"/>
-          <text x="125" y="188" text-anchor="middle" fill="#4285f4" font-size="9" font-weight="bold">Fuentes Citadas</text>
-          <g transform="translate(220, 80)">
+          <rect x="50" y="40" width="150" height="170" rx="8" fill="white" stroke="url(#notebook-grad)" stroke-width="3"/>
+          <rect x="50" y="40" width="150" height="30" fill="url(#notebook-grad)"/>
+          <text x="125" y="60" text-anchor="middle" fill="white" font-size="10" font-weight="bold">Gemini Notebook</text>
+          <circle cx="70" cy="95" r="8" fill="#4285f4"/>
+          <line x1="85" y1="95" x2="180" y2="95" stroke="#374151" stroke-width="1"/>
+          <circle cx="70" cy="120" r="8" fill="#34a853"/>
+          <line x1="85" y1="120" x2="180" y2="120" stroke="#374151" stroke-width="1"/>
+          <circle cx="70" cy="145" r="8" fill="#fbbc04"/>
+          <line x1="85" y1="145" x2="170" y2="145" stroke="#374151" stroke-width="1"/>
+          <rect x="60" y="170" width="130" height="30" rx="4" fill="#f3f4f6"/>
+          <text x="125" y="188" text-anchor="middle" fill="#4285f4" font-size="9" font-weight="bold">Audio/Video Overviews</text>
+          <g transform="translate(230, 80)">
             <circle cx="40" cy="40" r="35" fill="url(#notebook-grad)" opacity="0.2"/>
             <path d="M 30 40 Q 40 30 50 40 T 70 40" stroke="#4285f4" stroke-width="2" fill="none"/>
             <circle cx="40" cy="55" r="3" fill="#4285f4"/>
             <path d="M 25 50 L 30 55 L 40 45" stroke="#4285f4" stroke-width="2" fill="none"/>
           </g>
-          <text x="200" y="230" text-anchor="middle" fill="#4285f4" font-size="12" font-weight="bold">Investigación Inteligente</text>
+          <text x="210" y="230" text-anchor="middle" fill="#4285f4" font-size="11" font-weight="bold">Investigación Grounded (Julio 2026)</text>
         </svg>`
       },
       {
@@ -3211,7 +3198,7 @@ export const slidesData: Slide[] = [
     id: 'claude-capacidades',
     title: 'Claude - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'IA conversacional de Anthropic enfocada en análisis profundo y desarrollo',
+    description: 'IA conversacional de Anthropic enfocada en análisis profundo, Claude Code y agencialidad (Actualización Julio 2026)',
     cards: [
       {
         id: 'analisis-creacion',
@@ -3625,7 +3612,7 @@ export const slidesData: Slide[] = [
     id: 'grok-capacidades-principales',
     title: 'Grok 4 - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'La IA sin censura con acceso en tiempo real a X/Twitter',
+    description: 'La IA con acceso en tiempo real a X/Twitter y razonamiento de xAI (Actualización Julio 2026)',
     cards: [
       {
         id: 'grok-introduccion',
@@ -4099,7 +4086,7 @@ export const slidesData: Slide[] = [
     id: 'meta-ai-capacidades-principales',
     title: 'Meta AI - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'El asistente que vive donde tus clientes ya están: WhatsApp, Facebook e Instagram',
+    description: 'El asistente integrado en WhatsApp, Instagram, Facebook y Meta AI App (Actualización Julio 2026)',
     cards: [
       {
         id: 'meta-ai-introduccion-nlp',
