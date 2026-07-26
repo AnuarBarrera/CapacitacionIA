@@ -12,6 +12,21 @@ declare global {
   }
 }
 
+// Queue for events fired before Umami script loads
+const eventQueue: Array<{ eventName: string; params?: Record<string, any> }> = []
+let isFlushing = false
+
+function flushQueue() {
+  if (typeof window !== 'undefined' && typeof window.umami?.track === 'function' && eventQueue.length > 0) {
+    while (eventQueue.length > 0) {
+      const item = eventQueue.shift()
+      if (item) {
+        window.umami.track(item.eventName, item.params)
+      }
+    }
+  }
+}
+
 /**
  * Función vacía de inicialización por compatibilidad
  */
@@ -23,8 +38,25 @@ export function initializeGoogleAnalytics(): boolean {
  * Envía un evento personalizado a Umami Analytics
  */
 export function trackEvent(eventName: string, params?: Record<string, any>): void {
-  if (typeof window.umami?.track === 'function') {
+  if (typeof window !== 'undefined' && typeof window.umami?.track === 'function') {
+    flushQueue()
     window.umami.track(eventName, params)
+  } else {
+    eventQueue.push({ eventName, params })
+    if (typeof window !== 'undefined' && !isFlushing) {
+      isFlushing = true
+      const checkInterval = setInterval(() => {
+        if (typeof window.umami?.track === 'function') {
+          clearInterval(checkInterval)
+          isFlushing = false
+          flushQueue()
+        }
+      }, 300)
+      setTimeout(() => {
+        clearInterval(checkInterval)
+        isFlushing = false
+      }, 10000)
+    }
   }
 }
 

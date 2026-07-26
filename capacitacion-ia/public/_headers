@@ -8,8 +8,8 @@
 
   # Content Security Policy (CSP)
   # Previene XSS y ataques de inyección de código
-  # Permite solo recursos del mismo origen, Google Fonts y Google Analytics
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  # Permite recursos de la app, Google Fonts, Google Analytics, Umami y Cloudflare Insights
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://umami.anuarbarrera.dev https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://umami.anuarbarrera.dev https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://umami.anuarbarrera.dev https://cloudflareinsights.com https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
   # Previene clickjacking - no permite que el sitio se muestre en iframes
   X-Frame-Options: DENY
