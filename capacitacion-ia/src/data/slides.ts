@@ -8,22 +8,13 @@ export const slidesData: Slide[] = [
   {
     id: 'el-problema',
     title: 'El Reto de Crecer en México',
-    type: SlideType.TYPEWRITER,
-    lines: [
-      '¿Por qué cuesta tanto que un negocio crezca en México?',
-      '',
-      'No es por falta de talento ni de ganas.',
-      'Es que formalizar y escalar es CARO y LENTO.',
-      '',
-      'Pero... ¿y si pudieras competir con las grandes empresas',
-      '',
-      '...gratis,',
-      '...hoy mismo,',
-      '...desde tu celular?',
-      '',
-      'Eso es exactamente lo que vas a aprender hoy.'
+    type: SlideType.CONTENT,
+    content: '¿Por qué cuesta tanto que un negocio crezca en México? No es por falta de talento ni de ganas. Es que formalizar y escalar es CARO y LENTO. Pero... ¿y si pudieras competir con las grandes empresas gratis, hoy mismo, desde tu celular? Eso es exactamente lo que vas a aprender hoy.',
+    bullets: [
+      'No es falta de talento: es que formalizar es caro y lento',
+      '¿Y si pudieras competir con grandes empresas gratis y desde tu celular?',
+      'Eso es lo que vas a aprender hoy: IA práctica para tu negocio'
     ],
-    speed: 50,
     order: 0
   },
 
