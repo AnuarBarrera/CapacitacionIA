@@ -34,7 +34,7 @@ describe('CardGridSlide', () => {
       props: { slide: mockSlide }
     })
 
-    expect(wrapper.find('.slide-title').text()).toBe('Test Card Grid')
+    expect(wrapper.find('.hero-title').text()).toBe('Test Card Grid')
   })
 
   it('renders the description', () => {
@@ -42,7 +42,7 @@ describe('CardGridSlide', () => {
       props: { slide: mockSlide }
     })
 
-    expect(wrapper.find('.description').text()).toBe('Test description')
+    expect(wrapper.find('.hero-description').text()).toBe('Test description')
   })
 
   it('renders all cards', () => {

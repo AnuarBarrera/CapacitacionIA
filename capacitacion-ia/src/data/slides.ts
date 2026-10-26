@@ -4,71 +4,62 @@ import { SlideType, type Slide } from '@/interfaces/Slide'
  * Datos de la presentación: Del chat a la acción - Herramientas de IA para impulsar tu negocio
  */
 export const slidesData: Slide[] = [
-  // Vista 1: Landing / Inicio
-  {
-    id: 'landing',
-    title: 'Del chat a la acción: cómo usar la Inteligencia Artificial para impulsar tu negocio',
-    type: SlideType.TITLE,
-    subtitle: 'Una guía práctica para emprendedores mexicanos',
-    author: 'Anuar Barrera - Tu Socio Tecnológico',
-    order: 0
-  },
-
-  // Vista 2: El Problema (Hook Emocional)
+  // Vista 1: El Problema (Hook Emocional) - Ahora es la primera slide
   {
     id: 'el-problema',
     title: 'El Reto de Crecer en México',
     type: SlideType.TYPEWRITER,
     lines: [
-      '¿Por qué tantos negocios no crecen en México?',
+      '¿Por qué cuesta tanto que un negocio crezca en México?',
       '',
-      'No es falta de talento. Es que formalizar es CARO y LENTO.',
+      'No es por falta de talento ni de ganas.',
+      'Es que formalizar y escalar es CARO y LENTO.',
       '',
-      'Pero ¿y si hubiera una forma de competir con grandes empresas...',
+      'Pero... ¿y si pudieras competir con las grandes empresas',
       '',
       '...gratis,',
-      '...hoy,',
+      '...hoy mismo,',
       '...desde tu celular?',
       '',
-      'ESO es lo que aprenderás hoy.'
+      'Eso es exactamente lo que vas a aprender hoy.'
     ],
     speed: 50,
-    order: 1
+    order: 0
   },
 
   // Vista 2.5: Menú Principal / Índice
   {
     id: 'menu-principal',
-    title: 'Índice de Contenidos',
+    title: '¿Qué vamos a ver?',
     type: SlideType.CARD_GRID,
-    description: 'Explora los temas de la presentación',
+    description: 'Toca cada tarjeta para ir directo a ese tema',
     showContinueButton: false,
     cards: [
       {
         id: 'menu-que-es-ia',
         title: '¿Qué es la IA?',
-        description: 'Introducción a la Inteligencia Artificial',
+        description: 'Entiende qué hay detrás sin tecnicismos',
         icon: '🧠',
         link: 'que-es-ia'
       },
       {
         id: 'menu-los-5-grandes',
         title: 'Las 5 Plataformas',
-        description: 'Principales plataformas de IA',
+        description: 'ChatGPT, Gemini, Claude, Grok y Meta AI',
         icon: '⭐',
         link: 'los-5-grandes'
       },
       {
         id: 'menu-otras',
         title: 'Otras Herramientas',
-        description: 'Herramientas especializadas',
+        description: 'Herramientas especializadas para casos puntuales',
         icon: '🛠️',
         link: 'otras'
       },
       {
         id: 'menu-cierre',
         title: 'Contacto',
-        description: 'Comienza tu transformación digital',
+        description: '¿Te quedaste con dudas? Escríbeme',
         icon: '🚀',
         link: 'cierre'
       }
@@ -80,12 +71,12 @@ export const slidesData: Slide[] = [
   // Vista 3: ¿Qué es la IA?
   {
     id: 'que-es-ia',
-    title: '¿Qué es la IA?',
+    title: '¿Qué es la IA? (en palabras simples)',
     type: SlideType.CONTENT,
-    content: 'La IA es un Modelo Grande de Lenguaje (en inglés LLM - Large Language Model)',
+    content: 'La IA es un Modelo Grande de Lenguaje (LLM). Piensa en ello como una base de datos gigante que ha leído casi todo lo que ha escrito la humanidad, y usa matemáticas para predecir qué palabra viene después de tu pregunta.',
     customBullets: [
       {
-        text: 'Todo el contenido que ha generado la humanidad se organizó en una base de datos gigante',
+        text: 'Imagina una biblioteca infinita: todo lo que la humanidad ha escrito, publicado y subido a internet, organizado y listo para consultar.',
         keyword: 'Base de datos',
         svgContent: `<svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -146,7 +137,7 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: 'Con matemáticas, cada palabra (técnicamente llamada "token") recibió una posición específica',
+        text: 'Cada palabra (técnicamente "token") se convirtió en coordenadas matemáticas. Así la IA puede "entender" relaciones entre conceptos.',
         keyword: 'Matemáticas',
         svgContent: `<svg viewBox="0 0 250 140" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -217,7 +208,7 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: 'El LLM predice cuál es la siguiente palabra más probable según tu mensaje (prompt)',
+        text: 'Cuando escribes algo, el modelo calcula qué palabra tiene más probabilidad de venir después. No "piensa", predice basándose en patrones.',
         keyword: 'Predicción',
         svgContent: `<svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -289,7 +280,7 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: 'Entre mejor entrenado esté el modelo, mejor predice',
+        text: 'Cuanto más datos y mejor entrenamiento, más precisas son sus predicciones. Por eso los modelos nuevos son mucho más útiles que los de hace un año.',
         keyword: 'Entrenamiento',
         svgContent: `<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -351,7 +342,7 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: 'La IA no es magia, son matemáticas. No es inteligente, solo predice la siguiente palabra de forma tan convincente porque fue muy bien entrenada.',
+        text: 'La IA no es magia ni tiene conciencia. Son matemáticas aplicadas a escala masiva. Funciona tan bien porque fue entrenada con una cantidad brutal de información.',
         keyword: 'Magia',
         svgContent: `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -412,12 +403,12 @@ export const slidesData: Slide[] = [
   // Vista 4: ¿Cómo funcionan las aplicaciones de IA?
   {
     id: 'como-funcionan',
-    title: '¿Cómo funcionan las aplicaciones de IA?',
+    title: '¿Cómo funcionan las apps de IA como ChatGPT?',
     type: SlideType.CONTENT,
-    content: 'Las aplicaciones de Inteligencia Artificial (como ChatGPT) son "Agentes de IA". Esto significa que el LLM analiza tu mensaje y hace lo necesario (como pedirte mas informacion) para cumplirlo. Entre otras cosas',
+    content: 'Apps como ChatGPT son "Agentes de IA": el modelo analiza tu mensaje, piensa qué necesita hacer y ejecuta las acciones necesarias (buscar info, usar herramientas, pedirte más datos) para darte la mejor respuesta.',
     customBullets: [
       {
-        text: 'Un agente es el sistema que ejecuta las acciones necesarias para cumplir tu solicitud. No solo responde, sino que puede realizar múltiples tareas, pedir más información, o usar herramientas para darte el mejor resultado.',
+        text: 'Un agente no solo contesta: puede buscar en internet, analizar archivos, usar calculadoras, escribir código y combinar varias herramientas para resolver tu petición completa.',
         keyword: '¿Qué es un agente?',
         iconContent: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2Z" fill="currentColor" opacity="0.3"/>
@@ -544,8 +535,8 @@ export const slidesData: Slide[] = [
         </svg>`
       },
       {
-        text: 'El razonamiento es el proceso donde la IA analiza tu petición ANTES de ejecutarla. Esto significa que examina qué necesitas, evalúa diferentes opciones, y planea los pasos necesarios para darte un mejor resultado y reducir errores. No solo reacciona, sino que piensa estratégicamente.',
-        keyword: '¿Que es razonamiento?',
+        text: 'El razonamiento es cuando la IA se toma un momento para analizar tu petición antes de actuar. Evalúa opciones, planifica pasos y reduce errores. No solo reacciona: piensa antes de responder.',
+        keyword: '¿Qué es razonar?',
         iconContent: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9 2L9 6M15 2L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           <ellipse cx="12" cy="8" rx="6" ry="4" fill="currentColor" opacity="0.3">
@@ -749,9 +740,9 @@ export const slidesData: Slide[] = [
   // Vista 5: El Prompt
   {
     id: 'el-prompt',
-    title: 'El Prompt',
+    title: 'El Prompt: Cómo hablarle a la IA para que te entienda',
     type: SlideType.CARD_GRID,
-    description: 'El prompt es el mensaje que le mandas a la IA. Aprende a estructurarlo correctamente:',
+    description: 'El prompt es tu mensaje a la IA. Cuanto mejor lo estructures, mejor el resultado:',
     cards: [
       {
         id: 'estructura-basica',
@@ -813,7 +804,7 @@ export const slidesData: Slide[] = [
       },
       {
         id: 'ejemplo-real',
-        title: 'Ejemplo Real: El Poder de la IA',
+        title: 'Ejemplo Real: De $1,000 a gratis en 5 min',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
           <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -826,13 +817,13 @@ export const slidesData: Slide[] = [
           </g>
         </svg>`,
         bullets: [
-          'ANTES: Lona para negocio = $500-1,000 o hacerlo mal tú mismo',
+          'ANTES: Encargar una lona = $500-1,000 MXN o hacerla tú mal',
           'AHORA CON IA:',
-          '   QUE: Quiero lona para vender pan dulce',
-          '   COMO: estilo épico, inspiración anime, formato horizontal 1.20m',
-          '   CONTEXTO: Con precios desde 10 pesos mexicanos',
+          '   QUÉ: "Quiero una lona para vender pan dulce"',
+          '   CÓMO: "Estilo épico, inspiración anime, horizontal 1.20m"',
+          '   CONTEXTO: "Precios desde $10 pesos"',
           'Resultado: Diseño profesional, gratis, en 5 minutos',
-          ' ESTO es el poder de la IA'
+          '¡Así de simple es usar la IA bien!'
         ],
         svgContent: `<svg viewBox="0 0 350 250" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1039,9 +1030,9 @@ export const slidesData: Slide[] = [
   // Vista 6: Prompt Engineering
   {
     id: 'prompt-engineering',
-    title: 'Prompt Engineering',
+    title: 'Prompt Engineering: Trucos para que la IA te entienda a la primera',
     type: SlideType.CARD_GRID,
-    description: 'Estrategias para mejorar el prompt que le compartes a la IA y obtener mejores respuestas.',
+    description: 'Pequeños cambios en cómo preguntas cambian drásticamente la respuesta:',
     cards: [
       {
         id: 'especifico',
@@ -1367,9 +1358,9 @@ export const slidesData: Slide[] = [
   // Vista 7: Context Engineering
   {
     id: 'context-engineering',
-    title: 'Context Engineering',
+    title: 'Context Engineering: Dale a la IA la info que necesita para acertar',
     type: SlideType.CARD_GRID,
-    description: 'Formas y métodos para compartirle contexto a la IA para que entienda mejor tu situación.',
+    description: 'La IA no adivina: cuanto más contexto le des, mejor te entiende:',
     cards: [
       {
         id: 'subir-archivos',
@@ -1709,9 +1700,9 @@ export const slidesData: Slide[] = [
   // Vista 8: Qué SÍ y qué NO compartir
   {
     id: 'seguridad',
-    title: 'Qué SÍ y qué NO compartir con la IA',
+    title: 'Seguridad: Qué SÍ y qué NO compartir con la IA',
     type: SlideType.CARD_GRID,
-    description: 'Lo que escribes puede ser usado para entrenar la IA. Si es confidencial, NO lo compartas.',
+    description: 'Tus conversaciones pueden usarse para entrenar modelos. Regla de oro: si no lo dirías en voz alta en un café, no lo escribas aquí.',
     cards: [
       {
         id: 'si-compartir',
@@ -1890,7 +1881,7 @@ export const slidesData: Slide[] = [
       },
       {
         id: 'tip-elevador',
-        title: 'Tip',
+        title: 'La Regla del Café ☕',
         icon: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
           <path d="M12 16v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1902,10 +1893,11 @@ export const slidesData: Slide[] = [
           </path>
         </svg>`,
         bullets: [
-          'Regla simple para decidir qué compartir',
-          'Si se lo puedes compartir a un amigo mientras van en un elevador, probablemente se lo puedas compartir a la IA',
-          ' Conversación casual = OK ✓',
-          ' Información confidencial = NO ✗'
+          'Regla sencilla: ¿Lo dirías en una charla de café con un amigo?',
+          'Si la respuesta es sí → compártelo con la IA ✓',
+          'Si la respuesta es no → mantenlo privado ✗',
+          'Ejemplo OK: "¿Cómo promociono mi taquería?"',
+          'Ejemplo NO: "Mi contraseña del banco es..."'
         ],
         svgContent: `<svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1991,9 +1983,9 @@ export const slidesData: Slide[] = [
   // Vista 9: Los 5 Grandes
   {
     id: 'los-5-grandes',
-    title: 'Las 5 Plataformas Principales de IA',
+    title: 'Las 5 Plataformas que Debes Conocer',
     type: SlideType.CARD_GRID,
-    description: 'Da clic en una para conocerla a detalle',
+    description: 'Toca cada una para ver qué hace y cuándo usarla',
     showContinueButton: false,
     cards: [
       {
@@ -2126,7 +2118,7 @@ export const slidesData: Slide[] = [
     id: 'chatgpt-modelos-lenguaje',
     title: 'ChatGPT - Lo que puede hacer',
     type: SlideType.CARD_GRID,
-    description: 'Explora las capacidades principales de ChatGPT y sus modelos de razonamiento (Actualización Julio 2026)',
+    description: 'Explora las capacidades principales de ChatGPT y sus modelos de razonamiento (Actualización Octubre 2026)',
     cards: [
       {
         id: 'modelos-lenguaje',
@@ -2171,7 +2163,7 @@ export const slidesData: Slide[] = [
           <!-- Texto -->
           <text x="100" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Entrada Multimodal</text>
           <text x="300" y="50" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">Razonamiento & Acción</text>
-          <text x="200" y="210" text-anchor="middle" fill="#667eea" font-size="14" font-weight="bold">OpenAI o1 / o3 / GPT-5 (Julio 2026)</text>
+          <text x="200" y="210" text-anchor="middle" fill="#667eea" font-size="14" font-weight="bold">OpenAI o1 / o3 / GPT-5 (Octubre 2026)</text>
         </svg>`
       },
       {
@@ -2289,7 +2281,7 @@ export const slidesData: Slide[] = [
     id: 'chatgpt-dalle',
     title: 'Generación de Imágenes (DALL-E 3 & Canvas Visual)',
     type: SlideType.CARD_GRID,
-    description: 'Creación y edición de imágenes con inteligencia artificial (Actualización Julio 2026)',
+    description: 'Creación y edición de imágenes con inteligencia artificial (Actualización Octubre 2026)',
     cards: [
       {
         id: 'dalle-capacidades',
@@ -2358,7 +2350,7 @@ export const slidesData: Slide[] = [
     id: 'chatgpt-sora',
     title: 'Sora / Sora 2 - Generación de Video',
     type: SlideType.CARD_GRID,
-    description: 'Creación y edición de video hiperrealista con inteligencia artificial (Julio 2026)',
+    description: 'Creación y edición de video hiperrealista con inteligencia artificial (Actualización Octubre 2026)',
     cards: [
       {
         id: 'sora-usos',
@@ -2407,7 +2399,7 @@ export const slidesData: Slide[] = [
             <circle cx="15" cy="10" r="6" fill="white"/>
           </g>
           <!-- Texto -->
-          <text x="200" y="215" text-anchor="middle" fill="#6366f1" font-size="14" font-weight="bold">Generación de Video Sora (Julio 2026)</text>
+          <text x="200" y="215" text-anchor="middle" fill="#6366f1" font-size="14" font-weight="bold">Generación de Video Sora (Octubre 2026)</text>
         </svg>`
       }
     ],
@@ -2922,7 +2914,7 @@ export const slidesData: Slide[] = [
     ],
     features: [
       'Vinculado a tu cuenta de Google y Workspace',
-      'Gemini Notebook (antes NotebookLM): Asistente grounded con ejecución de código y Audio/Video Overviews (Julio 2026)',
+      'Gemini Notebook (antes NotebookLM): Asistente grounded con ejecución de código y Audio/Video Overviews (Octubre 2026)',
       'Veo 3.1 & Imagen 3: Generación de video y fotografía hiperrealista con IA',
       'Aplicación móvil para Android e iOS'
     ],
@@ -2934,7 +2926,7 @@ export const slidesData: Slide[] = [
     id: 'gemini-capacidades',
     title: 'Gemini - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'IA multimodal de Google para productividad y creatividad (Actualización Julio 2026)',
+    description: 'IA multimodal de Google para productividad y creatividad (Actualización Octubre 2026)',
     cards: [
       {
         id: 'procesamiento-multimodal',
@@ -2973,7 +2965,7 @@ export const slidesData: Slide[] = [
           <line x1="255" y1="90" x2="225" y2="110" stroke="#34a853" stroke-width="2"/>
           <line x1="145" y1="160" x2="175" y2="140" stroke="#fbbc04" stroke-width="2"/>
           <line x1="255" y1="160" x2="225" y2="140" stroke="#ea4335" stroke-width="2"/>
-          <text x="200" y="220" text-anchor="middle" fill="#4285f4" font-size="14" font-weight="bold">Procesamiento Unificado (Julio 2026)</text>
+          <text x="200" y="220" text-anchor="middle" fill="#4285f4" font-size="14" font-weight="bold">Procesamiento Unificado (Octubre 2026)</text>
         </svg>`
       },
       {
@@ -3025,7 +3017,7 @@ export const slidesData: Slide[] = [
     id: 'gemini-herramientas',
     title: 'Gemini - Herramientas Especializadas',
     type: SlideType.CARD_GRID,
-    description: 'Potencia tu flujo de trabajo con herramientas especializadas de Google (Nota de actualización: Julio 2026)',
+    description: 'Potencia tu flujo de trabajo con herramientas especializadas de Google (Actualización Octubre 2026)',
     cards: [
       {
         id: 'gemini-notebook',
@@ -3067,7 +3059,7 @@ export const slidesData: Slide[] = [
             <circle cx="40" cy="55" r="3" fill="#4285f4"/>
             <path d="M 25 50 L 30 55 L 40 45" stroke="#4285f4" stroke-width="2" fill="none"/>
           </g>
-          <text x="210" y="230" text-anchor="middle" fill="#4285f4" font-size="11" font-weight="bold">Investigación Grounded (Julio 2026)</text>
+          <text x="210" y="230" text-anchor="middle" fill="#4285f4" font-size="11" font-weight="bold">Investigación Grounded (Octubre 2026)</text>
         </svg>`
       },
       {
@@ -3198,7 +3190,7 @@ export const slidesData: Slide[] = [
     id: 'claude-capacidades',
     title: 'Claude - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'IA conversacional de Anthropic enfocada en análisis profundo, Claude Code y agencialidad (Actualización Julio 2026)',
+    description: 'IA conversacional de Anthropic enfocada en análisis profundo, Claude Code y agencialidad (Actualización Octubre 2026)',
     cards: [
       {
         id: 'analisis-creacion',
@@ -3612,7 +3604,7 @@ export const slidesData: Slide[] = [
     id: 'grok-capacidades-principales',
     title: 'Grok 4 - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'La IA con acceso en tiempo real a X/Twitter y razonamiento de xAI (Actualización Julio 2026)',
+    description: 'La IA con acceso en tiempo real a X/Twitter y razonamiento de xAI (Actualización Octubre 2026)',
     cards: [
       {
         id: 'grok-introduccion',
@@ -4086,7 +4078,7 @@ export const slidesData: Slide[] = [
     id: 'meta-ai-capacidades-principales',
     title: 'Meta AI - Capacidades Principales',
     type: SlideType.CARD_GRID,
-    description: 'El asistente integrado en WhatsApp, Instagram, Facebook y Meta AI App (Actualización Julio 2026)',
+    description: 'El asistente integrado en WhatsApp, Instagram, Facebook y Meta AI App (Actualización Octubre 2026)',
     cards: [
       {
         id: 'meta-ai-introduccion-nlp',

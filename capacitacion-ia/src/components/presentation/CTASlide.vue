@@ -149,6 +149,18 @@ const handleNavigateToSlide = (slideId: string) => {
             <span v-else>{{ social.platform }}</span>
           </button>
         </div>
+
+        <!-- Botones CTA -->
+        <div v-if="slide.ctaButtons && slide.ctaButtons.length > 0" class="cta-buttons">
+          <button
+            v-for="(btn, index) in slide.ctaButtons"
+            :key="index"
+            :class="['cta-button', btn.variant || 'secondary']"
+            @click="handleButtonClick(btn.action)"
+          >
+            {{ btn.label }}
+          </button>
+        </div>
       </div>
     </div>
     </div>
