@@ -1,0 +1,11 @@
+# Reglas de redirección para Cloudflare Pages (SPA)
+# Los assets (JS, CSS, imágenes) NO se reescriben a index.html
+/assets/*  /assets/:splat  200
+/favicon.ico  /favicon.ico  200
+/logoAnuarBarrera.webp  /logoAnuarBarrera.webp  200
+/capa.webp  /capa.webp  200
+/robots.txt  /robots.txt  200
+/sitemap.xml  /sitemap.xml  200
+
+# Todo lo demás -> index.html para SPA routing
+/*  /index.html  200
