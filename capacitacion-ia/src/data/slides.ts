@@ -4,59 +4,144 @@ import { SlideType, type Slide } from '@/interfaces/Slide'
  * Datos de la presentación: Del chat a la acción - Herramientas de IA para impulsar tu negocio
  */
 export const slidesData: Slide[] = [
-  // Vista 1: El Problema (Hook Emocional) - Ahora es la primera slide
+  // Vista 1: Portada simple - Entrada directa
   {
-    id: 'el-problema',
-    title: 'El Reto de Crecer en México',
-    type: SlideType.CONTENT,
-    content: '¿Por qué cuesta tanto que un negocio crezca en México? No es por falta de talento ni de ganas. Es que formalizar y escalar es CARO y LENTO. Pero... ¿y si pudieras competir con las grandes empresas gratis, hoy mismo, desde tu celular? Eso es exactamente lo que vas a aprender hoy.',
-    bullets: [
-      'No es falta de talento: es que formalizar es caro y lento',
-      '¿Y si pudieras competir con grandes empresas gratis y desde tu celular?',
-      'Eso es lo que vas a aprender hoy: IA práctica para tu negocio'
-    ],
+    id: 'portada',
+    title: 'IA para tu Negocio',
+    type: SlideType.TITLE,
+    subtitle: 'Guía práctica para emprendedores mexicanos',
+    author: 'Anuar Barrera — Tu Socio Tecnológico',
     order: 0
   },
 
   // Vista 2.5: Menú Principal / Índice
   {
-    id: 'menu-principal',
-    title: '¿Qué vamos a ver?',
-    type: SlideType.CARD_GRID,
-    description: 'Toca cada tarjeta para ir directo a ese tema',
-    showContinueButton: false,
-    cards: [
+        id: 'menu-principal',
+        title: '¿Qué vamos a ver?',
+        type: SlideType.CARD_GRID,
+        description: 'Toca cada tarjeta para ir directo a ese tema',
+        showContinueButton: false,
+        cards: [
+          {
+            id: 'menu-que-es-ia',
+            title: '¿Qué es la IA?',
+            description: 'Entiende qué hay detrás sin tecnicismos',
+            icon: '🧠',
+            link: 'que-es-ia'
+          },
+          {
+            id: 'menu-el-problema',
+            title: 'El Problema Real',
+            description: 'Por qué cuesta crecer y cómo la IA lo cambia',
+            icon: '🎯',
+            link: 'el-problema'
+          },
+          {
+            id: 'menu-los-5-grandes',
+            title: 'Las 5 Plataformas',
+            description: 'ChatGPT, Gemini, Claude, Grok y Meta AI',
+            icon: '⭐',
+            link: 'los-5-grandes'
+          },
+          {
+            id: 'menu-otras',
+            title: 'Otras Herramientas',
+            description: 'Herramientas especializadas para casos puntuales',
+            icon: '🛠️',
+            link: 'otras'
+          },
+          {
+            id: 'menu-cierre',
+            title: 'Contacto',
+            description: '¿Te quedaste con dudas? Escríbeme',
+            icon: '🚀',
+            link: 'cierre'
+          }
+        ],
+        columns: 3,
+        order: 1.5
+      },
+
+  // Vista 2: El Problema Real
+  {
+    id: 'el-problema-real',
+    title: 'El Problema Real',
+    type: SlideType.CONTENT,
+    content: 'En México, formalizar y escalar un negocio es caro y lento. No es falta de talento: son trámites, costos y tiempo que los grandes ya resolvieron. La IA cambia eso: te da acceso gratis a lo que antes costaba miles de pesos y semanas de trabajo.',
+    customBullets: [
       {
-        id: 'menu-que-es-ia',
-        title: '¿Qué es la IA?',
-        description: 'Entiende qué hay detrás sin tecnicismos',
-        icon: '🧠',
-        link: 'que-es-ia'
+        text: 'Formalizar un negocio: meses de trámites y miles de pesos',
+        keyword: 'El cuello de botella',
+        svgContent: `<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bottleneckGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#fa5252;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Embudo -->
+          <path d="M 50 30 L 100 30 L 200 150 L 0 150 Z" fill="url(#bottleneckGrad)" opacity="0.3" stroke="#ff6b6b" stroke-width="3"/>
+          <path d="M 100 50 L 100 130" stroke="#ff6b6b" stroke-width="3" stroke-dasharray="5,5">
+            <animate attributeName="stroke-dashoffset" values="0;20" dur="1s" repeatCount="indefinite"/>
+          </path>
+          <!-- Texto arriba -->
+          <text x="150" y="40" text-anchor="middle" fill="#ff6b6b" font-size="14" font-weight="bold">Tu negocio</text>
+          <text x="150" y="58" text-anchor="middle" fill="#ff6b6b" font-size="12">quiere crecer</text>
+          <!-- Texto en el cuello -->
+          <text x="150" y="100" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Trámites</text>
+          <text x="150" y="115" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Costos</text>
+          <text x="150" y="130" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Tiempo</text>
+          <!-- Texto abajo -->
+          <text x="150" y="165" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="bold">Negocio formal</text>
+          <text x="150" y="180" text-anchor="middle" fill="#51cf66" font-size="11">y escalable</text>
+        </svg>`
       },
       {
-        id: 'menu-los-5-grandes',
-        title: 'Las 5 Plataformas',
-        description: 'ChatGPT, Gemini, Claude, Grok y Meta AI',
-        icon: '⭐',
-        link: 'los-5-grandes'
+        text: 'La IA te da gratis lo que antes pagabas caro: diseño, textos, código, análisis',
+        keyword: 'La solución',
+        svgContent: `<svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="solutionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#51cf66;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#37b24d;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <!-- Flecha transformación -->
+          <path d="M 50 90 Q 100 30 150 90 Q 200 150 250 90" fill="none" stroke="url(#solutionGrad)" stroke-width="4" marker-end="url(#arrowSol)"/>
+          <defs>
+            <marker id="arrowSol" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+              <polygon points="0 0, 12 6, 0 12" fill="#51cf66"/>
+            </marker>
+          </defs>
+          <!-- Antes -->
+          <g transform="translate(40, 60)">
+            <rect x="0" y="0" width="90" height="70" rx="8" fill="#fff3f0" stroke="#ff6b6b" stroke-width="2"/>
+            <text x="45" y="20" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="bold">ANTES</text>
+            <text x="45" y="40" text-anchor="middle" fill="#999" font-size="11">Diseñador: $500+</text>
+            <text x="45" y="55" text-anchor="middle" fill="#999" font-size="11">Redactor: $300+</text>
+            <text x="45" y="70" text-anchor="middle" fill="#999" font-size="11">Programador: $1000+</text>
+            <text x="45" y="85" text-anchor="middle" fill="#999" font-size="11">Semanas de espera</text>
+          </g>
+          <!-- Después -->
+          <g transform="translate(170, 60)">
+            <rect x="0" y="0" width="90" height="70" rx="8" fill="#f0fdf4" stroke="#51cf66" stroke-width="2"/>
+            <text x="45" y="20" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="bold">AHORA</text>
+            <text x="45" y="40" text-anchor="middle" fill="#37b24d" font-size="11">Diseño: Gratis (IA)</text>
+            <text x="45" y="55" text-anchor="middle" fill="#37b24d" font-size="11">Textos: Gratis (IA)</text>
+            <text x="45" y="70" text-anchor="middle" fill="#37b24d" font-size="11">Código: Gratis (IA)</text>
+            <text x="45" y="85" text-anchor="middle" fill="#37b24d" font-size="11">Minutos, no semanas</text>
+          </g>
+          <!-- Checkmark -->
+          <circle cx="150" cy="150" r="18" fill="#51cf66" opacity="0.2"/>
+          <path d="M 140 150 L 148 158 L 160 146" stroke="#51cf66" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`
       },
       {
-        id: 'menu-otras',
-        title: 'Otras Herramientas',
-        description: 'Herramientas especializadas para casos puntuales',
-        icon: '🛠️',
-        link: 'otras'
-      },
-      {
-        id: 'menu-cierre',
-        title: 'Contacto',
-        description: '¿Te quedaste con dudas? Escríbeme',
-        icon: '🚀',
-        link: 'cierre'
+        text: 'Hoy vas a aprender a usar estas herramientas para tu negocio, sin saber programar',
+        keyword: 'Tu siguiente paso',
       }
     ],
-    columns: 3,
-    order: 1.5
+    order: 1
   },
 
   // Vista 3: ¿Qué es la IA?
