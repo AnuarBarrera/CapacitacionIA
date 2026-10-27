@@ -17,7 +17,7 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0',  // Escuchar en todas las interfaces de red
-    port: 5173,      // Puerto por defecto
+    port: 3000,      // Puerto por defecto
     allowedHosts: [
       'capa.anuarbarrera.dev',
       '.anuarbarrera.dev'  // Permite todos los subdominios de anuarbarrera.dev
